@@ -1,20 +1,45 @@
 import React, { useState } from 'react';
-import { Play, X, Sparkles, Anchor } from 'lucide-react';
+import { Play, X, Sparkles, Anchor, RotateCw } from 'lucide-react';
 
 export default function VideoSection() {
   const [isPlayingModal, setIsPlayingModal] = useState(false);
+  const [modalRotation, setModalRotation] = useState(() => {
+    const saved = localStorage.getItem('mb_hero_video_rotation');
+    return saved !== null ? parseInt(saved, 10) : 90;
+  });
+
+  const handleRotate = () => {
+    setModalRotation(prev => {
+      const next = (prev + 90) % 360;
+      localStorage.setItem('mb_hero_video_rotation', next.toString());
+      return next;
+    });
+  };
+
+  const isTransposed = modalRotation === 90 || modalRotation === 270;
 
   return (
     <section className="relative w-full py-28 md:py-40 bg-forest-deep overflow-hidden">
       {/* Background Visual Layer */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden flex items-center justify-center">
         <video
           src="/videos/entrance-video.mp4"
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover object-center filter brightness-[0.35] scale-105"
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            width: isTransposed ? '100vh' : '100vw',
+            height: isTransposed ? '100vw' : '100vh',
+            minWidth: isTransposed ? '100vh' : '100%',
+            minHeight: isTransposed ? '100vw' : '100%',
+            transform: `translate(-50%, -50%) rotate(${modalRotation}deg)`,
+            objectFit: 'cover'
+          }}
+          className="filter brightness-[0.35] scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-forest-deep/90 via-forest-deep/50 to-forest-deep/90" />
       </div>
@@ -55,7 +80,7 @@ export default function VideoSection() {
         </button>
       </div>
 
-      {/* Video Modal Player with User's Real Boating Video */}
+      {/* Video Modal Player with User's Real Boating Video and Rotation Controls */}
       {isPlayingModal && (
         <div 
           className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8 animate-fade-scale"
@@ -67,29 +92,45 @@ export default function VideoSection() {
             className="relative w-full max-w-4xl bg-forest-deep rounded-2xl overflow-hidden shadow-2xl border border-sand/30"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Header */}
+            {/* Header with Title, Rotate Button, and Close */}
             <div className="flex items-center justify-between p-4 bg-forest-deep/90 border-b border-sand/20 text-cream">
               <div className="flex items-center gap-2">
                 <Anchor className="w-4 h-4 text-sunset" />
                 <span className="font-serif text-lg text-sand">Mangroo Bay • Pondicherry Marina Boat Ride</span>
               </div>
-              <button
-                onClick={() => setIsPlayingModal(false)}
-                className="p-1.5 rounded-full hover:bg-white/10 text-cream"
-                aria-label="Close video"
-              >
-                <X className="w-6 h-6" />
-              </button>
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={handleRotate}
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-sand text-xs font-medium border border-sand/30 transition-colors"
+                  title="Rotate Video"
+                >
+                  <RotateCw className="w-3.5 h-3.5" />
+                  <span>Rotate ({modalRotation}°)</span>
+                </button>
+                <button
+                  onClick={() => setIsPlayingModal(false)}
+                  className="p-1.5 rounded-full hover:bg-white/10 text-cream"
+                  aria-label="Close video"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
             </div>
 
             {/* Video Player Container */}
-            <div className="relative aspect-video w-full bg-black flex items-center justify-center">
+            <div className="relative aspect-video w-full bg-black flex items-center justify-center overflow-hidden p-2">
               <video
                 src="/videos/entrance-video.mp4"
                 controls
                 autoPlay
                 playsInline
-                className="w-full h-full object-contain"
+                style={{
+                  transform: `rotate(${modalRotation}deg)`,
+                  transition: 'transform 0.4s ease-out',
+                  maxHeight: isTransposed ? '80vw' : '100%',
+                  maxWidth: isTransposed ? '60vh' : '100%',
+                }}
+                className="rounded-lg shadow-lg"
               />
             </div>
 

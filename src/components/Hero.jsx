@@ -1,9 +1,13 @@
-import React, { useState, useRef } from 'react';
-import { ArrowDown, Compass, Sparkles, Anchor, Waves, Volume2, VolumeX } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { ArrowDown, Compass, Sparkles, Anchor, Waves, Volume2, VolumeX, RotateCw } from 'lucide-react';
 import { HERO_DATA, BRAND_DATA } from '../data/content';
 
 export default function Hero({ onOpenBooking }) {
   const [isVideoMuted, setIsVideoMuted] = useState(true);
+  const [rotation, setRotation] = useState(() => {
+    const saved = localStorage.getItem('mb_hero_video_rotation');
+    return saved !== null ? parseInt(saved, 10) : 90; // Default rotated 90 degrees
+  });
   const videoRef = useRef(null);
 
   const toggleVideoSound = () => {
@@ -13,6 +17,14 @@ export default function Hero({ onOpenBooking }) {
     }
   };
 
+  const handleRotate = () => {
+    setRotation(prev => {
+      const next = (prev + 90) % 360;
+      localStorage.setItem('mb_hero_video_rotation', next.toString());
+      return next;
+    });
+  };
+
   const scrollToExplore = () => {
     const el = document.querySelector('#rides');
     if (el) {
@@ -20,10 +32,12 @@ export default function Hero({ onOpenBooking }) {
     }
   };
 
+  const isTransposed = rotation === 90 || rotation === 270;
+
   return (
     <section className="relative w-full h-screen min-h-[720px] flex items-center justify-center overflow-hidden">
-      {/* Background Video Layer with Atmospheric Dark Overlays */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      {/* Background Video Layer with 90° Rotation Support */}
+      <div className="absolute inset-0 z-0 overflow-hidden bg-forest-deep flex items-center justify-center">
         <video
           ref={videoRef}
           src={HERO_DATA.videoSrc}
@@ -32,21 +46,45 @@ export default function Hero({ onOpenBooking }) {
           loop
           muted={isVideoMuted}
           playsInline
-          className="w-full h-full object-cover object-center filter brightness-[0.75]"
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            width: isTransposed ? '100vh' : '100vw',
+            height: isTransposed ? '100vw' : '100vh',
+            minWidth: isTransposed ? '100vh' : '100%',
+            minHeight: isTransposed ? '100vw' : '100%',
+            transform: `translate(-50%, -50%) rotate(${rotation}deg)`,
+            objectFit: 'cover',
+            transition: 'transform 0.4s ease-out'
+          }}
+          className="filter brightness-[0.75]"
         />
         {/* Cinematic gradient overlays so typography remains readable */}
         <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-charcoal/40 to-forest-deep/75" />
         <div className="absolute inset-0 bg-forest/20 mix-blend-multiply" />
       </div>
 
-      {/* Floating Badges */}
+      {/* Floating Marina Badge */}
       <div className="absolute top-24 md:top-28 left-6 md:left-12 z-20 hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-forest-deep/80 backdrop-blur-md border border-sand/30 text-xs text-sand font-medium tracking-widest uppercase shadow-md">
         <Anchor className="w-3.5 h-3.5 text-sunset" />
         <span>Pondicherry Marina Boathouse</span>
       </div>
 
-      {/* Video Audio Control Toggle */}
-      <div className="absolute top-24 md:top-28 right-6 md:right-12 z-20">
+      {/* Video Controls: Rotate + Sound */}
+      <div className="absolute top-24 md:top-28 right-6 md:right-12 z-20 flex items-center gap-2">
+        {/* Rotate Button */}
+        <button
+          onClick={handleRotate}
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-forest-deep/80 hover:bg-forest text-sand border border-sand/30 backdrop-blur-md text-xs font-medium tracking-wide transition-all shadow-md active:scale-95"
+          title={`Rotate Video (${rotation}°)`}
+          aria-label={`Rotate Video (currently ${rotation} degrees)`}
+        >
+          <RotateCw className="w-3.5 h-3.5 text-sand" />
+          <span>Rotate ({rotation}°)</span>
+        </button>
+
+        {/* Audio Toggle */}
         <button
           onClick={toggleVideoSound}
           className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-forest-deep/80 hover:bg-forest text-sand border border-sand/30 backdrop-blur-md text-xs font-medium tracking-wide transition-all shadow-md active:scale-95"
