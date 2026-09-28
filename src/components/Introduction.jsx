@@ -32,7 +32,7 @@ export default function Introduction() {
             </div>
 
             <p className="text-sm md:text-base text-charcoal/75 leading-relaxed mb-12">
-              Anchored gently in Puducherry’s sheltered tidal waters, Mangroo Bay is designed as a sanctuary from the frantic rhythm of modern life. Here, time is measured not by clocks, but by the rise of morning mist and the warm descent of the evening sun.
+              Anchored gently in Puducherry’s sheltered tidal waters, Marina Bay is designed as a sanctuary from the frantic rhythm of modern life. Here, time is measured not by clocks, but by the rise of morning mist and the warm descent of the evening sun.
             </p>
 
             {/* Feature Row: 01, 02, 03 */}
@@ -61,7 +61,7 @@ export default function Introduction() {
               <div className="relative rounded-2xl overflow-hidden shadow-luxury border-4 border-white/80 aspect-[4/5] bg-sand/30">
                 <img
                   src={INTRO_DATA.mainImage}
-                  alt="Mangroo Bay boathouse waters and tropical greenery"
+                  alt="Marina Bay boathouse waters and tropical greenery"
                   className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
                   loading="lazy"
                 />

@@ -59,7 +59,7 @@ export default function GallerySection({ selectedImage, setSelectedImage }) {
             Visual Journal
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-forest font-light leading-tight mb-4">
-            A glimpse of Mangroo Bay
+            A glimpse of Marina Bay
           </h2>
           <p className="text-sm md:text-base text-charcoal/70 leading-relaxed font-sans">
             Gently drifting between calm waters, golden skies, and lush coastal greenery.

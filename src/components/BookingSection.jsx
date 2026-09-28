@@ -122,7 +122,7 @@ export default function BookingSection({ onOpenContact }) {
                   Book Another Ride
                 </button>
                 <a
-                  href={`https://wa.me/?text=Hello%20Mangroo%20Bay,%20I%20have%20inquiry%20${inquiryCode}%20for%20${encodeURIComponent(formData.rideType)}%20at%20Pondicherry%20Marina%20Boathouse.`}
+                  href={`https://wa.me/?text=Hello%20Marina%20Bay,%20I%20have%20inquiry%20${inquiryCode}%20for%20${encodeURIComponent(formData.rideType)}%20at%20Pondicherry%20Marina%20Boathouse.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-sand text-forest hover:bg-white uppercase tracking-widest text-xs font-semibold transition-colors shadow-md"

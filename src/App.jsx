@@ -8,7 +8,7 @@ import BoatFleetSection from './components/BoatFleetSection';
 import SignatureTimeline from './components/SignatureTimeline';
 import GallerySection from './components/GallerySection';
 import VideoSection from './components/VideoSection';
-import WhyMangrooBay from './components/WhyMangrooBay';
+import WhyMarinaBay from './components/WhyMarinaBay';
 import LocationSection from './components/LocationSection';
 import BookingSection from './components/BookingSection';
 import ContactSection from './components/ContactSection';
@@ -73,8 +73,8 @@ export default function App() {
       {/* 08 Cinematic Full-width Video Section */}
       <VideoSection />
 
-      {/* 09 Why Mangroo Bay Boat Rides */}
-      <WhyMangrooBay />
+      {/* 09 Why Marina Bay Boat Rides */}
+      <WhyMarinaBay />
 
       {/* 10 Destination & Pondicherry Marina Boathouse Location Map */}
       <LocationSection

@@ -1,4 +1,4 @@
-# Mangroo Bay — Pondicherry Marina Boathouse
+# Marina Bay — Pondicherry Marina Boathouse
 
 > **“Escape into the calm.”**  
 > *Premier Boat Rides, Sunset & Sunrise Cruises, Romantic Couple Voyages & Birthday Celebrations on the Water.*  
@@ -8,8 +8,8 @@
 
 ## 🌊 Overview
 
-**Mangroo Bay** is an exclusive waterfront boating service operating from the iconic **Pondicherry Marina Boathouse**. 
-Positioned at the rare geographic intersection where the **Mangrove Bio-Reserve**, **Lagoon Backwaters**, and the **Bay of Bengal Sea Mouth** meet, Mangroo Bay offers a peaceful, scenic, and luxurious boating experience.
+**Marina Bay** is an exclusive waterfront boating service operating from the iconic **Pondicherry Marina Boathouse**. 
+Positioned at the rare geographic intersection where the **Mangrove Bio-Reserve**, **Lagoon Backwaters**, and the **Bay of Bengal Sea Mouth** meet, Marina Bay offers a peaceful, scenic, and luxurious boating experience.
 
 > **Note:** This service is strictly for day boat rides, tours, and celebrations on the water (no overnight stays).
 
@@ -29,7 +29,7 @@ Positioned at the rare geographic intersection where the **Mangrove Bio-Reserve*
 
 ## ⚓ Boat Fleet & Vessels
 
-- **The Mangroo Bay Royal Boathouse Boat:** Covered boathouse vessel (up to 20 passengers) with cushioned perimeter seating, cake-cutting table, and celebratory Bluetooth sound system.
+- **The Marina Bay Royal Boathouse Boat:** Covered boathouse vessel (up to 20 passengers) with cushioned perimeter seating, cake-cutting table, and celebratory Bluetooth sound system.
 - **The Estuary Horizon Cruiser:** Intimate 2 to 6-seater cruiser for romantic couple dates, sunset glides, and silent mangrove safaris.
 - **Safety Amenities:**
   - 100% Government-Approved Life Jackets for all passengers (Adults, Children & Infants).
@@ -83,4 +83,4 @@ npm run preview
 - **Coordinates:** `11.9125° N, 79.8228° E`
 - **Distance:** 5–8 minutes from White Town (French Quarter) & Promenade Beach
 
-© 2026 Mangroo Bay. All rights reserved.
+© 2026 Marina Bay. All rights reserved.

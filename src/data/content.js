@@ -1,9 +1,9 @@
-// Mangroo Bay - Exclusively Premier Boating Experiences
+// Marina Bay - Exclusively Premier Boating Experiences
 // Pondicherry Marina Boathouse, Puducherry, India
 // Note: Exclusively boat rides and celebrations on the water (No overnight stays).
 
 export const BRAND_DATA = {
-  name: "Mangroo Bay",
+  name: "Marina Bay",
   tagline: "Escape into the calm.",
   supportingLine: "A premier boating experience surrounded by water, mangroves and the quiet beauty of Pondicherry Marina.",
   alternativeLine: "Pondicherry’s finest boat rides — where water, nature and unforgettable moments meet.",
@@ -13,17 +13,17 @@ export const BRAND_DATA = {
   contact: {
     phone: "+91 [ADD PHONE]",
     whatsapp: "+91 [ADD WHATSAPP]",
-    email: "rides@mangroobay.com",
+    email: "rides@marinabay.com",
     address: "Pondicherry Marina Boathouse Jetty, Coastal Estuary & Mangrove Backwaters, Puducherry 605001, India [ADD EXACT ADDRESS]",
     mapCoordinates: { lat: 11.9125, lng: 79.8228 },
     googleMapsUrl: "https://maps.google.com/?q=Pondicherry+Marina+Boathouse+Puducherry",
-    instagram: "https://instagram.com/mangroobay",
-    facebook: "https://facebook.com/mangroobay"
+    instagram: "https://instagram.com/marinabay.pondy",
+    facebook: "https://facebook.com/marinabay.pondy"
   }
 };
 
 export const HERO_DATA = {
-  title: "MANGROO BAY",
+  title: "MARINA BAY",
   tagline: "Escape into the calm.",
   description: "A premier boat ride experience surrounded by water, mangroves and the quiet beauty of Pondicherry Marina.",
   marinaHighlight: "Boarding & Boat Rides at Pondicherry Marina Boathouse",
@@ -36,9 +36,9 @@ export const HERO_DATA = {
 };
 
 export const INTRO_DATA = {
-  eyebrow: "WELCOME TO MANGROO BAY",
+  eyebrow: "WELCOME TO MARINA BAY",
   heading: "Where the water becomes your escape.",
-  body: "Leave the noise behind and slow down. Mangroo Bay offers premier boat rides at Pondicherry Marina Boathouse, designed for peaceful mornings, golden sunsets, private couple cruises, and memorable celebrations surrounded by nature.",
+  body: "Leave the noise behind and slow down. Marina Bay offers premier boat rides at Pondicherry Marina Boathouse, designed for peaceful mornings, golden sunsets, private couple cruises, and memorable celebrations surrounded by nature.",
   features: [
     { number: "01", title: "Scenic Waterway Glides", subtitle: "Tranquil backwater & lagoon boating" },
     { number: "02", title: "Mangrove Bio-Safaris", subtitle: "Lush green root tunnels & native birds" },
@@ -159,7 +159,7 @@ export const BOAT_FLEET_DATA = {
   vessels: [
     {
       id: "royal-cruiser",
-      title: "The Mangroo Bay Royal Boathouse Boat",
+      title: "The Marina Bay Royal Boathouse Boat",
       category: "Signature Covered Boathouse Vessel",
       capacity: "Up to 20 Guests (Perfect for Parties & Families)",
       idealFor: "Birthday Celebrations, Family Gatherings & Group Sunset Rides",
@@ -191,8 +191,8 @@ export const BOAT_FLEET_DATA = {
 
 export const MARINA_KEY_DETAILS = {
   name: "Pondicherry Marina Boathouse",
-  hubTagline: "The premier boarding gateway for Mangroo Bay",
-  overview: "Mangroo Bay operates exclusively from Pondicherry Marina Boathouse. This unique geographical haven sits right at the confluence of the mangrove waterways, tranquil lagoon backwaters, and the open Bay of Bengal sea mouth.",
+  hubTagline: "The premier boarding gateway for Marina Bay",
+  overview: "Marina Bay operates exclusively from Pondicherry Marina Boathouse. This unique geographical haven sits right at the confluence of the mangrove waterways, tranquil lagoon backwaters, and the open Bay of Bengal sea mouth.",
   highlights: [
     { title: "Strategic Marina Boarding", desc: "Easily accessible from White Town, Promenade Beach, and harbor area with smooth jetty boarding." },
     { title: "Triple-Water Geographic Splendor", desc: "Experience the rare intersection where Mangrove forest tunnels, serene lagoon waters, and sea waves meet." },
@@ -261,7 +261,7 @@ export const GALLERY_DATA = [
   {
     id: 2,
     category: "Boats & Fleet",
-    title: "Mangroo Bay Covered Boathouse Boat",
+    title: "Marina Bay Covered Boathouse Boat",
     subtitle: "Spacious deck for celebrations & scenic cruises",
     src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=85",
     span: "col-span-12 md:col-span-5",
@@ -323,7 +323,7 @@ export const GALLERY_DATA = [
   }
 ];
 
-export const WHY_MANGROO_DATA = [
+export const WHY_MARINA_DATA = [
   {
     number: "01",
     title: "Pondicherry Marina Location",
@@ -350,6 +350,8 @@ export const WHY_MANGROO_DATA = [
     description: "Escape the city rush and enjoy peaceful waters, gentle sea breezes, and memories that last a lifetime."
   }
 ];
+
+export const WHY_MANGROO_DATA = WHY_MARINA_DATA;
 
 export const LOCATION_DATA = {
   heading: "Find your way to the bay.",

@@ -108,7 +108,7 @@ export default function SignatureTimeline() {
             <div className="lg:col-span-5 p-8 sm:p-12 flex flex-col justify-between bg-gradient-to-b from-forest-deep to-forest/90">
               <div>
                 <div className="flex items-center gap-2 text-sunset text-xs uppercase tracking-luxury font-semibold mb-3">
-                  <span>Mangroo Bay Ritual</span>
+                  <span>Marina Bay Experience</span>
                   <span>•</span>
                   <span>{activeStage.name}</span>
                 </div>

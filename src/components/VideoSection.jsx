@@ -53,7 +53,7 @@ export default function VideoSection() {
           <button
             onClick={() => setIsPlayingModal(true)}
             className="group relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-sand/90 hover:bg-white text-forest flex items-center justify-center shadow-floating transition-all duration-300 transform hover:scale-110 active:scale-95"
-            aria-label="Play Mangroo Bay Experience Video"
+            aria-label="Play Marina Bay Experience Video"
           >
             <Play className="w-8 h-8 sm:w-10 sm:h-10 text-forest fill-forest ml-1 transition-transform group-hover:scale-110" />
           </button>
@@ -96,7 +96,7 @@ export default function VideoSection() {
             <div className="flex items-center justify-between p-4 bg-forest-deep/90 border-b border-sand/20 text-cream">
               <div className="flex items-center gap-2">
                 <Anchor className="w-4 h-4 text-sunset" />
-                <span className="font-serif text-lg text-sand">Mangroo Bay • Pondicherry Marina Boat Ride</span>
+                <span className="font-serif text-lg text-sand">Marina Bay • Pondicherry Marina Boat Ride</span>
               </div>
               <div className="flex items-center gap-3">
                 <button

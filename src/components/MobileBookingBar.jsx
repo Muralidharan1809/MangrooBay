@@ -26,7 +26,7 @@ export default function MobileBookingBar({ onOpenBooking }) {
         <div className="flex flex-col">
           <span className="font-serif text-sand text-sm font-medium tracking-wide flex items-center gap-1.5">
             <Anchor className="w-3.5 h-3.5 text-sunset" />
-            <span>Mangroo Bay Boat Rides</span>
+            <span>Marina Bay Boat Rides</span>
           </span>
           <span className="text-[10px] uppercase tracking-wider text-cream/70 font-sans">
             Pondicherry Marina Boathouse
