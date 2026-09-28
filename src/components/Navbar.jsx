@@ -20,9 +20,10 @@ export default function Navbar({ onOpenBooking, onOpenContact }) {
   }, []);
 
   const navLinks = [
-    { label: "Rides & Celebrations", href: "#rides" },
-    { label: "Boathouses", href: "#stay" },
-    { label: "Day Flow", href: "#activities" },
+    { label: "Boat Rides", href: "#rides" },
+    { label: "Fleet", href: "#fleet" },
+    { label: "Safety & Precautions", href: "#safety" },
+    { label: "Timings", href: "#activities" },
     { label: "Gallery", href: "#gallery" },
     { label: "Pondy Marina", href: "#location" },
     { label: "Contact", href: "#contact" },

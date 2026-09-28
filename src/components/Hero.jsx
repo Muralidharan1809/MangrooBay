@@ -9,6 +9,55 @@ export default function Hero({ onOpenBooking }) {
     return saved !== null ? parseInt(saved, 10) : 270; // Default rotated 270 degrees (opposite direction)
   });
   const videoRef = useRef(null);
+  const sectionRef = useRef(null);
+
+  // Automatically pause video and stop audio when user scrolls away from entrance
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!videoRef.current) return;
+      // When user scrolls down past the entrance (scrollY > 100), immediately stop video & audio
+      if (window.scrollY > 100) {
+        if (!videoRef.current.paused) {
+          videoRef.current.pause();
+        }
+      } else {
+        // When user scrolls back to top, resume video playback
+        if (videoRef.current.paused) {
+          videoRef.current.play().catch(() => {});
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Also use IntersectionObserver for smooth handling of viewport changes & anchor links
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting || entry.intersectionRatio < 0.5) {
+          if (videoRef.current && !videoRef.current.paused) {
+            videoRef.current.pause();
+          }
+        } else if (window.scrollY <= 100) {
+          if (videoRef.current && videoRef.current.paused) {
+            videoRef.current.play().catch(() => {});
+          }
+        }
+      },
+      { threshold: [0, 0.2, 0.5, 0.8] }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    // Run once on mount in case page reloads mid-scroll
+    handleScroll();
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const toggleVideoSound = () => {
     if (videoRef.current) {
@@ -35,7 +84,7 @@ export default function Hero({ onOpenBooking }) {
   const isTransposed = rotation === 90 || rotation === 270;
 
   return (
-    <section className="relative w-full h-screen min-h-[720px] flex items-center justify-center overflow-hidden">
+    <section ref={sectionRef} className="relative w-full h-screen min-h-[720px] flex items-center justify-center overflow-hidden">
       {/* Background Video Layer with 90° Rotation Support */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-forest-deep flex items-center justify-center">
         <video
@@ -128,17 +177,31 @@ export default function Hero({ onOpenBooking }) {
         </h1>
 
         {/* Tagline */}
-        <p className="font-serif text-2xl sm:text-3xl md:text-4xl italic text-sand font-light tracking-wide mb-4">
+        <p className="font-serif text-2xl sm:text-3xl md:text-4xl italic text-sand font-light tracking-wide mb-4 max-w-3xl">
           {HERO_DATA.tagline}
         </p>
 
-        {/* Quote / Supporting Line */}
-        <p className="max-w-2xl text-base sm:text-lg md:text-xl font-light text-cream/90 leading-relaxed mb-6 tracking-wide">
-          “{HERO_DATA.description}”
+        {/* Welcome Description */}
+        <p className="max-w-3xl text-sm sm:text-base md:text-lg font-light text-cream/95 leading-relaxed mb-3 tracking-wide">
+          {HERO_DATA.description}
         </p>
+
+        {/* Supporting Perspective Line */}
+        <p className="max-w-2xl text-xs sm:text-sm text-cream/80 font-light leading-relaxed mb-4 hidden sm:block">
+          {HERO_DATA.supportingText}
+        </p>
+
+        {/* Invitation Callout */}
+        <div className="inline-block px-4 py-1.5 rounded-full bg-sand/15 backdrop-blur-md border border-sand/30 mb-6 text-xs sm:text-sm font-serif italic text-sand tracking-wide">
+          {HERO_DATA.invitation}
+        </div>
 
         {/* Experiences Highlight Pill */}
         <div className="mb-8 hidden sm:flex flex-wrap items-center justify-center gap-2 text-[11px] text-cream/80 uppercase tracking-wider">
+          <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Arikamedu Heritage</span>
+          <span className="text-sunset">•</span>
+          <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Mangrove Safaris</span>
+          <span className="text-sunset">•</span>
           <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Sunset & Sunrise Rides</span>
           <span className="text-sunset">•</span>
           <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Couple Rides</span>
@@ -146,8 +209,6 @@ export default function Hero({ onOpenBooking }) {
           <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Birthday Celebrations</span>
           <span className="text-sunset">•</span>
           <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Adventure & Sea Rides</span>
-          <span className="text-sunset">•</span>
-          <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Mangrove Safaris</span>
         </div>
 
         {/* Call to Actions */}

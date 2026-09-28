@@ -5,6 +5,7 @@ import Introduction from './components/Introduction';
 import RidesAndExperiences from './components/RidesAndExperiences';
 import ExperienceSection from './components/ExperienceSection';
 import BoatFleetSection from './components/BoatFleetSection';
+import SafetySection from './components/SafetySection';
 import SignatureTimeline from './components/SignatureTimeline';
 import GallerySection from './components/GallerySection';
 import VideoSection from './components/VideoSection';
@@ -64,7 +65,12 @@ export default function App() {
         onOpenBooking={(vessel) => handleOpenBooking(vessel)}
       />
 
-      {/* 06 Signature Boating Hours Timeline */}
+      {/* 06 Safety & Passenger Precautions */}
+      <SafetySection
+        onOpenBooking={() => handleOpenBooking()}
+      />
+
+      {/* 07 Signature Boating Hours Timeline */}
       <SignatureTimeline />
 
       {/* 07 Masonry Gallery with Lightbox */}

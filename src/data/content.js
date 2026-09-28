@@ -26,8 +26,10 @@ export const BRAND_DATA = {
 
 export const HERO_DATA = {
   title: "MARINA BAY",
-  tagline: "Escape into the calm.",
-  description: "A premier boat ride experience surrounded by water, mangroves and the quiet beauty of Pondicherry Marina.",
+  tagline: "Where nature, history and boating adventure meet.",
+  description: "Discover the beauty of Puducherry Marina, explore peaceful mangroves, experience the heritage of Arikamedu, and set out on an unforgettable boating adventure.",
+  supportingText: "Whether it’s a relaxing escape, a sunset ride, or an exciting journey on the water, Marina Bay is your gateway to explore Puducherry from a whole new perspective.",
+  invitation: "Come aboard. Explore. Adventure. Escape into the calm.",
   marinaHighlight: "Boarding & Boat Rides at Pondicherry Marina Boathouse",
   boatingHoursBadge: "Daily Boating: Morning 8:00 AM – Evening 5:30 PM",
   primaryCta: "Book Your Boat Ride",
@@ -40,12 +42,14 @@ export const HERO_DATA = {
 
 export const INTRO_DATA = {
   eyebrow: "WELCOME TO MARINA BAY",
-  heading: "Where the water becomes your escape.",
-  body: "Leave the noise behind and slow down. Marina Bay offers premier boat rides at Pondicherry Marina Boathouse, designed for peaceful mornings, golden sunsets, private couple cruises, and memorable celebrations surrounded by nature.",
+  heading: "Where nature, history and boating adventure meet.",
+  body: "Discover the beauty of Puducherry Marina, explore peaceful mangroves, experience the heritage of Arikamedu, and set out on an unforgettable boating adventure.",
+  secondaryText: "Whether it’s a relaxing escape, a sunset ride, or an exciting journey on the water, Marina Bay is your gateway to explore Puducherry from a whole new perspective.",
+  invitation: "Come aboard. Explore. Adventure. Escape into the calm.",
   features: [
-    { number: "01", title: "Scenic Waterway Glides", subtitle: "Tranquil backwater & lagoon boating" },
-    { number: "02", title: "Mangrove Bio-Safaris", subtitle: "Lush green root tunnels & native birds" },
-    { number: "03", title: "Sunset & Sea Rides", subtitle: "Golden hours & open ocean breezes at Pondy Marina" }
+    { number: "01", title: "Puducherry Marina Boathouse", subtitle: "Coastal estuary waters, scenic breakwaters & ocean breezes" },
+    { number: "02", title: "Peaceful Mangrove Safaris", subtitle: "Lush green biological root tunnels & native birds" },
+    { number: "03", title: "Historic Arikamedu Heritage", subtitle: "Ancient Roman trading port ruins along serene riverbanks" }
   ],
   mainImage: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=1200&q=85",
   secondaryImage: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=85"
@@ -133,16 +137,16 @@ export const RIDES_AND_EXPERIENCES = [
   },
   {
     id: "mangrove-ride",
-    title: "Mangrove Ride (Eco Safari)",
-    category: "Eco Bio-Reserve Safari",
-    badge: "Eco Discovery",
-    tagline: "Glide quietly through dense mangrove tunnels",
-    description: "An eco-safari deep into the protected coastal mangrove forests. Glide through narrow green tunnels where twisted root systems touch the water and silence is broken only by the calls of rare migratory birds.",
+    title: "Mangrove & Arikamedu Heritage Safari",
+    category: "Eco & Historical Heritage",
+    badge: "Eco & Heritage Discovery",
+    tagline: "Glide through dense mangrove tunnels & historic Arikamedu waters",
+    description: "An eco-heritage voyage deep into the protected coastal mangrove forests and along the banks of historic Arikamedu — an ancient Indo-Roman trading port dating back over 2,000 years. Glide through lush green tunnels where twisted root systems touch calm waters, birds sing, and history lives on the shores.",
     duration: "60 Mins",
-    timing: "08:00 AM – 04:30 PM (Eco Hours)",
+    timing: "08:00 AM – 04:30 PM (Eco & Heritage Hours)",
     capacity: "Private or Group",
     image: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=1200&q=85",
-    features: ["Bio-reserve natural tunnel route", "Quiet eco-friendly cruising", "Birdwatching binoculars guide", "Authentic coastal ecology"]
+    features: ["Ancient Arikamedu heritage riverbank", "Protected mangrove bio-reserve tunnels", "Quiet eco-friendly cruising", "Birdwatching binoculars & local history guide"]
   }
 ];
 
@@ -372,8 +376,70 @@ export const LOCATION_DATA = {
   ],
   attractions: [
     { name: "Pondicherry Marina Promenade", distance: "At the location / 1 min walk" },
+    { name: "Arikamedu Ancient Archaeological Site", distance: "Along our backwater boating route / 10 mins" },
     { name: "White Town (French Quarter)", distance: "5–8 mins scenic drive" },
     { name: "Promenade Beach & Rock Beach", distance: "7 mins drive" },
     { name: "Auroville International Township", distance: "25 mins drive" }
+  ]
+};
+
+// Boating Safety & Precaution Guidelines
+export const SAFETY_AND_PRECAUTIONS_DATA = {
+  eyebrow: "YOUR SAFETY IS OUR HIGHEST PRIORITY",
+  heading: "Boating Safety & Passenger Precautions",
+  tagline: "Certified equipment, licensed boat masters, and strict maritime precautions for complete peace of mind.",
+  overview: "At Marina Bay, every voyage across Pondicherry Marina, the mangrove backwaters, and the historic Arikamedu estuary is guided by uncompromising safety protocols. Please review our safety guidelines and essential passenger precautions before boarding.",
+  guidelines: [
+    {
+      id: "life-jackets",
+      title: "100% Mandatory Life Jackets",
+      icon: "LifeBuoy",
+      summary: "Government-approved safety jackets for all passengers.",
+      description: "Properly fitted, certified marine life jackets are mandatory and provided for every adult, child, and infant before stepping aboard. Jackets must remain securely fastened throughout the entire ride."
+    },
+    {
+      id: "certified-captains",
+      title: "Government-Certified Boat Masters",
+      icon: "Anchor",
+      summary: "Licensed marine pilots with extensive local navigation experience.",
+      description: "All Marina Bay vessels are operated exclusively by government-licensed boat masters trained in maritime safety, CPR, first aid, and shallow-water backwater channels."
+    },
+    {
+      id: "weather-monitoring",
+      title: "Weather & Tide Synchronized",
+      icon: "Compass",
+      summary: "Real-time monitoring of tidal currents and coastal forecasts.",
+      description: "Departures are coordinated with Puducherry port weather bulletins and daily tidal charts. Rides are smoothly adjusted or rescheduled should wind or tide exceed safety thresholds."
+    },
+    {
+      id: "safe-boarding",
+      title: "Safe Jetty Boarding & Accessibility",
+      icon: "ShieldCheck",
+      summary: "Dedicated stable pontoon with crew boarding assistance.",
+      description: "Boarding takes place at our stable Pondicherry Marina Boathouse Jetty featuring non-slip gangways and sturdy handrails. Crew members provide physical assistance for seniors, toddlers, and families."
+    },
+    {
+      id: "onboard-discipline",
+      title: "Passenger Seating & Deck Discipline",
+      icon: "Users",
+      summary: "Remain comfortably seated while the vessel is in motion.",
+      description: "Passengers must remain seated on our cushioned deck lounge seating during transit. Do not lean over gunwales, sit on perimeter railings, or abruptly shift weight while the boat is cruising."
+    },
+    {
+      id: "eco-heritage",
+      title: "Eco-Reserve & Arikamedu Protection",
+      icon: "Heart",
+      summary: "Strict zero-litter policy in mangrove and heritage waters.",
+      description: "Help us preserve Puducherry’s pristine mangrove bio-reserve and Arikamedu heritage riverbanks. No disposal of plastics, littering, smoking, or unauthorized swimming in the estuary."
+    }
+  ],
+  precautionsList: [
+    "Arrive 10–15 minutes prior to scheduled departure for safety briefing and life jacket fitting.",
+    "Listen attentively to your captain's pre-departure instructions.",
+    "Fasten life jackets securely before the vessel unmoors from the jetty pontoon.",
+    "Keep hands and arms inside the boat during docking and narrow mangrove passes.",
+    "Secure mobile phones, cameras, and sunglasses with neck straps or waterproof pouches.",
+    "Consumption of alcohol, smoking, and carrying hazardous materials are strictly prohibited.",
+    "First-aid emergency kits and marine throw rings are equipped on every Marina Bay boat."
   ]
 };

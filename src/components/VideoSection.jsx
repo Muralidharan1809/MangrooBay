@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Play, X, Sparkles, Anchor, RotateCw } from 'lucide-react';
 
 export default function VideoSection() {
@@ -7,6 +7,28 @@ export default function VideoSection() {
     const saved = localStorage.getItem('mb_hero_video_rotation_v2');
     return saved !== null ? parseInt(saved, 10) : 270;
   });
+  const bgVideoRef = useRef(null);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!bgVideoRef.current) return;
+        if (!entry.isIntersecting) {
+          bgVideoRef.current.pause();
+        } else {
+          bgVideoRef.current.play().catch(() => {});
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleRotate = () => {
     setModalRotation(prev => {
@@ -19,10 +41,11 @@ export default function VideoSection() {
   const isTransposed = modalRotation === 90 || modalRotation === 270;
 
   return (
-    <section className="relative w-full py-28 md:py-40 bg-forest-deep overflow-hidden">
+    <section ref={sectionRef} className="relative w-full py-28 md:py-40 bg-forest-deep overflow-hidden">
       {/* Background Visual Layer */}
       <div className="absolute inset-0 z-0 overflow-hidden flex items-center justify-center">
         <video
+          ref={bgVideoRef}
           src="/videos/entrance-video.mp4"
           autoPlay
           loop

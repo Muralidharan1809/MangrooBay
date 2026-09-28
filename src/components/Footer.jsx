@@ -10,8 +10,9 @@ export default function Footer({ onOpenBooking }) {
   };
 
   const navLinks = [
-    { label: "Rides & Celebrations", href: "#rides" },
+    { label: "Boat Rides", href: "#rides" },
     { label: "Boat Fleet", href: "#fleet" },
+    { label: "Safety & Precautions", href: "#safety" },
     { label: "Gallery", href: "#gallery" },
     { label: "Pondicherry Marina", href: "#location" },
     { label: "Contact", href: "#contact" },

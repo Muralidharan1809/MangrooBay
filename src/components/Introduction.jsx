@@ -25,14 +25,18 @@ export default function Introduction() {
               {INTRO_DATA.heading}
             </h2>
 
-            <div className="relative pl-6 border-l-2 border-sunset/60 mb-8">
+            <div className="relative pl-6 border-l-2 border-sunset/60 mb-6">
               <p className="text-lg md:text-xl text-charcoal/90 leading-relaxed font-serif italic">
                 “{INTRO_DATA.body}”
               </p>
             </div>
 
-            <p className="text-sm md:text-base text-charcoal/75 leading-relaxed mb-12">
-              Anchored gently in Puducherry’s sheltered tidal waters, Marina Bay is designed as a sanctuary from the frantic rhythm of modern life. Here, time is measured not by clocks, but by the rise of morning mist and the warm descent of the evening sun.
+            <p className="text-sm md:text-base text-charcoal/80 leading-relaxed mb-4 font-sans">
+              {INTRO_DATA.secondaryText}
+            </p>
+
+            <p className="font-serif italic text-base md:text-lg text-sunset font-medium mb-10">
+              {INTRO_DATA.invitation}
             </p>
 
             {/* Feature Row: 01, 02, 03 */}
