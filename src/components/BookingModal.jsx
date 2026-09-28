@@ -18,7 +18,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience }) {
   const [formData, setFormData] = useState({
     rideType: 'Sunset Ride',
     date: '',
-    timeSlot: 'Sunset Golden Hour (05:00 PM - 06:45 PM)',
+    timeSlot: 'Sunset Golden Hour (04:00 PM - 05:30 PM)',
     passengers: '2 Passengers (Couple)',
     fullName: '',
     phone: '',
@@ -184,12 +184,15 @@ export default function BookingModal({ isOpen, onClose, initialExperience }) {
             <form onSubmit={handleSubmit} className="space-y-5">
               
               {/* Boarding Point Banner */}
-              <div className="p-3.5 rounded-xl bg-sand/20 border border-sand/50 flex items-center justify-between text-xs text-charcoal/85">
+              <div className="p-3.5 rounded-xl bg-sand/20 border border-sand/50 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-charcoal/85 gap-1.5">
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-forest shrink-0" />
                   <span><strong>Boarding:</strong> Pondicherry Marina Boathouse Jetty</span>
                 </div>
-                <span className="text-[10px] uppercase font-bold text-mangrove tracking-wider">Boat Rides Only</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-[10px] uppercase font-bold text-sunset tracking-wider">8:00 AM – 5:30 PM Daily</span>
+                  <span className="text-[10px] uppercase font-bold text-mangrove tracking-wider">• Boat Rides Only</span>
+                </div>
               </div>
 
               {/* Ride Selection */}
@@ -233,18 +236,17 @@ export default function BookingModal({ isOpen, onClose, initialExperience }) {
 
                 <div>
                   <label className="block text-xs uppercase tracking-wider font-semibold text-forest mb-2">
-                    Preferred Time Slot
+                    Preferred Time Slot (8 AM – 5:30 PM)
                   </label>
                   <select
                     value={formData.timeSlot}
                     onChange={(e) => setFormData({ ...formData, timeSlot: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl bg-white border border-sand/60 text-sm text-charcoal focus:outline-none focus:ring-2 focus:ring-forest"
                   >
-                    <option value="Sunrise (06:00 AM - 08:30 AM)">Sunrise (06:00 AM - 08:30 AM)</option>
-                    <option value="Morning (09:00 AM - 12:00 PM)">Morning (09:00 AM - 12:00 PM)</option>
-                    <option value="Afternoon (01:00 PM - 04:30 PM)">Afternoon (01:00 PM - 04:30 PM)</option>
-                    <option value="Sunset Golden Hour (05:00 PM - 06:45 PM)">Sunset Golden Hour (05:00 PM - 06:45 PM)</option>
-                    <option value="Evening Twilight (07:00 PM - 08:30 PM)">Evening Twilight (07:00 PM - 08:30 PM)</option>
+                    <option value="Morning Opening (08:00 AM - 10:30 AM)">Morning Opening (08:00 AM - 10:30 AM)</option>
+                    <option value="Midday Safari (10:30 AM - 01:30 PM)">Midday Safari (10:30 AM - 01:30 PM)</option>
+                    <option value="Afternoon Cruise (01:30 PM - 04:00 PM)">Afternoon Cruise (01:30 PM - 04:00 PM)</option>
+                    <option value="Sunset Golden Hour (04:00 PM - 05:30 PM)">Sunset Golden Hour (04:00 PM - 05:30 PM)</option>
                   </select>
                 </div>
               </div>

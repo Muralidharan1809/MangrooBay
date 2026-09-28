@@ -6,7 +6,7 @@ export default function BookingSection({ onOpenContact }) {
   const [formData, setFormData] = useState({
     rideType: 'Sunset Ride',
     date: '',
-    timeSlot: 'Sunset Golden Hour (05:00 PM - 06:45 PM)',
+    timeSlot: 'Sunset Golden Hour (04:00 PM - 05:30 PM)',
     passengers: '2 Passengers (Couple)',
     fullName: '',
     phone: '',
@@ -139,7 +139,7 @@ export default function BookingSection({ onOpenContact }) {
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-sand/20 gap-2">
                 <div className="flex items-center gap-2 text-xs text-sand/90">
                   <ShieldCheck className="w-4 h-4 text-sand" />
-                  <span>Pondicherry Marina Boathouse • Exclusive Boat Rides</span>
+                  <span>Pondicherry Marina Boathouse • Daily Boating 8:00 AM – 5:30 PM</span>
                 </div>
                 <button
                   type="button"
@@ -191,18 +191,17 @@ export default function BookingSection({ onOpenContact }) {
 
                 <div>
                   <label className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
-                    Time Slot
+                    Time Slot (8 AM – 5:30 PM)
                   </label>
                   <select
                     value={formData.timeSlot}
                     onChange={(e) => setFormData({ ...formData, timeSlot: e.target.value })}
                     className="w-full px-3 py-3 rounded-xl bg-forest/80 border border-sand/30 text-sm text-cream focus:outline-none focus:border-sand"
                   >
-                    <option value="Sunrise (06:00 AM - 08:30 AM)" className="bg-forest-deep">Sunrise (06:00 AM - 08:30 AM)</option>
-                    <option value="Morning (09:00 AM - 12:00 PM)" className="bg-forest-deep">Morning (09:00 AM - 12:00 PM)</option>
-                    <option value="Afternoon (01:00 PM - 04:30 PM)" className="bg-forest-deep">Afternoon (01:00 PM - 04:30 PM)</option>
-                    <option value="Sunset Golden Hour (05:00 PM - 06:45 PM)" className="bg-forest-deep">Sunset Golden Hour (05:00 PM - 06:45 PM)</option>
-                    <option value="Evening Twilight (07:00 PM - 08:30 PM)" className="bg-forest-deep">Evening Twilight (07:00 PM - 08:30 PM)</option>
+                    <option value="Morning Opening (08:00 AM - 10:30 AM)" className="bg-forest-deep">Morning Opening (08:00 AM - 10:30 AM)</option>
+                    <option value="Midday Safari (10:30 AM - 01:30 PM)" className="bg-forest-deep">Midday Safari (10:30 AM - 01:30 PM)</option>
+                    <option value="Afternoon Cruise (01:30 PM - 04:00 PM)" className="bg-forest-deep">Afternoon Cruise (01:30 PM - 04:00 PM)</option>
+                    <option value="Sunset Golden Hour (04:00 PM - 05:30 PM)" className="bg-forest-deep">Sunset Golden Hour (04:00 PM - 05:30 PM)</option>
                   </select>
                 </div>
 

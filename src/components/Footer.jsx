@@ -86,7 +86,11 @@ export default function Footer({ onOpenBooking }) {
                 Puducherry 605001, India<br />
                 [ADD EXACT ADDRESS]
               </p>
-              <p className="text-xs text-sand/80 pt-2 font-mono">
+              <div className="pt-2 text-xs">
+                <span className="text-[11px] uppercase tracking-wider text-sunset font-semibold block">Boating Hours:</span>
+                <span className="text-sand font-medium">Morning 8:00 AM – Evening 5:30 PM (Daily)</span>
+              </div>
+              <p className="text-xs text-sand/80 pt-1 font-mono">
                 {BRAND_DATA.contact.email}
               </p>
               <div className="pt-2">

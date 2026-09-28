@@ -10,6 +10,8 @@ export const BRAND_DATA = {
   location: "Pondicherry Marina Boathouse, Puducherry, India",
   estYear: "2026",
   marinaBadge: "Pondicherry Marina Boathouse Hub",
+  boatingHours: "Morning 8:00 AM – Evening 5:30 PM (Daily)",
+  boatingHoursShort: "Daily 8:00 AM – 5:30 PM",
   contact: {
     phone: "+91 [ADD PHONE]",
     whatsapp: "+91 [ADD WHATSAPP]",
@@ -27,6 +29,7 @@ export const HERO_DATA = {
   tagline: "Escape into the calm.",
   description: "A premier boat ride experience surrounded by water, mangroves and the quiet beauty of Pondicherry Marina.",
   marinaHighlight: "Boarding & Boat Rides at Pondicherry Marina Boathouse",
+  boatingHoursBadge: "Daily Boating: Morning 8:00 AM – Evening 5:30 PM",
   primaryCta: "Book Your Boat Ride",
   secondaryCta: "Explore All Boat Rides",
   scrollText: "Scroll to discover ↓",
@@ -58,20 +61,20 @@ export const RIDES_AND_EXPERIENCES = [
     tagline: "Golden hour magic mirrored across the water",
     description: "Experience the transition of Puducherry skies into amber and blush violet. As the sun dips over the mangrove horizon, the calm estuary glows in breathtaking hues — ideal for evening tea, peaceful cruising, and stunning photography.",
     duration: "45–60 Mins",
-    timing: "05:00 PM – 06:45 PM",
+    timing: "04:00 PM – 05:30 PM (Golden Hour Sunset)",
     capacity: "Private or Group (Up to 15)",
     image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85",
     features: ["Golden hour panoramic views", "Calm tidal backwaters", "Sunset photo stop points", "Complimentary cool drinks"]
   },
   {
     id: "sunrise-ride",
-    title: "Sunrise Ride (Sun Rice)",
+    title: "Sunrise & Morning Calm Ride (Sun Rice)",
     category: "Peaceful & Awakening",
     badge: "Pure Serenity",
-    tagline: "Dawn mist, soft golden rays & morning bird calls",
-    description: "Witness the estuary awaken. Glide across still, mirror-like waters as the morning sun casts soft golden beams through the mangrove mist. Spot kingfishers, egrets, and coastal cormorants embarking on their morning flight.",
+    tagline: "Morning opening rays, calm waters & dewy bird calls",
+    description: "Witness the estuary awaken with our first morning departures. Glide across still, mirror-like waters as the morning sun casts soft golden beams through the mangrove mist. Spot kingfishers, egrets, and coastal cormorants embarking on their morning flight.",
     duration: "45–60 Mins",
-    timing: "06:00 AM – 08:30 AM",
+    timing: "08:00 AM – 10:00 AM (Morning Opening Slots)",
     capacity: "Private or Group",
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85",
     features: ["Morning birdwatching safari", "Dewy mangrove mist", "Fresh South Indian filter coffee", "Undisturbed tranquil waters"]
@@ -84,7 +87,7 @@ export const RIDES_AND_EXPERIENCES = [
     tagline: "Private secluded boat cruise tailored for two",
     description: "An intimate voyage designed exclusively for couples, proposals, anniversaries, and romantic dates. Features subtle boat styling, fresh floral arrangements, warm lantern glow, soft background music, and absolute privacy on the water.",
     duration: "60–90 Mins",
-    timing: "Custom (Sunrise, Sunset or Twilight)",
+    timing: "08:00 AM – 05:30 PM (Custom Private Slots)",
     capacity: "Strictly 2 Guests (Couple)",
     image: "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=85",
     features: ["100% Private vessel", "Floral & lantern decoration option", "Romantic music playlist", "Dedicated private boat master"]
@@ -97,7 +100,7 @@ export const RIDES_AND_EXPERIENCES = [
     tagline: "Celebrate your special day on the floating boathouse boat",
     description: "Make birthdays unforgettable on the water. Enjoy a private celebratory cruise with cake cutting on the open deck, customized balloons & fairy light decor, party music, and picture-perfect memories with friends and family.",
     duration: "1.5 – 2 Hours",
-    timing: "Flexible slots (Day & Evening)",
+    timing: "08:00 AM – 05:30 PM (Flexible Slots)",
     capacity: "Groups up to 20 Guests",
     image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1200&q=85",
     features: ["Cake-cutting table & stand", "Balloon & fairy light styling", "High-clarity Bluetooth sound system", "Spacious open deck for group photos"]
@@ -110,7 +113,7 @@ export const RIDES_AND_EXPERIENCES = [
     tagline: "Thrilling turns, fun splashes & joyful memories",
     description: "An exhilarating ride across the open lagoon and wide waterways. Feel the wind rush with spirited throttle bursts, playful wave-splashing curves, and endless smiles for families, youngsters, and children.",
     duration: "30–45 Mins",
-    timing: "All Day Slots (09:00 AM – 05:00 PM)",
+    timing: "09:00 AM – 05:00 PM (Daily Slots)",
     capacity: "Groups of 4–12",
     image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
     features: ["Spirited boating speed & turns", "Certified life jackets for all ages", "High fun factor for youth & kids", "Exciting water spray action"]
@@ -123,7 +126,7 @@ export const RIDES_AND_EXPERIENCES = [
     tagline: "Where the tranquil backwaters meet the Bay of Bengal",
     description: "Cruise past the sheltering breakwaters of Pondicherry Marina into the majestic confluence where the lagoon meets the open sea. Feel the fresh oceanic breeze and watch traditional catamarans navigate wide horizons.",
     duration: "45–60 Mins",
-    timing: "Morning & Afternoon (Subject to tide)",
+    timing: "08:30 AM – 04:30 PM (Subject to tide)",
     capacity: "Small & Large Groups",
     image: "https://images.unsplash.com/photo-1508873696983-2df5703bc20d?auto=format&fit=crop&w=1200&q=85",
     features: ["Sea mouth & breakwater crossing", "Oceanic sea breeze", "Marine harbor views", "Coastline panorama of Puducherry"]
@@ -136,7 +139,7 @@ export const RIDES_AND_EXPERIENCES = [
     tagline: "Glide quietly through dense mangrove tunnels",
     description: "An eco-safari deep into the protected coastal mangrove forests. Glide through narrow green tunnels where twisted root systems touch the water and silence is broken only by the calls of rare migratory birds.",
     duration: "60 Mins",
-    timing: "07:00 AM – 04:30 PM",
+    timing: "08:00 AM – 04:30 PM (Eco Hours)",
     capacity: "Private or Group",
     image: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=1200&q=85",
     features: ["Bio-reserve natural tunnel route", "Quiet eco-friendly cruising", "Birdwatching binoculars guide", "Authentic coastal ecology"]
@@ -194,6 +197,7 @@ export const MARINA_KEY_DETAILS = {
   hubTagline: "The premier boarding gateway for Marina Bay",
   overview: "Marina Bay operates exclusively from Pondicherry Marina Boathouse. This unique geographical haven sits right at the confluence of the mangrove waterways, tranquil lagoon backwaters, and the open Bay of Bengal sea mouth.",
   highlights: [
+    { title: "Daily Boating: 8:00 AM – 5:30 PM", desc: "Open daily from Morning 8:00 AM to Evening 5:30 PM with regular departures, romantic sunset cruises, and private charters." },
     { title: "Strategic Marina Boarding", desc: "Easily accessible from White Town, Promenade Beach, and harbor area with smooth jetty boarding." },
     { title: "Triple-Water Geographic Splendor", desc: "Experience the rare intersection where Mangrove forest tunnels, serene lagoon waters, and sea waves meet." },
     { title: "100% Certified Safety", desc: "Govt-approved life jackets for adults and children, certified marine pilots, and full first-aid readiness." },
@@ -202,48 +206,48 @@ export const MARINA_KEY_DETAILS = {
 };
 
 export const TIMELINE_DATA = {
-  heading: "Boating hours, at your own pace.",
-  subheading: "From misty dawn glides to starlit evening cruises at Pondicherry Marina Boathouse.",
+  heading: "Boating hours, morning 8:00 AM to evening 5:30 PM.",
+  subheading: "From calm morning departures to golden hour sunsets at Pondicherry Marina Boathouse.",
   stages: [
     {
       id: "morning",
-      time: "06:00 AM — 09:00 AM",
-      name: "Sunrise Ride (Sun Rice)",
-      summary: "Calm water, morning mist and dewy light.",
-      description: "Witness the first golden rays breaking through the mangrove canopy. Still mirror-like waters make this the perfect time for nature lovers, bird photography, and fresh filter coffee on the water.",
+      time: "08:00 AM — 10:30 AM",
+      name: "Morning Calm & Sunrise Glides",
+      summary: "Mirror-still water, soft morning rays & birdsong.",
+      description: "Step aboard our first departures of the day at 8:00 AM. Still waters make this the purest time for peaceful cruising, nature watching, photography, and fresh filter coffee on the water.",
       image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=85",
       accent: "#E9D8B8",
       vibe: "Serene & Dewy"
     },
     {
-      id: "afternoon",
-      time: "09:30 AM — 04:30 PM",
-      name: "Mangrove Safari & Happy Ride",
-      summary: "Shaded green tunnels & exhilarating splashes.",
-      description: "Glide under the cool green arches of coastal mangroves, or take an energetic adventure ride across open lagoon channels with fun turns and refreshing water sprays.",
-      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=85",
+      id: "midday",
+      time: "10:30 AM — 01:30 PM",
+      name: "Mangrove Safari & Bio-Reserve Tunnels",
+      summary: "Cool shaded green root tunnels & quiet gliding.",
+      description: "Glide under the dense mangrove canopy where natural leaf canopies shield against the sun. Explore narrow green tunnels and observe native coastal wildlife.",
+      image: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=1000&q=85",
       accent: "#315C4A",
-      vibe: "Breezy & Spirited"
+      vibe: "Shaded & Peaceful"
+    },
+    {
+      id: "afternoon",
+      time: "01:30 PM — 04:00 PM",
+      name: "Adventure, Family & Birthday Celebrations",
+      summary: "Spirited waves, birthday party deck & joyful laughter.",
+      description: "Celebrate birthdays and milestones on our covered cruiser with cake cutting and music, or feel the wind with fun adventure glides across open lagoon waterways.",
+      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=85",
+      accent: "#123C32",
+      vibe: "Festive & Breezy"
     },
     {
       id: "golden-hour",
-      time: "05:00 PM — 06:45 PM",
-      name: "Sunset Ride & Couple Cruise",
-      summary: "Terracotta skies & golden water reflections.",
-      description: "Puducherry’s most iconic boating hour. Watch the sky turn fiery orange and lilac as your boat drifts along calm backwaters toward the sea mouth.",
+      time: "04:00 PM — 05:30 PM",
+      name: "Sunset Ride & Final Evening Cruise",
+      summary: "Amber skies, terracotta horizons & sea breeze.",
+      description: "Puducherry’s most iconic golden hour before our 5:30 PM close. Watch the sky turn fiery orange and lilac as your boat drifts along calm backwaters toward the sea mouth.",
       image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1000&q=85",
       accent: "#D9825B",
       vibe: "Romantic & Amber"
-    },
-    {
-      id: "night",
-      time: "07:00 PM — 08:30 PM",
-      name: "Birthday Celebrations & Twilight",
-      summary: "Fairy lights, music and water breeze.",
-      description: "Celebrate birthdays and special milestones under the evening sky. Lanterns and fairy lights sparkle on the boat deck as celebratory music floats across the bay.",
-      image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=85",
-      accent: "#123C32",
-      vibe: "Festive & Intimate"
     }
   ]
 };
@@ -357,8 +361,10 @@ export const LOCATION_DATA = {
   heading: "Find your way to the bay.",
   location: "Pondicherry Marina Boathouse, Puducherry, India",
   address: "Pondicherry Marina Boathouse Jetty, Estuary Backwaters, Puducherry 605001 [ADD EXACT ADDRESS]",
-  note: "Board directly at Pondicherry Marina Boathouse. Ample vehicle parking, certified safety gear, and welcoming guest jetty lounge available.",
+  boatingHours: "Morning 08:00 AM to Evening 05:30 PM (Daily)",
+  note: "Board directly at Pondicherry Marina Boathouse. Open daily from Morning 8:00 AM to Evening 5:30 PM. Ample vehicle parking, certified safety gear, and welcoming guest jetty lounge available.",
   marinaFeatures: [
+    "Boating Timings: Daily 8:00 AM – 5:30 PM",
     "Dedicated Boarding Jetty at Pondicherry Marina",
     "Govt-Approved Life Jackets & Safety Briefing",
     "Meeting Point of Mangrove Reserve, Lagoon & Sea Mouth",

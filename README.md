@@ -2,7 +2,8 @@
 
 > **“Escape into the calm.”**  
 > *Premier Boat Rides, Sunset & Sunrise Cruises, Romantic Couple Voyages & Birthday Celebrations on the Water.*  
-> **Boarding Location:** Pondicherry Marina Boathouse, Puducherry, India.
+> **Boarding Location:** Pondicherry Marina Boathouse, Puducherry, India.  
+> **Boating Hours:** Morning 8:00 AM – Evening 5:30 PM (Daily).
 
 ---
 

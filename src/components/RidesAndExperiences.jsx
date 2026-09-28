@@ -64,9 +64,15 @@ export default function RidesAndExperiences({ onBookRide }) {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-forest text-sand text-xs font-semibold uppercase tracking-luxury mb-4 shadow-sm">
-            <Anchor className="w-3.5 h-3.5 text-sunset" />
-            <span>Pondicherry Marina Boathouse</span>
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-forest text-sand text-xs font-semibold uppercase tracking-luxury shadow-sm">
+              <Anchor className="w-3.5 h-3.5 text-sunset" />
+              <span>Pondicherry Marina Boathouse</span>
+            </div>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sand/40 border border-sand/80 text-forest text-xs font-semibold uppercase tracking-luxury shadow-sm">
+              <Clock className="w-3.5 h-3.5 text-forest" />
+              <span>Boating: Morning 8:00 AM – Evening 5:30 PM</span>
+            </div>
           </div>
 
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-forest font-light leading-tight mb-4">

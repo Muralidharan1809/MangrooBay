@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ArrowDown, Compass, Sparkles, Anchor, Waves, Volume2, VolumeX, RotateCw } from 'lucide-react';
+import { ArrowDown, Compass, Sparkles, Anchor, Waves, Volume2, VolumeX, RotateCw, Clock } from 'lucide-react';
 import { HERO_DATA, BRAND_DATA } from '../data/content';
 
 export default function Hero({ onOpenBooking }) {
@@ -108,12 +108,18 @@ export default function Hero({ onOpenBooking }) {
       {/* Main Hero Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-cream flex flex-col items-center">
         
-        {/* Editorial Sub-eyebrow */}
-        <div className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-sand/15 backdrop-blur-md border border-sand/30">
-          <Sparkles className="w-3 h-3 text-sand" />
-          <span className="text-xs md:text-sm uppercase tracking-widest text-sand font-medium">
-            Welcome to Marina Bay • Pondicherry Marina Boathouse
-          </span>
+        {/* Editorial Sub-eyebrow & Boating Hours */}
+        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sand/15 backdrop-blur-md border border-sand/30">
+            <Sparkles className="w-3 h-3 text-sand" />
+            <span className="text-xs md:text-sm uppercase tracking-widest text-sand font-medium">
+              Welcome to Marina Bay • Pondicherry Marina Boathouse
+            </span>
+          </div>
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-forest-deep/80 backdrop-blur-md border border-sand/30 text-sand text-xs font-semibold uppercase tracking-wider shadow-sm">
+            <Clock className="w-3.5 h-3.5 text-sunset" />
+            <span>Daily 8:00 AM – 5:30 PM</span>
+          </div>
         </div>
 
         {/* Brand Title */}
