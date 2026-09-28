@@ -4,14 +4,14 @@ import { Play, X, Sparkles, Anchor, RotateCw } from 'lucide-react';
 export default function VideoSection() {
   const [isPlayingModal, setIsPlayingModal] = useState(false);
   const [modalRotation, setModalRotation] = useState(() => {
-    const saved = localStorage.getItem('mb_hero_video_rotation');
-    return saved !== null ? parseInt(saved, 10) : 90;
+    const saved = localStorage.getItem('mb_hero_video_rotation_v2');
+    return saved !== null ? parseInt(saved, 10) : 270;
   });
 
   const handleRotate = () => {
     setModalRotation(prev => {
       const next = (prev + 90) % 360;
-      localStorage.setItem('mb_hero_video_rotation', next.toString());
+      localStorage.setItem('mb_hero_video_rotation_v2', next.toString());
       return next;
     });
   };

@@ -5,8 +5,8 @@ import { HERO_DATA, BRAND_DATA } from '../data/content';
 export default function Hero({ onOpenBooking }) {
   const [isVideoMuted, setIsVideoMuted] = useState(true);
   const [rotation, setRotation] = useState(() => {
-    const saved = localStorage.getItem('mb_hero_video_rotation');
-    return saved !== null ? parseInt(saved, 10) : 90; // Default rotated 90 degrees
+    const saved = localStorage.getItem('mb_hero_video_rotation_v2');
+    return saved !== null ? parseInt(saved, 10) : 270; // Default rotated 270 degrees (opposite direction)
   });
   const videoRef = useRef(null);
 
@@ -20,7 +20,7 @@ export default function Hero({ onOpenBooking }) {
   const handleRotate = () => {
     setRotation(prev => {
       const next = (prev + 90) % 360;
-      localStorage.setItem('mb_hero_video_rotation', next.toString());
+      localStorage.setItem('mb_hero_video_rotation_v2', next.toString());
       return next;
     });
   };
