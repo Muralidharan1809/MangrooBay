@@ -91,9 +91,19 @@ export default function Footer({ onOpenBooking }) {
                 <span className="text-[11px] uppercase tracking-wider text-sunset font-semibold block">Boating Hours:</span>
                 <span className="text-sand font-medium">Morning 8:00 AM – Evening 5:30 PM (Daily)</span>
               </div>
-              <p className="text-xs text-sand/80 pt-1 font-mono">
-                {BRAND_DATA.contact.email}
-              </p>
+              <div className="text-xs text-sand/90 pt-1 font-mono flex flex-col gap-1.5">
+                <a href={`tel:${BRAND_DATA.contact.phoneRaw}`} className="hover:text-white transition-colors flex items-center gap-1.5">
+                  <span>📞 Call:</span>
+                  <span className="font-semibold text-white">{BRAND_DATA.contact.phone}</span>
+                </a>
+                <a href={BRAND_DATA.contact.whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-sunset transition-colors flex items-center gap-1.5">
+                  <span>💬 WhatsApp:</span>
+                  <span className="text-sand">{BRAND_DATA.contact.whatsapp}</span>
+                </a>
+                <a href={`mailto:${BRAND_DATA.contact.email}`} className="text-cream/70 hover:text-white transition-colors flex items-center gap-1.5">
+                  <span>✉️ {BRAND_DATA.contact.email}</span>
+                </a>
+              </div>
               <div className="pt-2">
                 <button
                   onClick={scrollToTop}

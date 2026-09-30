@@ -169,13 +169,13 @@ export default function BookingModal({ isOpen, onClose, initialExperience }) {
                   Back to Website
                 </button>
                 <a
-                  href={`https://wa.me/?text=Hello%20Marina%20Bay,%20I%20have%20boat%20ride%20inquiry%20${inquiryId}%20for%20${encodeURIComponent(formData.rideType)}%20at%20Pondicherry%20Marina%20Boathouse.`}
+                  href={`https://wa.me/917397438874?text=Hello%20Mangroo%20Bay,%20I%20have%20boat%20ride%20inquiry%20${inquiryId}%20for%20${encodeURIComponent(formData.rideType)}%20at%20Pondicherry%20Marina%20Boathouse.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-sand hover:bg-white text-forest text-xs uppercase tracking-widest font-semibold transition-colors border border-sand/50 shadow-sm"
                 >
                   <MessageSquare className="w-4 h-4" />
-                  <span>WhatsApp Concierge</span>
+                  <span>WhatsApp (+91 73974 38874)</span>
                 </a>
               </div>
             </div>

@@ -42,35 +42,46 @@ export default function ContactSection({ onOpenBooking }) {
 
             {/* Contact Placeholders */}
             <div className="space-y-4 pt-4 border-t border-sand/40">
-              <div className="flex items-center gap-4 text-sm text-charcoal">
-                <div className="w-10 h-10 rounded-full bg-cream border border-sand/40 flex items-center justify-center text-forest shrink-0">
+              <a 
+                href={`tel:${BRAND_DATA.contact.phoneRaw}`} 
+                className="flex items-center gap-4 text-sm text-charcoal hover:text-sunset transition-colors group"
+              >
+                <div className="w-10 h-10 rounded-full bg-cream border border-sand/40 flex items-center justify-center text-forest group-hover:border-sunset group-hover:text-sunset transition-colors shrink-0">
                   <Phone className="w-4 h-4" />
                 </div>
                 <div>
-                  <span className="block text-xs uppercase tracking-wider text-charcoal/50">Telephone</span>
-                  <span className="font-medium text-forest">{BRAND_DATA.contact.phone}</span>
+                  <span className="block text-xs uppercase tracking-wider text-charcoal/50">Telephone / Call</span>
+                  <span className="font-medium text-forest group-hover:text-sunset transition-colors">{BRAND_DATA.contact.phone}</span>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-center gap-4 text-sm text-charcoal">
-                <div className="w-10 h-10 rounded-full bg-cream border border-sand/40 flex items-center justify-center text-forest shrink-0">
+              <a 
+                href={BRAND_DATA.contact.whatsappUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 text-sm text-charcoal hover:text-mangrove transition-colors group"
+              >
+                <div className="w-10 h-10 rounded-full bg-cream border border-sand/40 flex items-center justify-center text-forest group-hover:border-mangrove group-hover:text-mangrove transition-colors shrink-0">
                   <MessageSquare className="w-4 h-4 text-mangrove" />
                 </div>
                 <div>
                   <span className="block text-xs uppercase tracking-wider text-charcoal/50">WhatsApp Concierge</span>
-                  <span className="font-medium text-forest">{BRAND_DATA.contact.whatsapp}</span>
+                  <span className="font-medium text-forest group-hover:text-mangrove transition-colors">{BRAND_DATA.contact.whatsapp}</span>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-center gap-4 text-sm text-charcoal">
-                <div className="w-10 h-10 rounded-full bg-cream border border-sand/40 flex items-center justify-center text-forest shrink-0">
+              <a 
+                href={`mailto:${BRAND_DATA.contact.email}`}
+                className="flex items-center gap-4 text-sm text-charcoal hover:text-forest-deep transition-colors group"
+              >
+                <div className="w-10 h-10 rounded-full bg-cream border border-sand/40 flex items-center justify-center text-forest group-hover:border-forest transition-colors shrink-0">
                   <Mail className="w-4 h-4 text-sunset" />
                 </div>
                 <div>
                   <span className="block text-xs uppercase tracking-wider text-charcoal/50">Email Inquiries</span>
                   <span className="font-medium text-forest">{BRAND_DATA.contact.email}</span>
                 </div>
-              </div>
+              </a>
             </div>
 
             {/* Social Media Links */}
