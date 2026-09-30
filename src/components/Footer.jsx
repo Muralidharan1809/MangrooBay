@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Waves, ArrowUp, Shield, FileText, X, Anchor } from 'lucide-react';
 import { BRAND_DATA } from '../data/content';
 
-export default function Footer({ onOpenBooking }) {
+export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
   const [modalType, setModalType] = useState(null);
 
   const scrollToTop = () => {
@@ -73,6 +73,14 @@ export default function Footer({ onOpenBooking }) {
                     Book Boat Ride →
                   </button>
                 </li>
+                <li>
+                  <button
+                    onClick={onOpenBookingsManager}
+                    className="text-sunset hover:text-white font-semibold transition-colors block py-0.5 text-left text-xs uppercase tracking-wider"
+                  >
+                    📋 View Booked Slots (Admin)
+                  </button>
+                </li>
               </ul>
             </div>
 
@@ -134,6 +142,13 @@ export default function Footer({ onOpenBooking }) {
                 className="hover:text-sand transition-colors"
               >
                 Boating Safety & Terms
+              </button>
+              <span>•</span>
+              <button
+                onClick={onOpenBookingsManager}
+                className="text-sunset hover:text-white transition-colors font-medium"
+              >
+                Booked Slots Manager
               </button>
             </div>
           </div>

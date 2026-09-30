@@ -13,6 +13,7 @@ import {
   Waves
 } from 'lucide-react';
 import { BRAND_DATA, RIDES_AND_EXPERIENCES } from '../data/content';
+import { saveNewBooking } from '../utils/bookingStorage';
 
 export default function BookingModal({ isOpen, onClose, initialExperience }) {
   const [formData, setFormData] = useState({
@@ -70,6 +71,19 @@ export default function BookingModal({ isOpen, onClose, initialExperience }) {
     setTimeout(() => {
       const randomId = 'MB-RIDE-' + Math.floor(10000 + Math.random() * 90000);
       setInquiryId(randomId);
+      saveNewBooking({
+        id: randomId,
+        createdAt: new Date().toISOString(),
+        fullName: formData.fullName,
+        phone: formData.phone,
+        email: formData.email,
+        rideType: formData.rideType,
+        date: formData.date,
+        timeSlot: formData.timeSlot,
+        guests: formData.guests,
+        notes: formData.specialRequests,
+        status: 'Pending'
+      });
       setIsSubmitting(false);
       setIsSuccess(true);
     }, 700);

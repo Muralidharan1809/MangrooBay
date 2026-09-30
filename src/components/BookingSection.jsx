@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar, Users, Send, CheckCircle2, ShieldCheck, Phone, Mail, Clock, MessageSquare, Anchor, Sparkles } from 'lucide-react';
 import { BRAND_DATA, RIDES_AND_EXPERIENCES } from '../data/content';
+import { saveNewBooking } from '../utils/bookingStorage';
 
 export default function BookingSection({ onOpenContact }) {
   const [formData, setFormData] = useState({
@@ -43,7 +44,21 @@ export default function BookingSection({ onOpenContact }) {
 
     setIsSubmitting(true);
     setTimeout(() => {
-      setInquiryCode('MB-RIDE-' + Math.floor(10000 + Math.random() * 90000));
+      const randomCode = 'MB-RIDE-' + Math.floor(10000 + Math.random() * 90000);
+      setInquiryCode(randomCode);
+      saveNewBooking({
+        id: randomCode,
+        createdAt: new Date().toISOString(),
+        fullName: formData.fullName,
+        phone: formData.phone,
+        email: formData.email,
+        rideType: formData.rideType,
+        date: formData.date,
+        timeSlot: formData.timeSlot,
+        guests: formData.passengers,
+        notes: formData.specialRequests,
+        status: 'Pending'
+      });
       setIsSubmitting(false);
       setIsSuccess(true);
     }, 700);

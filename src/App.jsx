@@ -16,10 +16,12 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 import MobileBookingBar from './components/MobileBookingBar';
+import AdminBookingsModal from './components/AdminBookingsModal';
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedExperience, setSelectedExperience] = useState(null);
+  const [isBookingsManagerOpen, setIsBookingsManagerOpen] = useState(false);
 
   const handleOpenBooking = (experience = null) => {
     setSelectedExperience(experience);
@@ -40,6 +42,7 @@ export default function App() {
       <Navbar
         onOpenBooking={() => handleOpenBooking()}
         onOpenContact={handleOpenContact}
+        onOpenBookingsManager={() => setIsBookingsManagerOpen(true)}
       />
 
       {/* 01 Full-screen Cinematic Hero */}
@@ -100,6 +103,7 @@ export default function App() {
       {/* 13 Forest Green Luxury Footer */}
       <Footer
         onOpenBooking={() => handleOpenBooking()}
+        onOpenBookingsManager={() => setIsBookingsManagerOpen(true)}
       />
 
       {/* Floating Sticky Mobile Booking Bar */}
@@ -112,6 +116,12 @@ export default function App() {
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}
         initialExperience={selectedExperience}
+      />
+
+      {/* Admin Booked Slots & Inquiries Manager Modal */}
+      <AdminBookingsModal
+        isOpen={isBookingsManagerOpen}
+        onClose={() => setIsBookingsManagerOpen(false)}
       />
 
     </div>

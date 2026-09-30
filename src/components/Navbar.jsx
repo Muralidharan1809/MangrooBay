@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Waves, ArrowRight, Anchor } from 'lucide-react';
+import { Menu, X, Waves, ArrowRight, Anchor, Calendar } from 'lucide-react';
 
-export default function Navbar({ onOpenBooking, onOpenContact }) {
+export default function Navbar({ onOpenBooking, onOpenContact, onOpenBookingsManager }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -88,7 +88,16 @@ export default function Navbar({ onOpenBooking, onOpenContact }) {
           </nav>
 
           {/* Right Action Group */}
-          <div className="hidden sm:flex items-center gap-4">
+          <div className="hidden sm:flex items-center gap-3">
+            <button
+              onClick={onOpenBookingsManager}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider text-sand hover:text-white border border-sand/30 hover:border-sand/60 hover:bg-sand/15 transition-all shadow-sm"
+              title="View all booked slots & reservation list"
+            >
+              <Calendar className="w-3.5 h-3.5 text-sunset" />
+              <span>Booked Slots</span>
+            </button>
+
             <button
               onClick={() => onOpenBooking()}
               className="group relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-sand text-forest hover:bg-white transition-all duration-300 shadow-md hover:shadow-lg active:scale-95"
@@ -99,7 +108,15 @@ export default function Navbar({ onOpenBooking, onOpenContact }) {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center gap-3 lg:hidden">
+          <div className="flex items-center gap-2 lg:hidden">
+            <button
+              onClick={onOpenBookingsManager}
+              className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider text-sand border border-sand/30 bg-forest-light/60"
+            >
+              <Calendar className="w-3 h-3 text-sunset" />
+              <span>Slots</span>
+            </button>
+
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-cream hover:text-sand focus:outline-none"
@@ -133,7 +150,18 @@ export default function Navbar({ onOpenBooking, onOpenContact }) {
           ))}
         </div>
 
-        <div className="flex flex-col gap-4 items-center border-t border-sand/20 pt-6">
+        <div className="flex flex-col gap-3 items-center border-t border-sand/20 pt-6">
+          <button
+            onClick={() => {
+              setMobileMenuOpen(false);
+              onOpenBookingsManager();
+            }}
+            className="w-full max-w-xs py-3 rounded-full bg-forest-light border border-sand/40 text-sand font-semibold uppercase tracking-widest text-xs hover:bg-forest transition-colors text-center flex items-center justify-center gap-2"
+          >
+            <Calendar className="w-3.5 h-3.5 text-sunset" />
+            <span>View Booked Slots / Lookup</span>
+          </button>
+
           <button
             onClick={() => {
               setMobileMenuOpen(false);
