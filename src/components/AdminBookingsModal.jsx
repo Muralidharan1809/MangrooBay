@@ -54,6 +54,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
     const clean = lookupQuery.trim().toLowerCase();
     const found = bookings.find(b => 
       (b.id && b.id.toLowerCase().includes(clean)) || 
+      (b.referenceId && b.referenceId.toLowerCase().includes(clean)) ||
       (b.phone && b.phone.includes(clean)) || 
       (b.fullName && b.fullName.toLowerCase().includes(clean))
     );
@@ -67,6 +68,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
       (b.fullName && b.fullName.toLowerCase().includes(cleanSearch)) ||
       (b.phone && b.phone.includes(cleanSearch)) ||
       (b.id && b.id.toLowerCase().includes(cleanSearch)) ||
+      (b.referenceId && b.referenceId.toLowerCase().includes(cleanSearch)) ||
       (b.rideType && b.rideType.toLowerCase().includes(cleanSearch));
     return matchesStatus && matchesSearch;
   });
@@ -213,6 +215,12 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
                       <span className="text-charcoal/60">Passenger Name:</span>
                       <span className="font-medium text-forest">{lookupResult.fullName}</span>
                     </div>
+                    {lookupResult.referenceId && (
+                      <div className="flex justify-between py-1 border-b border-sand/20">
+                        <span className="text-charcoal/60">Referral / Ref Code:</span>
+                        <span className="font-mono font-semibold text-sunset">{lookupResult.referenceId}</span>
+                      </div>
+                    )}
                     <div className="flex justify-between py-1 border-b border-sand/20">
                       <span className="text-charcoal/60">Ride Experience:</span>
                       <span className="font-medium text-forest">{lookupResult.rideType}</span>
@@ -310,6 +318,11 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
                           <span className="font-mono text-xs font-bold text-forest bg-forest/10 px-2.5 py-0.5 rounded-md">
                             {b.id}
                           </span>
+                          {b.referenceId && (
+                            <span className="font-mono text-[11px] font-medium text-sunset bg-sunset/10 border border-sunset/30 px-2 py-0.5 rounded-md" title="Customer Referral / Reference Code">
+                              Ref: {b.referenceId}
+                            </span>
+                          )}
                           <span className="text-xs uppercase tracking-wider font-semibold text-sunset">
                             {b.rideType}
                           </span>

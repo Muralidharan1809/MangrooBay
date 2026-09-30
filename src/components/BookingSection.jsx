@@ -12,6 +12,7 @@ export default function BookingSection({ onOpenContact }) {
     fullName: '',
     phone: '',
     email: '',
+    referenceId: '',
     specialRequests: ''
   });
 
@@ -56,6 +57,7 @@ export default function BookingSection({ onOpenContact }) {
         date: formData.date,
         timeSlot: formData.timeSlot,
         guests: formData.passengers,
+        referenceId: formData.referenceId.trim(),
         notes: formData.specialRequests,
         status: 'Pending'
       });
@@ -74,6 +76,7 @@ export default function BookingSection({ onOpenContact }) {
       fullName: '',
       phone: '',
       email: '',
+      referenceId: '',
       specialRequests: ''
     });
   };
@@ -118,9 +121,14 @@ export default function BookingSection({ onOpenContact }) {
               <h3 className="font-serif text-3xl sm:text-4xl text-cream font-light mt-1 mb-4">
                 Thank you, {formData.fullName}.
               </h3>
-              <p className="text-sm md:text-base text-cream/80 max-w-lg mx-auto mb-6 font-sans leading-relaxed">
+              <p className="text-sm md:text-base text-cream/80 max-w-lg mx-auto mb-2 font-sans leading-relaxed">
                 Your reservation request for <strong>{formData.rideType}</strong> ({formData.date} • {formData.timeSlot}) has been registered under reference <span className="font-mono text-sand font-bold">{inquiryCode}</span>.
               </p>
+              {formData.referenceId && (
+                <p className="text-xs text-sand/80 font-mono mb-6">
+                  Referral / Reference Code: <strong className="text-sand">{formData.referenceId}</strong>
+                </p>
+              )}
 
               <div className="p-4 rounded-xl bg-forest/80 border border-sand/20 max-w-md mx-auto text-xs text-sand/90 mb-8 flex items-start gap-3 text-left">
                 <Clock className="w-4 h-4 text-sunset shrink-0 mt-0.5" />
@@ -137,7 +145,7 @@ export default function BookingSection({ onOpenContact }) {
                   Book Another Ride
                 </button>
                 <a
-                  href={`https://wa.me/917397438874?text=Hello%20Mangroo%20Bay,%20I%20have%20inquiry%20${inquiryCode}%20for%20${encodeURIComponent(formData.rideType)}%20at%20Pondicherry%20Marina%20Boathouse.`}
+                  href={`https://wa.me/917397438874?text=Hello%20Mangroo%20Bay,%20I%20have%20inquiry%20${inquiryCode}%20for%20${encodeURIComponent(formData.rideType)}%20at%20Pondicherry%20Marina%20Boathouse.${formData.referenceId ? `%20Ref/Referral:%20${encodeURIComponent(formData.referenceId)}` : ''}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-sand text-forest hover:bg-white uppercase tracking-widest text-xs font-semibold transition-colors shadow-md"
@@ -288,6 +296,21 @@ export default function BookingSection({ onOpenContact }) {
                   }`}
                 />
                 {errors.email && <p className="text-[11px] text-sunset mt-1">{errors.email}</p>}
+              </div>
+
+              {/* Reference ID / Referral Code (Optional) */}
+              <div>
+                <label className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2 flex items-center justify-between">
+                  <span>Reference ID / Referral Code</span>
+                  <span className="text-[10px] text-sand/60 font-normal lowercase tracking-normal bg-forest-light/60 px-2 py-0.5 rounded-full">Optional</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g. Previous Booking ID, Friend Referral, or Agent Code"
+                  value={formData.referenceId}
+                  onChange={(e) => setFormData({ ...formData, referenceId: e.target.value })}
+                  className="w-full px-4 py-3 rounded-xl bg-forest/80 border border-sand/30 text-sm text-cream focus:outline-none focus:border-sand"
+                />
               </div>
 
               <div>

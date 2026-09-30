@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://mangroobay.com/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://mangroobay.com/Images/CouplesRide.jpeg</image:loc>
+      <image:title>Mangroo Bay Couple Boat Ride at Pondicherry Marina Boathouse</image:title>
+      <image:caption>Romantic couple boat ride at Pondicherry Marina Boathouse</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mangroobay.com/Images/BirthdayCelepraion.jpeg</image:loc>
+      <image:title>Mangroo Bay Birthday Celebration Boat Ride</image:title>
+      <image:caption>Waterfront birthday celebration boat ride in Pondicherry</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mangroobay.com/Images/Mangroo%20Forest.jpeg</image:loc>
+      <image:title>Mangroo Forest Eco Boat Safari Puducherry</image:title>
+      <image:caption>Explore tranquil mangrove channels and backwaters</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mangroobay.com/Images/Arikkamedu.jpeg</image:loc>
+      <image:title>Arikamedu Heritage Boating Pondicherry</image:title>
+      <image:caption>Historic Arikamedu Roman port waterway cruise</image:caption>
+    </image:image>
+  </url>
+</urlset>

@@ -28,6 +28,8 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23123C32' d='M0 0h32v32H0z'/%3E%3Cpath fill='%23D9825B' d='M16 6a5 5 0 100 10 5 5 0 000-10z' opacity='.8'/%3E%3Cpath fill='%23E9D8B8' d='M4 22c4-2 8-2 12 0s8 2 12 0v4c-4 2-8 2-12 0s-8-2-12 0v-4z'/%3E%3Cpath fill='%23315C4A' d='M7 25c3-1 6-1 9 0s6 1 9 0v3c-3 1-6 1-9 0s-6-1-9 0v-3z'/%3E%3C/svg%3E" />
 
+    <link rel="canonical" href="https://mangroobay.com/" />
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,64 +39,56 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "TouristAttraction",
-      "name": "Mangroo Bay at Pondicherry Marina Boathouse",
-      "description": "Premier boat rides, sunset cruises, couple boat rides, birthday celebrations, sea rides, and mangrove safaris at Pondicherry Marina Boathouse, Puducherry, India.",
-      "url": "https://mangroobay.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Pondicherry Marina Boathouse Jetty, Estuary Backwaters",
-        "addressLocality": "Puducherry",
-        "addressRegion": "Puducherry",
-        "postalCode": "605001",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 11.9125,
-        "longitude": 79.8228
-      },
-      "touristType": [
-        "Couples",
-        "Families",
-        "Nature Lovers",
-        "Celebrations"
-      ],
-      "amenityFeature": [
+      "@graph": [
         {
-          "@type": "LocationFeatureSpecification",
-          "name": "Pondicherry Marina Boarding Jetty",
-          "value": true
+          "@type": "TouristAttraction",
+          "@id": "https://mangroobay.com/#attraction",
+          "name": "Mangroo Bay at Pondicherry Marina Boathouse",
+          "description": "Premier boat rides, romantic couple cruises, sunset tours, birthday celebrations, sea rides, and mangrove safaris at Pondicherry Marina Boathouse, Puducherry.",
+          "url": "https://mangroobay.com",
+          "telephone": "+917397438874",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Pondicherry Marina Boathouse Jetty, Estuary Backwaters",
+            "addressLocality": "Puducherry",
+            "addressRegion": "Puducherry",
+            "postalCode": "605001",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 11.9125,
+            "longitude": 79.8228
+          },
+          "touristType": [
+            "Couples",
+            "Families",
+            "Nature Lovers",
+            "Celebrations"
+          ]
         },
         {
-          "@type": "LocationFeatureSpecification",
-          "name": "Sunset and Sunrise Boat Rides",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Couple Romantic Cruises",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Birthday Celebrations on Water",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Sea Mouth Confluence Rides",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Mangrove Bio-Reserve Safaris",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Govt-Approved Life Jackets & Safety Gear",
-          "value": true
+          "@type": "LocalBusiness",
+          "@id": "https://mangroobay.com/#business",
+          "name": "Mangroo Bay Boat Rides & Boathouse Puducherry",
+          "image": "https://mangroobay.com/Images/CouplesRide.jpeg",
+          "telephone": "+917397438874",
+          "priceRange": "₹₹",
+          "url": "https://mangroobay.com",
+          "openingHours": "Mo-Su 08:00-17:30",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Pondicherry Marina Boathouse Jetty, Estuary Backwaters",
+            "addressLocality": "Puducherry",
+            "addressRegion": "Puducherry",
+            "postalCode": "605001",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 11.9125,
+            "longitude": 79.8228
+          }
         }
       ]
     }

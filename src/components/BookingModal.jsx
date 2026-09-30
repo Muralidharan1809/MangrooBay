@@ -24,6 +24,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience }) {
     fullName: '',
     phone: '',
     email: '',
+    referenceId: '',
     specialRequests: ''
   });
 
@@ -80,7 +81,8 @@ export default function BookingModal({ isOpen, onClose, initialExperience }) {
         rideType: formData.rideType,
         date: formData.date,
         timeSlot: formData.timeSlot,
-        guests: formData.guests,
+        guests: formData.passengers,
+        referenceId: formData.referenceId.trim(),
         notes: formData.specialRequests,
         status: 'Pending'
       });
@@ -150,6 +152,12 @@ export default function BookingModal({ isOpen, onClose, initialExperience }) {
                   <span className="text-charcoal/60">Booking Reference:</span>
                   <span className="font-mono font-semibold text-forest">{inquiryId}</span>
                 </div>
+                {formData.referenceId && (
+                  <div className="flex justify-between border-b border-sand/30 pb-2">
+                    <span className="text-charcoal/60">Referral / Ref Code:</span>
+                    <span className="font-mono font-semibold text-sunset">{formData.referenceId}</span>
+                  </div>
+                )}
                 <div className="flex justify-between border-b border-sand/30 pb-2">
                   <span className="text-charcoal/60">Experience:</span>
                   <span className="font-medium text-charcoal">{formData.rideType}</span>
@@ -183,7 +191,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience }) {
                   Back to Website
                 </button>
                 <a
-                  href={`https://wa.me/917397438874?text=Hello%20Mangroo%20Bay,%20I%20have%20boat%20ride%20inquiry%20${inquiryId}%20for%20${encodeURIComponent(formData.rideType)}%20at%20Pondicherry%20Marina%20Boathouse.`}
+                  href={`https://wa.me/917397438874?text=Hello%20Mangroo%20Bay,%20I%20have%20boat%20ride%20inquiry%20${inquiryId}%20for%20${encodeURIComponent(formData.rideType)}%20at%20Pondicherry%20Marina%20Boathouse.${formData.referenceId ? `%20Referral/Ref:%20${encodeURIComponent(formData.referenceId)}` : ''}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-sand hover:bg-white text-forest text-xs uppercase tracking-widest font-semibold transition-colors border border-sand/50 shadow-sm"
@@ -333,6 +341,21 @@ export default function BookingModal({ isOpen, onClose, initialExperience }) {
                   }`}
                 />
                 {errors.email && <p className="text-[11px] text-sunset mt-1">{errors.email}</p>}
+              </div>
+
+              {/* Reference ID / Referral Code (Optional) */}
+              <div>
+                <label className="block text-xs uppercase tracking-wider font-semibold text-forest mb-2 flex items-center justify-between">
+                  <span>Reference ID / Referral Code</span>
+                  <span className="text-[10px] text-charcoal/50 font-normal lowercase tracking-normal bg-sand/30 px-2 py-0.5 rounded-full">Optional</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g. Previous Booking ID, Friend Referral, or Agent Code"
+                  value={formData.referenceId}
+                  onChange={(e) => setFormData({ ...formData, referenceId: e.target.value })}
+                  className="w-full px-4 py-3 rounded-xl bg-white border border-sand/60 text-sm text-charcoal focus:outline-none focus:ring-2 focus:ring-forest"
+                />
               </div>
 
               <div>

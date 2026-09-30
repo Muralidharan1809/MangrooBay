@@ -14,6 +14,7 @@ const INITIAL_SAMPLE_BOOKINGS = [
     date: new Date(Date.now() + 86400000).toISOString().split('T')[0],
     timeSlot: "Golden Hour Sunset (04:00 PM – 05:30 PM)",
     guests: "2 Guests (Couple)",
+    referenceId: "REF-COUPLE-99",
     notes: "Anniversary surprise ride. Requested rose petal decor.",
     status: "Confirmed"
   },
@@ -27,6 +28,7 @@ const INITIAL_SAMPLE_BOOKINGS = [
     date: new Date(Date.now() + 86400000 * 2).toISOString().split('T')[0],
     timeSlot: "Afternoon Celebration (02:00 PM – 03:45 PM)",
     guests: "12 Guests",
+    referenceId: "REF-PARTY-12",
     notes: "10th Birthday party for our daughter. Bringing a cake.",
     status: "Pending"
   },
@@ -40,6 +42,7 @@ const INITIAL_SAMPLE_BOOKINGS = [
     date: new Date().toISOString().split('T')[0],
     timeSlot: "Morning Calm (08:00 AM – 10:00 AM)",
     guests: "4 Guests (Family)",
+    referenceId: "",
     notes: "Interested in the ancient Roman bead trading history.",
     status: "Confirmed"
   }
@@ -99,9 +102,10 @@ export function exportBookingsToCSV() {
   const bookings = getStoredBookings();
   if (!bookings || bookings.length === 0) return;
 
-  const headers = ["Reference ID", "Date", "Time Slot", "Customer Name", "Phone", "Email", "Ride Type", "Guests", "Status", "Notes", "Created At"];
+  const headers = ["Reference ID", "Referral/Ref Code", "Date", "Time Slot", "Customer Name", "Phone", "Email", "Ride Type", "Guests", "Status", "Notes", "Created At"];
   const rows = bookings.map(b => [
     `"${b.id || ''}"`,
+    `"${b.referenceId || ''}"`,
     `"${b.date || ''}"`,
     `"${b.timeSlot || ''}"`,
     `"${b.fullName || ''}"`,
