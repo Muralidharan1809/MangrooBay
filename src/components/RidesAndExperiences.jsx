@@ -22,20 +22,20 @@ export default function RidesAndExperiences({ onBookRide }) {
 
   const categories = [
     'All',
-    'Romantic & Couple',
-    'Sunrise & Sunset',
+    'Couples & Sunset',
     'Celebrations',
-    'Adventure & Sea',
-    'Eco Mangrove'
+    'Group & Adventure',
+    'Mangrove & Nature',
+    'Arikamedu Heritage'
   ];
 
   const filterMatches = (ride, cat) => {
     if (cat === 'All') return true;
-    if (cat === 'Romantic & Couple') return ride.id === 'couple-ride' || ride.id === 'sunset-ride';
-    if (cat === 'Sunrise & Sunset') return ride.id === 'sunset-ride' || ride.id === 'sunrise-ride';
+    if (cat === 'Couples & Sunset') return ride.id === 'couples-ride' || ride.id === 'pondicherry-beach-river';
     if (cat === 'Celebrations') return ride.id === 'birthday-celebration';
-    if (cat === 'Adventure & Sea') return ride.id === 'adventure-happy-ride' || ride.id === 'sea-ride';
-    if (cat === 'Eco Mangrove') return ride.id === 'mangrove-ride' || ride.id === 'sunrise-ride';
+    if (cat === 'Group & Adventure') return ride.id === 'group-ride' || ride.id === 'pondicherry-beach-river';
+    if (cat === 'Mangrove & Nature') return ride.id === 'mangroo-forest' || ride.id === 'mangroove-forest';
+    if (cat === 'Arikamedu Heritage') return ride.id === 'arikkamedu';
     return true;
   };
 
@@ -43,13 +43,14 @@ export default function RidesAndExperiences({ onBookRide }) {
 
   const getRideIcon = (id) => {
     switch (id) {
-      case 'sunset-ride': return <Sun className="w-5 h-5 text-sunset" />;
-      case 'sunrise-ride': return <Sunrise className="w-5 h-5 text-sand" />;
-      case 'couple-ride': return <Heart className="w-5 h-5 text-sunset" />;
+      case 'couples-ride': return <Heart className="w-5 h-5 text-sunset" />;
       case 'birthday-celebration': return <Cake className="w-5 h-5 text-sand" />;
-      case 'adventure-happy-ride': return <Sparkles className="w-5 h-5 text-sand" />;
-      case 'sea-ride': return <Waves className="w-5 h-5 text-sunset" />;
-      case 'mangrove-ride': return <Compass className="w-5 h-5 text-mangrove" />;
+      case 'group-ride': return <Sparkles className="w-5 h-5 text-sand" />;
+      case 'mangroo-forest': return <Compass className="w-5 h-5 text-mangrove" />;
+      case 'mangroove-forest': return <Waves className="w-5 h-5 text-sand" />;
+      case 'arikkamedu': return <Anchor className="w-5 h-5 text-sunset" />;
+      case 'pondicherry-beach-river': return <Sun className="w-5 h-5 text-sunset" />;
+      case 'pondicherry-harbour': return <Sunrise className="w-5 h-5 text-sand" />;
       default: return <Waves className="w-5 h-5 text-sand" />;
     }
   };

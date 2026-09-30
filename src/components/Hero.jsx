@@ -198,17 +198,19 @@ export default function Hero({ onOpenBooking }) {
 
         {/* Experiences Highlight Pill */}
         <div className="mb-8 hidden sm:flex flex-wrap items-center justify-center gap-2 text-[11px] text-cream/80 uppercase tracking-wider">
-          <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Arikamedu Heritage</span>
+          <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Couples Ride</span>
           <span className="text-sunset">•</span>
-          <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Mangrove Safaris</span>
+          <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Birthday Celebration</span>
           <span className="text-sunset">•</span>
-          <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Sunset & Sunrise Rides</span>
+          <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Group Ride</span>
           <span className="text-sunset">•</span>
-          <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Couple Rides</span>
+          <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Mangroo Forest</span>
           <span className="text-sunset">•</span>
-          <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Birthday Celebrations</span>
+          <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Arikkamedu</span>
           <span className="text-sunset">•</span>
-          <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Adventure & Sea Rides</span>
+          <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Beach & River</span>
+          <span className="text-sunset">•</span>
+          <span className="px-3 py-1 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/20">Harbour</span>
         </div>
 
         {/* Call to Actions */}
@@ -224,7 +226,7 @@ export default function Hero({ onOpenBooking }) {
             onClick={scrollToExplore}
             className="w-full sm:w-auto px-8 py-4 rounded-full bg-forest-light/60 backdrop-blur-md border border-sand/40 text-cream font-medium uppercase tracking-luxury text-xs sm:text-sm hover:bg-forest-light/90 hover:border-sand transition-all duration-300 transform hover:-translate-y-0.5"
           >
-            Explore 7 Signature Rides ↓
+            Explore 8 Signature Rides ↓
           </button>
         </div>
       </div>
