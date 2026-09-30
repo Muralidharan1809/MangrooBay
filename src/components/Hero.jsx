@@ -1,27 +1,24 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ArrowDown, Compass, Sparkles, Anchor, Waves, Volume2, VolumeX, RotateCw, Clock } from 'lucide-react';
+import { ArrowDown, Compass, Sparkles, Anchor, Waves, Clock } from 'lucide-react';
 import { HERO_DATA, BRAND_DATA } from '../data/content';
 
 export default function Hero({ onOpenBooking }) {
-  const [isVideoMuted, setIsVideoMuted] = useState(true);
-  const [rotation, setRotation] = useState(() => {
+  const [rotation] = useState(() => {
     const saved = localStorage.getItem('mb_hero_video_rotation_v2');
-    return saved !== null ? parseInt(saved, 10) : 270; // Default rotated 270 degrees (opposite direction)
+    return saved !== null ? parseInt(saved, 10) : 270; // Maintain upright video orientation
   });
   const videoRef = useRef(null);
   const sectionRef = useRef(null);
 
-  // Automatically pause video and stop audio when user scrolls away from entrance
+  // Automatically pause video when user scrolls away from entrance
   useEffect(() => {
     const handleScroll = () => {
       if (!videoRef.current) return;
-      // When user scrolls down past the entrance (scrollY > 100), immediately stop video & audio
       if (window.scrollY > 100) {
         if (!videoRef.current.paused) {
           videoRef.current.pause();
         }
       } else {
-        // When user scrolls back to top, resume video playback
         if (videoRef.current.paused) {
           videoRef.current.play().catch(() => {});
         }
@@ -30,7 +27,6 @@ export default function Hero({ onOpenBooking }) {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Also use IntersectionObserver for smooth handling of viewport changes & anchor links
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting || entry.intersectionRatio < 0.5) {
@@ -50,7 +46,6 @@ export default function Hero({ onOpenBooking }) {
       observer.observe(sectionRef.current);
     }
 
-    // Run once on mount in case page reloads mid-scroll
     handleScroll();
 
     return () => {
@@ -58,21 +53,6 @@ export default function Hero({ onOpenBooking }) {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  const toggleVideoSound = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isVideoMuted;
-      setIsVideoMuted(!isVideoMuted);
-    }
-  };
-
-  const handleRotate = () => {
-    setRotation(prev => {
-      const next = (prev + 90) % 360;
-      localStorage.setItem('mb_hero_video_rotation_v2', next.toString());
-      return next;
-    });
-  };
 
   const scrollToExplore = () => {
     const el = document.querySelector('#rides');
@@ -85,7 +65,7 @@ export default function Hero({ onOpenBooking }) {
 
   return (
     <section ref={sectionRef} className="relative w-full h-screen min-h-[720px] flex items-center justify-center overflow-hidden">
-      {/* Background Video Layer with 90° Rotation Support */}
+      {/* Background Video Layer */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-forest-deep flex items-center justify-center">
         <video
           ref={videoRef}
@@ -93,7 +73,7 @@ export default function Hero({ onOpenBooking }) {
           poster={HERO_DATA.bgImage}
           autoPlay
           loop
-          muted={isVideoMuted}
+          muted
           playsInline
           style={{
             position: 'absolute',
@@ -104,8 +84,7 @@ export default function Hero({ onOpenBooking }) {
             minWidth: isTransposed ? '100vh' : '100%',
             minHeight: isTransposed ? '100vw' : '100%',
             transform: `translate(-50%, -50%) rotate(${rotation}deg)`,
-            objectFit: 'cover',
-            transition: 'transform 0.4s ease-out'
+            objectFit: 'cover'
           }}
           className="filter brightness-[0.75]"
         />
@@ -118,40 +97,6 @@ export default function Hero({ onOpenBooking }) {
       <div className="absolute top-24 md:top-28 left-6 md:left-12 z-20 hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-forest-deep/80 backdrop-blur-md border border-sand/30 text-xs text-sand font-medium tracking-widest uppercase shadow-md">
         <Anchor className="w-3.5 h-3.5 text-sunset" />
         <span>Pondicherry Marina Boathouse</span>
-      </div>
-
-      {/* Video Controls: Rotate + Sound */}
-      <div className="absolute top-24 md:top-28 right-6 md:right-12 z-20 flex items-center gap-2">
-        {/* Rotate Button */}
-        <button
-          onClick={handleRotate}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-forest-deep/80 hover:bg-forest text-sand border border-sand/30 backdrop-blur-md text-xs font-medium tracking-wide transition-all shadow-md active:scale-95"
-          title={`Rotate Video (${rotation}°)`}
-          aria-label={`Rotate Video (currently ${rotation} degrees)`}
-        >
-          <RotateCw className="w-3.5 h-3.5 text-sand" />
-          <span>Rotate ({rotation}°)</span>
-        </button>
-
-        {/* Audio Toggle */}
-        <button
-          onClick={toggleVideoSound}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-forest-deep/80 hover:bg-forest text-sand border border-sand/30 backdrop-blur-md text-xs font-medium tracking-wide transition-all shadow-md active:scale-95"
-          title={isVideoMuted ? "Unmute Entrance Video Audio" : "Mute Video Audio"}
-          aria-label={isVideoMuted ? "Unmute Entrance Video Audio" : "Mute Video Audio"}
-        >
-          {isVideoMuted ? (
-            <>
-              <VolumeX className="w-3.5 h-3.5 text-sand/70" />
-              <span className="hidden sm:inline">Unmute Video</span>
-            </>
-          ) : (
-            <>
-              <Volume2 className="w-3.5 h-3.5 text-sunset animate-bounce" />
-              <span className="hidden sm:inline">Sound Active</span>
-            </>
-          )}
-        </button>
       </div>
 
       {/* Main Hero Content */}

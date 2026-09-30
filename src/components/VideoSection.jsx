@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Play, X, Sparkles, Anchor, RotateCw } from 'lucide-react';
+import { Play, X, Sparkles, Anchor } from 'lucide-react';
 
 export default function VideoSection() {
   const [isPlayingModal, setIsPlayingModal] = useState(false);
-  const [modalRotation, setModalRotation] = useState(() => {
+  const [modalRotation] = useState(() => {
     const saved = localStorage.getItem('mb_hero_video_rotation_v2');
     return saved !== null ? parseInt(saved, 10) : 270;
   });
@@ -29,14 +29,6 @@ export default function VideoSection() {
 
     return () => observer.disconnect();
   }, []);
-
-  const handleRotate = () => {
-    setModalRotation(prev => {
-      const next = (prev + 90) % 360;
-      localStorage.setItem('mb_hero_video_rotation_v2', next.toString());
-      return next;
-    });
-  };
 
   const isTransposed = modalRotation === 90 || modalRotation === 270;
 
@@ -115,21 +107,13 @@ export default function VideoSection() {
             className="relative w-full max-w-4xl bg-forest-deep rounded-2xl overflow-hidden shadow-2xl border border-sand/30"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Header with Title, Rotate Button, and Close */}
+            {/* Header with Title and Close */}
             <div className="flex items-center justify-between p-4 bg-forest-deep/90 border-b border-sand/20 text-cream">
               <div className="flex items-center gap-2">
                 <Anchor className="w-4 h-4 text-sunset" />
                 <span className="font-serif text-lg text-sand">Mangroo Bay • Pondicherry Marina Boat Ride</span>
               </div>
               <div className="flex items-center gap-3">
-                <button
-                  onClick={handleRotate}
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 text-sand text-xs font-medium border border-sand/30 transition-colors"
-                  title="Rotate Video"
-                >
-                  <RotateCw className="w-3.5 h-3.5" />
-                  <span>Rotate ({modalRotation}°)</span>
-                </button>
                 <button
                   onClick={() => setIsPlayingModal(false)}
                   className="p-1.5 rounded-full hover:bg-white/10 text-cream"

@@ -73,14 +73,6 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
                     Book Boat Ride →
                   </button>
                 </li>
-                <li>
-                  <button
-                    onClick={onOpenBookingsManager}
-                    className="text-sunset hover:text-white font-semibold transition-colors block py-0.5 text-left text-xs uppercase tracking-wider"
-                  >
-                    📋 View Booked Slots (Admin)
-                  </button>
-                </li>
               </ul>
             </div>
 
@@ -127,7 +119,16 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
 
           {/* Bottom Copyright & Legal Links */}
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream/60 font-sans">
-            <p>© 2026 Mangroo Bay • Pondicherry Marina Boathouse. All rights reserved.</p>
+            <p>
+              <button 
+                onClick={onOpenBookingsManager} 
+                className="hover:text-sand transition-colors text-inherit"
+                title="Mangroo Bay"
+              >
+                ©
+              </button>{' '}
+              2026 Mangroo Bay • Pondicherry Marina Boathouse. All rights reserved.
+            </p>
             
             <div className="flex items-center gap-6">
               <button
@@ -142,13 +143,6 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
                 className="hover:text-sand transition-colors"
               >
                 Boating Safety & Terms
-              </button>
-              <span>•</span>
-              <button
-                onClick={onOpenBookingsManager}
-                className="text-sunset hover:text-white transition-colors font-medium"
-              >
-                Booked Slots Manager
               </button>
             </div>
           </div>

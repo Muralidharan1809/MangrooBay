@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Introduction from './components/Introduction';
@@ -22,6 +22,26 @@ export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedExperience, setSelectedExperience] = useState(null);
   const [isBookingsManagerOpen, setIsBookingsManagerOpen] = useState(false);
+
+  // Private Admin Access: Open manager via URL parameter (?admin=slots or ?admin=true) or Ctrl+Shift+A
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('admin') === 'slots' || params.get('admin') === 'true') {
+        setIsBookingsManagerOpen(true);
+      }
+
+      const handleKeyDown = (e) => {
+        if (e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
+          e.preventDefault();
+          setIsBookingsManagerOpen(prev => !prev);
+        }
+      };
+
+      window.addEventListener('keydown', handleKeyDown);
+      return () => window.removeEventListener('keydown', handleKeyDown);
+    }
+  }, []);
 
   const handleOpenBooking = (experience = null) => {
     setSelectedExperience(experience);

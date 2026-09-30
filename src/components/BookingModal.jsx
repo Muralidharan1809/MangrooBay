@@ -9,6 +9,7 @@ import {
   ShieldCheck, 
   Clock, 
   MessageSquare,
+  Phone,
   Anchor,
   Waves
 } from 'lucide-react';
@@ -69,26 +70,50 @@ export default function BookingModal({ isOpen, onClose, initialExperience }) {
     if (!validate()) return;
 
     setIsSubmitting(true);
+    const randomId = 'MB-RIDE-' + Math.floor(10000 + Math.random() * 90000);
+    setInquiryId(randomId);
+
+    saveNewBooking({
+      id: randomId,
+      createdAt: new Date().toISOString(),
+      fullName: formData.fullName,
+      phone: formData.phone,
+      email: formData.email,
+      rideType: formData.rideType,
+      date: formData.date,
+      timeSlot: formData.timeSlot,
+      guests: formData.passengers,
+      referenceId: formData.referenceId.trim(),
+      notes: formData.specialRequests,
+      status: 'Pending'
+    });
+
+    const waText = encodeURIComponent(
+      `*New Boat Ride Booking Request - Mangroo Bay*\n\n` +
+      `• *Booking ID:* ${randomId}\n` +
+      `• *Customer:* ${formData.fullName}\n` +
+      `• *Phone:* ${formData.phone}\n` +
+      `• *Email:* ${formData.email}\n` +
+      `• *Ride:* ${formData.rideType}\n` +
+      `• *Date:* ${formData.date}\n` +
+      `• *Slot:* ${formData.timeSlot}\n` +
+      `• *Guests:* ${formData.passengers}\n` +
+      (formData.referenceId ? `• *Referral/Ref:* ${formData.referenceId}\n` : '') +
+      (formData.specialRequests ? `• *Special Requests:* ${formData.specialRequests}\n` : '') +
+      `\n*Boarding Jetty:* Pondicherry Marina Boathouse\nPlease confirm slot availability. Thank you!`
+    );
+
+    const waUrl = `https://wa.me/917397438874?text=${waText}`;
+
     setTimeout(() => {
-      const randomId = 'MB-RIDE-' + Math.floor(10000 + Math.random() * 90000);
-      setInquiryId(randomId);
-      saveNewBooking({
-        id: randomId,
-        createdAt: new Date().toISOString(),
-        fullName: formData.fullName,
-        phone: formData.phone,
-        email: formData.email,
-        rideType: formData.rideType,
-        date: formData.date,
-        timeSlot: formData.timeSlot,
-        guests: formData.passengers,
-        referenceId: formData.referenceId.trim(),
-        notes: formData.specialRequests,
-        status: 'Pending'
-      });
       setIsSubmitting(false);
       setIsSuccess(true);
-    }, 700);
+      try {
+        window.open(waUrl, '_blank');
+      } catch (err) {
+        console.log('Popup blocked, customer can use WhatsApp button', err);
+      }
+    }, 600);
   };
 
   const handleReset = () => {
@@ -184,21 +209,42 @@ export default function BookingModal({ isOpen, onClose, initialExperience }) {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <button
-                  onClick={handleReset}
-                  className="px-6 py-3 rounded-full bg-forest text-sand hover:bg-forest-deep text-xs uppercase tracking-widest font-semibold transition-colors"
-                >
-                  Back to Website
-                </button>
                 <a
-                  href={`https://wa.me/917397438874?text=Hello%20Mangroo%20Bay,%20I%20have%20boat%20ride%20inquiry%20${inquiryId}%20for%20${encodeURIComponent(formData.rideType)}%20at%20Pondicherry%20Marina%20Boathouse.${formData.referenceId ? `%20Referral/Ref:%20${encodeURIComponent(formData.referenceId)}` : ''}`}
+                  href={`https://wa.me/917397438874?text=${encodeURIComponent(
+                    `*New Boat Ride Booking Request - Mangroo Bay*\n\n` +
+                    `• *Booking ID:* ${inquiryId}\n` +
+                    `• *Customer:* ${formData.fullName}\n` +
+                    `• *Phone:* ${formData.phone}\n` +
+                    `• *Ride:* ${formData.rideType}\n` +
+                    `• *Date:* ${formData.date}\n` +
+                    `• *Slot:* ${formData.timeSlot}\n` +
+                    `• *Guests:* ${formData.passengers}\n` +
+                    (formData.referenceId ? `• *Referral/Ref:* ${formData.referenceId}\n` : '') +
+                    (formData.specialRequests ? `• *Requests:* ${formData.specialRequests}\n` : '') +
+                    `\n*Boarding Jetty:* Pondicherry Marina Boathouse`
+                  )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-sand hover:bg-white text-forest text-xs uppercase tracking-widest font-semibold transition-colors border border-sand/50 shadow-sm"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs uppercase tracking-widest font-semibold transition-colors shadow-md"
                 >
                   <MessageSquare className="w-4 h-4" />
                   <span>WhatsApp (+91 73974 38874)</span>
                 </a>
+
+                <a
+                  href="tel:+917397438874"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-forest text-sand hover:bg-forest-deep text-xs uppercase tracking-widest font-semibold transition-colors shadow-sm"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>Call Jetty</span>
+                </a>
+
+                <button
+                  onClick={handleReset}
+                  className="px-5 py-3.5 rounded-full bg-white border border-sand/60 text-charcoal/80 hover:bg-sand/20 text-xs uppercase tracking-widest font-semibold transition-colors"
+                >
+                  Done
+                </button>
               </div>
             </div>
           ) : (

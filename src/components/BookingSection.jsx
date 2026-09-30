@@ -44,26 +44,50 @@ export default function BookingSection({ onOpenContact }) {
     if (!validate()) return;
 
     setIsSubmitting(true);
+    const randomCode = 'MB-RIDE-' + Math.floor(10000 + Math.random() * 90000);
+    setInquiryCode(randomCode);
+
+    saveNewBooking({
+      id: randomCode,
+      createdAt: new Date().toISOString(),
+      fullName: formData.fullName,
+      phone: formData.phone,
+      email: formData.email,
+      rideType: formData.rideType,
+      date: formData.date,
+      timeSlot: formData.timeSlot,
+      guests: formData.passengers,
+      referenceId: formData.referenceId.trim(),
+      notes: formData.specialRequests,
+      status: 'Pending'
+    });
+
+    const waText = encodeURIComponent(
+      `*New Boat Ride Booking Request - Mangroo Bay*\n\n` +
+      `• *Booking ID:* ${randomCode}\n` +
+      `• *Customer:* ${formData.fullName}\n` +
+      `• *Phone:* ${formData.phone}\n` +
+      `• *Email:* ${formData.email}\n` +
+      `• *Ride:* ${formData.rideType}\n` +
+      `• *Date:* ${formData.date}\n` +
+      `• *Slot:* ${formData.timeSlot}\n` +
+      `• *Guests:* ${formData.passengers}\n` +
+      (formData.referenceId ? `• *Referral/Ref:* ${formData.referenceId}\n` : '') +
+      (formData.specialRequests ? `• *Special Requests:* ${formData.specialRequests}\n` : '') +
+      `\n*Boarding Jetty:* Pondicherry Marina Boathouse\nPlease confirm slot availability. Thank you!`
+    );
+
+    const waUrl = `https://wa.me/917397438874?text=${waText}`;
+
     setTimeout(() => {
-      const randomCode = 'MB-RIDE-' + Math.floor(10000 + Math.random() * 90000);
-      setInquiryCode(randomCode);
-      saveNewBooking({
-        id: randomCode,
-        createdAt: new Date().toISOString(),
-        fullName: formData.fullName,
-        phone: formData.phone,
-        email: formData.email,
-        rideType: formData.rideType,
-        date: formData.date,
-        timeSlot: formData.timeSlot,
-        guests: formData.passengers,
-        referenceId: formData.referenceId.trim(),
-        notes: formData.specialRequests,
-        status: 'Pending'
-      });
       setIsSubmitting(false);
       setIsSuccess(true);
-    }, 700);
+      try {
+        window.open(waUrl, '_blank');
+      } catch (err) {
+        console.log('Popup blocked, customer can use WhatsApp button', err);
+      }
+    }, 600);
   };
 
   const handleReset = () => {
@@ -138,21 +162,42 @@ export default function BookingSection({ onOpenContact }) {
               </div>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a
+                  href={`https://wa.me/917397438874?text=${encodeURIComponent(
+                    `*New Boat Ride Booking Request - Mangroo Bay*\n\n` +
+                    `• *Booking ID:* ${inquiryCode}\n` +
+                    `• *Customer:* ${formData.fullName}\n` +
+                    `• *Phone:* ${formData.phone}\n` +
+                    `• *Ride:* ${formData.rideType}\n` +
+                    `• *Date:* ${formData.date}\n` +
+                    `• *Slot:* ${formData.timeSlot}\n` +
+                    `• *Guests:* ${formData.passengers}\n` +
+                    (formData.referenceId ? `• *Referral/Ref:* ${formData.referenceId}\n` : '') +
+                    (formData.specialRequests ? `• *Requests:* ${formData.specialRequests}\n` : '') +
+                    `\n*Boarding Jetty:* Pondicherry Marina Boathouse`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white uppercase tracking-widest text-xs font-semibold transition-colors shadow-lg"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  <span>Send on WhatsApp (+91 73974 38874)</span>
+                </a>
+
+                <a
+                  href="tel:+917397438874"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-forest-light border border-sand/40 text-sand hover:bg-forest hover:text-white uppercase tracking-widest text-xs font-semibold transition-colors shadow-sm"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>Call Jetty (+91 73974 38874)</span>
+                </a>
+
                 <button
                   onClick={handleReset}
-                  className="px-8 py-3.5 rounded-full bg-forest text-sand hover:bg-forest-light border border-sand/30 uppercase tracking-widest text-xs font-semibold transition-colors"
+                  className="px-6 py-3.5 rounded-full bg-forest text-sand/80 hover:text-white border border-sand/30 uppercase tracking-widest text-xs font-semibold transition-colors"
                 >
                   Book Another Ride
                 </button>
-                <a
-                  href={`https://wa.me/917397438874?text=Hello%20Mangroo%20Bay,%20I%20have%20inquiry%20${inquiryCode}%20for%20${encodeURIComponent(formData.rideType)}%20at%20Pondicherry%20Marina%20Boathouse.${formData.referenceId ? `%20Ref/Referral:%20${encodeURIComponent(formData.referenceId)}` : ''}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-sand text-forest hover:bg-white uppercase tracking-widest text-xs font-semibold transition-colors shadow-md"
-                >
-                  <MessageSquare className="w-4 h-4" />
-                  <span>Connect on WhatsApp (+91 73974 38874)</span>
-                </a>
               </div>
             </div>
           ) : (
