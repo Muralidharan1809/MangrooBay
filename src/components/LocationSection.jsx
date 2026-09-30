@@ -70,7 +70,7 @@ export default function LocationSection({ onOpenContact }) {
                 </div>
                 <div className="absolute top-18 left-1/2 -translate-x-1/2 bg-forest-deep/95 backdrop-blur-md border border-sand/40 p-3 rounded-xl text-center shadow-luxury w-56 pointer-events-none mt-2">
                   <p className="font-serif text-sand text-sm font-semibold">Pondicherry Marina Boathouse</p>
-                  <p className="text-[10px] text-cream/80">Marina Bay Boarding Jetty</p>
+                  <p className="text-[10px] text-cream/80">Mangroo Bay Boarding Jetty</p>
                 </div>
               </div>
 
@@ -124,7 +124,7 @@ export default function LocationSection({ onOpenContact }) {
               <div className="flex items-start gap-3 text-sm text-charcoal/80 mb-6">
                 <MapPin className="w-5 h-5 text-sunset shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-medium text-forest">Marina Bay Boarding Jetty</p>
+                  <p className="font-medium text-forest">Mangroo Bay Boarding Jetty</p>
                   <p className="text-xs text-charcoal/70 mt-1">
                     {LOCATION_DATA.address}
                   </p>

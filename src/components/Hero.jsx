@@ -162,7 +162,7 @@ export default function Hero({ onOpenBooking }) {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sand/15 backdrop-blur-md border border-sand/30">
             <Sparkles className="w-3 h-3 text-sand" />
             <span className="text-xs md:text-sm uppercase tracking-widest text-sand font-medium">
-              Welcome to Marina Bay • Pondicherry Marina Boathouse
+              Welcome to Mangroo Bay • Pondicherry Marina Boathouse
             </span>
           </div>
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-forest-deep/80 backdrop-blur-md border border-sand/30 text-sand text-xs font-semibold uppercase tracking-wider shadow-sm">
@@ -173,7 +173,7 @@ export default function Hero({ onOpenBooking }) {
 
         {/* Brand Title */}
         <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-light tracking-luxury uppercase text-cream drop-shadow-sm mb-4">
-          Marina Bay
+          Mangroo Bay
         </h1>
 
         {/* Tagline */}
@@ -234,7 +234,7 @@ export default function Hero({ onOpenBooking }) {
         <button
           onClick={scrollToExplore}
           className="group flex flex-col items-center text-xs tracking-widest uppercase text-sand/80 hover:text-sand transition-colors"
-          aria-label="Scroll to discover Marina Bay"
+          aria-label="Scroll to discover Mangroo Bay"
         >
           <span className="mb-2 font-sans tracking-luxury">{HERO_DATA.scrollText}</span>
           <div className="w-5 h-8 rounded-full border border-sand/40 flex items-start justify-center p-1">

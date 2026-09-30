@@ -82,7 +82,7 @@ export default function SafetySection({ onOpenBooking }) {
 
               <div className="mt-6 pt-4 border-t border-sand/15 flex items-center gap-2 text-[11px] text-sand/80 uppercase tracking-widest font-semibold">
                 <CheckCircle2 className="w-3.5 h-3.5 text-sand" />
-                <span>Marina Bay Safety Standard</span>
+                <span>Mangroo Bay Safety Standard</span>
               </div>
             </div>
           ))}

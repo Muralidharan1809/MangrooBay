@@ -109,7 +109,7 @@ export default function Footer({ onOpenBooking }) {
 
           {/* Bottom Copyright & Legal Links */}
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream/60 font-sans">
-            <p>© 2026 Marina Bay • Pondicherry Marina Boathouse. All rights reserved.</p>
+            <p>© 2026 Mangroo Bay • Pondicherry Marina Boathouse. All rights reserved.</p>
             
             <div className="flex items-center gap-6">
               <button
@@ -159,7 +159,7 @@ export default function Footer({ onOpenBooking }) {
               {modalType === 'privacy' ? (
                 <>
                   <p>
-                    Marina Bay at Pondicherry Marina Boathouse is committed to protecting your personal information. Any details shared during boat ride inquiries (names, contacts, celebration preferences) are utilized strictly for coordinating your boating reservation in Puducherry.
+                    Mangroo Bay at Pondicherry Marina Boathouse is committed to protecting your personal information. Any details shared during boat ride inquiries (names, contacts, celebration preferences) are utilized strictly for coordinating your boating reservation in Puducherry.
                   </p>
                   <p>
                     We never sell, distribute, or lease guest information to third parties. Communications are handled directly by our private boating concierge.

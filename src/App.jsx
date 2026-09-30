@@ -79,7 +79,7 @@ export default function App() {
       {/* 08 Cinematic Full-width Video Section */}
       <VideoSection />
 
-      {/* 09 Why Marina Bay Boat Rides */}
+      {/* 09 Why Mangroo Bay Boat Rides */}
       <WhyMarinaBay />
 
       {/* 10 Destination & Pondicherry Marina Boathouse Location Map */}

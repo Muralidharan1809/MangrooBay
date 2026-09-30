@@ -33,7 +33,7 @@ export default function ContactSection({ onOpenBooking }) {
                 Intimate Hospitality
               </span>
               <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-forest font-light leading-tight mb-4">
-                Talk to Marina Bay
+                Talk to Mangroo Bay
               </h2>
               <p className="text-sm md:text-base text-charcoal/75 max-w-md font-sans leading-relaxed">
                 Whether you are planning an intimate proposal, a private weekend getaway, or seeking tidal arrival advice, our dedicated team is at your service.
@@ -154,7 +154,7 @@ export default function ContactSection({ onOpenBooking }) {
                   type="submit"
                   className="w-full py-3.5 rounded-full bg-forest text-sand hover:bg-forest-deep hover:text-white uppercase tracking-widest text-xs font-semibold transition-all shadow-md flex items-center justify-center gap-2"
                 >
-                  <span>Talk to Marina Bay</span>
+                  <span>Talk to Mangroo Bay</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </form>

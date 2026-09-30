@@ -1,9 +1,9 @@
-// Marina Bay - Exclusively Premier Boating Experiences
+// Mangroo Bay - Exclusively Premier Boating Experiences
 // Pondicherry Marina Boathouse, Puducherry, India
 // Note: Exclusively boat rides and celebrations on the water (No overnight stays).
 
 export const BRAND_DATA = {
-  name: "Marina Bay",
+  name: "Mangroo Bay",
   tagline: "Escape into the calm.",
   supportingLine: "A premier boating experience surrounded by water, mangroves and the quiet beauty of Pondicherry Marina.",
   alternativeLine: "Pondicherry’s finest boat rides — where water, nature and unforgettable moments meet.",
@@ -15,20 +15,20 @@ export const BRAND_DATA = {
   contact: {
     phone: "+91 [ADD PHONE]",
     whatsapp: "+91 [ADD WHATSAPP]",
-    email: "rides@marinabay.com",
+    email: "rides@mangroobay.com",
     address: "Pondicherry Marina Boathouse Jetty, Coastal Estuary & Mangrove Backwaters, Puducherry 605001, India [ADD EXACT ADDRESS]",
     mapCoordinates: { lat: 11.9125, lng: 79.8228 },
     googleMapsUrl: "https://maps.google.com/?q=Pondicherry+Marina+Boathouse+Puducherry",
-    instagram: "https://instagram.com/marinabay.pondy",
-    facebook: "https://facebook.com/marinabay.pondy"
+    instagram: "https://instagram.com/mangroobay.pondy",
+    facebook: "https://facebook.com/mangroobay.pondy"
   }
 };
 
 export const HERO_DATA = {
-  title: "MARINA BAY",
+  title: "MANGROO BAY",
   tagline: "Where nature, history and boating adventure meet.",
   description: "Discover the beauty of Puducherry Marina, explore peaceful mangroves, experience the heritage of Arikamedu, and set out on an unforgettable boating adventure.",
-  supportingText: "Whether it’s a relaxing escape, a sunset ride, or an exciting journey on the water, Marina Bay is your gateway to explore Puducherry from a whole new perspective.",
+  supportingText: "Whether it’s a relaxing escape, a sunset ride, or an exciting journey on the water, Mangroo Bay is your gateway to explore Puducherry from a whole new perspective.",
   invitation: "Come aboard. Explore. Adventure. Escape into the calm.",
   marinaHighlight: "Boarding & Boat Rides at Pondicherry Marina Boathouse",
   boatingHoursBadge: "Daily Boating: Morning 8:00 AM – Evening 5:30 PM",
@@ -41,18 +41,18 @@ export const HERO_DATA = {
 };
 
 export const INTRO_DATA = {
-  eyebrow: "WELCOME TO MARINA BAY",
+  eyebrow: "WELCOME TO MANGROO BAY",
   heading: "Where nature, history and boating adventure meet.",
   body: "Discover the beauty of Puducherry Marina, explore peaceful mangroves, experience the heritage of Arikamedu, and set out on an unforgettable boating adventure.",
-  secondaryText: "Whether it’s a relaxing escape, a sunset ride, or an exciting journey on the water, Marina Bay is your gateway to explore Puducherry from a whole new perspective.",
+  secondaryText: "Whether it’s a relaxing escape, a sunset ride, or an exciting journey on the water, Mangroo Bay is your gateway to explore Puducherry from a whole new perspective.",
   invitation: "Come aboard. Explore. Adventure. Escape into the calm.",
   features: [
     { number: "01", title: "Puducherry Marina Boathouse", subtitle: "Coastal estuary waters, scenic breakwaters & ocean breezes" },
     { number: "02", title: "Peaceful Mangrove Safaris", subtitle: "Lush green biological root tunnels & native birds" },
     { number: "03", title: "Historic Arikamedu Heritage", subtitle: "Ancient Roman trading port ruins along serene riverbanks" }
   ],
-  mainImage: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=1200&q=85",
-  secondaryImage: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=85"
+  mainImage: "/Images/Mangroove_Forest1.jpeg",
+  secondaryImage: "/Images/CouplesRide.jpeg"
 };
 
 // 7 Signature Boat Rides at Pondicherry Marina Boathouse
@@ -67,7 +67,7 @@ export const RIDES_AND_EXPERIENCES = [
     duration: "45–60 Mins",
     timing: "04:00 PM – 05:30 PM (Golden Hour Sunset)",
     capacity: "Private or Group (Up to 15)",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85",
+    image: "/Images/Pondycherry Beach&River.jpeg",
     features: ["Golden hour panoramic views", "Calm tidal backwaters", "Sunset photo stop points", "Complimentary cool drinks"]
   },
   {
@@ -80,7 +80,7 @@ export const RIDES_AND_EXPERIENCES = [
     duration: "45–60 Mins",
     timing: "08:00 AM – 10:00 AM (Morning Opening Slots)",
     capacity: "Private or Group",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85",
+    image: "/Images/Pondycherry_harbour.jpeg",
     features: ["Morning birdwatching safari", "Dewy mangrove mist", "Fresh South Indian filter coffee", "Undisturbed tranquil waters"]
   },
   {
@@ -93,7 +93,7 @@ export const RIDES_AND_EXPERIENCES = [
     duration: "60–90 Mins",
     timing: "08:00 AM – 05:30 PM (Custom Private Slots)",
     capacity: "Strictly 2 Guests (Couple)",
-    image: "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=85",
+    image: "/Images/CouplesRide.jpeg",
     features: ["100% Private vessel", "Floral & lantern decoration option", "Romantic music playlist", "Dedicated private boat master"]
   },
   {
@@ -106,7 +106,7 @@ export const RIDES_AND_EXPERIENCES = [
     duration: "1.5 – 2 Hours",
     timing: "08:00 AM – 05:30 PM (Flexible Slots)",
     capacity: "Groups up to 20 Guests",
-    image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1200&q=85",
+    image: "/Images/BirthdayCelepraion.jpeg",
     features: ["Cake-cutting table & stand", "Balloon & fairy light styling", "High-clarity Bluetooth sound system", "Spacious open deck for group photos"]
   },
   {
@@ -119,7 +119,7 @@ export const RIDES_AND_EXPERIENCES = [
     duration: "30–45 Mins",
     timing: "09:00 AM – 05:00 PM (Daily Slots)",
     capacity: "Groups of 4–12",
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+    image: "/Images/GroupRide.jpeg",
     features: ["Spirited boating speed & turns", "Certified life jackets for all ages", "High fun factor for youth & kids", "Exciting water spray action"]
   },
   {
@@ -132,7 +132,7 @@ export const RIDES_AND_EXPERIENCES = [
     duration: "45–60 Mins",
     timing: "08:30 AM – 04:30 PM (Subject to tide)",
     capacity: "Small & Large Groups",
-    image: "https://images.unsplash.com/photo-1508873696983-2df5703bc20d?auto=format&fit=crop&w=1200&q=85",
+    image: "/Images/Pondycherry Beach&River.jpeg",
     features: ["Sea mouth & breakwater crossing", "Oceanic sea breeze", "Marine harbor views", "Coastline panorama of Puducherry"]
   },
   {
@@ -145,7 +145,7 @@ export const RIDES_AND_EXPERIENCES = [
     duration: "60 Mins",
     timing: "08:00 AM – 04:30 PM (Eco & Heritage Hours)",
     capacity: "Private or Group",
-    image: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=1200&q=85",
+    image: "/Images/Arikkamedu.jpeg",
     features: ["Ancient Arikamedu heritage riverbank", "Protected mangrove bio-reserve tunnels", "Quiet eco-friendly cruising", "Birdwatching binoculars & local history guide"]
   }
 ];
@@ -166,16 +166,16 @@ export const BOAT_FLEET_DATA = {
   vessels: [
     {
       id: "royal-cruiser",
-      title: "The Marina Bay Royal Boathouse Boat",
+      title: "The Mangroo Bay Royal Boathouse Boat",
       category: "Signature Covered Boathouse Vessel",
       capacity: "Up to 20 Guests (Perfect for Parties & Families)",
       idealFor: "Birthday Celebrations, Family Gatherings & Group Sunset Rides",
       pricingPlaceholder: "Standard group & private charter rates [ADD PRICING]",
-      image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85",
+      image: "/Images/GroupRide.jpeg",
       gallery: [
-        "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85",
-        "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=85",
-        "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1200&q=85"
+        "/Images/GroupRide.jpeg",
+        "/Images/BirthdayCelepraion.jpeg",
+        "/Images/Pondycherry Beach&River.jpeg"
       ],
       description: "Our flagship covered boathouse vessel. Features a wide central deck with cushioned perimeter seating, a dedicated center table for birthday cake cutting, decorative fairy lighting, and crystal-clear sound connectivity."
     },
@@ -186,10 +186,11 @@ export const BOAT_FLEET_DATA = {
       capacity: "2 to 6 Guests (Private & Romantic)",
       idealFor: "Couple Rides, Sunrise Birdwatching & Private Sunset Glides",
       pricingPlaceholder: "Private couple & small group rates [ADD PRICING]",
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
+      image: "/Images/CouplesRide.jpeg",
       gallery: [
-        "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
-        "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=85"
+        "/Images/CouplesRide.jpeg",
+        "/Images/Arikkamedu.jpeg",
+        "/Images/Mangroo Forest.jpeg"
       ],
       description: "Designed for couples and intimate groups. Positioned low to the water for silent gliding into narrow mangrove channels and viewing romantic sunsets along the Puducherry backwaters."
     }
@@ -198,8 +199,8 @@ export const BOAT_FLEET_DATA = {
 
 export const MARINA_KEY_DETAILS = {
   name: "Pondicherry Marina Boathouse",
-  hubTagline: "The premier boarding gateway for Marina Bay",
-  overview: "Marina Bay operates exclusively from Pondicherry Marina Boathouse. This unique geographical haven sits right at the confluence of the mangrove waterways, tranquil lagoon backwaters, and the open Bay of Bengal sea mouth.",
+  hubTagline: "The premier boarding gateway for Mangroo Bay",
+  overview: "Mangroo Bay operates exclusively from Pondicherry Marina Boathouse. This unique geographical haven sits right at the confluence of the mangrove waterways, tranquil lagoon backwaters, and the open Bay of Bengal sea mouth.",
   highlights: [
     { title: "Daily Boating: 8:00 AM – 5:30 PM", desc: "Open daily from Morning 8:00 AM to Evening 5:30 PM with regular departures, romantic sunset cruises, and private charters." },
     { title: "Strategic Marina Boarding", desc: "Easily accessible from White Town, Promenade Beach, and harbor area with smooth jetty boarding." },
@@ -260,27 +261,27 @@ export const GALLERY_DATA = [
   {
     id: 1,
     category: "The Bay",
-    title: "Pondicherry Marina Estuary",
-    subtitle: "Calm morning waters at the boathouse jetty",
-    src: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=85",
+    title: "Pondicherry Marina & Harbour",
+    subtitle: "Boating gateway at the harbor estuary",
+    src: "/Images/Pondycherry_harbour.jpeg",
     span: "col-span-12 md:col-span-7",
     aspect: "aspect-[16/10]"
   },
   {
     id: 2,
     category: "Boats & Fleet",
-    title: "Marina Bay Covered Boathouse Boat",
+    title: "Mangroo Bay Covered Boathouse Boat",
     subtitle: "Spacious deck for celebrations & scenic cruises",
-    src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=85",
+    src: "/Images/GroupRide.jpeg",
     span: "col-span-12 md:col-span-5",
     aspect: "aspect-[4/3]"
   },
   {
     id: 3,
     category: "Sunset",
-    title: "Sunset Ride Golden Glow",
-    subtitle: "Terracotta horizons meeting calm tides",
-    src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=85",
+    title: "Sunset & Sea Ride Confluence",
+    subtitle: "Where river meets the ocean at golden hour",
+    src: "/Images/Pondycherry Beach&River.jpeg",
     span: "col-span-12 md:col-span-4",
     aspect: "aspect-[4/5]"
   },
@@ -289,7 +290,7 @@ export const GALLERY_DATA = [
     category: "Rides",
     title: "Couple Ride on Calm Waters",
     subtitle: "Romantic private boating for two",
-    src: "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=85",
+    src: "/Images/CouplesRide.jpeg",
     span: "col-span-12 md:col-span-8",
     aspect: "aspect-[16/9]"
   },
@@ -298,7 +299,7 @@ export const GALLERY_DATA = [
     category: "Nature",
     title: "Mangrove Safari Bio-Reserve",
     subtitle: "Navigating lush green waterway tunnels",
-    src: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=900&q=85",
+    src: "/Images/Mangroo Forest.jpeg",
     span: "col-span-12 md:col-span-5",
     aspect: "aspect-[4/3]"
   },
@@ -307,25 +308,25 @@ export const GALLERY_DATA = [
     category: "Celebrations",
     title: "Birthday Celebration on the Water",
     subtitle: "Floating deck festivities & party vibes",
-    src: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1200&q=85",
+    src: "/Images/BirthdayCelepraion.jpeg",
     span: "col-span-12 md:col-span-7",
     aspect: "aspect-[16/10]"
   },
   {
     id: 7,
-    category: "Rides",
-    title: "Sea Ride Confluence",
-    subtitle: "Where estuary backwaters meet the sea",
-    src: "https://images.unsplash.com/photo-1508873696983-2df5703bc20d?auto=format&fit=crop&w=900&q=85",
+    category: "Heritage",
+    title: "Arikamedu Heritage Waters",
+    subtitle: "Ancient trading port riverbank exploration",
+    src: "/Images/Arikkamedu.jpeg",
     span: "col-span-12 md:col-span-6",
     aspect: "aspect-[16/11]"
   },
   {
     id: 8,
     category: "Nature",
-    title: "Sunrise Birdwatch (Sun Rice)",
-    subtitle: "Herons and egrets feeding along the shores",
-    src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85",
+    title: "Lush Mangrove Canopies",
+    subtitle: "Dense mangrove roots and peaceful trails",
+    src: "/Images/Mangroove_Forest1.jpeg",
     span: "col-span-12 md:col-span-6",
     aspect: "aspect-[16/11]"
   }
@@ -388,7 +389,7 @@ export const SAFETY_AND_PRECAUTIONS_DATA = {
   eyebrow: "YOUR SAFETY IS OUR HIGHEST PRIORITY",
   heading: "Boating Safety & Passenger Precautions",
   tagline: "Certified equipment, licensed boat masters, and strict maritime precautions for complete peace of mind.",
-  overview: "At Marina Bay, every voyage across Pondicherry Marina, the mangrove backwaters, and the historic Arikamedu estuary is guided by uncompromising safety protocols. Please review our safety guidelines and essential passenger precautions before boarding.",
+  overview: "At Mangroo Bay, every voyage across Pondicherry Marina, the mangrove backwaters, and the historic Arikamedu estuary is guided by uncompromising safety protocols. Please review our safety guidelines and essential passenger precautions before boarding.",
   guidelines: [
     {
       id: "life-jackets",
@@ -402,7 +403,7 @@ export const SAFETY_AND_PRECAUTIONS_DATA = {
       title: "Government-Certified Boat Masters",
       icon: "Anchor",
       summary: "Licensed marine pilots with extensive local navigation experience.",
-      description: "All Marina Bay vessels are operated exclusively by government-licensed boat masters trained in maritime safety, CPR, first aid, and shallow-water backwater channels."
+      description: "All Mangroo Bay vessels are operated exclusively by government-licensed boat masters trained in maritime safety, CPR, first aid, and shallow-water backwater channels."
     },
     {
       id: "weather-monitoring",
@@ -440,6 +441,6 @@ export const SAFETY_AND_PRECAUTIONS_DATA = {
     "Keep hands and arms inside the boat during docking and narrow mangrove passes.",
     "Secure mobile phones, cameras, and sunglasses with neck straps or waterproof pouches.",
     "Consumption of alcohol, smoking, and carrying hazardous materials are strictly prohibited.",
-    "First-aid emergency kits and marine throw rings are equipped on every Marina Bay boat."
+    "First-aid emergency kits and marine throw rings are equipped on every Mangroo Bay boat."
   ]
 };

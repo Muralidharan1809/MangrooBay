@@ -65,7 +65,7 @@ export default function Introduction() {
               <div className="relative rounded-2xl overflow-hidden shadow-luxury border-4 border-white/80 aspect-[4/5] bg-sand/30">
                 <img
                   src={INTRO_DATA.mainImage}
-                  alt="Marina Bay boathouse waters and tropical greenery"
+                  alt="Mangroo Bay boathouse waters and tropical greenery"
                   className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
                   loading="lazy"
                 />

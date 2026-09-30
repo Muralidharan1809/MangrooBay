@@ -22,7 +22,7 @@ export default function WhyMarinaBay() {
         <div className="max-w-3xl mb-16 md:mb-20">
           <span className="text-xs uppercase tracking-luxury text-mangrove font-semibold mb-3 flex items-center gap-2">
             <span className="w-8 h-[1px] bg-mangrove inline-block" />
-            The Marina Bay Distinction
+            The Mangroo Bay Distinction
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-forest font-light leading-tight">
             Why choose our<br />
@@ -62,7 +62,7 @@ export default function WhyMarinaBay() {
               </div>
 
               <div className="mt-6 pt-4 border-t border-sand/30 flex items-center text-[11px] uppercase tracking-wider text-mangrove font-semibold">
-                <span>Marina Bay Promise</span>
+                <span>Mangroo Bay Promise</span>
               </div>
             </div>
           ))}
