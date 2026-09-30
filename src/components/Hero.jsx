@@ -10,18 +10,37 @@ export default function Hero({ onOpenBooking }) {
   const videoRef = useRef(null);
   const sectionRef = useRef(null);
 
-  // Automatically pause video when user scrolls away from entrance
+  // Automatically handle video and audio playback: plays on entrance, stops on scroll
   useEffect(() => {
+    // Attempt audio on first interaction to comply with browser autoplay policies
+    const handleFirstGesture = () => {
+      if (videoRef.current && window.scrollY <= 100) {
+        videoRef.current.muted = false;
+        videoRef.current.volume = 0.7;
+      }
+      window.removeEventListener('click', handleFirstGesture);
+      window.removeEventListener('touchstart', handleFirstGesture);
+      window.removeEventListener('keydown', handleFirstGesture);
+    };
+
+    window.addEventListener('click', handleFirstGesture, { passive: true });
+    window.addEventListener('touchstart', handleFirstGesture, { passive: true });
+    window.addEventListener('keydown', handleFirstGesture, { passive: true });
+
     const handleScroll = () => {
       if (!videoRef.current) return;
+      // When user scrolls down past the entrance (scrollY > 100), immediately stop video & audio
       if (window.scrollY > 100) {
         if (!videoRef.current.paused) {
           videoRef.current.pause();
         }
+        videoRef.current.muted = true;
       } else {
+        // When user scrolls back to the entrance, resume video & audio
         if (videoRef.current.paused) {
           videoRef.current.play().catch(() => {});
         }
+        videoRef.current.muted = false;
       }
     };
 
@@ -33,10 +52,12 @@ export default function Hero({ onOpenBooking }) {
           if (videoRef.current && !videoRef.current.paused) {
             videoRef.current.pause();
           }
+          if (videoRef.current) videoRef.current.muted = true;
         } else if (window.scrollY <= 100) {
           if (videoRef.current && videoRef.current.paused) {
             videoRef.current.play().catch(() => {});
           }
+          if (videoRef.current) videoRef.current.muted = false;
         }
       },
       { threshold: [0, 0.2, 0.5, 0.8] }
@@ -51,6 +72,9 @@ export default function Hero({ onOpenBooking }) {
     return () => {
       observer.disconnect();
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('click', handleFirstGesture);
+      window.removeEventListener('touchstart', handleFirstGesture);
+      window.removeEventListener('keydown', handleFirstGesture);
     };
   }, []);
 
