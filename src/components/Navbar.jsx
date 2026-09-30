@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Waves, ArrowRight, Anchor } from 'lucide-react';
-import SoundscapePlayer from './SoundscapePlayer';
 
 export default function Navbar({ onOpenBooking, onOpenContact }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -90,8 +89,6 @@ export default function Navbar({ onOpenBooking, onOpenContact }) {
 
           {/* Right Action Group */}
           <div className="hidden sm:flex items-center gap-4">
-            <SoundscapePlayer />
-
             <button
               onClick={() => onOpenBooking()}
               className="group relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-sand text-forest hover:bg-white transition-all duration-300 shadow-md hover:shadow-lg active:scale-95"
@@ -103,7 +100,6 @@ export default function Navbar({ onOpenBooking, onOpenContact }) {
 
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-3 lg:hidden">
-            <SoundscapePlayer />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-cream hover:text-sand focus:outline-none"
