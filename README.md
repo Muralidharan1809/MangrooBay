@@ -1,7 +1,7 @@
-# Marina Bay — Pondicherry Marina Boathouse
+# Mangrove Bay — Pondicherry Marina Boathouse
 
 > **“Escape into the calm.”**  
-> *Premier Boat Rides, Sunset & Sunrise Cruises, Romantic Couple Voyages & Birthday Celebrations on the Water.*  
+> *Premier Boat Rides, Sunset & Sunrise Cruises, Romantic Couple Voyages, Sea Rides & Mangrove Safaris.*  
 > **Boarding Location:** Pondicherry Marina Boathouse, Puducherry, India.  
 > **Boating Hours:** Morning 8:00 AM – Evening 5:30 PM (Daily).
 
@@ -9,19 +9,19 @@
 
 ## 🌊 Overview
 
-**Marina Bay** is an exclusive waterfront boating service operating from the iconic **Pondicherry Marina Boathouse**. 
-Positioned at the rare geographic intersection where the **Mangrove Bio-Reserve**, **Lagoon Backwaters**, and the **Bay of Bengal Sea Mouth** meet, Marina Bay offers a peaceful, scenic, and luxurious boating experience.
+**Mangrove Bay** is an exclusive waterfront boating service operating from the iconic **Pondicherry Marina Boathouse**. 
+Positioned at the rare geographic intersection where the **Mangrove Bio-Reserve**, **Lagoon Backwaters**, and the **Bay of Bengal Sea Mouth** meet, Mangrove Bay offers a peaceful, scenic, and luxurious boating experience.
 
-> **Note:** This service is strictly for day boat rides, tours, and celebrations on the water (no overnight stays).
+> **Note:** This service is strictly for day boat rides and tours on the water (no overnight stays).
 
 ---
 
-## 🚤 7 Signature Boating Rides & Celebrations
+## 🚤 7 Signature Boating Rides
 
 1. **Sunset Ride:** Experience Puducherry's iconic golden hour with terracotta and amber skies mirrored across the calm tides.
 2. **Sunrise Ride (Sun Rice):** Early morning cruise through dewy mangrove mist with birds singing and fresh filter coffee.
 3. **Couple Ride:** 100% private secluded boat for two with rose petals, lantern styling, romantic tunes, and dedicated pilot.
-4. **Birthday Celebration Ride:** Floating party on the water with cake cutting on the open deck, balloons, fairy lights, and music.
+4. **Group & Family Ride:** Spacious cruising across the open lagoon and waterways with shaded seating and joyful views.
 5. **Adventure & Happy Ride:** High-energy curves, thrilling wave splashes, and joyful laughter for families and kids.
 6. **Sea Ride (Estuary Mouth):** Cruise past the Pondicherry Marina breakwaters to where the backwaters meet the open Bay of Bengal sea.
 7. **Mangrove Ride (Eco Safari):** Quiet eco-safari deep into the dense green root tunnels of the protected coastal mangrove reserve.
@@ -30,7 +30,7 @@ Positioned at the rare geographic intersection where the **Mangrove Bio-Reserve*
 
 ## ⚓ Boat Fleet & Vessels
 
-- **The Marina Bay Royal Boathouse Boat:** Covered boathouse vessel (up to 20 passengers) with cushioned perimeter seating, cake-cutting table, and celebratory Bluetooth sound system.
+- **The Mangrove Bay Royal Boathouse Boat:** Covered boathouse vessel (up to 20 passengers) with cushioned perimeter seating, sunshade canopy, and high-clarity sound system.
 - **The Estuary Horizon Cruiser:** Intimate 2 to 6-seater cruiser for romantic couple dates, sunset glides, and silent mangrove safaris.
 - **Safety Amenities:**
   - 100% Government-Approved Life Jackets for all passengers (Adults, Children & Infants).
@@ -84,4 +84,4 @@ npm run preview
 - **Coordinates:** `11.9125° N, 79.8228° E`
 - **Distance:** 5–8 minutes from White Town (French Quarter) & Promenade Beach
 
-© 2026 Marina Bay. All rights reserved.
+© 2026 Mangrove Bay. All rights reserved.

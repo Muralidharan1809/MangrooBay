@@ -1,6 +1,7 @@
-// Mangroo Bay - Booking Storage & Slot Management Utility
+// Mangrove Bay - Booking Storage & Slot Management Utility
 
-const STORAGE_KEY = 'mangroo_bay_bookings';
+const STORAGE_KEY = 'mangrove_bay_bookings';
+const LEGACY_STORAGE_KEY = 'mangroo_bay_bookings';
 
 // Pre-seeded sample bookings for demonstration so the dashboard has rich data right away
 const INITIAL_SAMPLE_BOOKINGS = [
@@ -24,12 +25,12 @@ const INITIAL_SAMPLE_BOOKINGS = [
     fullName: "Venkatesh Raman",
     phone: "+91 94432 87654",
     email: "venkat.raman@example.com",
-    rideType: "Birthday Celebration",
+    rideType: "Group Ride",
     date: new Date(Date.now() + 86400000 * 2).toISOString().split('T')[0],
-    timeSlot: "Afternoon Celebration (02:00 PM – 03:45 PM)",
+    timeSlot: "Afternoon Cruise (01:30 PM – 03:30 PM)",
     guests: "12 Guests",
-    referenceId: "REF-PARTY-12",
-    notes: "10th Birthday party for our daughter. Bringing a cake.",
+    referenceId: "REF-GROUP-12",
+    notes: "Family sightseeing trip with kids. Requesting safe shaded seating.",
     status: "Pending"
   },
   {
@@ -40,7 +41,7 @@ const INITIAL_SAMPLE_BOOKINGS = [
     email: "ananya.sen@example.com",
     rideType: "Mangrove & Arikamedu Heritage Safari",
     date: new Date().toISOString().split('T')[0],
-    timeSlot: "Morning Calm (08:00 AM – 10:00 AM)",
+    timeSlot: "Morning Calm (07:00 AM – 09:30 AM)",
     guests: "4 Guests (Family)",
     referenceId: "",
     notes: "Interested in the ancient Roman bead trading history.",
@@ -50,7 +51,7 @@ const INITIAL_SAMPLE_BOOKINGS = [
 
 export function getStoredBookings() {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const raw = localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_STORAGE_KEY);
     if (!raw) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(INITIAL_SAMPLE_BOOKINGS));
       return INITIAL_SAMPLE_BOOKINGS;
@@ -122,7 +123,7 @@ export function exportBookingsToCSV() {
   const encodedUri = encodeURI(csvContent);
   const link = document.createElement("a");
   link.setAttribute("href", encodedUri);
-  link.setAttribute("download", `mangroo_bay_bookings_${new Date().toISOString().split('T')[0]}.csv`);
+  link.setAttribute("download", `mangrove_bay_bookings_${new Date().toISOString().split('T')[0]}.csv`);
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);

@@ -75,6 +75,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
 
   const stats = {
     total: bookings.length,
+    inquiries: bookings.filter(b => (b.status || '').toLowerCase() === 'inquiry' || b.isContactNote).length,
     pending: bookings.filter(b => (b.status || 'Pending') === 'Pending').length,
     confirmed: bookings.filter(b => b.status === 'Confirmed').length
   };
@@ -94,7 +95,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
           <div>
             <div className="flex items-center gap-2 text-[11px] uppercase tracking-luxury text-sand font-semibold mb-1">
               <Anchor className="w-3.5 h-3.5 text-sunset" />
-              <span>Mangroo Bay • Pondicherry Marina Boathouse</span>
+              <span>Mangrove Bay • Pondy Mermaid Boat House</span>
             </div>
             <h3 className="font-serif text-2xl sm:text-3xl font-light text-cream">
               Booked Slots & Inquiries Manager
@@ -239,13 +240,13 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
                     </div>
                     <div className="flex justify-between py-1">
                       <span className="text-charcoal/60">Boarding Point:</span>
-                      <span className="font-medium text-forest">Pondicherry Marina Boathouse Jetty</span>
+                      <span className="font-medium text-forest">Pondy Mermaid Boat House Jetty</span>
                     </div>
                   </div>
 
                   <div className="mt-6 pt-4 border-t border-sand/30 flex justify-center gap-3">
                     <a
-                      href={`https://wa.me/917397438874?text=Hello%20Mangroo%20Bay,%20inquiring%20about%20my%20booking%20${lookupResult.id}`}
+                      href={`https://wa.me/917397438874?text=Hello%20Mangrove%20Bay,%20inquiring%20about%20my%20booking%20${lookupResult.id}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-sand text-forest hover:bg-white text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm"
@@ -281,7 +282,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
                 </div>
 
                 <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0">
-                  {['All', 'Pending', 'Confirmed', 'Completed'].map(status => (
+                  {['All', 'Inquiry', 'Pending', 'Confirmed', 'Completed'].map(status => (
                     <button
                       key={status}
                       onClick={() => setSelectedStatus(status)}
@@ -291,7 +292,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
                           : 'bg-white text-charcoal/70 border border-sand/40 hover:bg-sand/20'
                       }`}
                     >
-                      {status}
+                      {status === 'Inquiry' ? `Inquiries (${stats.inquiries})` : status}
                     </button>
                   ))}
                 </div>
@@ -327,7 +328,9 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
                             {b.rideType}
                           </span>
                           <span className={`px-2 py-0.5 rounded-md text-[10px] font-semibold uppercase tracking-wider ${
-                            b.status === 'Confirmed' 
+                            b.status === 'Inquiry'
+                              ? 'bg-purple-100 text-purple-800'
+                              : b.status === 'Confirmed' 
                               ? 'bg-emerald-100 text-emerald-800' 
                               : b.status === 'Completed'
                               ? 'bg-blue-100 text-blue-800'
@@ -378,7 +381,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
                                 <span>Call</span>
                               </a>
                               <a
-                                href={`https://wa.me/${b.phone.replace(/[^0-9]/g, '')}?text=Hello%20${encodeURIComponent(b.fullName)},%20confirming%20your%20Mangroo%20Bay%20boat%20ride%20for%20${encodeURIComponent(b.rideType)}%20on%20${b.date}%20at%20Pondicherry%20Marina%20Boathouse.`}
+                                href={`https://wa.me/${b.phone.replace(/[^0-9]/g, '')}?text=Hello%20${encodeURIComponent(b.fullName)},%20regarding%20your%20inquiry%20for%20${encodeURIComponent(b.rideType)}%20at%20Pondicherry%20Marina.`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-medium transition-colors shadow-sm"
@@ -398,6 +401,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
                             onChange={(e) => handleStatusChange(b.id, e.target.value)}
                             className="text-xs font-semibold px-2.5 py-1.5 rounded-lg bg-white border border-sand/60 text-forest focus:outline-none focus:ring-1 focus:ring-forest cursor-pointer"
                           >
+                            <option value="Inquiry">Inquiry</option>
                             <option value="Pending">Pending</option>
                             <option value="Confirmed">Confirmed</option>
                             <option value="Completed">Completed</option>
@@ -424,7 +428,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
 
         {/* Footer Note */}
         <div className="bg-white px-6 py-3 border-t border-sand/30 flex items-center justify-between text-[11px] text-charcoal/60">
-          <span>Boarding & departures: Pondicherry Marina Boathouse (Daily 8:00 AM – 5:30 PM)</span>
+          <span>Boarding & departures: Pondy Mermaid Boat House (Daily 7:00 AM – 5:30 PM)</span>
           <span className="font-mono">Owner Helpline: +91 73974 38874</span>
         </div>
 

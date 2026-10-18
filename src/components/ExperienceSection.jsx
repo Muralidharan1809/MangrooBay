@@ -10,7 +10,7 @@ export default function ExperienceSection({ onSelectExperience }) {
       title: "Glide on the Water",
       description: "Feel the peaceful rhythm of calm tides and the soothing whisper of mangrove breezes.",
       tag: "Pure Serenity",
-      image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85",
+      image: "/Images/Pondycherry_harbour.jpeg",
       highlight: "Panoramic open-air water vistas on every ride"
     },
     {
@@ -18,7 +18,7 @@ export default function ExperienceSection({ onSelectExperience }) {
       title: "Sunset on the Bay",
       description: "Experience warm golden-hour skies reflected across the water as your boat drifts gently.",
       tag: "Golden Hour",
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=85",
+      image: "/Images/Pondycherry Beach&River.jpeg",
       highlight: "Private boat sunset cruising & evening tea"
     },
     {
@@ -26,7 +26,7 @@ export default function ExperienceSection({ onSelectExperience }) {
       title: "Explore by Boat",
       description: "Discover hidden mangrove channels and the confluence where the lagoon meets the sea.",
       tag: "Eco-Discovery",
-      image: "https://images.unsplash.com/photo-1508873696983-2df5703bc20d?auto=format&fit=crop&w=1000&q=85",
+      image: "/Images/Mangroo Forest.jpeg",
       highlight: "Guided boating through scenic Puducherry waterways"
     },
     {
@@ -34,8 +34,8 @@ export default function ExperienceSection({ onSelectExperience }) {
       title: "Slow Down",
       description: "Disconnect from the everyday rush and create unforgettable memories on the calm water.",
       tag: "Mindful Boating",
-      image: "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1000&q=85",
-      highlight: "Celebrations, romantic rides & joyful family laughter"
+      image: "/Images/CouplesRide.jpeg",
+      highlight: "Scenic tours, romantic rides & joyful family moments"
     }
   ];
 
@@ -59,7 +59,7 @@ export default function ExperienceSection({ onSelectExperience }) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
           <span className="text-xs uppercase tracking-luxury text-sand/80 font-semibold mb-3 inline-block">
-            Pondicherry Marina Boating
+            Pondy Mermaid Boat House Boating
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-cream font-light leading-tight">
             More than a boat ride.<br />

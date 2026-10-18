@@ -20,11 +20,13 @@ export default function Navbar({ onOpenBooking, onOpenContact, onOpenBookingsMan
 
   const navLinks = [
     { label: "Boat Rides", href: "#rides" },
+    { label: "Offers", href: "#offers" },
     { label: "Fleet", href: "#fleet" },
     { label: "Safety & Precautions", href: "#safety" },
     { label: "Timings", href: "#activities" },
     { label: "Gallery", href: "#gallery" },
-    { label: "Pondy Marina", href: "#location" },
+    { label: "Reviews", href: "#reviews" },
+    { label: "Location", href: "#location" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -58,17 +60,17 @@ export default function Navbar({ onOpenBooking, onOpenContact, onOpenBookingsMan
           <a
             href="#"
             className="group flex items-center gap-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-sand"
-            aria-label="Mangroo Bay Home"
+            aria-label="Mangrove Bay Home"
           >
             <div className="w-9 h-9 rounded-full bg-forest-light/60 border border-sand/30 flex items-center justify-center text-sand group-hover:border-sand transition-colors">
               <Waves className="w-5 h-5 text-sand transition-transform group-hover:scale-110" />
             </div>
             <div>
               <span className="font-serif text-2xl md:text-3xl font-medium tracking-luxury text-cream uppercase transition-colors group-hover:text-sand">
-                Mangroo Bay
+                Mangrove Bay
               </span>
               <span className="block text-[9px] tracking-widest text-sand/90 uppercase font-sans -mt-1">
-                Pondicherry Marina Boathouse
+                Pondy Mermaid Boat House
               </span>
             </div>
           </a>
@@ -80,9 +82,13 @@ export default function Navbar({ onOpenBooking, onOpenContact, onOpenBookingsMan
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-cream/90 hover:text-sand transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-sand hover:after:w-full after:transition-all after:duration-300"
+                className={`transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-sand hover:after:w-full after:transition-all after:duration-300 ${
+                  link.label === "Offers"
+                    ? "text-sunset font-bold hover:text-white"
+                    : "text-cream/90 hover:text-sand"
+                }`}
               >
-                {link.label}
+                {link.label === "Offers" ? "✨ Offers" : link.label}
               </a>
             ))}
           </nav>
@@ -119,7 +125,7 @@ export default function Navbar({ onOpenBooking, onOpenContact, onOpenBookingsMan
       >
         <div className="flex flex-col space-y-5 text-center">
           <p className="text-xs uppercase tracking-luxury text-sunset font-semibold">
-            Pondicherry Marina Boathouse
+            Pondy Mermaid Boat House
           </p>
           {navLinks.map((link) => (
             <a
@@ -143,8 +149,17 @@ export default function Navbar({ onOpenBooking, onOpenContact, onOpenBookingsMan
           >
             Book Boat Ride
           </button>
+          <button
+            onClick={() => {
+              setMobileMenuOpen(false);
+              onOpenBookingsManager && onOpenBookingsManager();
+            }}
+            className="text-xs text-sunset hover:text-white font-medium underline underline-offset-4"
+          >
+            🔒 Inquiries & Bookings Dashboard
+          </button>
           <p className="text-xs text-sand/70 tracking-wide">
-            Pondicherry Marina • Escape into the calm.
+            Pondy Mermaid Boat House • Escape into the calm.
           </p>
         </div>
       </div>

@@ -1,7 +1,7 @@
 @echo off
 cd /d "%~dp0"
 echo ========================================================
-echo   Starting Mangroo Bay - Pondicherry Marina Boathouse
+echo   Starting Mangrove Bay - Pondicherry Marina Boathouse
 echo ========================================================
 echo.
 echo Opening browser at http://localhost:3000/ ...

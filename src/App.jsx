@@ -17,10 +17,13 @@ import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 import MobileBookingBar from './components/MobileBookingBar';
 import AdminBookingsModal from './components/AdminBookingsModal';
+import OffersSection from './components/OffersSection';
+import ReviewsSection from './components/ReviewsSection';
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedExperience, setSelectedExperience] = useState(null);
+  const [initialPromoCode, setInitialPromoCode] = useState('');
   const [isBookingsManagerOpen, setIsBookingsManagerOpen] = useState(false);
 
   // Private Admin Access: Open manager via URL parameter (?admin=slots or ?admin=true) or Ctrl+Shift+A
@@ -43,8 +46,9 @@ export default function App() {
     }
   }, []);
 
-  const handleOpenBooking = (experience = null) => {
+  const handleOpenBooking = (experience = null, promoCode = '') => {
     setSelectedExperience(experience);
+    setInitialPromoCode(promoCode);
     setIsBookingOpen(true);
   };
 
@@ -73,17 +77,22 @@ export default function App() {
       {/* 02 Editorial Introduction Section */}
       <Introduction />
 
-      {/* 03 Signature Boating Rides & Celebrations (Pondicherry Marina Boathouse) */}
+      {/* 03 Signature Boating Rides (Pondy Mermaid Boat House) */}
       <RidesAndExperiences
         onBookRide={(ride) => handleOpenBooking(ride)}
       />
 
-      {/* 04 Experience Atmosphere Overview (4 Blocks) */}
+      {/* 04 Exclusive Offers & Special Passes */}
+      <OffersSection
+        onSelectOffer={(promoCode) => handleOpenBooking(null, promoCode)}
+      />
+
+      {/* 05 Experience Atmosphere Overview (4 Blocks) */}
       <ExperienceSection
         onSelectExperience={(exp) => handleOpenBooking(exp)}
       />
 
-      {/* 05 Boat Fleet & Covered Boathouse Vessels Showcase */}
+      {/* 06 Boat Fleet & Covered Vessels Showcase */}
       <BoatFleetSection
         onOpenBooking={(vessel) => handleOpenBooking(vessel)}
       />
@@ -102,10 +111,15 @@ export default function App() {
       {/* 08 Cinematic Full-width Video Section */}
       <VideoSection />
 
-      {/* 09 Why Mangroo Bay Boat Rides */}
+      {/* 09 Why Mangrove Bay Boat Rides */}
       <WhyMarinaBay />
 
-      {/* 10 Destination & Pondicherry Marina Boathouse Location Map */}
+      {/* 10 Verified Customer Reviews & Google Rating */}
+      <ReviewsSection
+        onOpenBooking={() => handleOpenBooking()}
+      />
+
+      {/* 11 Destination & Pondy Mermaid Boat House Location Map */}
       <LocationSection
         onOpenContact={handleOpenContact}
       />
@@ -136,6 +150,7 @@ export default function App() {
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}
         initialExperience={selectedExperience}
+        initialPromoCode={initialPromoCode}
       />
 
       {/* Admin Booked Slots & Inquiries Manager Modal */}

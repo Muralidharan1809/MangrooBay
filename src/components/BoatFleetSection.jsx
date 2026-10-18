@@ -25,7 +25,7 @@ export default function BoatFleetSection({ onOpenBooking, onOpenLightbox }) {
       case '360° Waterfront Views': return <Eye className="w-5 h-5 text-sunset" />;
       case 'Sun & Rain Canopy': return <Umbrella className="w-5 h-5 text-sand" />;
       case 'Certified Life Jackets': return <LifeBuoy className="w-5 h-5 text-mangrove" />;
-      case 'Celebration Sound System': return <Music className="w-5 h-5 text-sand" />;
+      case 'Clear Marine Sound System': return <Music className="w-5 h-5 text-sand" />;
       case 'Certified Boat Captain': return <Anchor className="w-5 h-5 text-forest" />;
       default: return <Sparkles className="w-5 h-5 text-sand" />;
     }
@@ -128,7 +128,7 @@ export default function BoatFleetSection({ onOpenBooking, onOpenLightbox }) {
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-xs font-semibold uppercase tracking-luxury text-sunset">
-                  Pondicherry Marina Fleet
+                  Pondy Mermaid Boat House Fleet
                 </span>
                 <span className="text-xs text-charcoal/40">•</span>
                 <span className="text-xs text-charcoal/70">{activeVessel.capacity}</span>
@@ -168,6 +168,16 @@ export default function BoatFleetSection({ onOpenBooking, onOpenLightbox }) {
                       </div>
                     </div>
                   ))}
+                </div>
+
+                {/* On-site Jetty Amenities Reminder */}
+                <div className="mt-5 p-3 rounded-xl bg-sand/20 border border-sand/40 flex flex-wrap items-center justify-between gap-2 text-xs text-forest">
+                  <span className="font-semibold">Boarding at Pondy Mermaid Boat House:</span>
+                  <div className="flex flex-wrap items-center gap-3 text-[11px] font-medium text-forest/90">
+                    <span className="inline-flex items-center gap-1"><span className="text-emerald-700 font-bold">✓</span> Free Parking</span>
+                    <span className="inline-flex items-center gap-1"><span className="text-emerald-700 font-bold">✓</span> Clean Toilets</span>
+                    <span className="inline-flex items-center gap-1"><span className="text-emerald-700 font-bold">✓</span> Dress Changing Rooms</span>
+                  </div>
                 </div>
               </div>
             </div>

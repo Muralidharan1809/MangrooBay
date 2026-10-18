@@ -4,31 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     
+    <!-- Google Analytics 4 (GA4) -->
+    <!-- Replace 'G-XXXXXXXXXX' with your Google Analytics Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', {
+        page_path: window.location.pathname,
+        send_page_view: true
+      });
+    </script>
+
     <!-- SEO Meta Tags -->
-    <title>Mangroo Bay | Pondicherry Marina Boathouse & Waterfront Boat Rides</title>
-    <meta name="description" content="Discover Mangroo Bay at Pondicherry Marina Boathouse. Premier waterfront boat rides, romantic couple cruises, sunset & sunrise tours, birthday celebrations, sea rides, and mangrove safaris in Puducherry." />
-    <meta name="keywords" content="Pondicherry Marina boathouse, Pondy Marina boathouse, Mangroo Bay, boathouse in Puducherry, couple boat ride Pondicherry, birthday celebration boathouse Pondicherry, sunset boat ride Pondicherry, sunrise boat ride Pondicherry, sea ride Pondicherry, mangrove safari Puducherry" />
-    <meta name="author" content="Mangroo Bay • Pondicherry Marina Boathouse" />
+    <title>Mangrove Bay | Pondicherry Marina Boat Rides & Tours</title>
+    <meta name="description" content="Discover Mangrove Bay at Pondicherry Marina. Premier 1-hour waterfront boat rides, romantic couple cruises, sunset tours, sea mouth rides, and mangrove safaris in Puducherry." />
+    <meta name="keywords" content="Pondicherry Marina boat ride, Pondy Marina boat rides, Mangrove Bay, boating in Puducherry, couple boat ride Pondicherry, sunset boat ride Pondicherry, sunrise boat ride Pondicherry, sea ride Pondicherry, mangrove safari Puducherry" />
+    <meta name="author" content="Mangrove Bay • Pondicherry Marina" />
     <meta name="theme-color" content="#123C32" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://mangroobay.com/" />
-    <meta property="og:title" content="Mangroo Bay | Pondicherry Marina Boathouse & Waterfront Experience" />
-    <meta property="og:description" content="Escape into the calm at Pondicherry Marina Boathouse with Mangroo Bay. Sunset & sunrise rides, couple cruises, birthday celebrations, sea mouth adventures, and peaceful mangrove safaris." />
+    <meta property="og:url" content="https://mangrovebay.com/" />
+    <meta property="og:title" content="Mangrove Bay | Pondicherry Marina Boat Rides & Tours" />
+    <meta property="og:description" content="Escape into the calm at Pondicherry Marina with Mangrove Bay. Daily 7:00 AM – 5:30 PM. 1-hour boat rides, couple cruises, sea mouth adventures, and peaceful mangrove safaris." />
     <meta property="og:image" content="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1600&q=80" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://mangroobay.com/" />
-    <meta property="twitter:title" content="Mangroo Bay | Pondicherry Marina Boathouse & Waterfront Experience" />
-    <meta property="twitter:description" content="Premier waterfront boat rides, romantic couple cruises, sunset tours, birthday celebrations, and mangrove safaris at Pondicherry Marina." />
+    <meta property="twitter:url" content="https://mangrovebay.com/" />
+    <meta property="twitter:title" content="Mangrove Bay | Pondicherry Marina Boat Rides & Tours" />
+    <meta property="twitter:description" content="Premier 1-hour waterfront boat rides, romantic couple cruises, sunset tours, and mangrove safaris at Pondicherry Marina." />
     <meta property="twitter:image" content="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1600&q=80" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23123C32' d='M0 0h32v32H0z'/%3E%3Cpath fill='%23D9825B' d='M16 6a5 5 0 100 10 5 5 0 000-10z' opacity='.8'/%3E%3Cpath fill='%23E9D8B8' d='M4 22c4-2 8-2 12 0s8 2 12 0v4c-4 2-8 2-12 0s-8-2-12 0v-4z'/%3E%3Cpath fill='%23315C4A' d='M7 25c3-1 6-1 9 0s6 1 9 0v3c-3 1-6 1-9 0s-6-1-9 0v-3z'/%3E%3C/svg%3E" />
 
-    <link rel="canonical" href="https://mangroobay.com/" />
+    <link rel="canonical" href="https://mangrovebay.com/" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,14 +55,14 @@
       "@graph": [
         {
           "@type": "TouristAttraction",
-          "@id": "https://mangroobay.com/#attraction",
-          "name": "Mangroo Bay at Pondicherry Marina Boathouse",
-          "description": "Premier boat rides, romantic couple cruises, sunset tours, birthday celebrations, sea rides, and mangrove safaris at Pondicherry Marina Boathouse, Puducherry.",
-          "url": "https://mangroobay.com",
+          "@id": "https://mangrovebay.com/#attraction",
+          "name": "Mangrove Bay at Pondicherry Marina",
+          "description": "Premier 1-hour boat rides, romantic couple cruises, sunset tours, sea rides, and mangrove safaris at Pondicherry Marina, Puducherry.",
+          "url": "https://mangrovebay.com",
           "telephone": "+917397438874",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Pondicherry Marina Boathouse Jetty, Estuary Backwaters",
+            "streetAddress": "Pondicherry Marina Jetty, Estuary Backwaters",
             "addressLocality": "Puducherry",
             "addressRegion": "Puducherry",
             "postalCode": "605001",
@@ -64,21 +77,21 @@
             "Couples",
             "Families",
             "Nature Lovers",
-            "Celebrations"
+            "Sightseeing"
           ]
         },
         {
           "@type": "LocalBusiness",
-          "@id": "https://mangroobay.com/#business",
-          "name": "Mangroo Bay Boat Rides & Boathouse Puducherry",
-          "image": "https://mangroobay.com/Images/CouplesRide.jpeg",
+          "@id": "https://mangrovebay.com/#business",
+          "name": "Mangrove Bay Boat Rides Puducherry",
+          "image": "https://mangrovebay.com/Images/CouplesRide.jpeg",
           "telephone": "+917397438874",
           "priceRange": "₹₹",
-          "url": "https://mangroobay.com",
-          "openingHours": "Mo-Su 08:00-17:30",
+          "url": "https://mangrovebay.com",
+          "openingHours": "Mo-Su 07:00-17:30",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Pondicherry Marina Boathouse Jetty, Estuary Backwaters",
+            "streetAddress": "Pondicherry Marina Jetty, Estuary Backwaters",
             "addressLocality": "Puducherry",
             "addressRegion": "Puducherry",
             "postalCode": "605001",

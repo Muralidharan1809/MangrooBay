@@ -11,10 +11,12 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
 
   const navLinks = [
     { label: "Boat Rides", href: "#rides" },
+    { label: "Special Offers", href: "#offers" },
     { label: "Boat Fleet", href: "#fleet" },
     { label: "Safety & Precautions", href: "#safety" },
     { label: "Gallery", href: "#gallery" },
-    { label: "Pondicherry Marina", href: "#location" },
+    { label: "Customer Reviews", href: "#reviews" },
+    { label: "Pondy Mermaid Boat House", href: "#location" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -37,7 +39,7 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
                     {BRAND_DATA.name}
                   </span>
                   <span className="block text-[10px] tracking-widest uppercase text-sand/80 font-sans">
-                    Pondicherry Marina Boathouse
+                    Pondy Mermaid Boat House
                   </span>
                 </div>
               </div>
@@ -45,7 +47,7 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
                 “{BRAND_DATA.tagline}”
               </p>
               <p className="text-sm text-cream/70 max-w-sm font-sans font-light leading-relaxed">
-                Premier boat rides, sunset cruises, romantic couple dates, birthday celebrations on the water, sea rides, and mangrove safaris.
+                Premier 1-hour boat rides, sunset cruises, romantic couple dates, sea rides, and mangrove safaris.
               </p>
             </div>
 
@@ -70,7 +72,7 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
                     onClick={onOpenBooking}
                     className="text-sand hover:text-white font-medium transition-colors block py-0.5 text-left"
                   >
-                    Book Boat Ride →
+                    Book Boat Ride (1 Hr) →
                   </button>
                 </li>
               </ul>
@@ -79,17 +81,21 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
             {/* Retreat Details & Region */}
             <div className="md:col-span-3 space-y-3">
               <p className="text-xs uppercase tracking-luxury text-sand font-semibold mb-4">
-                Pondicherry Marina Boathouse
+                Pondy Mermaid Boat House
               </p>
               <p className="text-xs text-cream/70 leading-relaxed font-sans">
                 Waterfront Boarding Jetty<br />
                 Estuary & Mangrove Backwaters<br />
-                Puducherry 605001, India<br />
-                [ADD EXACT ADDRESS]
+                Puducherry 605001, India
               </p>
               <div className="pt-2 text-xs">
                 <span className="text-[11px] uppercase tracking-wider text-sunset font-semibold block">Boating Hours:</span>
-                <span className="text-sand font-medium">Morning 8:00 AM – Evening 5:30 PM (Daily)</span>
+                <span className="text-sand font-medium">Morning 7:00 AM – Evening 5:30 PM (Daily)</span>
+              </div>
+              <div className="pt-1 text-[11px] text-cream/75 space-y-0.5">
+                <p>✓ 100% Free Vehicle Parking</p>
+                <p>✓ Clean Restrooms & Toilets</p>
+                <p>✓ Dress Changing Rooms</p>
               </div>
               <div className="text-xs text-sand/90 pt-1 font-mono flex flex-col gap-1.5">
                 <a href={`tel:${BRAND_DATA.contact.phoneRaw}`} className="hover:text-white transition-colors flex items-center gap-1.5">
@@ -123,14 +129,14 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
               <button 
                 onClick={onOpenBookingsManager} 
                 className="hover:text-sand transition-colors text-inherit"
-                title="Mangroo Bay"
+                title="Mangrove Bay"
               >
                 ©
               </button>{' '}
-              2026 Mangroo Bay • Pondicherry Marina Boathouse. All rights reserved.
+              2026 Mangrove Bay • Pondy Mermaid Boat House. All rights reserved.
             </p>
             
-            <div className="flex items-center gap-6">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6">
               <button
                 onClick={() => setModalType('privacy')}
                 className="hover:text-sand transition-colors"
@@ -143,6 +149,14 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
                 className="hover:text-sand transition-colors"
               >
                 Boating Safety & Terms
+              </button>
+              <span>•</span>
+              <button
+                onClick={onOpenBookingsManager}
+                className="text-sunset/90 hover:text-white font-medium transition-colors flex items-center gap-1"
+                title="View customer inquiries and booking messages"
+              >
+                <span>🔒 Inquiries & Bookings Dashboard</span>
               </button>
             </div>
           </div>
@@ -178,7 +192,7 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
               {modalType === 'privacy' ? (
                 <>
                   <p>
-                    Mangroo Bay at Pondicherry Marina Boathouse is committed to protecting your personal information. Any details shared during boat ride inquiries (names, contacts, celebration preferences) are utilized strictly for coordinating your boating reservation in Puducherry.
+                    Mangrove Bay at Pondy Mermaid Boat House is committed to protecting your personal information. Any details shared during boat ride inquiries (names, contacts, ride preferences) are utilized strictly for coordinating your boating reservation in Puducherry.
                   </p>
                   <p>
                     We never sell, distribute, or lease guest information to third parties. Communications are handled directly by our private boating concierge.
@@ -187,7 +201,7 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
               ) : (
                 <>
                   <p>
-                    All boat rides depart from the Pondicherry Marina Boathouse Jetty. Life jackets are mandatory and provided for every passenger (adults and children) prior to boarding.
+                    All boat rides depart from the Pondy Mermaid Boat House Jetty. Life jackets are mandatory and provided for every passenger (adults and children) prior to boarding.
                   </p>
                   <p>
                     Rides are operated by government-certified boat masters. Departure timings are synchronized with weather conditions and tidal safety. Guests are requested to respect the quiet coastal bird sanctuary and mangrove reserve.

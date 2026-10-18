@@ -1,25 +1,98 @@
 import React, { useState } from 'react';
-import { Calendar, Users, Send, CheckCircle2, ShieldCheck, Phone, Mail, Clock, MessageSquare, Anchor, Sparkles } from 'lucide-react';
-import { BRAND_DATA, RIDES_AND_EXPERIENCES } from '../data/content';
+import { 
+  Calendar, 
+  Users, 
+  Send, 
+  CheckCircle2, 
+  ShieldCheck, 
+  Phone, 
+  Clock, 
+  MessageSquare, 
+  Anchor, 
+  Compass,
+  Sparkles,
+  Tag,
+  Check
+} from 'lucide-react';
+import { BRAND_DATA, RIDES_AND_EXPERIENCES, OFFERS_DATA, STANDARD_PRICING } from '../data/content';
 import { saveNewBooking } from '../utils/bookingStorage';
+import { trackBookingSubmitted, trackWhatsAppClick, trackOfferApplied } from '../utils/analytics';
 
 export default function BookingSection({ onOpenContact }) {
   const [formData, setFormData] = useState({
     rideType: 'Sunset Ride',
     date: '',
-    timeSlot: 'Sunset Golden Hour (04:00 PM - 05:30 PM)',
-    passengers: '2 Passengers (Couple)',
+    timeSlot: 'Sunset Golden Hour (03:30 PM - 05:30 PM)',
+    adults: 2,
+    children: 0,
     fullName: '',
     phone: '',
     email: '',
+    promoCode: '',
     referenceId: '',
     specialRequests: ''
   });
 
+  const [appliedOffer, setAppliedOffer] = useState(null);
+  const [promoMessage, setPromoMessage] = useState(null);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [inquiryCode, setInquiryCode] = useState('');
+
+  // Pricing calculation (Couple: ₹3,000, Separate: ₹5,000, Shared: ₹500/adult, ₹250/child, 1 Hour)
+  const isCoupleRide = formData.rideType?.toLowerCase().includes('couple');
+  const isSeparateRide = formData.rideType?.toLowerCase().includes('separate') || formData.rideType?.toLowerCase().includes('private') || formData.rideType?.toLowerCase().includes('charter');
+
+  let basePrice = 0;
+  if (isCoupleRide) {
+    basePrice = 3000;
+  } else if (isSeparateRide) {
+    basePrice = 5000;
+  } else {
+    basePrice = (formData.adults * STANDARD_PRICING.adultPrice) + (formData.children * STANDARD_PRICING.childPrice);
+  }
+  
+  let discountAmount = 0;
+  if (appliedOffer) {
+    if (appliedOffer.discountType === 'percentage') {
+      discountAmount = Math.round((basePrice * appliedOffer.discountPercent) / 100);
+    } else if (appliedOffer.discountType === 'flat') {
+      discountAmount = appliedOffer.discountFlat;
+    }
+  }
+  const finalPrice = Math.max(0, basePrice - discountAmount);
+
+  const handleApplyPromo = (codeToApply = null) => {
+    const code = (codeToApply || formData.promoCode).trim().toUpperCase();
+    if (!code) {
+      setAppliedOffer(null);
+      setPromoMessage({ type: 'error', text: 'Please enter a promo code' });
+      return;
+    }
+
+    const offer = OFFERS_DATA.find(o => o.code.toUpperCase() === code);
+    if (offer) {
+      if (offer.minPassengers && (formData.adults + formData.children) < offer.minPassengers) {
+        setAppliedOffer(null);
+        setPromoMessage({ 
+          type: 'error', 
+          text: `Code ${offer.code} requires minimum ${offer.minPassengers} passengers.` 
+        });
+        return;
+      }
+      setFormData(prev => ({ ...prev, promoCode: offer.code }));
+      setAppliedOffer(offer);
+      setPromoMessage({ 
+        type: 'success', 
+        text: `Offer Applied: ${offer.discountBadge} (${offer.title})` 
+      });
+      trackOfferApplied(offer.code, offer.discountBadge);
+    } else {
+      setAppliedOffer(null);
+      setPromoMessage({ type: 'error', text: 'Invalid promo code. Check active offers.' });
+    }
+  };
 
   const validate = () => {
     const newErrors = {};
@@ -30,10 +103,19 @@ export default function BookingSection({ onOpenContact }) {
     } else if (!/^[0-9+\s-]{8,15}$/.test(formData.phone.trim())) {
       newErrors.phone = 'Valid phone number required';
     }
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email address is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email.trim())) {
+    if (formData.email && formData.email.trim() && !/\S+@\S+\.\S+/.test(formData.email.trim())) {
       newErrors.email = 'Valid email address required';
+    }
+    if (formData.adults < 1) {
+      newErrors.passengers = 'At least 1 adult passenger is required';
+    }
+    const totalGuests = formData.adults + formData.children;
+    if (formData.rideType && formData.rideType.toLowerCase().includes('group')) {
+      if (totalGuests < 1) {
+        newErrors.passengers = 'Group Ride requires at least 1 guest (Min 1 – Max 10 Guests).';
+      } else if (totalGuests > 10) {
+        newErrors.passengers = 'Group Ride allows a maximum of 10 guests (Min 1 – Max 10 Guests). For larger groups, please select Separate Private Boat.';
+      }
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -47,6 +129,10 @@ export default function BookingSection({ onOpenContact }) {
     const randomCode = 'MB-RIDE-' + Math.floor(10000 + Math.random() * 90000);
     setInquiryCode(randomCode);
 
+    const passengerSummary = `${formData.adults} Adult${formData.adults > 1 ? 's' : ''}${
+      formData.children > 0 ? `, ${formData.children} Child${formData.children > 1 ? 'ren' : ''}` : ''
+    }`;
+
     saveNewBooking({
       id: randomCode,
       createdAt: new Date().toISOString(),
@@ -54,27 +140,45 @@ export default function BookingSection({ onOpenContact }) {
       phone: formData.phone,
       email: formData.email,
       rideType: formData.rideType,
+      duration: "1 Hour (60 Mins)",
       date: formData.date,
       timeSlot: formData.timeSlot,
-      guests: formData.passengers,
+      guests: passengerSummary,
+      adults: formData.adults,
+      children: formData.children,
+      promoCode: appliedOffer ? appliedOffer.code : formData.promoCode.trim(),
+      estimatedTotal: finalPrice,
       referenceId: formData.referenceId.trim(),
       notes: formData.specialRequests,
       status: 'Pending'
     });
 
+    trackBookingSubmitted({
+      id: randomCode,
+      rideType: formData.rideType,
+      passengers: passengerSummary,
+      date: formData.date,
+      timeSlot: formData.timeSlot,
+      promoCode: appliedOffer ? appliedOffer.code : ''
+    });
+
     const waText = encodeURIComponent(
-      `*New Boat Ride Booking Request - Mangroo Bay*\n\n` +
+      `*New Boat Ride Booking Request - Mangrove Bay*\n\n` +
       `• *Booking ID:* ${randomCode}\n` +
       `• *Customer:* ${formData.fullName}\n` +
       `• *Phone:* ${formData.phone}\n` +
       `• *Email:* ${formData.email}\n` +
       `• *Ride:* ${formData.rideType}\n` +
+      `• *Duration:* 1 Hour (60 Mins) — Explores All 4 Sights (Mangroves, Arikamedu, Beach/River & Harbour)\n` +
       `• *Date:* ${formData.date}\n` +
       `• *Slot:* ${formData.timeSlot}\n` +
-      `• *Guests:* ${formData.passengers}\n` +
+      `• *Guests:* ${passengerSummary} (Total: ${formData.adults + formData.children})\n` +
+      `• *Fare:* ${isCoupleRide ? '₹3,000 Couple Ride Package (1 Hour)' : isSeparateRide ? '₹5,000 Separate Full Private Boat (1 Hour)' : '₹500/Adult, ₹250/Child'}\n` +
+      (appliedOffer ? `• *Applied Offer:* ${appliedOffer.code} (${appliedOffer.discountBadge})\n` : '') +
+      `• *Estimated Total:* ₹${finalPrice}\n` +
       (formData.referenceId ? `• *Referral/Ref:* ${formData.referenceId}\n` : '') +
       (formData.specialRequests ? `• *Special Requests:* ${formData.specialRequests}\n` : '') +
-      `\n*Boarding Jetty:* Pondicherry Marina Boathouse\nPlease confirm slot availability. Thank you!`
+      `\n*Boarding Jetty:* Pondy Mermaid Boat House\n*Hours:* Daily 7:00 AM – 5:30 PM\n*Amenities:* Free Parking • Clean Restrooms • Changing Rooms\nPlease confirm slot availability. Thank you!`
     );
 
     const waUrl = `https://wa.me/917397438874?text=${waText}`;
@@ -83,11 +187,14 @@ export default function BookingSection({ onOpenContact }) {
       setIsSubmitting(false);
       setIsSuccess(true);
       try {
-        window.open(waUrl, '_blank');
+        const win = window.open(waUrl, '_blank');
+        if (!win) {
+          window.location.href = waUrl;
+        }
       } catch (err) {
-        console.log('Popup blocked, customer can use WhatsApp button', err);
+        window.location.href = waUrl;
       }
-    }, 600);
+    }, 400);
   };
 
   const handleReset = () => {
@@ -95,14 +202,18 @@ export default function BookingSection({ onOpenContact }) {
     setFormData({
       rideType: 'Sunset Ride',
       date: '',
-      timeSlot: 'Sunset Golden Hour (05:00 PM - 06:45 PM)',
-      passengers: '2 Passengers (Couple)',
+      timeSlot: 'Sunset Golden Hour (03:30 PM - 05:30 PM)',
+      adults: 2,
+      children: 0,
       fullName: '',
       phone: '',
       email: '',
+      promoCode: '',
       referenceId: '',
       specialRequests: ''
     });
+    setAppliedOffer(null);
+    setPromoMessage(null);
   };
 
   return (
@@ -117,7 +228,7 @@ export default function BookingSection({ onOpenContact }) {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-forest-light border border-sand/30 text-sand text-xs font-semibold uppercase tracking-luxury mb-4">
             <Anchor className="w-3.5 h-3.5 text-sunset" />
-            <span>Pondicherry Marina Boathouse Boarding</span>
+            <span>Pondy Mermaid Boat House Boarding</span>
           </div>
 
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-cream font-light leading-tight mb-4">
@@ -146,38 +257,57 @@ export default function BookingSection({ onOpenContact }) {
                 Thank you, {formData.fullName}.
               </h3>
               <p className="text-sm md:text-base text-cream/80 max-w-lg mx-auto mb-2 font-sans leading-relaxed">
-                Your reservation request for <strong>{formData.rideType}</strong> ({formData.date} • {formData.timeSlot}) has been registered under reference <span className="font-mono text-sand font-bold">{inquiryCode}</span>.
+                Your reservation request for <strong>{formData.rideType}</strong> (1 Hour • {formData.date} • {formData.timeSlot}) has been registered under reference <span className="font-mono text-sand font-bold">{inquiryCode}</span>.
               </p>
-              {formData.referenceId && (
-                <p className="text-xs text-sand/80 font-mono mb-6">
-                  Referral / Reference Code: <strong className="text-sand">{formData.referenceId}</strong>
-                </p>
-              )}
+
+              <div className="p-4 rounded-2xl bg-forest/80 border border-sand/20 max-w-md mx-auto text-xs text-sand/90 mb-8 space-y-1.5 text-left">
+                <div className="flex justify-between border-b border-sand/20 pb-1.5 font-semibold text-cream">
+                  <span>Ride Duration:</span>
+                  <span>1 Hour (60 Mins)</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Guests:</span>
+                  <span>{formData.adults} Adults, {formData.children} Children</span>
+                </div>
+                {appliedOffer && (
+                  <div className="flex justify-between text-sunset font-semibold">
+                    <span>Applied Offer:</span>
+                    <span>{appliedOffer.code} ({appliedOffer.discountBadge})</span>
+                  </div>
+                )}
+                <div className="flex justify-between text-sm font-bold text-sand pt-1.5 border-t border-sand/20">
+                  <span>Estimated Total:</span>
+                  <span>₹{finalPrice}</span>
+                </div>
+                <div className="flex justify-between text-[11px] text-cream/70 pt-1">
+                  <span>Boarding Jetty:</span>
+                  <span className="text-sand">Pondy Mermaid Boat House</span>
+                </div>
+              </div>
 
               <div className="p-4 rounded-xl bg-forest/80 border border-sand/20 max-w-md mx-auto text-xs text-sand/90 mb-8 flex items-start gap-3 text-left">
                 <Clock className="w-4 h-4 text-sunset shrink-0 mt-0.5" />
                 <p>
-                  Our team at Pondicherry Marina Boathouse will confirm your ride slot, coordinate jetty arrival, and arrange any special cake or flower requests. No advance payment required online.
+                  Our team at Pondy Mermaid Boat House will confirm your ride slot, coordinate jetty arrival, and guide you on safety precautions. No advance payment required online.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
                   href={`https://wa.me/917397438874?text=${encodeURIComponent(
-                    `*New Boat Ride Booking Request - Mangroo Bay*\n\n` +
+                    `*New Boat Ride Booking Request - Mangrove Bay*\n\n` +
                     `• *Booking ID:* ${inquiryCode}\n` +
                     `• *Customer:* ${formData.fullName}\n` +
-                    `• *Phone:* ${formData.phone}\n` +
-                    `• *Ride:* ${formData.rideType}\n` +
+                    `• *Ride:* ${formData.rideType} (1 Hour)\n` +
+                    `• *Guests:* ${formData.adults} Adults, ${formData.children} Children\n` +
+                    `• *Estimated Total:* ₹${finalPrice}\n` +
                     `• *Date:* ${formData.date}\n` +
                     `• *Slot:* ${formData.timeSlot}\n` +
-                    `• *Guests:* ${formData.passengers}\n` +
-                    (formData.referenceId ? `• *Referral/Ref:* ${formData.referenceId}\n` : '') +
-                    (formData.specialRequests ? `• *Requests:* ${formData.specialRequests}\n` : '') +
-                    `\n*Boarding Jetty:* Pondicherry Marina Boathouse`
+                    `\n*Boarding Jetty:* Pondy Mermaid Boat House`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppClick('Booking Section Success')}
                   className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white uppercase tracking-widest text-xs font-semibold transition-colors shadow-lg"
                 >
                   <MessageSquare className="w-4 h-4" />
@@ -189,7 +319,7 @@ export default function BookingSection({ onOpenContact }) {
                   className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-forest-light border border-sand/40 text-sand hover:bg-forest hover:text-white uppercase tracking-widest text-xs font-semibold transition-colors shadow-sm"
                 >
                   <Phone className="w-4 h-4" />
-                  <span>Call Jetty (+91 73974 38874)</span>
+                  <span>Call Jetty</span>
                 </a>
 
                 <button
@@ -204,24 +334,37 @@ export default function BookingSection({ onOpenContact }) {
             /* Booking Form */
             <form onSubmit={handleSubmit} className="space-y-6">
               
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-sand/20 gap-2">
-                <div className="flex items-center gap-2 text-xs text-sand/90">
-                  <ShieldCheck className="w-4 h-4 text-sand" />
-                  <span>Pondicherry Marina Boathouse • Daily Boating 8:00 AM – 5:30 PM</span>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-4 border-b border-sand/20 gap-3">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2 text-xs text-sand/90 font-medium">
+                    <ShieldCheck className="w-4 h-4 text-sand" />
+                    <span>Pondy Mermaid Boat House • Daily Boating 7:00 AM – 5:30 PM • 1 Hour Rides</span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-sand/80">
+                    <span className="inline-flex items-center gap-1">
+                      <span className="text-emerald-400 font-bold">✓</span> Free Vehicle Parking
+                    </span>
+                    <span className="inline-flex items-center gap-1">
+                      <span className="text-emerald-400 font-bold">✓</span> Clean Restrooms & Toilets
+                    </span>
+                    <span className="inline-flex items-center gap-1">
+                      <span className="text-emerald-400 font-bold">✓</span> Dress Changing Rooms
+                    </span>
+                  </div>
                 </div>
                 <button
                   type="button"
                   onClick={onOpenContact}
-                  className="text-xs text-sand/80 hover:text-white underline underline-offset-4"
+                  className="text-xs text-sand/80 hover:text-white underline underline-offset-4 shrink-0"
                 >
-                  Special Birthday or Party Request? Contact Us
+                  Need Assistance? Contact Concierge
                 </button>
               </div>
 
               {/* Ride Selection */}
               <div>
                 <label className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
-                  Select Boating Ride or Celebration
+                  Select 1-Hour Boating Ride
                 </label>
                 <select
                   value={formData.rideType}
@@ -230,17 +373,20 @@ export default function BookingSection({ onOpenContact }) {
                 >
                   {RIDES_AND_EXPERIENCES.map(r => (
                     <option key={r.id} value={r.title} className="bg-forest-deep text-sand">
-                      {r.title} — {r.tagline} ({r.duration})
+                      {r.title} — 1 Hour ({r.id === 'couples-ride' ? '₹3,000 Flat / Couple • All Places Explored' : r.id === 'separate-ride' ? '₹5,000 Full Private Boat • All Places Explored' : '₹500 Adult / ₹250 Child • All Places Explored'})
                     </option>
                   ))}
-                  <option value="Private Boathouse Boat Charter" className="bg-forest-deep text-sand">
-                    Private Boathouse Boat Charter — Full boat for custom party or family
-                  </option>
                 </select>
+                <div className="mt-2 p-2.5 rounded-xl bg-sand/15 border border-sand/30 flex items-start sm:items-center gap-2 text-[11px] text-sand">
+                  <Compass className="w-3.5 h-3.5 text-sunset shrink-0 mt-0.5 sm:mt-0" />
+                  <span>
+                    <strong>All 4 Sights Included:</strong> Every 1-hour cruise explores Mangrove Canopies, Historic 2,000-Yr Arikamedu, Beach/River Confluence & Harbour!
+                  </span>
+                </div>
               </div>
 
-              {/* Date, Time Slot & Passengers */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {/* Date & Time Slot (7:00 AM - 5:30 PM) */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
                     Ride Date *
@@ -250,7 +396,7 @@ export default function BookingSection({ onOpenContact }) {
                     value={formData.date}
                     onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                     min={new Date().toISOString().split('T')[0]}
-                    className={`w-full px-3 py-3 rounded-xl bg-forest/80 border text-sm text-cream focus:outline-none focus:border-sand ${
+                    className={`w-full px-4 py-3 rounded-xl bg-forest/80 border text-sm text-cream focus:outline-none focus:border-sand ${
                       errors.date ? 'border-sunset' : 'border-sand/30'
                     }`}
                   />
@@ -259,36 +405,205 @@ export default function BookingSection({ onOpenContact }) {
 
                 <div>
                   <label className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
-                    Time Slot (8 AM – 5:30 PM)
+                    Time Slot (7:00 AM – 5:30 PM)
                   </label>
                   <select
                     value={formData.timeSlot}
                     onChange={(e) => setFormData({ ...formData, timeSlot: e.target.value })}
-                    className="w-full px-3 py-3 rounded-xl bg-forest/80 border border-sand/30 text-sm text-cream focus:outline-none focus:border-sand"
+                    className="w-full px-4 py-3 rounded-xl bg-forest/80 border border-sand/30 text-sm text-cream focus:outline-none focus:border-sand"
                   >
-                    <option value="Morning Opening (08:00 AM - 10:30 AM)" className="bg-forest-deep">Morning Opening (08:00 AM - 10:30 AM)</option>
-                    <option value="Midday Safari (10:30 AM - 01:30 PM)" className="bg-forest-deep">Midday Safari (10:30 AM - 01:30 PM)</option>
-                    <option value="Afternoon Cruise (01:30 PM - 04:00 PM)" className="bg-forest-deep">Afternoon Cruise (01:30 PM - 04:00 PM)</option>
-                    <option value="Sunset Golden Hour (04:00 PM - 05:30 PM)" className="bg-forest-deep">Sunset Golden Hour (04:00 PM - 05:30 PM)</option>
+                    <option value="Early Sunrise Opening (07:00 AM - 09:30 AM)" className="bg-forest-deep">
+                      Early Sunrise Opening (07:00 AM - 09:30 AM)
+                    </option>
+                    <option value="Morning Scenic (09:30 AM - 12:00 PM)" className="bg-forest-deep">
+                      Morning Scenic (09:30 AM - 12:00 PM)
+                    </option>
+                    <option value="Afternoon Eco Cruise (12:00 PM - 03:30 PM)" className="bg-forest-deep">
+                      Afternoon Eco Cruise (12:00 PM - 03:30 PM)
+                    </option>
+                    <option value="Sunset Golden Hour (03:30 PM - 05:30 PM)" className="bg-forest-deep">
+                      Sunset Golden Hour (03:30 PM - 05:30 PM)
+                    </option>
                   </select>
                 </div>
+              </div>
 
-                <div>
-                  <label className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
-                    Passengers
+              {/* Passenger Counter (Adults ₹500, Children ₹250) */}
+              <div className="p-4 rounded-2xl bg-forest/60 border border-sand/30 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs uppercase tracking-luxury text-sand font-semibold">
+                    Number of Passengers
+                  </span>
+                  <span className="text-[11px] text-cream/70 font-sans">
+                    Duration: 1 Hour (60 Mins)
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  {/* Adults */}
+                  <div className="p-3 rounded-xl bg-forest-deep/80 border border-sand/30 flex items-center justify-between">
+                    <div>
+                      <span className="block text-xs font-bold text-cream">Adults</span>
+                      <span className="text-[11px] text-sand/80">₹500 each</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setFormData(p => ({ ...p, adults: Math.max(1, p.adults - 1) }))}
+                        className="w-8 h-8 rounded-lg bg-forest border border-sand/40 text-sand font-bold hover:bg-forest-light"
+                      >
+                        -
+                      </button>
+                      <span className="w-6 text-center font-bold text-sand text-sm">{formData.adults}</span>
+                      <button
+                        type="button"
+                        onClick={() => setFormData(p => ({ ...p, adults: p.adults + 1 }))}
+                        className="w-8 h-8 rounded-lg bg-forest border border-sand/40 text-sand font-bold hover:bg-forest-light"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Children */}
+                  <div className="p-3 rounded-xl bg-forest-deep/80 border border-sand/30 flex items-center justify-between">
+                    <div>
+                      <span className="block text-xs font-bold text-cream">Children</span>
+                      <span className="text-[11px] text-sand/80">₹250 (3–10 yrs)</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setFormData(p => ({ ...p, children: Math.max(0, p.children - 1) }))}
+                        className="w-8 h-8 rounded-lg bg-forest border border-sand/40 text-sand font-bold hover:bg-forest-light"
+                      >
+                        -
+                      </button>
+                      <span className="w-6 text-center font-bold text-sand text-sm">{formData.children}</span>
+                      <button
+                        type="button"
+                        onClick={() => setFormData(p => ({ ...p, children: p.children + 1 }))}
+                        className="w-8 h-8 rounded-lg bg-forest border border-sand/40 text-sand font-bold hover:bg-forest-light"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Group Ride Capacity Indicator */}
+                {formData.rideType && formData.rideType.toLowerCase().includes('group') && (
+                  <div className="pt-2 border-t border-sand/30 flex items-center justify-between text-xs">
+                    <span className="text-sand font-semibold">
+                      Group Ride Capacity: <span className="text-sunset font-bold">1 to 10 Guests</span>
+                    </span>
+                    <span className={`text-[11px] font-mono font-bold px-2.5 py-0.5 rounded ${
+                      formData.adults + formData.children >= 1 && formData.adults + formData.children <= 10
+                        ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
+                        : 'bg-sunset/20 text-sunset border border-sunset/40'
+                    }`}>
+                      Current: {formData.adults + formData.children} Guests
+                    </span>
+                  </div>
+                )}
+
+                {errors.passengers && (
+                  <p className="text-xs text-sunset font-semibold pt-1">
+                    {errors.passengers}
+                  </p>
+                )}
+              </div>
+
+              {/* Promo Code Input & Quick Apply */}
+              <div className="p-4 rounded-2xl bg-forest/60 border border-sand/30 space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <label className="text-xs uppercase tracking-luxury text-sand font-semibold flex items-center gap-1.5">
+                    <Tag className="w-3.5 h-3.5 text-sunset" />
+                    <span>Have a Promo Code or Offer?</span>
                   </label>
-                  <select
-                    value={formData.passengers}
-                    onChange={(e) => setFormData({ ...formData, passengers: e.target.value })}
-                    className="w-full px-3 py-3 rounded-xl bg-forest/80 border border-sand/30 text-sm text-cream focus:outline-none focus:border-sand"
+                  <span className="text-[10px] text-cream/50 uppercase">Optional</span>
+                </div>
+
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    placeholder="e.g. SUNRISE7, FAMILYPASS"
+                    value={formData.promoCode}
+                    onChange={(e) => setFormData({ ...formData, promoCode: e.target.value.toUpperCase() })}
+                    className="flex-1 px-4 py-2.5 rounded-xl bg-forest-deep border border-sand/30 text-xs font-mono uppercase tracking-wider text-sand focus:outline-none focus:border-sand"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => handleApplyPromo()}
+                    className="px-5 py-2.5 rounded-xl bg-sand text-forest hover:bg-white text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm"
                   >
-                    <option value="2 Passengers (Couple)" className="bg-forest-deep">2 Passengers (Couple Ride)</option>
-                    <option value="1 Passenger" className="bg-forest-deep">1 Passenger (Solo)</option>
-                    <option value="3-4 Passengers (Small Family)" className="bg-forest-deep">3–4 Passengers (Small Family)</option>
-                    <option value="5-8 Passengers (Celebration / Adventure)" className="bg-forest-deep">5–8 Passengers (Birthday / Adventure)</option>
-                    <option value="9-15 Passengers (Large Group)" className="bg-forest-deep">9–15 Passengers (Group Party)</option>
-                    <option value="16-20 Passengers (Full Charter)" className="bg-forest-deep">16–20 Passengers (Full Boathouse Boat)</option>
-                  </select>
+                    Apply
+                  </button>
+                </div>
+
+                {promoMessage && (
+                  <p className={`text-xs flex items-center gap-1.5 font-medium ${
+                    promoMessage.type === 'success' ? 'text-emerald-400' : 'text-sunset'
+                  }`}>
+                    {promoMessage.type === 'success' && <Check className="w-3.5 h-3.5" />}
+                    <span>{promoMessage.text}</span>
+                  </p>
+                )}
+
+                <div className="pt-1 flex flex-wrap items-center gap-1.5">
+                  <span className="text-[10px] text-cream/60 uppercase">Quick Apply:</span>
+                  {OFFERS_DATA.map((off) => (
+                    <button
+                      key={off.id}
+                      type="button"
+                      onClick={() => handleApplyPromo(off.code)}
+                      className={`text-[10px] font-mono font-semibold px-2.5 py-1 rounded-full border transition-all ${
+                        appliedOffer?.code === off.code
+                          ? 'bg-sand text-forest border-sand'
+                          : 'bg-forest-light/60 text-sand border-sand/30 hover:bg-forest-light'
+                      }`}
+                    >
+                      {off.code} ({off.discountBadge})
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Price Calculation Banner */}
+              <div className="p-4 rounded-2xl bg-forest-deep border border-sand/40 space-y-2">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="text-[10px] uppercase tracking-wider text-sand block font-bold">
+                      Estimated Boating Fare (1 Hour Complete Ride)
+                    </span>
+                    <div className="text-xs text-cream/75 mt-0.5">
+                      {isCoupleRide ? (
+                        <span>Couple Ride: ₹3,000 (Flat 2 Guests)</span>
+                      ) : isSeparateRide ? (
+                        <span>Separate Private Boat: ₹5,000 (Flat Full Boat)</span>
+                      ) : (
+                        <span>
+                          {formData.adults} Adults × ₹500
+                          {formData.children > 0 && ` + ${formData.children} Children × ₹250`}
+                        </span>
+                      )}
+                      {discountAmount > 0 && (
+                        <span className="text-sunset font-semibold"> (–₹{discountAmount} Offer)</span>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="text-right">
+                    <div className="font-serif text-2xl font-bold text-sand">
+                      ₹{finalPrice}
+                    </div>
+                    <span className="text-[10px] text-cream/60">Pay on jetty arrival</span>
+                  </div>
+                </div>
+
+                <div className="pt-1.5 border-t border-sand/20 flex flex-wrap items-center justify-between gap-1 text-[11px] text-sand/90">
+                  <span className="text-emerald-400 font-medium">✓ 1-Hour Full Duration Ride</span>
+                  <span className="text-sand/80 font-medium">Free Parking & Changing Rooms</span>
                 </div>
               </div>
 
@@ -329,7 +644,7 @@ export default function BookingSection({ onOpenContact }) {
 
               <div>
                 <label className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
-                  Email Address *
+                  Email Address (Optional)
                 </label>
                 <input
                   type="email"
@@ -343,28 +658,14 @@ export default function BookingSection({ onOpenContact }) {
                 {errors.email && <p className="text-[11px] text-sunset mt-1">{errors.email}</p>}
               </div>
 
-              {/* Reference ID / Referral Code (Optional) */}
-              <div>
-                <label className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2 flex items-center justify-between">
-                  <span>Reference ID / Referral Code</span>
-                  <span className="text-[10px] text-sand/60 font-normal lowercase tracking-normal bg-forest-light/60 px-2 py-0.5 rounded-full">Optional</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="e.g. Previous Booking ID, Friend Referral, or Agent Code"
-                  value={formData.referenceId}
-                  onChange={(e) => setFormData({ ...formData, referenceId: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-forest/80 border border-sand/30 text-sm text-cream focus:outline-none focus:border-sand"
-                />
-              </div>
-
+              {/* Special Requests */}
               <div>
                 <label className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
-                  Special Celebration Requests (Optional)
+                  Special Requests (Optional)
                 </label>
                 <textarea
                   rows="2"
-                  placeholder="Birthday cake cutting setup, balloon decorations, romantic flower arrangement, photography help, or custom music playlist..."
+                  placeholder="Arrival preferences, romantic rose decor, photography help, or custom music playlist..."
                   value={formData.specialRequests}
                   onChange={(e) => setFormData({ ...formData, specialRequests: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl bg-forest/80 border border-sand/30 text-sm text-cream focus:outline-none focus:border-sand resize-none"
@@ -376,13 +677,13 @@ export default function BookingSection({ onOpenContact }) {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full sm:flex-1 py-4 rounded-full bg-sand text-forest hover:bg-white uppercase tracking-luxury text-xs font-bold transition-all shadow-luxury flex items-center justify-center gap-2 disabled:opacity-50"
+                  className="w-full sm:flex-1 py-4 rounded-full bg-sand text-forest hover:bg-white uppercase tracking-luxury text-xs font-bold transition-all shadow-luxury flex items-center justify-center gap-2 disabled:opacity-50 active:scale-98"
                 >
                   {isSubmitting ? (
                     <span>Submitting Request...</span>
                   ) : (
                     <>
-                      <span>Reserve Boat Ride</span>
+                      <span>Reserve 1-Hour Boat Ride (₹{finalPrice})</span>
                       <Send className="w-4 h-4" />
                     </>
                   )}
@@ -399,7 +700,7 @@ export default function BookingSection({ onOpenContact }) {
 
               <div className="text-center pt-2">
                 <p className="text-[11px] text-sand/60 font-sans">
-                  * Exclusively boat ride experiences. Departures from Pondicherry Marina Boathouse Jetty. Life jackets provided.
+                  * Exclusively boat ride experiences. Departures from Pondy Mermaid Boat House. Life jackets provided.
                 </p>
               </div>
 

@@ -82,7 +82,7 @@ export default function SafetySection({ onOpenBooking }) {
 
               <div className="mt-6 pt-4 border-t border-sand/15 flex items-center gap-2 text-[11px] text-sand/80 uppercase tracking-widest font-semibold">
                 <CheckCircle2 className="w-3.5 h-3.5 text-sand" />
-                <span>Mangroo Bay Safety Standard</span>
+                <span>Mangrove Bay Safety Standard</span>
               </div>
             </div>
           ))}
@@ -101,7 +101,7 @@ export default function SafetySection({ onOpenBooking }) {
                 Important Boating Precautions & Etiquette
               </h3>
               <p className="text-sm text-cream/75 leading-relaxed font-sans">
-                To guarantee a peaceful and safe cruise for everyone, please observe these simple onboard precautions before and during your ride at Pondicherry Marina.
+                To guarantee a peaceful and safe cruise for everyone, please observe these simple onboard precautions before and during your ride at Pondy Mermaid Boat House.
               </p>
               
               <div className="pt-2">

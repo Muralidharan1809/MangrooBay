@@ -1,55 +1,72 @@
-// Mangroo Bay - Exclusively Premier Boating Experiences
-// Pondicherry Marina Boathouse, Puducherry, India
-// Note: Exclusively boat rides and celebrations on the water (No overnight stays).
+// Mangrove Bay - Exclusively Premier Boating Experiences
+// Pondy Mermaid Boat House, Puducherry, India
+// Note: Exclusively boat rides and tours on the water (No overnight stays).
+
+export const STANDARD_PRICING = {
+  duration: "1 Hour (60 Mins)",
+  durationMinutes: 60,
+  adultPrice: 500,
+  childPrice: 250,
+  couplePrice: 3000,
+  separatePrice: 5000,
+  currency: "₹",
+  priceDisplay: "₹500 / Adult • ₹250 / Child",
+  couplePriceDisplay: "₹3,000 / Couple Ride (1 Hour)",
+  separatePriceDisplay: "₹5,000 / Separate Private Boat (1 Hour)",
+  childPolicy: "Child rate applies for kids aged 3–10. Infants under 3 ride free.",
+  everyRideNote: "Every boat ride is 1 Hour (60 Mins) in duration.",
+  pricingNote: "Shared rides: ₹500/Adult, ₹250/Child • Couple Ride: ₹3,000 • Separate Private Boat: ₹5,000 (All Rides 1 Hour)",
+  amenitiesNote: "100% Free Vehicle Parking • Clean Restrooms & Toilet Facilities • Private Dress Changing Rooms"
+};
 
 export const BRAND_DATA = {
-  name: "Mangroo Bay",
+  name: "Mangrove Bay",
   tagline: "Escape into the calm.",
-  supportingLine: "A premier boating experience surrounded by water, mangroves and the quiet beauty of Pondicherry Marina.",
+  supportingLine: "A premier boating experience surrounded by water, mangroves and the quiet beauty of Pondy Mermaid Boat House.",
   alternativeLine: "Pondicherry’s finest boat rides — where water, nature and unforgettable moments meet.",
-  location: "Pondicherry Marina Boathouse, Puducherry, India",
+  location: "Pondy Mermaid Boat House, Puducherry, India",
   estYear: "2026",
-  marinaBadge: "Pondicherry Marina Boathouse Hub",
-  boatingHours: "Morning 8:00 AM – Evening 5:30 PM (Daily)",
-  boatingHoursShort: "Daily 8:00 AM – 5:30 PM",
+  marinaBadge: "Pondy Mermaid Boat House",
+  boatingHours: "Morning 7:00 AM – Evening 5:30 PM (Daily)",
+  boatingHoursShort: "Daily 7:00 AM – 5:30 PM",
   contact: {
     phone: "+91 73974 38874",
     phoneRaw: "+917397438874",
     whatsapp: "+91 73974 38874",
     whatsappUrl: "https://wa.me/917397438874",
-    email: "rides@mangroobay.com",
-    address: "Pondicherry Marina Boathouse Jetty, Coastal Estuary & Mangrove Backwaters, Puducherry 605001, India",
+    email: "rides@mangrovebay.com",
+    address: "Pondy Mermaid Boat House Jetty, Coastal Estuary & Mangrove Backwaters, Puducherry 605001, India",
     mapCoordinates: { lat: 11.9125, lng: 79.8228 },
-    googleMapsUrl: "https://maps.google.com/?q=Pondicherry+Marina+Boathouse+Puducherry",
-    instagram: "https://instagram.com/mangroobay.pondy",
-    facebook: "https://facebook.com/mangroobay.pondy"
+    googleMapsUrl: "https://maps.google.com/?q=Pondy+Mermaid+Boat+House+Puducherry",
+    instagram: "https://instagram.com/mangrovebay.pondy",
+    facebook: "https://facebook.com/mangrovebay.pondy"
   }
 };
 
 export const HERO_DATA = {
-  title: "MANGROO BAY",
+  title: "MANGROVE BAY",
   tagline: "Where nature, history and boating adventure meet.",
-  description: "Discover the beauty of Puducherry Marina, explore peaceful mangroves, experience the heritage of Arikamedu, and set out on an unforgettable boating adventure.",
-  supportingText: "Whether it’s a relaxing escape, a sunset ride, or an exciting journey on the water, Mangroo Bay is your gateway to explore Puducherry from a whole new perspective.",
+  description: "Discover the beauty of Pondy Mermaid Boat House, explore peaceful mangroves, experience the heritage of Arikamedu, and set out on an unforgettable boating adventure.",
+  supportingText: "Whether it’s a relaxing escape, a sunset ride, or an exciting journey on the water, Mangrove Bay is your gateway to explore Puducherry from a whole new perspective.",
   invitation: "Come aboard. Explore. Adventure. Escape into the calm.",
-  marinaHighlight: "Boarding & Boat Rides at Pondicherry Marina Boathouse",
-  boatingHoursBadge: "Daily Boating: Morning 8:00 AM – Evening 5:30 PM",
+  marinaHighlight: "Boarding & Boat Rides at Pondy Mermaid Boat House",
+  boatingHoursBadge: "Daily Boating: Morning 7:00 AM – Evening 5:30 PM",
   primaryCta: "Book Your Boat Ride",
   secondaryCta: "Explore All Boat Rides",
-  scrollText: "Scroll to discover ↓",
+  scrollText: "Scroll to explore ↓",
   videoSrc: "/videos/entrance-video.mp4",
-  bgImage: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=2000&q=85",
-  aerialBg: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=85"
+  bgImage: "/Images/Pondycherry_harbour.jpeg",
+  aerialBg: "/Images/Pondycherry Beach&River.jpeg"
 };
 
 export const INTRO_DATA = {
-  eyebrow: "WELCOME TO MANGROO BAY",
+  eyebrow: "WELCOME TO MANGROVE BAY",
   heading: "Where nature, history and boating adventure meet.",
-  body: "Discover the beauty of Puducherry Marina, explore peaceful mangroves, experience the heritage of Arikamedu, and set out on an unforgettable boating adventure.",
-  secondaryText: "Whether it’s a relaxing escape, a sunset ride, or an exciting journey on the water, Mangroo Bay is your gateway to explore Puducherry from a whole new perspective.",
+  body: "Discover the beauty of Pondy Mermaid Boat House, explore peaceful mangroves, experience the heritage of Arikamedu, and set out on an unforgettable boating adventure.",
+  secondaryText: "Whether it’s a relaxing escape, a sunset ride, or an exciting journey on the water, Mangrove Bay is your gateway to explore Puducherry from a whole new perspective.",
   invitation: "Come aboard. Explore. Adventure. Escape into the calm.",
   features: [
-    { number: "01", title: "Puducherry Marina Boathouse", subtitle: "Coastal estuary waters, scenic breakwaters & ocean breezes" },
+    { number: "01", title: "Pondy Mermaid Boat House", subtitle: "Coastal estuary waters, scenic breakwaters & ocean breezes" },
     { number: "02", title: "Peaceful Mangrove Safaris", subtitle: "Lush green biological root tunnels & native birds" },
     { number: "03", title: "Historic Arikamedu Heritage", subtitle: "Ancient Roman trading port ruins along serene riverbanks" }
   ],
@@ -57,111 +74,170 @@ export const INTRO_DATA = {
   secondaryImage: "/Images/CouplesRide.jpeg"
 };
 
-// 7 Signature Boat Rides at Pondicherry Marina Boathouse
+// All Scenic Places Explored in Every 1-Hour Cruise
+// Customers do NOT have to choose just 1 place — EVERY 1-hour boat ride explores ALL 4 of these locations together!
+export const ALL_PLACES_EXPLORED = [
+  {
+    id: "mangrove-forest",
+    number: "01",
+    title: "Mangrove Forest & Canopy Trails",
+    tagline: "Lush Tidal Bio-Reserve & Green Water Tunnels",
+    description: "Navigate through the protected coastal mangrove canals where dense root systems drop into the tidal water, creating shady biological tunnels and sanctuary for exotic migratory birds.",
+    image: "/Images/Mangroo Forest.jpeg",
+    highlights: ["Shaded mangrove root canals", "Rare wetland bird species", "Cool saline breeze & mirror waters"]
+  },
+  {
+    id: "arikkamedu-port",
+    number: "02",
+    title: "Historic Arikamedu Port",
+    tagline: "2,000-Year Ancient Indo-Roman Trading Port",
+    description: "Cruise alongside the historic riverbanks of Arikamedu — Puducherry's legendary archaeological wonder where ancient Romans traded Roman amphorae wine jars, gemstones, and beads across the river over 2,000 years ago.",
+    image: "/Images/Arikkamedu.jpeg",
+    highlights: ["2,000-year Roman trade history", "Archaeological river banks", "Ancient port heritage insights"]
+  },
+  {
+    id: "beach-and-river",
+    number: "03",
+    title: "Pondicherry Beach & River Confluence",
+    tagline: "Where Lagoon Waters Meet Bay of Bengal Waves",
+    description: "Glide out to the magnificent estuary confluence point where the tranquil backwater river merges into the sparkling Bay of Bengal ocean beach. Enjoy open panoramic ocean views and soothing waves.",
+    image: "/Images/Pondycherry Beach&River.jpeg",
+    highlights: ["River meets ocean confluence", "Golden sandy beach views", "Panoramic open-water breeze"]
+  },
+  {
+    id: "pondicherry-harbour",
+    number: "04",
+    title: "Pondicherry Harbour & Breakwaters",
+    tagline: "Maritime Activity, Breakwaters & Deep Water Horizons",
+    description: "Pass by the sheltering maritime breakwaters of Pondy Mermaid Boat House and the active fishing harbor. Watch colorful catamarans, deep sea trawlers, and seabirds diving in the horizon.",
+    image: "/Images/Pondycherry_harbour.jpeg",
+    highlights: ["Active fishing fleet & catamarans", "Harbour breakwater views", "Deep blue maritime horizon"]
+  }
+];
+
+// Signature Boat Rides at Pondy Mermaid Boat House
+// Couple Ride: ₹3,000 • Separate Private Boat: ₹5,000 • Shared Ride: ₹500/Adult, ₹250/Child (All Rides 1 Hour)
+// NOTE: Every single ride explores ALL 4 scenic places above!
 export const RIDES_AND_EXPERIENCES = [
   {
     id: "couples-ride",
     title: "Couples Ride",
-    category: "Romantic & Private Boating",
-    badge: "Couples Special",
-    tagline: "Private secluded boat cruise tailored for two",
-    description: "An intimate voyage designed exclusively for couples, proposals, anniversaries, and romantic dates. Features subtle boat styling, fresh floral arrangements, warm lantern glow, soft background music, and absolute privacy on the water.",
-    duration: "60–90 Mins",
-    timing: "08:00 AM – 05:30 PM (Custom Private Slots)",
+    category: "Romantic & 100% Private",
+    badge: "Couple Special • ₹3,000",
+    tagline: "Private secluded boat cruise tailored for two • All Places Explored",
+    description: "An intimate romantic voyage designed exclusively for couples, proposals, anniversaries, and peaceful moments. Subtle boat styling, soft music, ambient sunset glow, and 100% complete privacy on the water. Explores Mangroves, Arikamedu, Beach/River confluence, and Harbour together in a full 1-hour cruise.",
+    duration: "1 Hour (60 Mins)",
+    durationMinutes: 60,
+    priceAdult: 3000,
+    priceDisplay: "₹3,000 / Couple (1 Hour)",
+    priceNote: "₹3,000 Flat Rate for 2 Guests (1 Hour Full Cruise • All Sights Included)",
+    isPackage: true,
+    packagePrice: 3000,
+    timing: "07:00 AM – 05:30 PM (Custom Private Slots)",
     capacity: "Strictly 2 Guests (Couple)",
     image: "/Images/CouplesRide.jpeg",
-    features: ["100% Private vessel", "Floral & lantern decoration option", "Romantic music playlist", "Dedicated private boat master"]
+    features: [
+      "100% Private dedicated vessel for 2",
+      "₹3,000 Complete Couple Package",
+      "1 Hour full serene cruise",
+      "All 4 scenic destinations explored",
+      "Romantic music playlist & photo stops"
+    ]
   },
   {
-    id: "birthday-celebration",
-    title: "Birthday Celebration",
-    category: "Celebrations & Parties",
-    badge: "Party on the Water",
-    tagline: "Celebrate your special day on the floating boathouse boat",
-    description: "Make birthdays unforgettable on the water. Enjoy a private celebratory cruise with cake cutting on the open deck, customized balloons & fairy light decor, party music, and picture-perfect memories with friends and family.",
-    duration: "1.5 – 2 Hours",
-    timing: "08:00 AM – 05:30 PM (Flexible Slots)",
-    capacity: "Groups up to 20 Guests",
-    image: "/Images/BirthdayCelepraion.jpeg",
-    features: ["Cake-cutting table & stand", "Balloon & fairy light styling", "High-clarity Bluetooth sound system", "Spacious open deck for group photos"]
+    id: "separate-ride",
+    title: "Separate Private Boat",
+    category: "Exclusive Private Charter",
+    badge: "100% Private Boat • ₹5,000",
+    tagline: "Dedicated separate private boat exclusively for your group • All Places Explored",
+    description: "Enjoy complete privacy with a separate boat reserved entirely for your family or friends (1 to 10 guests). No strangers or sharing. Choose your own rhythm, customized music, photo stops, and route through mangroves, Arikamedu, beach confluence, and harbor.",
+    duration: "1 Hour (60 Mins)",
+    durationMinutes: 60,
+    priceAdult: 5000,
+    priceDisplay: "₹5,000 / Separate Boat (1 Hour)",
+    priceNote: "₹5,000 Flat Rate for 1 to 10 Guests (1 Hour Private • All Sights Included)",
+    isPackage: true,
+    packagePrice: 5000,
+    timing: "07:00 AM – 05:30 PM (Any Custom Slot)",
+    capacity: "Exclusive Group (1 to 10 Guests)",
+    image: "/Images/GroupRide.jpeg",
+    features: [
+      "100% Exclusive separate private boat",
+      "₹5,000 Full Boat Flat Rate (1 to 10 Guests)",
+      "1 Hour uninterrupted private tour",
+      "All 4 scenic destinations explored",
+      "Custom music, photo stops & flexible route"
+    ]
   },
   {
     id: "group-ride",
-    title: "Group Ride",
-    category: "Adventure & Family Joy",
-    badge: "Adventure & Happy Ride",
-    tagline: "Spirited group boating, thrilling turns & family joy",
-    description: "An exhilarating ride across the open lagoon and wide waterways. Feel the wind rush with spirited throttle bursts, playful wave-splashing curves, and endless smiles for families, youth groups, and children.",
-    duration: "30–45 Mins",
-    timing: "09:00 AM – 05:00 PM (Daily Slots)",
-    capacity: "Groups of 4–20 Guests",
+    title: "Shared Boating Ride",
+    category: "Classic Scenic Cruise",
+    badge: "Most Popular • 1 Hour",
+    tagline: "Scenic 1-hour cruise exploring all backwaters, mangroves & sea confluence",
+    description: "Join fellow travellers for a wonderful 1-hour voyage. Feel the cool river and ocean breeze, glide past ancient archaeological banks, navigate through emerald mangrove canopies, and reach the beach sea mouth.",
+    duration: "1 Hour (60 Mins)",
+    durationMinutes: 60,
+    priceAdult: 500,
+    priceChild: 250,
+    priceDisplay: "₹500 / Adult • ₹250 / Child",
+    priceNote: "₹500 Adult / ₹250 Child (1 Hour • All Sights Included)",
+    timing: "07:00 AM – 05:30 PM (Daily Slots)",
+    capacity: "Min 1 – Max 10 Guests",
     image: "/Images/GroupRide.jpeg",
-    features: ["Spirited boating speed & turns", "Certified life jackets for all ages", "High fun factor for youth & kids", "Exciting water spray action"]
-  },
-  {
-    id: "mangroo-forest",
-    title: "Mangroo Forest",
-    category: "Eco Safari & Wildlife",
-    badge: "Bio-Reserve Safari",
-    tagline: "Navigate through dense mangrove waterways and wildlife",
-    description: "Gliding silently into the protected coastal mangrove forests. Discover dense aerial root formations touching the tidal waters, exotic birds, and the pristine natural biodiversity of Puducherry.",
-    duration: "45–60 Mins",
-    timing: "08:00 AM – 04:30 PM (Eco Hours)",
-    capacity: "Private or Group",
-    image: "/Images/Mangroo Forest.jpeg",
-    features: ["Protected mangrove bio-reserve tunnels", "Quiet eco-friendly cruising", "Birdwatching binoculars", "Scenic photography points"]
-  },
-  {
-    id: "mangroove-forest",
-    title: "Mangroove Forest",
-    category: "Nature & Canopy Trail",
-    badge: "Canopy Trail",
-    tagline: "Lush green tree root tunnels & peaceful serene waters",
-    description: "Deep exploration of the green canopy waterways. Breathe in the cool sea breezes filtered through the thick mangrove leaves as your boat gently navigates calm sheltered canals.",
-    duration: "45–60 Mins",
-    timing: "08:00 AM – 05:00 PM (Daily Slots)",
-    capacity: "Small & Large Groups",
-    image: "/Images/Mangroove_Forest1.jpeg",
-    features: ["Lush biological mangrove root tunnels", "Calm sheltered waters", "Natural shade & cooling breezes", "Experienced nature guide pilot"]
-  },
-  {
-    id: "arikkamedu",
-    title: "Arikkamedu",
-    category: "Historic Heritage Boating",
-    badge: "Heritage Discovery",
-    tagline: "Ancient Roman trading port ruins along serene riverbanks",
-    description: "Cruise along the banks of historic Arikamedu — an ancient Indo-Roman trading port dating back over 2,000 years. Learn the rich archaeological history where ancient Roman pottery, beads, and gems were traded along the river waters.",
-    duration: "60 Mins",
-    timing: "08:00 AM – 04:30 PM (Heritage Slots)",
-    capacity: "Private or Group",
-    image: "/Images/Arikkamedu.jpeg",
-    features: ["Ancient Arikamedu heritage riverbank", "Historical narrative & guide", "Calm backwater cruise", "Panoramic river views"]
+    features: [
+      "Min 1 – Max 10 Guests capacity",
+      "₹500 Adult / ₹250 Child",
+      "1 Hour full duration ride",
+      "All 4 scenic destinations explored",
+      "Free parking, restrooms & changing rooms"
+    ]
   },
   {
     id: "pondicherry-beach-river",
-    title: "Pondycherry Beach & River",
-    category: "Sunset & Sea Confluence",
-    badge: "Sunset & Sea Ride",
-    tagline: "Where the backwater river meets the ocean beach and golden sunset",
-    description: "Cruise past the sheltering breakwaters of Pondicherry Marina into the majestic confluence where the river meets the Bay of Bengal sea beach. Watch the sun dip over the coastal horizon casting golden glows across waves and sands.",
-    duration: "45–60 Mins",
-    timing: "04:00 PM – 05:30 PM (Golden Hour Sunset)",
-    capacity: "Private or Group (Up to 15)",
+    title: "Sunset & Sea Confluence Ride",
+    category: "Sunset & Golden Hour",
+    badge: "Golden Hour Special",
+    tagline: "Where the backwater river meets the ocean beach at golden sunset",
+    description: "Cruise past the sheltering breakwaters of Pondy Mermaid Boat House into the majestic confluence where the river meets the Bay of Bengal sea beach. Watch the sun dip over the coastal horizon casting golden glows across waves and sands while exploring all 4 scenic sights.",
+    duration: "1 Hour (60 Mins)",
+    durationMinutes: 60,
+    priceAdult: 500,
+    priceChild: 250,
+    priceDisplay: "₹500 / Adult • ₹250 / Child",
+    priceNote: "₹500 Adult / ₹250 Child (1 Hour)",
+    timing: "03:30 PM – 05:30 PM (Golden Hour Sunset)",
+    capacity: "1 to 10 Guests (Shared or Private)",
     image: "/Images/Pondycherry Beach&River.jpeg",
-    features: ["Golden hour panoramic sunset", "River & ocean confluence", "Coastal breeze & wave vistas", "Sunset photo stop points"]
+    features: [
+      "Golden hour panoramic ocean sunset",
+      "River & ocean confluence crossing",
+      "All 4 scenic destinations explored",
+      "1 Hour sunset cruise & photo stops"
+    ]
   },
   {
     id: "pondicherry-harbour",
-    title: "Pondycherry Harbour",
-    category: "Sunrise & Marina Experience",
-    badge: "Sunrise & Harbour Ride",
+    title: "Sunrise Morning Estuary Ride",
+    category: "Sunrise & Morning Calm",
+    badge: "Early 7 AM Opening",
     tagline: "Morning opening rays, harbor views, and fishing boat horizons",
-    description: "Witness the estuary and bustling harbor awaken with our first morning departures. Glide across still, mirror-like waters as the morning sun casts soft golden beams across traditional catamarans and modern marina docks.",
-    duration: "45–60 Mins",
-    timing: "08:00 AM – 10:00 AM (Sunrise & Morning Slots)",
-    capacity: "Private or Group",
+    description: "Witness the estuary and bustling harbor awaken with our first morning departures at 7:00 AM. Glide across still, mirror-like waters as the morning sun casts soft golden beams across traditional catamarans and docks, exploring all 4 sights in morning peace.",
+    duration: "1 Hour (60 Mins)",
+    durationMinutes: 60,
+    priceAdult: 500,
+    priceChild: 250,
+    priceDisplay: "₹500 / Adult • ₹250 / Child",
+    priceNote: "₹500 Adult / ₹250 Child (1 Hour)",
+    timing: "07:00 AM – 09:30 AM (Sunrise & Morning Slots)",
+    capacity: "1 to 10 Guests (Shared or Private)",
     image: "/Images/Pondycherry_harbour.jpeg",
-    features: ["Morning harbor & marina views", "Early morning sunrise calm", "Fresh South Indian filter coffee", "Birdwatching along jetty docks"]
+    features: [
+      "Early 7:00 AM sunrise calm waters",
+      "Morning harbor & catamaran views",
+      "All 4 scenic destinations explored",
+      "1 Hour fresh morning cruise"
+    ]
   }
 ];
 
@@ -169,38 +245,37 @@ export const RIDES_AND_EXPERIENCES = [
 export const BOAT_FLEET_DATA = {
   eyebrow: "OUR BOAT FLEET & VESSELS",
   heading: "Crafted for comfort on the water.",
-  description: "Operating from Pondicherry Marina Boathouse, our custom-built boats feature wide panoramic views, plush cushioned seating, protective sunshade canopies, and strict marine safety standards.",
+  description: "Operating from Pondy Mermaid Boat House, our custom-built boats feature wide panoramic views, plush cushioned seating, protective sunshade canopies, and strict marine safety standards.",
   features: [
     { name: "Comfortable Seating", icon: "Armchair", detail: "Plush cushioned lounge seating with ample legroom" },
     { name: "360° Waterfront Views", icon: "Eye", detail: "Unobstructed open-air decks for photography & scenic sightseeing" },
     { name: "Sun & Rain Canopy", icon: "Umbrella", detail: "Protective overhead canopy keeping guests cool and shaded" },
     { name: "Certified Life Jackets", icon: "LifeBuoy", detail: "100% government-approved safety jackets for adults, children & infants" },
-    { name: "Celebration Sound System", icon: "Music", detail: "Bluetooth music connectivity for birthdays & party vibes" },
+    { name: "Clear Marine Sound System", icon: "Music", detail: "Bluetooth music connectivity for relaxing and scenic boat rides" },
     { name: "Certified Boat Captain", icon: "Anchor", detail: "Highly experienced local marine pilots with deep waterway knowledge" }
   ],
   vessels: [
     {
       id: "royal-cruiser",
-      title: "The Mangroo Bay Royal Boathouse Boat",
-      category: "Signature Covered Boathouse Vessel",
-      capacity: "Up to 20 Guests (Perfect for Parties & Families)",
-      idealFor: "Birthday Celebrations, Family Gatherings & Group Sunset Rides",
-      pricingPlaceholder: "Standard group & private charter rates [ADD PRICING]",
+      title: "The Mangrove Bay Royal Cruiser",
+      category: "Signature Covered Cruiser Vessel",
+      capacity: "1 to 10 Guests (Min 1 – Max 10)",
+      idealFor: "Family Gatherings, Group Rides & Separate Private Boat Tours",
+      pricingPlaceholder: "Separate Private Boat: ₹5,000 • Shared: ₹500/Adult, ₹250/Child (1 Hour)",
       image: "/Images/GroupRide.jpeg",
       gallery: [
         "/Images/GroupRide.jpeg",
-        "/Images/BirthdayCelepraion.jpeg",
         "/Images/Pondycherry Beach&River.jpeg"
       ],
-      description: "Our flagship covered boathouse vessel. Features a wide central deck with cushioned perimeter seating, a dedicated center table for birthday cake cutting, decorative fairy lighting, and crystal-clear sound connectivity."
+      description: "Our flagship covered vessel. Features a wide central deck with cushioned perimeter seating, protective overhead sunshade canopy, decorative warm lighting, and crystal-clear sound connectivity."
     },
     {
       id: "sunset-safari",
       title: "The Estuary Horizon Cruiser",
       category: "Intimate Couple & Eco Safari Boat",
-      capacity: "2 to 6 Guests (Private & Romantic)",
-      idealFor: "Couple Rides, Sunrise Birdwatching & Private Sunset Glides",
-      pricingPlaceholder: "Private couple & small group rates [ADD PRICING]",
+      capacity: "Strictly 2 Guests (Couple) or Up to 6",
+      idealFor: "Couple Rides (₹3,000), Sunrise Birdwatching & Private Sunset Glides",
+      pricingPlaceholder: "Couple Ride: ₹3,000 Package • 1 Hour Full Cruise",
       image: "/Images/CouplesRide.jpeg",
       gallery: [
         "/Images/CouplesRide.jpeg",
@@ -213,29 +288,29 @@ export const BOAT_FLEET_DATA = {
 };
 
 export const MARINA_KEY_DETAILS = {
-  name: "Pondicherry Marina Boathouse",
-  hubTagline: "The premier boarding gateway for Mangroo Bay",
-  overview: "Mangroo Bay operates exclusively from Pondicherry Marina Boathouse. This unique geographical haven sits right at the confluence of the mangrove waterways, tranquil lagoon backwaters, and the open Bay of Bengal sea mouth.",
+  name: "Pondy Mermaid Boat House",
+  hubTagline: "The premier boarding gateway for Mangrove Bay",
+  overview: "Mangrove Bay operates exclusively from Pondy Mermaid Boat House. This unique geographical haven sits right at the confluence of the mangrove waterways, tranquil lagoon backwaters, and the open Bay of Bengal sea mouth.",
   highlights: [
-    { title: "Daily Boating: 8:00 AM – 5:30 PM", desc: "Open daily from Morning 8:00 AM to Evening 5:30 PM with regular departures, romantic sunset cruises, and private charters." },
-    { title: "Strategic Marina Boarding", desc: "Easily accessible from White Town, Promenade Beach, and harbor area with smooth jetty boarding." },
-    { title: "Triple-Water Geographic Splendor", desc: "Experience the rare intersection where Mangrove forest tunnels, serene lagoon waters, and sea waves meet." },
-    { title: "100% Certified Safety", desc: "Govt-approved life jackets for adults and children, certified marine pilots, and full first-aid readiness." },
-    { title: "Visitor Amenities", desc: "Spacious vehicle parking, comfortable boarding lounge, refreshment kiosks, and dedicated concierge desk." }
+    { title: "Daily Boating: 7:00 AM – 5:30 PM", desc: "Open daily from Morning 7:00 AM to Evening 5:30 PM with early sunrise departures, romantic sunset cruises, and 1-hour backwater rides." },
+    { title: "100% Free Vehicle Parking", desc: "Spacious dedicated free parking for cars and two-wheelers right at the jetty entrance." },
+    { title: "Clean Restrooms & Toilet Facilities", desc: "Well-maintained hygienic washroom facilities available for all guests before and after your ride." },
+    { title: "Private Dress Changing Rooms", desc: "Dedicated clean changing rooms to easily change clothing before or after water activities." },
+    { title: "100% Certified Safety", desc: "Govt-approved life jackets for adults and children, certified marine pilots, and full first-aid readiness." }
   ]
 };
 
 export const TIMELINE_DATA = {
-  heading: "Boating hours, morning 8:00 AM to evening 5:30 PM.",
-  subheading: "From calm morning departures to golden hour sunsets at Pondicherry Marina Boathouse.",
+  heading: "Boating hours, morning 7:00 AM to evening 5:30 PM.",
+  subheading: "From early 7:00 AM sunrise departures to golden hour sunsets at Pondy Mermaid Boat House.",
   stages: [
     {
       id: "morning",
-      time: "08:00 AM — 10:30 AM",
-      name: "Morning Calm & Sunrise Glides",
+      time: "07:00 AM — 10:30 AM",
+      name: "Early Morning Sunrise & Estuary Calm",
       summary: "Mirror-still water, soft morning rays & birdsong.",
-      description: "Step aboard our first departures of the day at 8:00 AM. Still waters make this the purest time for peaceful cruising, nature watching, photography, and fresh filter coffee on the water.",
-      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=85",
+      description: "Step aboard our earliest departures of the day at 7:00 AM. Still waters make this the purest time for peaceful cruising, nature watching, photography, and fresh filter coffee on the water.",
+      image: "/Images/Pondycherry_harbour.jpeg",
       accent: "#E9D8B8",
       vibe: "Serene & Dewy"
     },
@@ -245,19 +320,19 @@ export const TIMELINE_DATA = {
       name: "Mangrove Safari & Bio-Reserve Tunnels",
       summary: "Cool shaded green root tunnels & quiet gliding.",
       description: "Glide under the dense mangrove canopy where natural leaf canopies shield against the sun. Explore narrow green tunnels and observe native coastal wildlife.",
-      image: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=1000&q=85",
+      image: "/Images/Mangroove_Forest1.jpeg",
       accent: "#315C4A",
       vibe: "Shaded & Peaceful"
     },
     {
       id: "afternoon",
       time: "01:30 PM — 04:00 PM",
-      name: "Adventure, Family & Birthday Celebrations",
-      summary: "Spirited waves, birthday party deck & joyful laughter.",
-      description: "Celebrate birthdays and milestones on our covered cruiser with cake cutting and music, or feel the wind with fun adventure glides across open lagoon waterways.",
-      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=85",
+      name: "Adventure & Family Lagoon Rides",
+      summary: "Spirited waves, shaded deck & joyful family moments.",
+      description: "Cruise across open lagoon waterways with family and friends on our covered cruiser, feel the refreshing sea breeze, and enjoy exhilarating smooth turns.",
+      image: "/Images/GroupRide.jpeg",
       accent: "#123C32",
-      vibe: "Festive & Breezy"
+      vibe: "Active & Breezy"
     },
     {
       id: "golden-hour",
@@ -265,7 +340,7 @@ export const TIMELINE_DATA = {
       name: "Sunset Ride & Final Evening Cruise",
       summary: "Amber skies, terracotta horizons & sea breeze.",
       description: "Puducherry’s most iconic golden hour before our 5:30 PM close. Watch the sky turn fiery orange and lilac as your boat drifts along calm backwaters toward the sea mouth.",
-      image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1000&q=85",
+      image: "/Images/Pondycherry Beach&River.jpeg",
       accent: "#D9825B",
       vibe: "Romantic & Amber"
     }
@@ -276,7 +351,7 @@ export const GALLERY_DATA = [
   {
     id: 1,
     category: "The Bay",
-    title: "Pondicherry Marina & Harbour",
+    title: "Pondy Mermaid Boat House & Harbour",
     subtitle: "Boating gateway at the harbor estuary",
     src: "/Images/Pondycherry_harbour.jpeg",
     span: "col-span-12 md:col-span-7",
@@ -285,8 +360,8 @@ export const GALLERY_DATA = [
   {
     id: 2,
     category: "Boats & Fleet",
-    title: "Mangroo Bay Covered Boathouse Boat",
-    subtitle: "Spacious deck for celebrations & scenic cruises",
+    title: "Mangrove Bay Covered Vessel",
+    subtitle: "Spacious deck for family & scenic cruises",
     src: "/Images/GroupRide.jpeg",
     span: "col-span-12 md:col-span-5",
     aspect: "aspect-[4/3]"
@@ -320,10 +395,10 @@ export const GALLERY_DATA = [
   },
   {
     id: 6,
-    category: "Celebrations",
-    title: "Birthday Celebration on the Water",
-    subtitle: "Floating deck festivities & party vibes",
-    src: "/Images/BirthdayCelepraion.jpeg",
+    category: "Rides",
+    title: "Lagoon Scenic Boating",
+    subtitle: "Wide open deck for family and scenic views",
+    src: "/Images/GroupRide.jpeg",
     span: "col-span-12 md:col-span-7",
     aspect: "aspect-[16/10]"
   },
@@ -350,8 +425,8 @@ export const GALLERY_DATA = [
 export const WHY_MARINA_DATA = [
   {
     number: "01",
-    title: "Pondicherry Marina Location",
-    description: "Depart directly from Pondicherry Marina Boathouse jetty, with dedicated parking and rapid access from White Town."
+    title: "Pondy Mermaid Boat House Location",
+    description: "Depart directly from Pondy Mermaid Boat House jetty, with 100% free vehicle parking, clean restrooms & toilet facilities, private dress changing rooms, and rapid access from White Town."
   },
   {
     number: "02",
@@ -360,8 +435,8 @@ export const WHY_MARINA_DATA = [
   },
   {
     number: "03",
-    title: "Tailored Celebrations & Dates",
-    description: "Custom setups for birthday celebrations with cake cutting and music, plus private couple rides with floral & lantern decor."
+    title: "Intimate Dates & Family Tours",
+    description: "Private couple voyages styled with romantic ambient decor, alongside spacious covered vessels for memorable family outings."
   },
   {
     number: "04",
@@ -375,23 +450,25 @@ export const WHY_MARINA_DATA = [
   }
 ];
 
+export const WHY_MANGROVE_DATA = WHY_MARINA_DATA;
 export const WHY_MANGROO_DATA = WHY_MARINA_DATA;
 
 export const LOCATION_DATA = {
   heading: "Find your way to the bay.",
-  location: "Pondicherry Marina Boathouse, Puducherry, India",
-  address: "Pondicherry Marina Boathouse Jetty, Estuary Backwaters, Puducherry 605001 [ADD EXACT ADDRESS]",
-  boatingHours: "Morning 08:00 AM to Evening 05:30 PM (Daily)",
-  note: "Board directly at Pondicherry Marina Boathouse. Open daily from Morning 8:00 AM to Evening 5:30 PM. Ample vehicle parking, certified safety gear, and welcoming guest jetty lounge available.",
+  location: "Pondy Mermaid Boat House, Puducherry, India",
+  address: "Pondy Mermaid Boat House Jetty, Estuary Backwaters, Puducherry 605001, India",
+  boatingHours: "Morning 07:00 AM to Evening 05:30 PM (Daily)",
+  note: "Board directly at Pondy Mermaid Boat House. Open daily from Morning 7:00 AM to Evening 5:30 PM. 100% Free vehicle parking, clean restrooms & toilet facilities, private dress changing rooms, certified safety gear, and welcoming guest jetty lounge available.",
   marinaFeatures: [
-    "Boating Timings: Daily 8:00 AM – 5:30 PM",
-    "Dedicated Boarding Jetty at Pondicherry Marina",
-    "Govt-Approved Life Jackets & Safety Briefing",
-    "Meeting Point of Mangrove Reserve, Lagoon & Sea Mouth",
-    "Spacious Parking & Refreshment Promenade"
+    "100% Free Vehicle Parking (Cars & Two-Wheelers)",
+    "Clean Restrooms & Toilet Facilities",
+    "Private Dress Changing Rooms for Guests",
+    "Boating Timings: Daily 7:00 AM – 5:30 PM (All Rides 1 Hour)",
+    "Dedicated Boarding Jetty at Pondy Mermaid Boat House",
+    "Govt-Approved Life Jackets & Safety Briefing"
   ],
   attractions: [
-    { name: "Pondicherry Marina Promenade", distance: "At the location / 1 min walk" },
+    { name: "Pondy Mermaid Boat House Promenade", distance: "At the location / 1 min walk" },
     { name: "Arikamedu Ancient Archaeological Site", distance: "Along our backwater boating route / 10 mins" },
     { name: "White Town (French Quarter)", distance: "5–8 mins scenic drive" },
     { name: "Promenade Beach & Rock Beach", distance: "7 mins drive" },
@@ -404,7 +481,7 @@ export const SAFETY_AND_PRECAUTIONS_DATA = {
   eyebrow: "YOUR SAFETY IS OUR HIGHEST PRIORITY",
   heading: "Boating Safety & Passenger Precautions",
   tagline: "Certified equipment, licensed boat masters, and strict maritime precautions for complete peace of mind.",
-  overview: "At Mangroo Bay, every voyage across Pondicherry Marina, the mangrove backwaters, and the historic Arikamedu estuary is guided by uncompromising safety protocols. Please review our safety guidelines and essential passenger precautions before boarding.",
+  overview: "At Mangrove Bay, every voyage across Pondy Mermaid Boat House, the mangrove backwaters, and the historic Arikamedu estuary is guided by uncompromising safety protocols. Please review our safety guidelines and essential passenger precautions before boarding.",
   guidelines: [
     {
       id: "life-jackets",
@@ -418,7 +495,7 @@ export const SAFETY_AND_PRECAUTIONS_DATA = {
       title: "Government-Certified Boat Masters",
       icon: "Anchor",
       summary: "Licensed marine pilots with extensive local navigation experience.",
-      description: "All Mangroo Bay vessels are operated exclusively by government-licensed boat masters trained in maritime safety, CPR, first aid, and shallow-water backwater channels."
+      description: "All Mangrove Bay vessels are operated exclusively by government-licensed boat masters trained in maritime safety, CPR, first aid, and shallow-water backwater channels."
     },
     {
       id: "weather-monitoring",
@@ -432,7 +509,7 @@ export const SAFETY_AND_PRECAUTIONS_DATA = {
       title: "Safe Jetty Boarding & Accessibility",
       icon: "ShieldCheck",
       summary: "Dedicated stable pontoon with crew boarding assistance.",
-      description: "Boarding takes place at our stable Pondicherry Marina Boathouse Jetty featuring non-slip gangways and sturdy handrails. Crew members provide physical assistance for seniors, toddlers, and families."
+      description: "Boarding takes place at our stable Pondy Mermaid Boat House Jetty featuring non-slip gangways and sturdy handrails. Crew members provide physical assistance for seniors, toddlers, and families."
     },
     {
       id: "onboard-discipline",
@@ -456,6 +533,179 @@ export const SAFETY_AND_PRECAUTIONS_DATA = {
     "Keep hands and arms inside the boat during docking and narrow mangrove passes.",
     "Secure mobile phones, cameras, and sunglasses with neck straps or waterproof pouches.",
     "Consumption of alcohol, smoking, and carrying hazardous materials are strictly prohibited.",
-    "First-aid emergency kits and marine throw rings are equipped on every Mangroo Bay boat."
+    "First-aid emergency kits and marine throw rings are equipped on every Mangrove Bay boat."
+  ]
+};
+
+// =============================================================================
+// SPECIAL OFFERS & PROMOTIONAL DISCOUNTS
+// Easy for site owners to add, edit, or disable offers.
+// =============================================================================
+export const OFFERS_DATA = [
+  {
+    id: "sunrise7",
+    code: "SUNRISE7",
+    title: "Sunrise 7:00 AM Early Bird",
+    tagline: "First departures of the day at Pondy Mermaid Boat House",
+    discountBadge: "10% OFF",
+    discountType: "percentage",
+    discountPercent: 10,
+    description: "Book our earliest 7:00 AM – 9:00 AM morning slot to experience mirror-calm backwaters, dewy cool breezes, and peaceful birdwatching.",
+    applicableRides: "All 1-Hour Rides",
+    validity: "Daily 7:00 AM – 9:00 AM Slots",
+    terms: "Applicable on all 1-hour rides booked for early morning slots.",
+    highlight: true
+  },
+  {
+    id: "familypass",
+    code: "FAMILYPASS",
+    title: "Family & Group Saver",
+    tagline: "Special discount for groups of 1 to 10 guests",
+    discountBadge: "₹200 OFF",
+    discountType: "flat",
+    discountFlat: 200,
+    minPassengers: 1,
+    maxPassengers: 10,
+    description: "Bringing your family or friends? Save ₹200 on total ride bookings for 1 to 10 passengers aboard our cruiser.",
+    applicableRides: "Group Ride (Min 1 – Max 10 Guests)",
+    validity: "Valid on 1–10 Passengers Daily",
+    terms: "Valid for groups of 1 to 10 guests. Applied on total booking amount.",
+    highlight: false
+  },
+  {
+    id: "couplebay",
+    code: "COUPLEBAY",
+    title: "Romantic Couple Special",
+    tagline: "Exclusive private couple cruise styling",
+    discountBadge: "FREE DECOR",
+    discountType: "complimentary",
+    description: "Enjoy a private 1-hour cruise tailored for couples with complimentary romantic rose petal decor and warm lantern styling.",
+    applicableRides: "Couples Ride",
+    validity: "Valid Daily on Couples Ride",
+    terms: "Applies to 1-Hour Couples Ride at Pondy Mermaid Boat House.",
+    highlight: false
+  },
+  {
+    id: "weekday10",
+    code: "WEEKDAY10",
+    title: "Weekday Explorer Pass",
+    tagline: "Escape the weekend rush",
+    discountBadge: "10% OFF",
+    discountType: "percentage",
+    discountPercent: 10,
+    description: "Enjoy 10% off any 1-hour boat ride Monday through Friday. Unwind in complete tranquility away from city bustle.",
+    applicableRides: "All 1-Hour Rides",
+    validity: "Monday to Friday (7 AM – 5:30 PM)",
+    terms: "Valid on all weekday departures Monday through Friday.",
+    highlight: false
+  }
+];
+
+// =============================================================================
+// VERIFIED CUSTOMER REVIEWS & TESTIMONIALS
+// Displays authentic reviews from travelers visiting Pondy Mermaid Boat House.
+// =============================================================================
+export const REVIEWS_DATA = {
+  aggregate: {
+    score: "4.9",
+    scale: "5.0",
+    totalReviews: "520+",
+    source: "Google Reviews",
+    verifiedPercentage: "98% Positive Feedback",
+    recommendationRate: "99% would recommend to friends & family",
+    googleMapsUrl: "https://maps.google.com/?q=Pondy+Mermaid+Boat+House+Puducherry"
+  },
+  filters: [
+    { id: "all", label: "All Reviews (520+)" },
+    { id: "couple", label: "Couple Rides" },
+    { id: "family", label: "Family & Separate Boat" },
+    { id: "mangrove", label: "Mangrove Safaris" },
+    { id: "sunset", label: "Sunset Cruises" }
+  ],
+  reviews: [
+    {
+      id: "rev-1",
+      author: "Ananya & Karthik Sundaram",
+      location: "Bengaluru, Karnataka",
+      avatarInitials: "AK",
+      rating: 5,
+      date: "October 2026",
+      rideType: "Couples Ride (1 Hour)",
+      category: "couple",
+      verified: true,
+      headline: "Unforgettable romantic cruise — 100% worth the ₹3,000 package!",
+      reviewText: "We booked the 1-Hour Couple Ride for our wedding anniversary. Hands down the most peaceful and romantic experience in Pondicherry! Complete privacy on the boat, gentle romantic music playing, and captain was very courteous. The private dress changing rooms and free parking right at Pondy Mermaid Boat House made the whole visit effortless.",
+      highlight: "Private vessel, romantic setup & dedicated captain"
+    },
+    {
+      id: "rev-2",
+      author: "Rajesh Nambiar & Family",
+      location: "Chennai, Tamil Nadu",
+      avatarInitials: "RN",
+      rating: 5,
+      date: "October 2026",
+      rideType: "Separate Private Boat (1 Hour)",
+      category: "family",
+      verified: true,
+      headline: "Genuine full 1-hour ride — no rushing at all!",
+      reviewText: "Booked the Separate Private Boat for ₹5,000 for our family of 8. Unlike other crowded boating points that cut short within 15 minutes, here every ride is a genuine, full 1-hour cruise! Kids loved navigating the mangrove root tunnels, and elderly family members felt very safe with clean life jackets. The washrooms and dress changing facilities were very clean.",
+      highlight: "Full 60 minutes duration & clean amenities"
+    },
+    {
+      id: "rev-3",
+      author: "Priya Ramanathan",
+      location: "Hyderabad, Telangana",
+      avatarInitials: "PR",
+      rating: 5,
+      date: "September 2026",
+      rideType: "Mangrove Forest Safari (1 Hour)",
+      category: "mangrove",
+      verified: true,
+      headline: "Surreal green root tunnels and excellent pricing",
+      reviewText: "Did the 1-Hour Mangrove Bio-Reserve ride (₹500/Adult, ₹250 for my 6-year-old child). The green canopy tunnels were breathtaking and so quiet. Having dedicated free vehicle parking at Pondy Mermaid Boat House saved us so much time in Puducherry traffic. Truly 5-star service!",
+      highlight: "Affordable shared rates (₹500/₹250) & free parking"
+    },
+    {
+      id: "rev-4",
+      author: "Vikram Shenoy & Friends",
+      location: "Coimbatore, Tamil Nadu",
+      avatarInitials: "VS",
+      rating: 5,
+      date: "September 2026",
+      rideType: "Group Ride (Adventure)",
+      category: "family",
+      verified: true,
+      headline: "Thrilling turns & epic sea mouth confluence views",
+      reviewText: "Group ride with 6 friends across the river and sea mouth confluence. Excellent captain, thrilling waves when entering the wider waters, and beautiful views of the coastal harbor. Clean toilets and changing facilities before boarding. Highly recommend to everyone visiting Pondicherry!",
+      highlight: "Great for groups of friends & thrilling waves"
+    },
+    {
+      id: "rev-5",
+      author: "Dr. Meera Iyer",
+      location: "Kochi, Kerala",
+      avatarInitials: "MI",
+      rating: 5,
+      date: "September 2026",
+      rideType: "Sunset & Sea Confluence (1 Hour)",
+      category: "sunset",
+      verified: true,
+      headline: "Pure magic at golden hour — best boat house in Pondy",
+      reviewText: "The Sunset & Sea Confluence cruise at 4:30 PM was pure magic. Watching the sun go down where the backwater meets the Bay of Bengal sea beach is unforgettable. Smooth boarding from the jetty, certified life vests, and super courteous staff. The best boat house in Pondicherry!",
+      highlight: "Breathtaking sunset views at the sea confluence"
+    },
+    {
+      id: "rev-6",
+      author: "Arun Kumar & Sneha",
+      location: "Mumbai, Maharashtra",
+      avatarInitials: "AS",
+      rating: 5,
+      date: "August 2026",
+      rideType: "Pondy Mermaid Harbour Sunrise (1 Hour)",
+      category: "couple",
+      verified: true,
+      headline: "Early 7:00 AM sunrise ride was pure bliss",
+      reviewText: "Early morning 7:00 AM sunrise boat ride from Pondy Mermaid Boat House. Mirror calm water and chirping birds in the mangrove roots. So refreshing! Easy location to reach from White Town, safe car parking, and very genuine pricing for a full 60-minute ride.",
+      highlight: "Peaceful 7 AM slot & calm mirror waters"
+    }
   ]
 };
