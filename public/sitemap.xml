@@ -1,30 +1,36 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- PondyBoating Homepage -->
   <url>
-    <loc>https://mangrovebay.com/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <loc>https://pondyboating.com/</loc>
+
     <image:image>
-      <image:loc>https://mangrovebay.com/Images/CouplesRide.jpeg</image:loc>
-      <image:title>Mangrove Bay Couple Boat Ride at Pondicherry Marina Boathouse</image:title>
-      <image:caption>Romantic couple boat ride at Pondicherry Marina Boathouse</image:caption>
+      <image:loc>https://pondyboating.com/Images/CouplesRide.jpeg</image:loc>
+      <image:title>Couple Boat Ride in Pondicherry</image:title>
+      <image:caption>Enjoy a couple boating experience in Pondicherry.</image:caption>
     </image:image>
+
     <image:image>
-      <image:loc>https://mangrovebay.com/Images/GroupRide.jpeg</image:loc>
-      <image:title>Mangrove Bay Group Boat Ride at Pondicherry Marina Boathouse</image:title>
-      <image:caption>Scenic family and group boat ride in Pondicherry</image:caption>
+      <image:loc>https://pondyboating.com/Images/GroupRide.jpeg</image:loc>
+      <image:title>Family and Group Boat Ride in Pondicherry</image:title>
+      <image:caption>Enjoy a scenic boating experience with family and friends.</image:caption>
     </image:image>
+
     <image:image>
-      <image:loc>https://mangrovebay.com/Images/Mangroo%20Forest.jpeg</image:loc>
-      <image:title>Mangrove Forest Eco Boat Safari Puducherry</image:title>
-      <image:caption>Explore tranquil mangrove channels and backwaters</image:caption>
+      <image:loc>https://pondyboating.com/Images/Mangroo%20Forest.jpeg</image:loc>
+      <image:title>Mangrove Forest Boat Safari in Puducherry</image:title>
+      <image:caption>Explore the mangrove waterways and natural scenery of Puducherry.</image:caption>
     </image:image>
+
     <image:image>
-      <image:loc>https://mangrovebay.com/Images/Arikkamedu.jpeg</image:loc>
-      <image:title>Arikamedu Heritage Boating Pondicherry</image:title>
-      <image:caption>Historic Arikamedu Roman port waterway cruise</image:caption>
+      <image:loc>https://pondyboating.com/Images/Arikkamedu.jpeg</image:loc>
+      <image:title>Arikamedu Boating Experience in Pondicherry</image:title>
+      <image:caption>Discover boating experiences near the Arikamedu heritage area.</image:caption>
     </image:image>
+
   </url>
 </urlset>
