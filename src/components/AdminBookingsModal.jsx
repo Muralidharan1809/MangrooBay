@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { 
   X, 
   Calendar, 
@@ -387,7 +388,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
                                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-medium transition-colors shadow-sm"
                                 title="WhatsApp Customer"
                               >
-                                <MessageSquare className="w-3 h-3" />
+                                <WhatsAppIcon className="w-3 h-3 fill-current" />
                                 <span>WhatsApp</span>
                               </a>
                             </>

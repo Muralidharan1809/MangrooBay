@@ -99,7 +99,7 @@ export default function ContactSection({ onOpenBooking }) {
                 className="flex items-center gap-4 text-sm text-charcoal hover:text-emerald-700 transition-colors group p-3 rounded-2xl hover:bg-emerald-50/60 border border-transparent hover:border-emerald-200"
               >
                 <div className="w-12 h-12 rounded-full bg-emerald-100 border border-emerald-300 flex items-center justify-center text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white transition-colors shrink-0 shadow-sm">
-                  <MessageSquare className="w-5 h-5" />
+                  <WhatsAppIcon className="w-5 h-5 fill-current" />
                 </div>
                 <div>
                   <span className="block text-xs uppercase tracking-wider text-emerald-800 font-bold">Direct WhatsApp Chat (Instant Reply)</span>
@@ -168,7 +168,7 @@ export default function ContactSection({ onOpenBooking }) {
                 Send a WhatsApp Note
               </h3>
               <span className="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 border border-emerald-300">
-                <MessageSquare className="w-3 h-3 text-emerald-700" />
+                <WhatsAppIcon className="w-3 h-3 text-emerald-700 fill-current" />
                 Direct WhatsApp
               </span>
             </div>
@@ -263,7 +263,7 @@ export default function ContactSection({ onOpenBooking }) {
                   type="submit"
                   className="w-full py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white uppercase tracking-widest text-xs font-bold transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 transform hover:-translate-y-0.5 active:translate-y-0"
                 >
-                  <MessageSquare className="w-4 h-4" />
+                  <WhatsAppIcon className="w-4 h-4 fill-white" />
                   <span>Send Directly to WhatsApp</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
