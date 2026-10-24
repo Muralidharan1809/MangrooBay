@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Waves, ArrowUp, Shield, FileText, X, Anchor, MessageSquare, Phone } from 'lucide-react';
+import { Waves, ArrowUp, Shield, FileText, X, Anchor, MessageSquare, Phone, MapPin } from 'lucide-react';
 import { BRAND_DATA } from '../data/content';
 
 export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
@@ -114,6 +114,16 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
                 >
                   <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
                   <span>WhatsApp: <strong>{BRAND_DATA.contact.whatsapp}</strong></span>
+                </a>
+                <a
+                  href={BRAND_DATA.contact.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors flex items-center gap-2 text-sand hover:underline"
+                  title="Open Mangrove Bay on Google Maps"
+                >
+                  <MapPin className="w-3.5 h-3.5 text-sunset shrink-0" />
+                  <span>Open in Google Maps</span>
                 </a>
               </div>
               <div className="pt-2">

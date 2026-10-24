@@ -38,7 +38,7 @@ export const BRAND_DATA = {
     email: "info@pondyboating.com",
     address: "Mangrove Bay Boarding Jetty, Coastal Estuary & Mangrove Backwaters, Puducherry 605001, India",
     mapCoordinates: { lat: 11.9125, lng: 79.8228 },
-    googleMapsUrl: "https://maps.google.com/?q=Mangrove+Bay+Boating+Puducherry",
+    googleMapsUrl: "https://maps.app.goo.gl/AE9WcERLaQ4ztnj89",
     instagram: "https://instagram.com/mangrovebay.pondy",
     facebook: "https://facebook.com/mangrovebay.pondy"
   }
@@ -614,7 +614,7 @@ export const REVIEWS_DATA = {
     source: "Google Reviews",
     verifiedPercentage: "98% Positive Feedback",
     recommendationRate: "99% would recommend to friends & family",
-    googleMapsUrl: "https://maps.google.com/?q=Mangrove+Bay+Boating+Puducherry"
+    googleMapsUrl: "https://maps.app.goo.gl/AE9WcERLaQ4ztnj89"
   },
   filters: [
     { id: "all", label: "All Reviews (520+)" },
