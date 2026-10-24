@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { Menu, X, Waves, ArrowRight, MessageSquare } from 'lucide-react';
 
 export default function Navbar({ onOpenBooking, onOpenContact, onOpenBookingsManager }) {
@@ -102,7 +103,7 @@ export default function Navbar({ onOpenBooking, onOpenContact, onOpenBookingsMan
               title="Chat on WhatsApp (+91 73974 38874)"
               aria-label="WhatsApp Inquiry"
             >
-              <MessageSquare className="w-4 h-4" />
+              <WhatsAppIcon className="w-4 h-4" />
             </a>
 
             <button
@@ -166,7 +167,7 @@ export default function Navbar({ onOpenBooking, onOpenContact, onOpenBookingsMan
             onClick={() => setMobileMenuOpen(false)}
             className="w-full max-w-xs py-3 rounded-full bg-emerald-600 text-white font-semibold uppercase tracking-widest text-xs hover:bg-emerald-700 transition-colors text-center flex items-center justify-center gap-2 shadow-md"
           >
-            <MessageSquare className="w-4 h-4" />
+            <WhatsAppIcon className="w-4 h-4" />
             <span>Chat on WhatsApp</span>
           </a>
           <button

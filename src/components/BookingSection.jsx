@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { 
   Calendar, 
   Users, 
@@ -310,7 +311,7 @@ export default function BookingSection({ onOpenContact }) {
                   onClick={() => trackWhatsAppClick('Booking Section Success')}
                   className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white uppercase tracking-widest text-xs font-semibold transition-colors shadow-lg"
                 >
-                  <MessageSquare className="w-4 h-4" />
+                  <WhatsAppIcon className="w-4 h-4" />
                   <span>Send on WhatsApp (+91 73974 38874)</span>
                 </a>
 

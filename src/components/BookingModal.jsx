@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { 
   X, 
   Calendar, 
@@ -340,7 +341,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
                   onClick={() => trackWhatsAppClick('Booking Modal Success')}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs uppercase tracking-widest font-semibold transition-colors shadow-md"
                 >
-                  <MessageSquare className="w-4 h-4" />
+                  <WhatsAppIcon className="w-4 h-4" />
                   <span>Confirm on WhatsApp</span>
                 </a>
 

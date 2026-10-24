@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { BRAND_DATA } from '../data/content';
 import { Phone, MessageSquare, Instagram, Facebook, Send, CheckCircle2, ArrowRight, Anchor, Clock } from 'lucide-react';
 import { saveNewBooking } from '../utils/bookingStorage';
@@ -206,7 +207,7 @@ export default function ContactSection({ onOpenBooking }) {
                       rel="noopener noreferrer"
                       className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs uppercase tracking-widest font-bold transition-all shadow-md hover:scale-105"
                     >
-                      <MessageSquare className="w-4 h-4" />
+                      <WhatsAppIcon className="w-4 h-4" />
                       <span>Open WhatsApp Chat Now</span>
                     </a>
                   )}

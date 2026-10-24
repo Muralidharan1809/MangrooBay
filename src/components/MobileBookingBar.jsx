@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { Anchor, ArrowRight, MessageSquare } from 'lucide-react';
 
 export default function MobileBookingBar({ onOpenBooking }) {
@@ -41,7 +42,7 @@ export default function MobileBookingBar({ onOpenBooking }) {
             className="p-2.5 rounded-full bg-emerald-600 text-white shadow-md active:scale-95 transition-transform"
             aria-label="WhatsApp Inquiry"
           >
-            <MessageSquare className="w-4 h-4" />
+            <WhatsAppIcon className="w-4 h-4" />
           </a>
           <button
             onClick={onOpenBooking}

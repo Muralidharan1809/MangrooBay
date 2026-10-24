@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { HelpCircle, ChevronDown, MessageSquare, Phone, Clock, ShieldCheck, MapPin, Anchor } from 'lucide-react';
 import { BRAND_DATA } from '../data/content';
 
@@ -131,7 +132,7 @@ export default function FAQSection({ onOpenBooking }) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold uppercase tracking-widest shadow-md transition-all active:scale-95"
             >
-              <MessageSquare className="w-4 h-4" />
+              <WhatsAppIcon className="w-4 h-4" />
               <span>Chat on WhatsApp</span>
             </a>
 

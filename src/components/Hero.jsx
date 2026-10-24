@@ -1,4 +1,5 @@
 import React from 'react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { ArrowDown, Clock, MessageSquare, ArrowRight } from 'lucide-react';
 import { HERO_DATA, STANDARD_PRICING } from '../data/content';
 import { trackBookingInitiated } from '../utils/analytics';
@@ -104,7 +105,7 @@ export default function Hero({ onOpenBooking }) {
             rel="noopener noreferrer"
             className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-emerald-600/90 hover:bg-emerald-600 text-white font-semibold uppercase tracking-widest text-xs backdrop-blur-md border border-emerald-400/40 transition-all shadow-md flex items-center justify-center gap-2 active:scale-95"
           >
-            <MessageSquare className="w-4 h-4" />
+            <WhatsAppIcon className="w-4 h-4" />
             <span>Chat on WhatsApp</span>
           </a>
         </div>

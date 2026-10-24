@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { Waves, ArrowUp, Shield, FileText, X, Anchor, MessageSquare, Phone, MapPin } from 'lucide-react';
 import { BRAND_DATA } from '../data/content';
 
@@ -112,7 +113,7 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
                   rel="noopener noreferrer" 
                   className="hover:text-white transition-colors flex items-center gap-2 text-emerald-400 font-medium"
                 >
-                  <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
+                  <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-400" />
                   <span>WhatsApp: <strong>{BRAND_DATA.contact.whatsapp}</strong></span>
                 </a>
                 <a

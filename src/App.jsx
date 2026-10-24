@@ -16,6 +16,7 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 import MobileBookingBar from './components/MobileBookingBar';
+import FloatingWhatsAppButton from './components/FloatingWhatsAppButton';
 import AdminBookingsModal from './components/AdminBookingsModal';
 import OffersSection from './components/OffersSection';
 import ReviewsSection from './components/ReviewsSection';
@@ -143,6 +144,9 @@ export default function App() {
         onOpenBooking={() => handleOpenBooking()}
         onOpenBookingsManager={() => setIsBookingsManagerOpen(true)}
       />
+
+      {/* Floating Sticky Mobile Booking Bar */}
+      <FloatingWhatsAppButton />
 
       {/* Floating Sticky Mobile Booking Bar */}
       <MobileBookingBar
