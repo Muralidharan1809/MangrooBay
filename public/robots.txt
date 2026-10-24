@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://mangrovebay.com/sitemap.xml
+Sitemap: https://pondyboating.com/sitemap.xml
