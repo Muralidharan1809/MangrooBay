@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Introduction from './components/Introduction';
@@ -162,6 +163,9 @@ export default function App() {
         isOpen={isBookingsManagerOpen}
         onClose={() => setIsBookingsManagerOpen(false)}
       />
+
+      {/* Vercel Speed Insights */}
+      <SpeedInsights />
 
     </div>
   );
