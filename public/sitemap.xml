@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -6,28 +5,28 @@
 
   <!-- PondyBoating Homepage -->
   <url>
-    <loc>https://pondyboating.com/</loc>
+    <loc>https://www.pondyboating.com/</loc>
 
     <image:image>
-      <image:loc>https://pondyboating.com/Images/CouplesRide.jpeg</image:loc>
+      <image:loc>https://www.pondyboating.com/Images/CouplesRide.jpeg</image:loc>
       <image:title>Couple Boat Ride in Pondicherry</image:title>
       <image:caption>Enjoy a couple boating experience in Pondicherry.</image:caption>
     </image:image>
 
     <image:image>
-      <image:loc>https://pondyboating.com/Images/GroupRide.jpeg</image:loc>
+      <image:loc>https://www.pondyboating.com/Images/GroupRide.jpeg</image:loc>
       <image:title>Family and Group Boat Ride in Pondicherry</image:title>
       <image:caption>Enjoy a scenic boating experience with family and friends.</image:caption>
     </image:image>
 
     <image:image>
-      <image:loc>https://pondyboating.com/Images/Mangroo%20Forest.jpeg</image:loc>
+      <image:loc>https://www.pondyboating.com/Images/Mangroo%20Forest.jpeg</image:loc>
       <image:title>Mangrove Forest Boat Safari in Puducherry</image:title>
       <image:caption>Explore the mangrove waterways and natural scenery of Puducherry.</image:caption>
     </image:image>
 
     <image:image>
-      <image:loc>https://pondyboating.com/Images/Arikkamedu.jpeg</image:loc>
+      <image:loc>https://www.pondyboating.com/Images/Arikkamedu.jpeg</image:loc>
       <image:title>Arikamedu Boating Experience in Pondicherry</image:title>
       <image:caption>Discover boating experiences near the Arikamedu heritage area.</image:caption>
     </image:image>
