@@ -3,33 +3,66 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- PondyBoating Homepage -->
+  <!-- Homepage -->
   <url>
     <loc>https://www.pondyboating.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-    <image:image>
-      <image:loc>https://www.pondyboating.com/Images/CouplesRide.jpeg</image:loc>
-      <image:title>Couple Boat Ride in Pondicherry</image:title>
-      <image:caption>Enjoy a couple boating experience in Pondicherry.</image:caption>
-    </image:image>
+  <!-- Boating in Pondicherry Page -->
+  <url>
+    <loc>https://www.pondyboating.com/boating-in-pondicherry</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-    <image:image>
-      <image:loc>https://www.pondyboating.com/Images/GroupRide.jpeg</image:loc>
-      <image:title>Family and Group Boat Ride in Pondicherry</image:title>
-      <image:caption>Enjoy a scenic boating experience with family and friends.</image:caption>
-    </image:image>
-
+  <!-- Mangrove Boating Page -->
+  <url>
+    <loc>https://www.pondyboating.com/mangrove-boating</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.pondyboating.com/Images/Mangroo%20Forest.jpeg</image:loc>
       <image:title>Mangrove Forest Boat Safari in Puducherry</image:title>
       <image:caption>Explore the mangrove waterways and natural scenery of Puducherry.</image:caption>
     </image:image>
+  </url>
 
+  <!-- Boat Ride Packages Page -->
+  <url>
+    <loc>https://www.pondyboating.com/boat-ride-packages</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.pondyboating.com/Images/CouplesRide.jpeg</image:loc>
+      <image:title>Couple Boat Ride Package</image:title>
+      <image:caption>Enjoy a couple boating experience in Pondicherry.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.pondyboating.com/Images/GroupRide.jpeg</image:loc>
+      <image:title>Family and Group Boat Ride Package</image:title>
+      <image:caption>Enjoy a scenic boating experience with family and friends.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Location Page -->
+  <url>
+    <loc>https://www.pondyboating.com/location</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
     <image:image>
       <image:loc>https://www.pondyboating.com/Images/Arikkamedu.jpeg</image:loc>
-      <image:title>Arikamedu Boating Experience in Pondicherry</image:title>
+      <image:title>Arikamedu Boating Location</image:title>
       <image:caption>Discover boating experiences near the Arikamedu heritage area.</image:caption>
     </image:image>
-
   </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://www.pondyboating.com/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
