@@ -84,7 +84,7 @@ export default function VideoSection() {
         </h2>
 
         <p className="text-sm md:text-base text-cream/80 max-w-xl font-sans font-light leading-relaxed mb-8">
-          Watch our boats glide across the calm waterways and lush mangrove channels of Pondy Mermaid Boat House.
+          Watch our boats glide across the calm waterways and lush mangrove channels of Mangrove Bay.
         </p>
 
         <button
@@ -111,7 +111,7 @@ export default function VideoSection() {
             <div className="flex items-center justify-between p-4 bg-forest-deep/90 border-b border-sand/20 text-cream">
               <div className="flex items-center gap-2">
                 <Anchor className="w-4 h-4 text-sunset" />
-                <span className="font-serif text-lg text-sand">Mangrove Bay • Pondy Mermaid Boat House</span>
+                <span className="font-serif text-lg text-sand">Mangrove Bay</span>
               </div>
               <div className="flex items-center gap-3">
                 <button

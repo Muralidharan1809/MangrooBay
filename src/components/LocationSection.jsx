@@ -3,7 +3,7 @@ import { LOCATION_DATA, BRAND_DATA } from '../data/content';
 import { MapPin, Navigation, ExternalLink, Compass, ShieldCheck, Anchor, Waves } from 'lucide-react';
 
 export default function LocationSection({ onOpenContact }) {
-  const [activePin, setActivePin] = useState('mermaid');
+  const [activePin, setActivePin] = useState('Mangrove Bay');
 
   return (
     <section id="location" className="py-24 md:py-32 bg-cream relative overflow-hidden">
@@ -15,11 +15,11 @@ export default function LocationSection({ onOpenContact }) {
             href={BRAND_DATA.contact.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            title="Click to view Pondy Mermaid Boat House on Google Maps"
+            title="Click to view Mangrove Bay on Google Maps"
             className="group inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-forest hover:bg-forest-deep text-sand hover:text-white text-xs font-semibold uppercase tracking-luxury mb-4 shadow-sm transition-all"
           >
             <Anchor className="w-3.5 h-3.5 text-sunset group-hover:rotate-12 transition-transform" />
-            <span>Pondy Mermaid Boat House</span>
+            <span>Mangrove Bay</span>
             <ExternalLink className="w-3 h-3 text-sand/80 ml-1 group-hover:translate-x-0.5 transition-transform" />
           </a>
 
@@ -28,7 +28,7 @@ export default function LocationSection({ onOpenContact }) {
           </h2>
 
           <p className="mt-4 text-base text-charcoal/75 max-w-xl font-sans">
-            Departing directly from <strong>Pondy Mermaid Boat House</strong> — the premier boarding jetty where peaceful mangrove root tunnels, lagoon waters, and the Bay of Bengal sea mouth meet.
+            Departing directly from <strong>Mangrove Bay</strong> — the premier boarding jetty where peaceful mangrove root tunnels, lagoon waters, and the Bay of Bengal sea mouth meet.
           </p>
         </div>
 
@@ -68,7 +68,7 @@ export default function LocationSection({ onOpenContact }) {
                 className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-forest/90 hover:bg-forest backdrop-blur-md border border-sand/30 text-xs text-sand uppercase tracking-wider transition-all"
               >
                 <Anchor className="w-3.5 h-3.5 text-sunset group-hover:scale-110 transition-transform" />
-                <span className="font-medium">Pondy Mermaid Boat House</span>
+                <span className="font-medium">Mangrove Bay</span>
                 <ExternalLink className="w-3 h-3 text-sand/70 group-hover:text-sand" />
               </a>
               <span className="text-[11px] text-sand/70 tracking-widest uppercase">Puducherry, India</span>
@@ -81,7 +81,7 @@ export default function LocationSection({ onOpenContact }) {
                 href={BRAND_DATA.contact.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Click to open Pondy Mermaid Boat House on Google Maps"
+                title="Click to open Mangrove Bay on Google Maps"
                 className="relative group cursor-pointer block transform hover:scale-105 transition-all duration-300"
               >
                 {/* Pulsing ring indicator */}
@@ -95,7 +95,7 @@ export default function LocationSection({ onOpenContact }) {
                 {/* Pin Tooltip Card */}
                 <div className="relative mt-3 -translate-x-1/2 left-1/2 bg-forest-deep/95 backdrop-blur-md border border-sand/50 p-3.5 rounded-2xl text-center shadow-luxury w-64 group-hover:border-sand group-hover:bg-forest transition-all">
                   <div className="flex items-center justify-center gap-1.5 mb-0.5">
-                    <p className="font-serif text-sand text-sm font-semibold tracking-wide">Pondy Mermaid Boat House</p>
+                    <p className="font-serif text-sand text-sm font-semibold tracking-wide">Mangrove Bay</p>
                     <ExternalLink className="w-3.5 h-3.5 text-sunset shrink-0" />
                   </div>
                   <p className="text-[11px] text-cream/90 font-light">Mangrove Bay Official Boarding Jetty</p>
@@ -126,7 +126,7 @@ export default function LocationSection({ onOpenContact }) {
             <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-sand/20">
               <div>
                 <p className="text-xs text-sand font-medium uppercase tracking-wider">Navigation Destination</p>
-                <p className="text-xs text-cream/90 font-mono">Pondy Mermaid Boat House • Puducherry</p>
+                <p className="text-xs text-cream/90 font-mono">Mangrove Bay • Puducherry</p>
               </div>
 
               <a
@@ -151,7 +151,7 @@ export default function LocationSection({ onOpenContact }) {
                 Official Boarding Destination
               </span>
               <h3 className="font-serif text-2xl text-forest font-light mb-3">
-                Pondy Mermaid Boat House
+                Mangrove Bay
               </h3>
               
               <div className="flex items-start gap-3 text-sm text-charcoal/80 mb-6">
@@ -174,7 +174,7 @@ export default function LocationSection({ onOpenContact }) {
                 rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-forest text-sand hover:bg-forest-deep hover:text-white uppercase tracking-widest text-xs font-semibold transition-all shadow-md group"
               >
-                <span>Get Directions to Pondy Mermaid Boat House</span>
+                <span>Get Directions to Mangrove Bay</span>
                 <Navigation className="w-4 h-4 text-sunset group-hover:translate-x-1 transition-transform" />
               </a>
             </div>

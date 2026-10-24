@@ -95,7 +95,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
           <div>
             <div className="flex items-center gap-2 text-[11px] uppercase tracking-luxury text-sand font-semibold mb-1">
               <Anchor className="w-3.5 h-3.5 text-sunset" />
-              <span>Mangrove Bay • Pondy Mermaid Boat House</span>
+              <span>Mangrove Bay</span>
             </div>
             <h3 className="font-serif text-2xl sm:text-3xl font-light text-cream">
               Booked Slots & Inquiries Manager
@@ -240,7 +240,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
                     </div>
                     <div className="flex justify-between py-1">
                       <span className="text-charcoal/60">Boarding Point:</span>
-                      <span className="font-medium text-forest">Pondy Mermaid Boat House Jetty</span>
+                      <span className="font-medium text-forest">Mangrove Bay Boarding Jetty</span>
                     </div>
                   </div>
 
@@ -428,7 +428,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
 
         {/* Footer Note */}
         <div className="bg-white px-6 py-3 border-t border-sand/30 flex items-center justify-between text-[11px] text-charcoal/60">
-          <span>Boarding & departures: Pondy Mermaid Boat House (Daily 7:00 AM – 5:30 PM)</span>
+          <span>Boarding & departures: Mangrove Bay (Daily 7:00 AM – 5:30 PM)</span>
           <span className="font-mono">Owner Helpline: +91 73974 38874</span>
         </div>
 

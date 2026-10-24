@@ -101,7 +101,7 @@ export default function SafetySection({ onOpenBooking }) {
                 Important Boating Precautions & Etiquette
               </h3>
               <p className="text-sm text-cream/75 leading-relaxed font-sans">
-                To guarantee a peaceful and safe cruise for everyone, please observe these simple onboard precautions before and during your ride at Pondy Mermaid Boat House.
+                To guarantee a peaceful and safe cruise for everyone, please observe these simple onboard precautions before and during your ride at Mangrove Bay.
               </p>
               
               <div className="pt-2">

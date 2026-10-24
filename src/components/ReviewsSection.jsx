@@ -31,7 +31,7 @@ export default function ReviewsSection({ onOpenBooking }) {
             </h2>
 
             <p className="mt-4 text-base text-charcoal/75 font-sans leading-relaxed">
-              Read authentic feedback from couples, families, and travelers who experienced our 1-hour backwater cruises, private charters, and mangrove safaris departing from <strong>Pondy Mermaid Boat House</strong>.
+              Read authentic feedback from couples, families, and travelers who experienced our 1-hour backwater cruises, private charters, and mangrove safaris departing from <strong>Mangrove Bay</strong>.
             </p>
           </div>
 
@@ -187,7 +187,7 @@ export default function ReviewsSection({ onOpenBooking }) {
             </div>
             <div>
               <h3 className="font-serif text-xl sm:text-2xl text-sand font-light">
-                Ready for your 1-hour backwater ride at Pondy Mermaid Boat House?
+                Ready for your 1-hour backwater ride at Mangrove Bay?
               </h3>
               <p className="text-xs text-cream/80 mt-1">
                 Open daily 7:00 AM – 5:30 PM • Couple Ride ₹3,000 • Separate Private Boat ₹5,000 • Shared ₹500/Adult, ₹250/Child

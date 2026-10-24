@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ArrowDown, Compass, Sparkles, Anchor, Waves, Clock } from 'lucide-react';
+import { ArrowDown, Compass, Sparkles, Anchor, Waves, Clock, MessageSquare, ArrowRight } from 'lucide-react';
 import { HERO_DATA, BRAND_DATA, STANDARD_PRICING } from '../data/content';
 import { trackBookingInitiated } from '../utils/analytics';
 
@@ -13,7 +13,6 @@ export default function Hero({ onOpenBooking }) {
 
   // Automatically handle video and audio playback: plays on entrance, stops on scroll
   useEffect(() => {
-    // Attempt audio on first interaction to comply with browser autoplay policies
     const handleFirstGesture = () => {
       if (videoRef.current && window.scrollY <= 100) {
         videoRef.current.muted = false;
@@ -28,74 +27,57 @@ export default function Hero({ onOpenBooking }) {
     window.addEventListener('touchstart', handleFirstGesture, { passive: true });
     window.addEventListener('keydown', handleFirstGesture, { passive: true });
 
-    const handleScroll = () => {
-      if (!videoRef.current) return;
-      // When user scrolls down past the entrance (scrollY > 100), immediately stop video & audio
-      if (window.scrollY > 100) {
-        if (!videoRef.current.paused) {
-          videoRef.current.pause();
-        }
-        videoRef.current.muted = true;
-      } else {
-        // When user scrolls back to the entrance, resume video & audio
-        if (videoRef.current.paused) {
-          videoRef.current.play().catch(() => {});
-        }
-        videoRef.current.muted = false;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting || entry.intersectionRatio < 0.5) {
-          if (videoRef.current && !videoRef.current.paused) {
-            videoRef.current.pause();
-          }
-          if (videoRef.current) videoRef.current.muted = true;
-        } else if (window.scrollY <= 100) {
-          if (videoRef.current && videoRef.current.paused) {
-            videoRef.current.play().catch(() => {});
-          }
-          if (videoRef.current) videoRef.current.muted = false;
-        }
-      },
-      { threshold: [0, 0.2, 0.5, 0.8] }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    handleScroll();
-
     return () => {
-      observer.disconnect();
-      window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('click', handleFirstGesture);
       window.removeEventListener('touchstart', handleFirstGesture);
       window.removeEventListener('keydown', handleFirstGesture);
     };
   }, []);
 
+  useEffect(() => {
+    const handleScrollPlayback = () => {
+      if (!videoRef.current || !sectionRef.current) return;
+      const rect = sectionRef.current.getBoundingClientRect();
+      const inView = rect.bottom > 150;
+
+      if (inView) {
+        if (videoRef.current.paused) {
+          videoRef.current.play().catch(() => {});
+        }
+      } else {
+        if (!videoRef.current.paused) {
+          videoRef.current.pause();
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScrollPlayback, { passive: true });
+    return () => window.removeEventListener('scroll', handleScrollPlayback);
+  }, []);
+
   const scrollToExplore = () => {
     const el = document.querySelector('#rides');
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      const navOffset = 80;
+      const elPos = el.getBoundingClientRect().top;
+      const offsetPos = elPos + window.pageYOffset - navOffset;
+      window.scrollTo({ top: offsetPos, behavior: 'smooth' });
     }
   };
 
   const isTransposed = rotation === 90 || rotation === 270;
 
   return (
-    <section ref={sectionRef} className="relative w-full min-h-screen flex flex-col items-center justify-center pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-36 md:pb-24 overflow-hidden">
-      {/* Background Video Layer */}
-      <div className="absolute inset-0 z-0 overflow-hidden bg-forest-deep flex items-center justify-center">
+    <section
+      ref={sectionRef}
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-forest-deep pt-24 pb-16"
+    >
+      {/* Background Entrance Video */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <video
           ref={videoRef}
           src={HERO_DATA.videoSrc}
-          poster={HERO_DATA.bgImage}
           autoPlay
           loop
           muted
@@ -111,126 +93,120 @@ export default function Hero({ onOpenBooking }) {
             transform: `translate(-50%, -50%) rotate(${rotation}deg)`,
             objectFit: 'cover'
           }}
-          className="filter brightness-[0.75]"
+          className="filter brightness-[0.70]"
         />
         {/* Cinematic gradient overlays so typography remains readable */}
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-charcoal/40 to-forest-deep/75" />
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-charcoal/45 to-forest-deep/80" />
         <div className="absolute inset-0 bg-forest/20 mix-blend-multiply" />
       </div>
 
       {/* Main Hero Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-cream flex flex-col items-center my-auto">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-cream flex flex-col items-center my-auto">
         
-        {/* Editorial Sub-eyebrow & Boating Hours */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-3 sm:mb-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sand/15 backdrop-blur-md border border-sand/30 shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-sand" />
-            <span className="text-xs md:text-sm uppercase tracking-widest text-sand font-medium">
-              Welcome to Mangrove Bay • Pondy Mermaid Boat House
-            </span>
-          </div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-forest-deep/80 backdrop-blur-md border border-sand/30 text-sand text-xs font-semibold uppercase tracking-wider shadow-sm">
-            <Clock className="w-3.5 h-3.5 text-sunset" />
-            <span>Daily 7:00 AM – 5:30 PM</span>
-          </div>
-          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-full bg-sand/20 backdrop-blur-md border border-sand/40 text-cream text-xs font-semibold uppercase tracking-wider shadow-sm">
-            <span className="text-sand font-bold">Couple ₹3,000</span>
-            <span className="text-sand/60">•</span>
-            <span className="text-sunset font-bold">Separate Boat ₹5,000</span>
-            <span className="text-sand/60">•</span>
-            <span className="text-cream">Shared ₹500/₹250</span>
-            <span className="text-sand/60">•</span>
-            <span className="text-sand font-bold">1 Hour Full Ride</span>
-          </div>
+        {/* Sleek Single Eyebrow Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-sand/30 shadow-sm mb-4">
+          <Clock className="w-3.5 h-3.5 text-sunset" />
+          <span className="text-xs uppercase tracking-widest text-sand font-medium">
+            Puducherry Boating • Daily 7:00 AM – 5:30 PM
+          </span>
         </div>
 
         {/* Brand Title */}
-        <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-luxury uppercase text-cream drop-shadow-sm mb-3 sm:mb-4">
+        <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl font-light tracking-luxury uppercase text-cream drop-shadow-md mb-2">
           Mangrove Bay
         </h1>
 
         {/* Tagline */}
-        <p className="font-serif text-xl sm:text-2xl md:text-3xl italic text-sand font-light tracking-wide mb-3 sm:mb-4 max-w-3xl">
-          {HERO_DATA.tagline}
+        <p className="font-serif text-xl sm:text-2xl md:text-3xl italic text-sand font-light tracking-wide mb-4 max-w-2xl">
+          Escape into the calm.
         </p>
 
-        {/* Welcome Description */}
-        <p className="max-w-3xl text-xs sm:text-sm md:text-base font-light text-cream/95 leading-relaxed mb-3 tracking-wide">
-          {HERO_DATA.description}
+        {/* Description */}
+        <p className="max-w-2xl text-xs sm:text-sm md:text-base font-light text-cream/90 leading-relaxed mb-6 font-sans">
+          Discover peaceful mangrove canals, historic 2,000-year-old Arikamedu ruins, and the breathtaking Bay of Bengal sea confluence on an authentic 1-hour cruise.
         </p>
 
-        {/* Supporting Perspective Line */}
-        <p className="max-w-2xl text-xs sm:text-sm text-cream/80 font-light leading-relaxed mb-3 sm:mb-4 hidden sm:block">
-          {HERO_DATA.supportingText}
-        </p>
-
-        {/* Visitor Facilities Ribbon */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[11px] sm:text-xs text-sand font-medium mb-3 sm:mb-4">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sand/15 border border-sand/30 backdrop-blur-sm">
-            <span className="text-sunset">✓</span> Free Vehicle Parking
-          </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sand/15 border border-sand/30 backdrop-blur-sm">
-            <span className="text-sunset">✓</span> Clean Restrooms & Toilets
-          </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sand/15 border border-sand/30 backdrop-blur-sm">
-            <span className="text-sunset">✓</span> Dress Changing Facilities
-          </span>
-        </div>
-
-        {/* Invitation Callout */}
-        <div className="inline-block px-4 py-1.5 rounded-full bg-sand/15 backdrop-blur-md border border-sand/30 mb-4 sm:mb-6 text-xs sm:text-sm font-serif italic text-sand tracking-wide">
-          {HERO_DATA.invitation}
-        </div>
-
-        {/* Experiences Highlight Pill */}
-        <div className="mb-6 sm:mb-8 hidden sm:flex flex-col items-center justify-center gap-2.5 text-[11px] text-cream/90 uppercase tracking-wider">
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            <span className="px-3.5 py-1.5 rounded-full bg-forest-deep/80 backdrop-blur-md border border-sand/30 font-semibold text-sand">Couples Ride (₹3,000)</span>
-            <span className="text-sunset">•</span>
-            <span className="px-3.5 py-1.5 rounded-full bg-forest-deep/80 backdrop-blur-md border border-sand/30 font-semibold text-sand">Separate Private Boat (₹5,000)</span>
-            <span className="text-sunset">•</span>
-            <span className="px-3.5 py-1.5 rounded-full bg-forest-deep/80 backdrop-blur-md border border-sand/30 font-semibold text-sand">Shared Ride (₹500 / ₹250)</span>
+        {/* Clean, Cohesive Pricing Card */}
+        <div className="mb-6 p-4 rounded-2xl bg-black/45 backdrop-blur-md border border-sand/30 max-w-2xl w-full shadow-luxury">
+          <div className="grid grid-cols-3 divide-x divide-sand/20 text-center">
+            <div className="px-2">
+              <span className="block text-[10px] uppercase tracking-wider text-sand/80 font-medium">Shared Ride</span>
+              <span className="font-serif text-base sm:text-xl font-bold text-cream">
+                ₹500 <span className="text-[10px] font-sans font-normal text-sand/70">/ ₹250</span>
+              </span>
+            </div>
+            <div className="px-2">
+              <span className="block text-[10px] uppercase tracking-wider text-sunset font-semibold">Couple (Private)</span>
+              <span className="font-serif text-base sm:text-xl font-bold text-sand">
+                ₹3,000 <span className="text-[10px] font-sans font-normal text-sand/70">flat</span>
+              </span>
+            </div>
+            <div className="px-2">
+              <span className="block text-[10px] uppercase tracking-wider text-sand/80 font-medium">Separate Boat</span>
+              <span className="font-serif text-base sm:text-xl font-bold text-cream">
+                ₹5,000 <span className="text-[10px] font-sans font-normal text-sand/70">1–10 guests</span>
+              </span>
+            </div>
           </div>
-          <div className="text-[11px] text-sand/90 normal-case tracking-normal font-sans flex items-center gap-2 bg-black/40 px-4 py-1 rounded-full border border-sand/30 backdrop-blur-md">
-            <span className="text-sunset font-bold">✨ Every 1-Hour Ride Explores All:</span>
-            <span>Mangrove Forests • 2,000-Yr Arikamedu • Beach & River Confluence • Harbour</span>
+          <div className="mt-2.5 pt-2 border-t border-sand/20 text-[11px] text-sand/90 flex flex-wrap items-center justify-center gap-1.5 font-sans">
+            <span className="text-sunset font-bold">✨ Every Ride:</span>
+            <span>1 Hour Full Cruise • Explores Mangroves, Arikamedu, Beach & Harbour</span>
           </div>
         </div>
 
         {/* Call to Actions */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto mb-6">
           <button
             onClick={() => {
               trackBookingInitiated('Hero Primary CTA');
               onOpenBooking();
             }}
-            className="w-full sm:w-auto px-8 py-4 rounded-full bg-sand text-forest font-semibold uppercase tracking-luxury text-xs sm:text-sm hover:bg-white hover:shadow-floating transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-sand hover:bg-white text-forest font-semibold uppercase tracking-widest text-xs transition-all shadow-lg hover:shadow-2xl active:scale-95 flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
           >
-            Book Your Boat Ride (₹500 / 1 Hr)
+            <span>Book Your Boat Ride</span>
+            <ArrowRight className="w-4 h-4" />
           </button>
 
-          <button
-            onClick={scrollToExplore}
-            className="w-full sm:w-auto px-8 py-4 rounded-full bg-forest-light/60 backdrop-blur-md border border-sand/40 text-cream font-medium uppercase tracking-luxury text-xs sm:text-sm hover:bg-forest-light/90 hover:border-sand transition-all duration-300 transform hover:-translate-y-0.5"
+          <a
+            href="https://wa.me/917397438874?text=Hello%20Mangrove%20Bay,%20I%20would%20like%20to%20inquire%20about%20booking%20a%20boat%20ride."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-emerald-600/90 hover:bg-emerald-600 text-white font-semibold uppercase tracking-widest text-xs backdrop-blur-md border border-emerald-400/40 transition-all shadow-md flex items-center justify-center gap-2 active:scale-95"
           >
-            Explore 7 Signature Rides ↓
-          </button>
+            <MessageSquare className="w-4 h-4" />
+            <span>Chat on WhatsApp</span>
+          </a>
         </div>
+
+        {/* Clean Amenities Trust Strip */}
+        <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-sand/90 font-medium">
+          <span className="inline-flex items-center gap-1.5">
+            <span className="text-sunset font-bold">✓</span> Free Vehicle Parking
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <span className="text-sunset font-bold">✓</span> Clean Restrooms & Toilets
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <span className="text-sunset font-bold">✓</span> Dress Changing Rooms
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <span className="text-sunset font-bold">✓</span> Life Jackets Included
+          </span>
+        </div>
+
       </div>
 
-      {/* Redesigned Sleek Coastal Scroll Indicator */}
-      <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-10 text-center">
+      {/* Sleek Coastal Scroll Indicator */}
+      <div className="absolute bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2 z-10 text-center">
         <button
           onClick={scrollToExplore}
-          className="group flex flex-col items-center gap-1.5 text-[10px] sm:text-xs tracking-widest uppercase text-sand/80 hover:text-sand transition-all duration-300 focus:outline-none"
-          aria-label="Scroll to explore 7 signature boat rides"
+          className="group flex flex-col items-center gap-1 text-[10px] sm:text-xs tracking-widest uppercase text-sand/70 hover:text-sand transition-all duration-300 focus:outline-none"
+          aria-label="Scroll to explore boat rides"
         >
           <span className="font-sans tracking-luxury group-hover:tracking-[0.25em] transition-all duration-300">
             Scroll to explore
           </span>
-          <div className="w-8 h-8 rounded-full bg-forest-deep/70 backdrop-blur-md border border-sand/30 flex items-center justify-center group-hover:bg-sand group-hover:border-sand transition-all duration-300 shadow-md">
-            <ArrowDown className="w-3.5 h-3.5 text-sand group-hover:text-forest transition-colors animate-bounce" />
-          </div>
+          <ArrowDown className="w-3.5 h-3.5 text-sand animate-bounce" />
         </button>
       </div>
     </section>

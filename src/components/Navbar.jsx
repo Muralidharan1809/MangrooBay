@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Waves, ArrowRight, Anchor } from 'lucide-react';
+import { Menu, X, Waves, ArrowRight, MessageSquare } from 'lucide-react';
 
 export default function Navbar({ onOpenBooking, onOpenContact, onOpenBookingsManager }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,10 +22,9 @@ export default function Navbar({ onOpenBooking, onOpenContact, onOpenBookingsMan
     { label: "Boat Rides", href: "#rides" },
     { label: "Offers", href: "#offers" },
     { label: "Fleet", href: "#fleet" },
-    { label: "Safety & Precautions", href: "#safety" },
-    { label: "Timings", href: "#activities" },
-    { label: "Gallery", href: "#gallery" },
+    { label: "Safety", href: "#safety" },
     { label: "Reviews", href: "#reviews" },
+    { label: "FAQ", href: "#faq" },
     { label: "Location", href: "#location" },
     { label: "Contact", href: "#contact" },
   ];
@@ -51,7 +50,7 @@ export default function Navbar({ onOpenBooking, onOpenContact, onOpenBookingsMan
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
             ? 'bg-forest/95 backdrop-blur-md shadow-luxury py-3 border-b border-sand/15'
-            : 'bg-gradient-to-b from-charcoal/80 via-charcoal/40 to-transparent py-5'
+            : 'bg-gradient-to-b from-charcoal/80 via-charcoal/40 to-transparent py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -69,8 +68,8 @@ export default function Navbar({ onOpenBooking, onOpenContact, onOpenBookingsMan
               <span className="font-serif text-2xl md:text-3xl font-medium tracking-luxury text-cream uppercase transition-colors group-hover:text-sand">
                 Mangrove Bay
               </span>
-              <span className="block text-[9px] tracking-widest text-sand/90 uppercase font-sans -mt-1">
-                Pondy Mermaid Boat House
+              <span className="block text-[9px] tracking-widest text-sand/80 uppercase font-sans -mt-0.5">
+                Puducherry Boating
               </span>
             </div>
           </a>
@@ -94,13 +93,24 @@ export default function Navbar({ onOpenBooking, onOpenContact, onOpenBookingsMan
           </nav>
 
           {/* Right Action Group */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-2.5">
+            <a
+              href="https://wa.me/917397438874?text=Hello%20Mangrove%20Bay,%20I%20would%20like%20to%20inquire%20about%20booking%20a%20boat%20ride."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-full bg-emerald-600/80 hover:bg-emerald-600 text-white transition-all shadow-sm"
+              title="Chat on WhatsApp (+91 73974 38874)"
+              aria-label="WhatsApp Inquiry"
+            >
+              <MessageSquare className="w-4 h-4" />
+            </a>
+
             <button
               onClick={() => onOpenBooking()}
-              className="group relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-sand text-forest hover:bg-white transition-all duration-300 shadow-md hover:shadow-lg active:scale-95"
+              className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-sand text-forest hover:bg-white transition-all duration-300 shadow-md hover:shadow-lg active:scale-95"
             >
               <span>Book Boat Ride</span>
-              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
             </button>
           </div>
 
@@ -119,13 +129,13 @@ export default function Navbar({ onOpenBooking, onOpenContact, onOpenBookingsMan
 
       {/* Mobile Drawer Menu */}
       <div
-        className={`fixed inset-0 z-40 bg-forest-deep/95 backdrop-blur-xl transition-all duration-500 lg:hidden flex flex-col justify-between p-8 pt-28 ${
+        className={`fixed inset-0 z-40 bg-forest-deep/95 backdrop-blur-xl transition-all duration-500 lg:hidden flex flex-col justify-between p-8 pt-24 ${
           mobileMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-4'
         }`}
       >
-        <div className="flex flex-col space-y-5 text-center">
+        <div className="flex flex-col space-y-4 text-center">
           <p className="text-xs uppercase tracking-luxury text-sunset font-semibold">
-            Pondy Mermaid Boat House
+            Mangrove Bay • Puducherry Boating
           </p>
           {navLinks.map((link) => (
             <a
@@ -147,20 +157,27 @@ export default function Navbar({ onOpenBooking, onOpenContact, onOpenBookingsMan
             }}
             className="w-full max-w-xs py-3.5 rounded-full bg-sand text-forest font-semibold uppercase tracking-widest text-sm hover:bg-cream transition-colors text-center shadow-lg"
           >
-            Book Boat Ride
+            Book Boat Ride (1 Hr)
           </button>
+          <a
+            href="https://wa.me/917397438874?text=Hello%20Mangrove%20Bay,%20I%20would%20like%20to%20inquire%20about%20booking%20a%20boat%20ride."
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
+            className="w-full max-w-xs py-3 rounded-full bg-emerald-600 text-white font-semibold uppercase tracking-widest text-xs hover:bg-emerald-700 transition-colors text-center flex items-center justify-center gap-2 shadow-md"
+          >
+            <MessageSquare className="w-4 h-4" />
+            <span>Chat on WhatsApp</span>
+          </a>
           <button
             onClick={() => {
               setMobileMenuOpen(false);
               onOpenBookingsManager && onOpenBookingsManager();
             }}
-            className="text-xs text-sunset hover:text-white font-medium underline underline-offset-4"
+            className="text-[11px] text-sand/60 hover:text-sand font-medium pt-2"
           >
-            🔒 Inquiries & Bookings Dashboard
+            🔒 Staff Admin Access
           </button>
-          <p className="text-xs text-sand/70 tracking-wide">
-            Pondy Mermaid Boat House • Escape into the calm.
-          </p>
         </div>
       </div>
     </>

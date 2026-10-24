@@ -19,6 +19,7 @@ import MobileBookingBar from './components/MobileBookingBar';
 import AdminBookingsModal from './components/AdminBookingsModal';
 import OffersSection from './components/OffersSection';
 import ReviewsSection from './components/ReviewsSection';
+import FAQSection from './components/FAQSection';
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -77,7 +78,7 @@ export default function App() {
       {/* 02 Editorial Introduction Section */}
       <Introduction />
 
-      {/* 03 Signature Boating Rides (Pondy Mermaid Boat House) */}
+      {/* 03 Signature Boating Rides (Mangrove Bay) */}
       <RidesAndExperiences
         onBookRide={(ride) => handleOpenBooking(ride)}
       />
@@ -119,7 +120,10 @@ export default function App() {
         onOpenBooking={() => handleOpenBooking()}
       />
 
-      {/* 11 Destination & Pondy Mermaid Boat House Location Map */}
+      {/* 10.5 Frequently Asked Questions (SEO FAQs) */}
+      <FAQSection onOpenBooking={() => handleOpenBooking()} />
+
+      {/* 11 Destination & Dedicated Boarding Jetty Map */}
       <LocationSection
         onOpenContact={handleOpenContact}
       />

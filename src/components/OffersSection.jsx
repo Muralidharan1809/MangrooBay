@@ -197,7 +197,7 @@ export default function OffersSection({ onSelectOffer }) {
               1-Hour Boating • Couple Ride ₹3,000 • Separate Boat ₹5,000
             </h4>
             <p className="text-xs sm:text-sm text-cream/75 max-w-xl">
-              Shared rides ₹500/Adult & ₹250/Child. Includes 100% free vehicle parking, hygienic restrooms & toilets, and private dress changing rooms right at Pondy Mermaid Boat House!
+              Shared rides ₹500/Adult & ₹250/Child. Includes 100% free vehicle parking, hygienic restrooms & toilets, and private dress changing rooms right at Mangrove Bay!
             </p>
           </div>
 
@@ -209,7 +209,7 @@ export default function OffersSection({ onSelectOffer }) {
               Book with Sunrise Offer
             </button>
             <a
-              href="https://wa.me/917397438874?text=Hello%20Mangrove%20Bay,%20I%20would%20like%20to%20know%20about%20current%20boating%20offers%20at%20Pondy%20Mermaid%20Boat%20House."
+              href="https://wa.me/917397438874?text=Hello%20Mangrove%20Bay,%20I%20would%20like%20to%20know%20about%20current%20boating%20offers%20at%20Pondy%20Mangrove Bay%20Boat%20House."
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-cream border border-sand/30 text-xs uppercase tracking-widest font-semibold transition-all"

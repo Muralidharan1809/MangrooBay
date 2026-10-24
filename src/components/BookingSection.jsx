@@ -178,7 +178,7 @@ export default function BookingSection({ onOpenContact }) {
       `• *Estimated Total:* ₹${finalPrice}\n` +
       (formData.referenceId ? `• *Referral/Ref:* ${formData.referenceId}\n` : '') +
       (formData.specialRequests ? `• *Special Requests:* ${formData.specialRequests}\n` : '') +
-      `\n*Boarding Jetty:* Pondy Mermaid Boat House\n*Hours:* Daily 7:00 AM – 5:30 PM\n*Amenities:* Free Parking • Clean Restrooms • Changing Rooms\nPlease confirm slot availability. Thank you!`
+      `\n*Boarding Jetty:* Mangrove Bay\n*Hours:* Daily 7:00 AM – 5:30 PM\n*Amenities:* Free Parking • Clean Restrooms • Changing Rooms\nPlease confirm slot availability. Thank you!`
     );
 
     const waUrl = `https://wa.me/917397438874?text=${waText}`;
@@ -228,7 +228,7 @@ export default function BookingSection({ onOpenContact }) {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-forest-light border border-sand/30 text-sand text-xs font-semibold uppercase tracking-luxury mb-4">
             <Anchor className="w-3.5 h-3.5 text-sunset" />
-            <span>Pondy Mermaid Boat House Boarding</span>
+            <span>Mangrove Bay Boarding</span>
           </div>
 
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-cream font-light leading-tight mb-4">
@@ -281,14 +281,14 @@ export default function BookingSection({ onOpenContact }) {
                 </div>
                 <div className="flex justify-between text-[11px] text-cream/70 pt-1">
                   <span>Boarding Jetty:</span>
-                  <span className="text-sand">Pondy Mermaid Boat House</span>
+                  <span className="text-sand">Mangrove Bay</span>
                 </div>
               </div>
 
               <div className="p-4 rounded-xl bg-forest/80 border border-sand/20 max-w-md mx-auto text-xs text-sand/90 mb-8 flex items-start gap-3 text-left">
                 <Clock className="w-4 h-4 text-sunset shrink-0 mt-0.5" />
                 <p>
-                  Our team at Pondy Mermaid Boat House will confirm your ride slot, coordinate jetty arrival, and guide you on safety precautions. No advance payment required online.
+                  Our team at Mangrove Bay will confirm your ride slot, coordinate jetty arrival, and guide you on safety precautions. No advance payment required online.
                 </p>
               </div>
 
@@ -303,7 +303,7 @@ export default function BookingSection({ onOpenContact }) {
                     `• *Estimated Total:* ₹${finalPrice}\n` +
                     `• *Date:* ${formData.date}\n` +
                     `• *Slot:* ${formData.timeSlot}\n` +
-                    `\n*Boarding Jetty:* Pondy Mermaid Boat House`
+                    `\n*Boarding Jetty:* Mangrove Bay`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -338,7 +338,7 @@ export default function BookingSection({ onOpenContact }) {
                 <div className="space-y-1">
                   <div className="flex items-center gap-2 text-xs text-sand/90 font-medium">
                     <ShieldCheck className="w-4 h-4 text-sand" />
-                    <span>Pondy Mermaid Boat House • Daily Boating 7:00 AM – 5:30 PM • 1 Hour Rides</span>
+                    <span>Mangrove Bay • Daily Boating 7:00 AM – 5:30 PM • 1 Hour Rides</span>
                   </div>
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-sand/80">
                     <span className="inline-flex items-center gap-1">
@@ -700,7 +700,7 @@ export default function BookingSection({ onOpenContact }) {
 
               <div className="text-center pt-2">
                 <p className="text-[11px] text-sand/60 font-sans">
-                  * Exclusively boat ride experiences. Departures from Pondy Mermaid Boat House. Life jackets provided.
+                  * Exclusively boat ride experiences. Departures from Mangrove Bay. Life jackets provided.
                 </p>
               </div>
 

@@ -40,7 +40,7 @@ export default function ContactSection({ onOpenBooking }) {
       `• *Inquiry Ref:* ${noteId}\n` +
       `• *From:* ${senderContact.trim()}\n` +
       `• *Message:* ${inquiryText.trim()}\n\n` +
-      `*Boarding Jetty:* Pondy Mermaid Boat House\n` +
+      `*Boarding Jetty:* Mangrove Bay\n` +
       `*Boating Hours:* Daily 7:00 AM – 5:30 PM`
     );
     const generatedWaUrl = `https://wa.me/917397438874?text=${waText}`;
@@ -127,7 +127,7 @@ export default function ContactSection({ onOpenBooking }) {
                 </div>
                 <div>
                   <span className="block text-xs uppercase tracking-wider text-forest font-bold">Boarding Jetty & Hours</span>
-                  <span className="font-medium text-xs text-charcoal/80">Pondy Mermaid Boat House • Daily 7:00 AM – 5:30 PM</span>
+                  <span className="font-medium text-xs text-charcoal/80">Mangrove Bay • Daily 7:00 AM – 5:30 PM</span>
                 </div>
               </div>
             </div>
@@ -268,7 +268,7 @@ export default function ContactSection({ onOpenBooking }) {
                 </button>
 
                 <p className="text-[11px] text-center text-charcoal/60 pt-1">
-                  ⚡ Directly opens WhatsApp chat with our Pondy Mermaid Boat House jetty (+91 73974 38874)
+                  ⚡ Directly opens WhatsApp chat with our Mangrove Bay jetty (+91 73974 38874)
                 </p>
               </form>
             )}

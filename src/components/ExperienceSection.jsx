@@ -59,7 +59,7 @@ export default function ExperienceSection({ onSelectExperience }) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
           <span className="text-xs uppercase tracking-luxury text-sand/80 font-semibold mb-3 inline-block">
-            Pondy Mermaid Boat House Boating
+            Mangrove Bay Boating
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-cream font-light leading-tight">
             More than a boat ride.<br />

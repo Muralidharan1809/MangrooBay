@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Waves, ArrowUp, Shield, FileText, X, Anchor } from 'lucide-react';
+import { Waves, ArrowUp, Shield, FileText, X, Anchor, MessageSquare, Phone } from 'lucide-react';
 import { BRAND_DATA } from '../data/content';
 
 export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
@@ -16,7 +16,8 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
     { label: "Safety & Precautions", href: "#safety" },
     { label: "Gallery", href: "#gallery" },
     { label: "Customer Reviews", href: "#reviews" },
-    { label: "Pondy Mermaid Boat House", href: "#location" },
+    { label: "FAQ", href: "#faq" },
+    { label: "Location", href: "#location" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -39,7 +40,7 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
                     {BRAND_DATA.name}
                   </span>
                   <span className="block text-[10px] tracking-widest uppercase text-sand/80 font-sans">
-                    Pondy Mermaid Boat House
+                    Puducherry Boating
                   </span>
                 </div>
               </div>
@@ -47,7 +48,7 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
                 “{BRAND_DATA.tagline}”
               </p>
               <p className="text-sm text-cream/70 max-w-sm font-sans font-light leading-relaxed">
-                Premier 1-hour boat rides, sunset cruises, romantic couple dates, sea rides, and mangrove safaris.
+                Premier 1-hour boat rides, romantic couple voyages, private family charters, and mangrove safaris in Puducherry.
               </p>
             </div>
 
@@ -78,36 +79,41 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
               </ul>
             </div>
 
-            {/* Retreat Details & Region */}
+            {/* Jetty Details & Contact */}
             <div className="md:col-span-3 space-y-3">
               <p className="text-xs uppercase tracking-luxury text-sand font-semibold mb-4">
-                Pondy Mermaid Boat House
+                Boarding Jetty & Hours
               </p>
               <p className="text-xs text-cream/70 leading-relaxed font-sans">
-                Waterfront Boarding Jetty<br />
+                Mangrove Bay Boarding Jetty<br />
                 Estuary & Mangrove Backwaters<br />
                 Puducherry 605001, India
               </p>
-              <div className="pt-2 text-xs">
+              <div className="pt-1 text-xs">
                 <span className="text-[11px] uppercase tracking-wider text-sunset font-semibold block">Boating Hours:</span>
-                <span className="text-sand font-medium">Morning 7:00 AM – Evening 5:30 PM (Daily)</span>
+                <span className="text-sand font-medium">Daily 7:00 AM – 5:30 PM (All Rides 1 Hour)</span>
               </div>
               <div className="pt-1 text-[11px] text-cream/75 space-y-0.5">
                 <p>✓ 100% Free Vehicle Parking</p>
                 <p>✓ Clean Restrooms & Toilets</p>
-                <p>✓ Dress Changing Rooms</p>
+                <p>✓ Private Dress Changing Rooms</p>
               </div>
-              <div className="text-xs text-sand/90 pt-1 font-mono flex flex-col gap-1.5">
-                <a href={`tel:${BRAND_DATA.contact.phoneRaw}`} className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <span>📞 Call:</span>
-                  <span className="font-semibold text-white">{BRAND_DATA.contact.phone}</span>
+              <div className="text-xs text-sand/90 pt-2 font-sans flex flex-col gap-2">
+                <a 
+                  href={`tel:${BRAND_DATA.contact.phoneRaw}`} 
+                  className="hover:text-white transition-colors flex items-center gap-2"
+                >
+                  <Phone className="w-3.5 h-3.5 text-sunset" />
+                  <span>Call: <strong className="text-white">{BRAND_DATA.contact.phone}</strong></span>
                 </a>
-                <a href={BRAND_DATA.contact.whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-sunset transition-colors flex items-center gap-1.5">
-                  <span>💬 WhatsApp:</span>
-                  <span className="text-sand">{BRAND_DATA.contact.whatsapp}</span>
-                </a>
-                <a href={`mailto:${BRAND_DATA.contact.email}`} className="text-cream/70 hover:text-white transition-colors flex items-center gap-1.5">
-                  <span>✉️ {BRAND_DATA.contact.email}</span>
+                <a 
+                  href={BRAND_DATA.contact.whatsappUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-white transition-colors flex items-center gap-2 text-emerald-400 font-medium"
+                >
+                  <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>WhatsApp: <strong>{BRAND_DATA.contact.whatsapp}</strong></span>
                 </a>
               </div>
               <div className="pt-2">
@@ -133,7 +139,7 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
               >
                 ©
               </button>{' '}
-              2026 Mangrove Bay • Pondy Mermaid Boat House. All rights reserved.
+              2026 Mangrove Bay. All rights reserved.
             </p>
             
             <div className="flex flex-wrap items-center gap-4 sm:gap-6">
@@ -192,7 +198,7 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
               {modalType === 'privacy' ? (
                 <>
                   <p>
-                    Mangrove Bay at Pondy Mermaid Boat House is committed to protecting your personal information. Any details shared during boat ride inquiries (names, contacts, ride preferences) are utilized strictly for coordinating your boating reservation in Puducherry.
+                    Mangrove Bay is committed to protecting your personal information. Any details shared during boat ride inquiries (names, contacts, ride preferences) are utilized strictly for coordinating your boating reservation in Puducherry.
                   </p>
                   <p>
                     We never sell, distribute, or lease guest information to third parties. Communications are handled directly by our private boating concierge.
@@ -201,7 +207,7 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
               ) : (
                 <>
                   <p>
-                    All boat rides depart from the Pondy Mermaid Boat House Jetty. Life jackets are mandatory and provided for every passenger (adults and children) prior to boarding.
+                    All boat rides depart from the Mangrove Bay Boarding Jetty. Life jackets are mandatory and provided for every passenger (adults and children) prior to boarding.
                   </p>
                   <p>
                     Rides are operated by government-certified boat masters. Departure timings are synchronized with weather conditions and tidal safety. Guests are requested to respect the quiet coastal bird sanctuary and mangrove reserve.

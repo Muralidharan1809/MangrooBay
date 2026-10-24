@@ -128,7 +128,7 @@ export default function BoatFleetSection({ onOpenBooking, onOpenLightbox }) {
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-xs font-semibold uppercase tracking-luxury text-sunset">
-                  Pondy Mermaid Boat House Fleet
+                  Mangrove Bay Fleet
                 </span>
                 <span className="text-xs text-charcoal/40">•</span>
                 <span className="text-xs text-charcoal/70">{activeVessel.capacity}</span>
@@ -172,7 +172,7 @@ export default function BoatFleetSection({ onOpenBooking, onOpenLightbox }) {
 
                 {/* On-site Jetty Amenities Reminder */}
                 <div className="mt-5 p-3 rounded-xl bg-sand/20 border border-sand/40 flex flex-wrap items-center justify-between gap-2 text-xs text-forest">
-                  <span className="font-semibold">Boarding at Pondy Mermaid Boat House:</span>
+                  <span className="font-semibold">Boarding at Mangrove Bay:</span>
                   <div className="flex flex-wrap items-center gap-3 text-[11px] font-medium text-forest/90">
                     <span className="inline-flex items-center gap-1"><span className="text-emerald-700 font-bold">✓</span> Free Parking</span>
                     <span className="inline-flex items-center gap-1"><span className="text-emerald-700 font-bold">✓</span> Clean Toilets</span>

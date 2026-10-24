@@ -207,7 +207,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
       `• *Estimated Total:* ₹${finalPrice}\n` +
       (formData.referenceId ? `• *Referral/Ref:* ${formData.referenceId}\n` : '') +
       (formData.specialRequests ? `• *Special Requests:* ${formData.specialRequests}\n` : '') +
-      `\n*Boarding Jetty:* Pondy Mermaid Boat House\n*Hours:* Daily 7:00 AM – 5:30 PM\n*Amenities:* Free Parking • Clean Restrooms • Changing Rooms\nPlease confirm slot availability. Thank you!`
+      `\n*Boarding Jetty:* Mangrove Bay\n*Hours:* Daily 7:00 AM – 5:30 PM\n*Amenities:* Free Parking • Clean Restrooms • Changing Rooms\nPlease confirm slot availability. Thank you!`
     );
 
     const waUrl = `https://wa.me/917397438874?text=${waText}`;
@@ -247,7 +247,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
           <div>
             <div className="flex items-center gap-2 text-[11px] uppercase tracking-luxury text-sand font-semibold mb-1">
               <Anchor className="w-3.5 h-3.5 text-sunset" />
-              <span>Pondy Mermaid Boat House</span>
+              <span>Mangrove Bay</span>
               <span className="text-sand/50">•</span>
               <span className="text-sunset">Daily 7:00 AM – 5:30 PM</span>
             </div>
@@ -311,14 +311,14 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
                 </div>
                 <div className="flex justify-between text-[11px] text-charcoal/60 pt-1">
                   <span>Boarding Point:</span>
-                  <span className="font-medium text-forest">Pondy Mermaid Boat House</span>
+                  <span className="font-medium text-forest">Mangrove Bay</span>
                 </div>
               </div>
 
               <div className="p-4 rounded-xl bg-sand/20 border border-sand/40 max-w-md mx-auto text-xs text-charcoal/80 mb-6 flex items-start gap-3 text-left">
                 <Clock className="w-4 h-4 text-forest shrink-0 mt-0.5" />
                 <p>
-                  Our jetty team at Pondy Mermaid Boat House will contact you via WhatsApp/Call to confirm your 1-hour slot availability and guide you on arrival. No advance online payment required.
+                  Our jetty team at Mangrove Bay will contact you via WhatsApp/Call to confirm your 1-hour slot availability and guide you on arrival. No advance online payment required.
                 </p>
               </div>
 
@@ -333,7 +333,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
                     `• *Estimated Total:* ₹${finalPrice}\n` +
                     `• *Date:* ${formData.date}\n` +
                     `• *Slot:* ${formData.timeSlot}\n` +
-                    `\n*Boarding Jetty:* Pondy Mermaid Boat House`
+                    `\n*Boarding Jetty:* Mangrove Bay`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -369,7 +369,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <div className="flex items-center gap-2">
                     <ShieldCheck className="w-4 h-4 text-forest shrink-0" />
-                    <span><strong>Boarding:</strong> Pondy Mermaid Boat House Jetty</span>
+                    <span><strong>Boarding:</strong> Mangrove Bay Boarding Jetty</span>
                   </div>
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="text-[10px] uppercase font-bold text-sunset tracking-wider bg-white/70 px-2 py-0.5 rounded">
@@ -724,7 +724,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
                   )}
                 </button>
                 <p className="text-[11px] text-charcoal/60 text-center mt-3 font-sans">
-                  * All rides depart from Pondy Mermaid Boat House. Life jackets and certified marine pilots provided.
+                  * All rides depart from Mangrove Bay. Life jackets and certified marine pilots provided.
                 </p>
               </div>
 
