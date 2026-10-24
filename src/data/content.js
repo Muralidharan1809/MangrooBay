@@ -350,6 +350,17 @@ export const TIMELINE_DATA = {
 
 export const GALLERY_DATA = [
   {
+    id: "story-video-1",
+    category: "Video Story",
+    title: "Mangrove Bay Boating Experience Reel",
+    subtitle: "Watch real 1-hour cruise gliding through calm mangrove waters",
+    src: "/Images/Mangroo Forest.jpeg",
+    videoSrc: "/videos/entrance-video.mp4",
+    isVideo: true,
+    span: "col-span-12 md:col-span-7",
+    aspect: "aspect-[16/10]"
+  },
+  {
     id: 1,
     category: "The Bay",
     title: "Mangrove Bay & Harbour",

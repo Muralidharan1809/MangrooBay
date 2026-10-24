@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { GALLERY_DATA } from '../data/content';
-import { X, ChevronLeft, ChevronRight, Maximize2, Sparkles, Filter } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Maximize2, Play, Sparkles, Film } from 'lucide-react';
 
 export default function GallerySection({ selectedImage, setSelectedImage }) {
   const [activeFilter, setActiveFilter] = useState('All');
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
-  const filters = ['All', 'The Bay', 'Boathouse', 'Experiences', 'Sunset', 'Nature'];
+  const filters = ['All', 'Video Story', 'The Bay', 'Boats & Fleet', 'Sunset', 'Nature', 'Heritage'];
 
   const filteredImages = activeFilter === 'All'
     ? GALLERY_DATA
@@ -56,13 +56,13 @@ export default function GallerySection({ selectedImage, setSelectedImage }) {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-xs uppercase tracking-luxury text-mangrove font-semibold mb-3 inline-block">
-            Visual Journal
+            Visual & Story Gallery
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-forest font-light leading-tight mb-4">
             A glimpse of Mangrove Bay
           </h2>
           <p className="text-sm md:text-base text-charcoal/70 leading-relaxed font-sans">
-            Gently drifting between calm waters, golden skies, and lush coastal greenery.
+            Gently drifting between calm waters, golden skies, lush coastal greenery, and authentic boating stories.
           </p>
           <div className="w-16 h-[1px] bg-sand/60 mx-auto mt-6" />
         </div>
@@ -73,13 +73,14 @@ export default function GallerySection({ selectedImage, setSelectedImage }) {
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-5 py-2 rounded-full text-xs sm:text-sm uppercase tracking-widest font-medium transition-all duration-300 ${
+              className={`px-5 py-2 rounded-full text-xs sm:text-sm uppercase tracking-widest font-medium transition-all duration-300 flex items-center gap-1.5 ${
                 activeFilter === filter
                   ? 'bg-forest text-cream shadow-md scale-105'
                   : 'bg-white/80 text-charcoal/70 hover:bg-sand/30 hover:text-forest border border-sand/40'
               }`}
             >
-              {filter}
+              {filter === 'Video Story' && <Film className="w-3.5 h-3.5 text-sunset" />}
+              <span>{filter}</span>
             </button>
           ))}
         </div>
@@ -98,20 +99,31 @@ export default function GallerySection({ selectedImage, setSelectedImage }) {
                 className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-108"
                 loading="lazy"
               />
+
+              {/* Video Play Overlay Indicator if it's a video story */}
+              {item.isVideo && (
+                <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-sand/90 text-forest flex items-center justify-center shadow-floating group-hover:scale-110 group-hover:bg-white transition-all duration-300">
+                    <Play className="w-7 h-7 sm:w-9 sm:h-9 text-forest fill-forest ml-1" />
+                  </div>
+                </div>
+              )}
+
               {/* Subtle hover gradient and info card */}
               <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 p-6 flex flex-col justify-between" />
               
               {/* Hover Badge Top */}
               <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-400 transform -translate-y-2 group-hover:translate-y-0">
-                <span className="px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-semibold bg-forest-deep/80 text-sand border border-sand/30 backdrop-blur-md">
-                  {item.category}
+                <span className="px-3 py-1 rounded-full text-[10px] uppercase tracking-wider font-semibold bg-forest-deep/80 text-sand border border-sand/30 backdrop-blur-md flex items-center gap-1">
+                  {item.isVideo && <Play className="w-3 h-3 fill-sunset text-sunset" />}
+                  <span>{item.category}</span>
                 </span>
               </div>
 
               {/* Hover Badge Expand Icon */}
               <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-400">
                 <div className="w-8 h-8 rounded-full bg-forest-deep/80 text-sand border border-sand/30 flex items-center justify-center backdrop-blur-md">
-                  <Maximize2 className="w-4 h-4" />
+                  {item.isVideo ? <Play className="w-4 h-4 text-sunset fill-sunset" /> : <Maximize2 className="w-4 h-4" />}
                 </div>
               </div>
 
@@ -137,8 +149,8 @@ export default function GallerySection({ selectedImage, setSelectedImage }) {
         >
           {/* Top Bar with Counter & Close */}
           <div className="absolute top-6 left-6 right-6 flex items-center justify-between z-20 text-cream" onClick={(e) => e.stopPropagation()}>
-            <div className="text-xs tracking-widest uppercase text-sand">
-              {lightboxIndex + 1} / {filteredImages.length} • {filteredImages[lightboxIndex].category}
+            <div className="text-xs tracking-widest uppercase text-sand flex items-center gap-2">
+              <span>{lightboxIndex + 1} / {filteredImages.length} • {filteredImages[lightboxIndex].category}</span>
             </div>
             <button
               onClick={closeLightbox}
@@ -167,16 +179,28 @@ export default function GallerySection({ selectedImage, setSelectedImage }) {
             <ChevronRight className="w-6 h-6" />
           </button>
 
-          {/* Main Image Container */}
+          {/* Main Media Container */}
           <div
-            className="max-w-5xl max-h-[82vh] w-full flex flex-col items-center justify-center relative z-10"
+            className="max-w-5xl max-h-[85vh] w-full flex flex-col items-center justify-center relative z-10"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={filteredImages[lightboxIndex].src}
-              alt={filteredImages[lightboxIndex].title}
-              className="max-h-[72vh] max-w-full rounded-2xl object-contain shadow-2xl border border-sand/30"
-            />
+            {filteredImages[lightboxIndex].isVideo ? (
+              <div className="w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl border border-sand/30 p-1">
+                <video
+                  src={filteredImages[lightboxIndex].videoSrc}
+                  controls
+                  autoPlay
+                  playsInline
+                  className="w-full max-h-[70vh] rounded-xl object-contain bg-black mx-auto"
+                />
+              </div>
+            ) : (
+              <img
+                src={filteredImages[lightboxIndex].src}
+                alt={filteredImages[lightboxIndex].title}
+                className="max-h-[72vh] max-w-full rounded-2xl object-contain shadow-2xl border border-sand/30"
+              />
+            )}
             <div className="mt-4 text-center">
               <h4 className="font-serif text-2xl text-cream font-light">{filteredImages[lightboxIndex].title}</h4>
               <p className="text-sm text-sand/80 font-sans">{filteredImages[lightboxIndex].subtitle}</p>

@@ -1,60 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { ArrowDown, Compass, Sparkles, Anchor, Waves, Clock, MessageSquare, ArrowRight } from 'lucide-react';
-import { HERO_DATA, BRAND_DATA, STANDARD_PRICING } from '../data/content';
+import React from 'react';
+import { ArrowDown, Clock, MessageSquare, ArrowRight } from 'lucide-react';
+import { HERO_DATA, STANDARD_PRICING } from '../data/content';
 import { trackBookingInitiated } from '../utils/analytics';
 
 export default function Hero({ onOpenBooking }) {
-  const [rotation] = useState(() => {
-    const saved = localStorage.getItem('mb_hero_video_rotation_v2');
-    return saved !== null ? parseInt(saved, 10) : 270; // Maintain upright video orientation
-  });
-  const videoRef = useRef(null);
-  const sectionRef = useRef(null);
-
-  // Automatically handle video and audio playback: plays on entrance, stops on scroll
-  useEffect(() => {
-    const handleFirstGesture = () => {
-      if (videoRef.current && window.scrollY <= 100) {
-        videoRef.current.muted = false;
-        videoRef.current.volume = 0.7;
-      }
-      window.removeEventListener('click', handleFirstGesture);
-      window.removeEventListener('touchstart', handleFirstGesture);
-      window.removeEventListener('keydown', handleFirstGesture);
-    };
-
-    window.addEventListener('click', handleFirstGesture, { passive: true });
-    window.addEventListener('touchstart', handleFirstGesture, { passive: true });
-    window.addEventListener('keydown', handleFirstGesture, { passive: true });
-
-    return () => {
-      window.removeEventListener('click', handleFirstGesture);
-      window.removeEventListener('touchstart', handleFirstGesture);
-      window.removeEventListener('keydown', handleFirstGesture);
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleScrollPlayback = () => {
-      if (!videoRef.current || !sectionRef.current) return;
-      const rect = sectionRef.current.getBoundingClientRect();
-      const inView = rect.bottom > 150;
-
-      if (inView) {
-        if (videoRef.current.paused) {
-          videoRef.current.play().catch(() => {});
-        }
-      } else {
-        if (!videoRef.current.paused) {
-          videoRef.current.pause();
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScrollPlayback, { passive: true });
-    return () => window.removeEventListener('scroll', handleScrollPlayback);
-  }, []);
-
   const scrollToExplore = () => {
     const el = document.querySelector('#rides');
     if (el) {
@@ -65,39 +14,21 @@ export default function Hero({ onOpenBooking }) {
     }
   };
 
-  const isTransposed = rotation === 90 || rotation === 270;
-
   return (
     <section
-      ref={sectionRef}
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-forest-deep pt-24 pb-16"
     >
-      {/* Background Entrance Video */}
+      {/* Background High-Resolution Still Image (No starting video / zero unwanted audio) */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <video
-          ref={videoRef}
-          src={HERO_DATA.videoSrc}
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            width: isTransposed ? '100vh' : '100vw',
-            height: isTransposed ? '100vw' : '100vh',
-            minWidth: isTransposed ? '100vh' : '100%',
-            minHeight: isTransposed ? '100vw' : '100%',
-            transform: `translate(-50%, -50%) rotate(${rotation}deg)`,
-            objectFit: 'cover'
-          }}
-          className="filter brightness-[0.70]"
+        <img
+          src="/Images/Mangroo Forest.jpeg"
+          alt="Mangrove Bay Puducherry"
+          className="w-full h-full object-cover filter brightness-[0.55] scale-105 transition-transform duration-1000"
         />
-        {/* Cinematic gradient overlays so typography remains readable */}
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-charcoal/45 to-forest-deep/80" />
-        <div className="absolute inset-0 bg-forest/20 mix-blend-multiply" />
+        {/* Cinematic gradient overlays so typography remains crisp & readable */}
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/60 to-forest-deep/80" />
+        <div className="absolute inset-0 bg-forest/25 mix-blend-multiply" />
       </div>
 
       {/* Main Hero Content */}
