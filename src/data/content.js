@@ -38,7 +38,7 @@ export const BRAND_DATA = {
     email: "info@pondyboating.com",
     address: "2nd Cross St, Marina, Vambakeerapalayam, Puducherry, 605001, India",
     mapCoordinates: { lat: 11.9125, lng: 79.8228 },
-    googleMapsUrl: "https://maps.app.goo.gl/iBC8EiiJDkTW9tRR9",
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=PondyBoating+Marina+Vambakeerapalayam+Puducherry",
     instagram: "https://instagram.com/mangrovebay.pondy",
     facebook: "https://facebook.com/mangrovebay.pondy"
   }
@@ -625,7 +625,7 @@ export const REVIEWS_DATA = {
     source: "Google Reviews",
     verifiedPercentage: "98% Positive Feedback",
     recommendationRate: "99% would recommend to friends & family",
-    googleMapsUrl: "https://maps.app.goo.gl/iBC8EiiJDkTW9tRR9"
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=PondyBoating+Marina+Vambakeerapalayam+Puducherry"
   },
   filters: [
     { id: "all", label: "All Reviews (520+)" },
