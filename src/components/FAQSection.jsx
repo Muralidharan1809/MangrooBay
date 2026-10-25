@@ -6,14 +6,30 @@ import { BRAND_DATA } from '../data/content';
 export default function FAQSection({ onOpenBooking }) {
   const [openIndex, setOpenIndex] = useState(0);
 
-  const faqs = [
+    const faqs = [
+    {
+      question: "What is the Pondicherry boat ride price?",
+      answer: "We offer 100% transparent, official fixed rates for a genuine full 1-hour (60 mins) cruise:\n• Shared Boating Ride: ₹500 per Adult, ₹250 per Child (ages 3–10; infants under 3 ride free).\n• Couples Private Boat Ride: ₹3,000 Flat Rate (100% private boat exclusively for 2 guests).\n• Separate Private Boat: ₹5,000 Flat Rate (dedicated private boat for 1 to 10 guests).\nEvery ride explores all 4 scenic sights with life jackets included!"
+    },
     {
       question: "Which is the best boating in Pondicherry (Pondy Boating)?",
       answer: "Pondy Boating (Mangrove Bay) is widely recognized as the premier boating experience in Pondicherry (Pondycherry). Departing from Marina, Vambakeerapalayam, every ride is a genuine 1-hour cruise exploring lush mangrove root canals, ancient 2,000-year Arikamedu ruins, and the breathtaking Bay of Bengal sea confluence, fully equipped with approved life jackets and licensed captains."
     },
     {
-      question: "Where can I experience mangrove boating in Pondicherry (Pondycherry)?",
+      question: "Where can I experience mangrove boating Pondicherry?",
       answer: "The premier location for mangrove boating in Pondicherry is Pondy Boating at Mangrove Bay. We guide you inside the shaded, protected mangrove tunnels and bio-reserves where exotic wetland birds nest. Daily boat rides operate from 7:00 AM to 5:30 PM with shared rides (₹500/adult, ₹250/child) and private boats."
+    },
+    {
+      question: "Can I book a private boat ride in Pondicherry?",
+      answer: "Yes! Pondy Boating provides 100% private boat rides in Pondicherry. You can choose our Couples Private Boat (₹3,000 flat for 2 guests) or the Separate Private Vessel (₹5,000 flat for 1 to 10 guests) for an exclusive, private 1-hour voyage without sharing the boat with others."
+    },
+    {
+      question: "How does Pondicherry boating booking work?",
+      answer: "Pondicherry boating booking is instant and easy online through pondyboating.com or via WhatsApp (+91 73974 38874). Select your ride, date, and preferred time slot. No advance online payment is required; your slot is confirmed on WhatsApp, and payment can be made upon arrival at the jetty via Cash or UPI."
+    },
+    {
+      question: "Where can I find boating near me in Pondicherry with parking?",
+      answer: "If you are searching for boating near me in Pondicherry, Pondy Boating (Mangrove Bay) is centrally located at 2nd Cross St, Marina, Vambakeerapalayam. We provide 100% free dedicated vehicle parking for cars and bikes directly at the jetty entrance, plus clean restrooms and changing rooms."
     },
     {
       question: "What are the boat ride timings at Mangrove Bay Puducherry?",

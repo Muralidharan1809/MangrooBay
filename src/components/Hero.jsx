@@ -39,7 +39,7 @@ export default function Hero({ onOpenBooking }) {
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-sand/30 shadow-sm mb-4">
           <Clock className="w-3.5 h-3.5 text-sunset" />
           <span className="text-xs uppercase tracking-widest text-sand font-medium">
-            Pondy Boating • Mangrove Safari • Daily 7:00 AM – 5:30 PM
+            Best Boating in Pondicherry • Mangrove Tours • Daily 7:00 AM – 5:30 PM
           </span>
         </div>
 
@@ -48,7 +48,7 @@ export default function Hero({ onOpenBooking }) {
           Mangrove Bay
         </h1>
         <p className="text-xs sm:text-sm uppercase tracking-widest text-sand font-medium mb-3">
-          The Premier Pondy Boating Experience
+          The Best Boating in Pondicherry • Mangrove Bay
         </p>
 
         {/* Tagline */}
@@ -58,7 +58,7 @@ export default function Hero({ onOpenBooking }) {
 
         {/* Description */}
         <p className="max-w-2xl text-xs sm:text-sm md:text-base font-light text-cream/90 leading-relaxed mb-6 font-sans">
-          Discover the finest pondy mangrove boating experience — explore lush mangrove canals, historic 2,000-year-old Arikamedu ruins, and the breathtaking Bay of Bengal sea confluence on an authentic 1-hour cruise.
+          Discover the best boating in Pondicherry — experience scenic mangrove boating in Pondicherry, historic 2,000-year Arikamedu ruins, and the Bay of Bengal sea confluence with 100% private boat rides and transparent boat ride prices.
         </p>
 
         {/* Clean, Cohesive Pricing Card */}

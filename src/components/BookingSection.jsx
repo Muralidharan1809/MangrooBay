@@ -229,15 +229,15 @@ export default function BookingSection({ onOpenContact }) {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-forest-light border border-sand/30 text-sand text-xs font-semibold uppercase tracking-luxury mb-4">
             <Anchor className="w-3.5 h-3.5 text-sunset" />
-            <span>Mangrove Bay Boarding</span>
+            <span>Pondicherry Boating Booking • Instant Confirmation</span>
           </div>
 
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-cream font-light leading-tight mb-4">
-            Ready for your boat ride?
+            Pondicherry Boating Booking & Price
           </h2>
 
           <p className="font-serif text-xl sm:text-2xl text-sand italic font-light">
-            “Your next quiet morning or golden sunset on the water is closer than you think.”
+            “Book the best boating in Pondicherry with official fixed prices — no advance payment required.”
           </p>
           <div className="w-16 h-[1px] bg-sand/30 mx-auto mt-6" />
         </div>

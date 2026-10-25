@@ -19,16 +19,16 @@ export default function LocationSection({ onOpenContact }) {
             className="group inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-forest hover:bg-forest-deep text-sand hover:text-white text-xs font-semibold uppercase tracking-luxury mb-4 shadow-sm transition-all"
           >
             <Anchor className="w-3.5 h-3.5 text-sunset group-hover:rotate-12 transition-transform" />
-            <span>Mangrove Bay</span>
+            <span>Boating Near Me • Marina Estuary, Puducherry</span>
             <ExternalLink className="w-3 h-3 text-sand/80 ml-1 group-hover:translate-x-0.5 transition-transform" />
           </a>
 
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-forest font-light leading-tight">
-            Find your way to the bay.
+            Boating Near Me in Pondicherry
           </h2>
 
           <p className="mt-4 text-base text-charcoal/75 max-w-xl font-sans">
-            Departing directly from <strong>Mangrove Bay</strong> — the premier boarding jetty where peaceful mangrove root tunnels, lagoon waters, and the Bay of Bengal sea mouth meet.
+            Looking for boating near me in Pondicherry? Depart directly from Pondy Boating (Mangrove Bay) at Marina, Vambakeerapalayam — featuring 100% free car parking, clean restrooms, and changing rooms right at the boarding jetty.
           </p>
         </div>
 

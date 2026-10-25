@@ -63,15 +63,15 @@ export default function RidesAndExperiences({ onBookRide }) {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-forest text-sand text-xs font-semibold uppercase tracking-luxury shadow-sm mb-3">
             <Anchor className="w-3.5 h-3.5 text-sunset" />
-            <span>Pondy Boating • 1-Hour Mangrove Experiences • Daily 7:00 AM – 5:30 PM</span>
+            <span>Pondicherry Boating Booking & Price • All 4 Sights in 1 Hour</span>
           </div>
 
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-forest font-light leading-tight mb-3">
-            Pondicherry Boating & Mangrove Tours
+            Best Boating in Pondicherry — Packages & Price
           </h2>
 
           <p className="text-sm sm:text-base text-charcoal/75 leading-relaxed max-w-2xl mx-auto font-sans">
-            Experience the premier pondy mangrove boating adventure. Every 1-hour cruise explores all 4 iconic sights together: peaceful mangrove root canals, historic 2,000-year Arikamedu, the beach sea confluence, and the harbour.
+            Check Pondicherry boat ride price and packages. Experience the premier mangrove boating Pondicherry adventure with 100% private boat rides or shared family tours exploring all 4 iconic sights in 1 full hour.
           </p>
         </div>
 
