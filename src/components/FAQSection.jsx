@@ -8,6 +8,14 @@ export default function FAQSection({ onOpenBooking }) {
 
   const faqs = [
     {
+      question: "Which is the best boating in Pondicherry (Pondy Boating)?",
+      answer: "Pondy Boating (Mangrove Bay) is widely recognized as the premier boating experience in Pondicherry (Pondycherry). Departing from Marina, Vambakeerapalayam, every ride is a genuine 1-hour cruise exploring lush mangrove root canals, ancient 2,000-year Arikamedu ruins, and the breathtaking Bay of Bengal sea confluence, fully equipped with approved life jackets and licensed captains."
+    },
+    {
+      question: "Where can I experience mangrove boating in Pondicherry (Pondycherry)?",
+      answer: "The premier location for mangrove boating in Pondicherry is Pondy Boating at Mangrove Bay. We guide you inside the shaded, protected mangrove tunnels and bio-reserves where exotic wetland birds nest. Daily boat rides operate from 7:00 AM to 5:30 PM with shared rides (₹500/adult, ₹250/child) and private boats."
+    },
+    {
       question: "What are the boat ride timings at Mangrove Bay Puducherry?",
       answer: "Mangrove Bay is open daily from Morning 7:00 AM to Evening 5:30 PM. The first departures start at 7:00 AM for peaceful early morning sunrise cruises with mirror-like waters. Our popular golden hour sunset rides operate between 3:30 PM and 5:30 PM."
     },

@@ -61,10 +61,10 @@ export const HERO_DATA = {
 };
 
 export const INTRO_DATA = {
-  eyebrow: "WELCOME TO MANGROVE BAY",
-  heading: "Where nature, history and boating adventure meet.",
-  body: "Discover the beauty of Mangrove Bay, explore peaceful mangroves, experience the heritage of Arikamedu, and set out on an unforgettable boating adventure.",
-  secondaryText: "Whether it’s a relaxing escape, a sunset ride, or an exciting journey on the water, Mangrove Bay is your gateway to explore Puducherry from a whole new perspective.",
+  eyebrow: "PONDY BOATING • MANGROVE BAY",
+  heading: "The premier Pondicherry boating & mangrove experience.",
+  body: "Discover the beauty of Pondy Boating at Mangrove Bay — explore peaceful mangroves, experience the 2,000-year heritage of Arikamedu, and set out on an unforgettable boating adventure in Pondicherry.",
+  secondaryText: "Looking for the finest boating in Pondy (Pondycherry)? Whether it is a romantic couple cruise, family private charter, or a serene mangrove boating safari, Pondy Boating is your gateway to explore Puducherry from the water.",
   invitation: "Come aboard. Explore. Adventure. Escape into the calm.",
   features: [
     { number: "01", title: "Mangrove Bay", subtitle: "Coastal estuary waters, scenic breakwaters & ocean breezes" },
