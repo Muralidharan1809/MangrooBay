@@ -19,7 +19,7 @@ export default function LocationSection({ onOpenContact }) {
             className="group inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-forest hover:bg-forest-deep text-sand hover:text-white text-xs font-semibold uppercase tracking-luxury mb-4 shadow-sm transition-all"
           >
             <Anchor className="w-3.5 h-3.5 text-sunset group-hover:rotate-12 transition-transform" />
-            <span>Boating Near Me • Marina Estuary, Puducherry</span>
+            <span>Marina Boating in Pondy • Boating Near Me</span>
             <ExternalLink className="w-3 h-3 text-sand/80 ml-1 group-hover:translate-x-0.5 transition-transform" />
           </a>
 
@@ -28,7 +28,7 @@ export default function LocationSection({ onOpenContact }) {
           </h2>
 
           <p className="mt-4 text-base text-charcoal/75 max-w-xl font-sans">
-            Looking for boating near me in Pondicherry? Depart directly from Pondy Boating (Mangrove Bay) at Marina, Vambakeerapalayam — featuring 100% free car parking, clean restrooms, and changing rooms right at the boarding jetty.
+            Looking for the famous Marina boating in Pondy (Merina boating) or boating near me in Pondicherry? Depart directly from Pondy Boating (Mangrove Bay) at Marina, Vambakeerapalayam — featuring 100% free car parking, clean restrooms, and changing rooms right at the boarding jetty.
           </p>
         </div>
 

@@ -62,7 +62,7 @@ export const HERO_DATA = {
 
 export const INTRO_DATA = {
   eyebrow: "PONDY BOATING • MANGROVE BAY",
-  heading: "The premier Pondicherry boating & mangrove experience.",
+  heading: "The #1 Tourist Boating in Pondicherry & Premier Marina Boating.",
   body: "Discover the beauty of Pondy Boating at Mangrove Bay — explore peaceful mangroves, experience the 2,000-year heritage of Arikamedu, and set out on an unforgettable boating adventure in Pondicherry.",
   secondaryText: "Looking for the finest boating in Pondy (Pondycherry)? Whether it is a romantic couple cruise, family private charter, or a serene mangrove boating safari, Pondy Boating is your gateway to explore Puducherry from the water.",
   invitation: "Come aboard. Explore. Adventure. Escape into the calm.",

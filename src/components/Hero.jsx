@@ -48,7 +48,7 @@ export default function Hero({ onOpenBooking }) {
           Mangrove Bay
         </h1>
         <p className="text-xs sm:text-sm uppercase tracking-widest text-sand font-medium mb-3">
-          The Best Boating in Pondicherry • Mangrove Bay
+          Premier Pondicherry Boat House • Mangrove Bay
         </p>
 
         {/* Tagline */}

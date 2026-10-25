@@ -8,6 +8,22 @@ export default function FAQSection({ onOpenBooking }) {
 
     const faqs = [
     {
+      question: "Where is Marina boating in Pondy located?",
+      answer: "Marina boating in Pondy (Merina boating) is located at Pondy Boating (Mangrove Bay), 2nd Cross St, Marina, Vambakeerapalayam. It is the premier boarding point right next to Pondicherry Marina beach and the estuary breakwater, featuring 100% free car and two-wheeler parking."
+    },
+    {
+      question: "Which is the best tourist boating in Pondicherry (Pondycherry)?",
+      answer: "Pondy Boating at Mangrove Bay is rated the #1 tourist boating in Pondicherry. Rated 4.9 stars by hundreds of visitors, every 1-hour cruise explores 4 iconic sights together: lush mangrove canopy tunnels, 2,000-year ancient Arikamedu ruins, Marina beach sea confluence, and the harbour with full certified safety equipment."
+    },
+    {
+      question: "Which is the best boat house in Pondicherry (Pondycherry)?",
+      answer: "Pondy Boating (Mangrove Bay) is widely rated the #1 best boat house in Pondicherry (Pondycherry). Departing directly from Marina, Vambakeerapalayam, every ride is a genuine 1-hour backwater journey exploring lush mangrove root canals, ancient 2,000-year Arikamedu ruins, and the Bay of Bengal ocean confluence. We offer 100% free car parking, zero waiting queues, certified life vests, and transparent fixed pricing."
+    },
+    {
+      question: "What is the Pondicherry boat house ticket price and timings?",
+      answer: "Pondy Boating operates daily from Morning 7:00 AM to Evening 5:30 PM. Official fixed ticket prices for a full 1-hour cruise:\n• Shared Boat Ride: ₹500 per Adult, ₹250 per Child (ages 3–10; under 3 free).\n• Couples Private Boat: ₹3,000 Flat Rate (100% private boat for 2).\n• Separate Private Boat: ₹5,000 Flat Rate (dedicated private vessel for up to 10 guests).\nEvery ticket covers all 4 iconic sights together!"
+    },
+    {
       question: "What is the Pondicherry boat ride price?",
       answer: "We offer 100% transparent, official fixed rates for a genuine full 1-hour (60 mins) cruise:\n• Shared Boating Ride: ₹500 per Adult, ₹250 per Child (ages 3–10; infants under 3 ride free).\n• Couples Private Boat Ride: ₹3,000 Flat Rate (100% private boat exclusively for 2 guests).\n• Separate Private Boat: ₹5,000 Flat Rate (dedicated private boat for 1 to 10 guests).\nEvery ride explores all 4 scenic sights with life jackets included!"
     },
