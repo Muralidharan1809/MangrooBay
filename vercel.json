@@ -1,0 +1,21 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "pondyboating.com"
+        }
+      ],
+      "destination": "https://www.pondyboating.com/:path*",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/((?!assets/|Images/|videos/|robots\\.txt|sitemap\\.xml|.*\\.html|.*\\.jpeg|.*\\.png|.*\\.mp4|.*\\.svg).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
