@@ -36,9 +36,9 @@ export const BRAND_DATA = {
     whatsappUrl: "https://wa.me/917397438874",
     website: "https://www.pondyboating.com",
     email: "info@pondyboating.com",
-    address: "Mangrove Bay Boarding Jetty, Coastal Estuary & Mangrove Backwaters, Puducherry 605001, India",
+    address: "2nd Cross St, Marina, Vambakeerapalayam, Puducherry, 605001, India",
     mapCoordinates: { lat: 11.9125, lng: 79.8228 },
-    googleMapsUrl: "https://maps.app.goo.gl/AE9WcERLaQ4ztnj89",
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=PondyBoating+Marina+Vambakeerapalayam+Puducherry",
     instagram: "https://instagram.com/mangrovebay.pondy",
     facebook: "https://facebook.com/mangrovebay.pondy"
   }
@@ -468,7 +468,7 @@ export const WHY_MANGROO_DATA = WHY_MARINA_DATA;
 export const LOCATION_DATA = {
   heading: "Find your way to the bay.",
   location: "Mangrove Bay, Puducherry, India",
-  address: "Mangrove Bay Boarding Jetty, Estuary Backwaters, Puducherry 605001, India",
+  address: "2nd Cross St, Marina, Vambakeerapalayam, Puducherry, 605001, India",
   boatingHours: "Morning 07:00 AM to Evening 05:30 PM (Daily)",
   note: "Board directly at Mangrove Bay. Open daily from Morning 7:00 AM to Evening 5:30 PM. 100% Free vehicle parking, clean restrooms & toilet facilities, private dress changing rooms, certified safety gear, and welcoming guest jetty lounge available.",
   marinaFeatures: [
@@ -625,7 +625,7 @@ export const REVIEWS_DATA = {
     source: "Google Reviews",
     verifiedPercentage: "98% Positive Feedback",
     recommendationRate: "99% would recommend to friends & family",
-    googleMapsUrl: "https://maps.app.goo.gl/AE9WcERLaQ4ztnj89"
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=PondyBoating+Marina+Vambakeerapalayam+Puducherry"
   },
   filters: [
     { id: "all", label: "All Reviews (520+)" },
