@@ -70,7 +70,7 @@ export default function Navbar({ onOpenBooking, onOpenContact, onOpenBookingsMan
                 Mangrove Bay
               </span>
               <span className="block text-[9px] tracking-widest text-sand/80 uppercase font-sans -mt-0.5">
-                Puducherry Boating
+                Pondy Boating • Puducherry
               </span>
             </div>
           </a>

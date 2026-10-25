@@ -41,7 +41,7 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
                     {BRAND_DATA.name}
                   </span>
                   <span className="block text-[10px] tracking-widest uppercase text-sand/80 font-sans">
-                    Puducherry Boating
+                    Pondy Boating • Puducherry
                   </span>
                 </div>
               </div>
@@ -49,7 +49,7 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
                 “{BRAND_DATA.tagline}”
               </p>
               <p className="text-sm text-cream/70 max-w-sm font-sans font-light leading-relaxed">
-                Premier 1-hour boat rides, romantic couple voyages, private family charters, and mangrove safaris in Puducherry.
+                Premier 1-hour Pondy boating rides, romantic couple voyages, private family charters, and pondy mangrove boating safaris in Puducherry.
               </p>
             </div>
 
