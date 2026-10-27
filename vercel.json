@@ -14,8 +14,23 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!assets/|Images/|videos/|robots\\.txt|sitemap\\.xml|.*\\.html|.*\\.jpeg|.*\\.png|.*\\.mp4|.*\\.svg).*)",
+      "source": "/((?!assets/|Images/|videos/|robots\\.txt|sitemap\\.xml|llms.*\\.txt|ai-catalog\\.json|\\.well-known/.*|.*\\.html|.*\\.json|.*\\.jpeg|.*\\.png|.*\\.mp4|.*\\.svg).*)",
       "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*\\.json|.*\\.txt)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
+      ]
     }
   ]
 }

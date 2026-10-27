@@ -397,10 +397,13 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
 
               {/* Ride Selection */}
               <div>
-                <label className="block text-xs uppercase tracking-wider font-semibold text-forest mb-2">
+                <label htmlFor="modal-ride-type" className="block text-xs uppercase tracking-wider font-semibold text-forest mb-2">
                   Select 1-Hour Boating Ride
                 </label>
                 <select
+                  id="modal-ride-type"
+                  name="rideType"
+                  aria-label="Select 1-Hour Boating Ride"
                   value={formData.rideType}
                   onChange={(e) => setFormData({ ...formData, rideType: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl bg-white border border-sand/60 text-sm text-charcoal focus:outline-none focus:ring-2 focus:ring-forest font-medium"
@@ -422,10 +425,13 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
               {/* Date & Time Slot (7 AM to 5:30 PM) */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs uppercase tracking-wider font-semibold text-forest mb-2">
+                  <label htmlFor="modal-ride-date" className="block text-xs uppercase tracking-wider font-semibold text-forest mb-2">
                     Ride Date *
                   </label>
                   <input
+                    id="modal-ride-date"
+                    name="rideDate"
+                    aria-label="Ride Date"
                     type="date"
                     value={formData.date}
                     onChange={(e) => setFormData({ ...formData, date: e.target.value })}
@@ -438,10 +444,13 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase tracking-wider font-semibold text-forest mb-2">
+                  <label htmlFor="modal-time-slot" className="block text-xs uppercase tracking-wider font-semibold text-forest mb-2">
                     Time Slot (7:00 AM – 5:30 PM)
                   </label>
                   <select
+                    id="modal-time-slot"
+                    name="timeSlot"
+                    aria-label="Select Preferred Time Slot"
                     value={formData.timeSlot}
                     onChange={(e) => setFormData({ ...formData, timeSlot: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl bg-white border border-sand/60 text-sm text-charcoal focus:outline-none focus:ring-2 focus:ring-forest"
@@ -483,6 +492,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
                     <div className="flex items-center gap-2">
                       <button
                         type="button"
+                        aria-label="Decrease adult passengers"
                         onClick={() => setFormData(p => ({ ...p, adults: Math.max(1, p.adults - 1) }))}
                         className="w-8 h-8 rounded-lg bg-white border border-sand/60 text-forest font-bold hover:bg-sand/30"
                       >
@@ -491,6 +501,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
                       <span className="w-6 text-center font-bold text-forest text-sm">{formData.adults}</span>
                       <button
                         type="button"
+                        aria-label="Increase adult passengers"
                         onClick={() => setFormData(p => ({ ...p, adults: p.adults + 1 }))}
                         className="w-8 h-8 rounded-lg bg-white border border-sand/60 text-forest font-bold hover:bg-sand/30"
                       >
@@ -508,6 +519,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
                     <div className="flex items-center gap-2">
                       <button
                         type="button"
+                        aria-label="Decrease child passengers"
                         onClick={() => setFormData(p => ({ ...p, children: Math.max(0, p.children - 1) }))}
                         className="w-8 h-8 rounded-lg bg-white border border-sand/60 text-forest font-bold hover:bg-sand/30"
                       >
@@ -516,6 +528,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
                       <span className="w-6 text-center font-bold text-forest text-sm">{formData.children}</span>
                       <button
                         type="button"
+                        aria-label="Increase child passengers"
                         onClick={() => setFormData(p => ({ ...p, children: p.children + 1 }))}
                         className="w-8 h-8 rounded-lg bg-white border border-sand/60 text-forest font-bold hover:bg-sand/30"
                       >
@@ -551,7 +564,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
               {/* Promo Code Input & Available Offers */}
               <div className="p-4 rounded-2xl bg-white border border-sand/60 space-y-2.5">
                 <div className="flex items-center justify-between">
-                  <label className="text-xs uppercase tracking-wider font-semibold text-forest flex items-center gap-1.5">
+                  <label htmlFor="modal-promo-code" className="text-xs uppercase tracking-wider font-semibold text-forest flex items-center gap-1.5">
                     <Tag className="w-3.5 h-3.5 text-sunset" />
                     <span>Have a Promo Code or Offer?</span>
                   </label>
@@ -560,6 +573,9 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
 
                 <div className="flex gap-2">
                   <input
+                    id="modal-promo-code"
+                    name="promoCode"
+                    aria-label="Promo code or discount offer"
                     type="text"
                     placeholder="e.g. SUNRISE7, FAMILYPASS"
                     value={formData.promoCode}
@@ -646,10 +662,13 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
               {/* Passenger Contact Details */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs uppercase tracking-wider font-semibold text-forest mb-2">
+                  <label htmlFor="modal-full-name" className="block text-xs uppercase tracking-wider font-semibold text-forest mb-2">
                     Your Name *
                   </label>
                   <input
+                    id="modal-full-name"
+                    name="fullName"
+                    aria-label="Your Name"
                     type="text"
                     placeholder="e.g. Karthik & Sneha"
                     value={formData.fullName}
@@ -662,10 +681,13 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase tracking-wider font-semibold text-forest mb-2">
+                  <label htmlFor="modal-phone" className="block text-xs uppercase tracking-wider font-semibold text-forest mb-2">
                     Phone / WhatsApp *
                   </label>
                   <input
+                    id="modal-phone"
+                    name="phone"
+                    aria-label="Phone or WhatsApp Number"
                     type="tel"
                     placeholder="+91 98765 43210"
                     value={formData.phone}
@@ -679,10 +701,13 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
               </div>
 
               <div>
-                <label className="block text-xs uppercase tracking-wider font-semibold text-forest mb-2">
+                <label htmlFor="modal-email" className="block text-xs uppercase tracking-wider font-semibold text-forest mb-2">
                   Email Address (Optional)
                 </label>
                 <input
+                  id="modal-email"
+                  name="email"
+                  aria-label="Email Address"
                   type="email"
                   placeholder="name@example.com"
                   value={formData.email}
@@ -696,10 +721,13 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
 
               {/* Special Requests */}
               <div>
-                <label className="block text-xs uppercase tracking-wider font-semibold text-forest mb-2">
+                <label htmlFor="modal-special-requests" className="block text-xs uppercase tracking-wider font-semibold text-forest mb-2">
                   Special Requests (Optional)
                 </label>
                 <textarea
+                  id="modal-special-requests"
+                  name="specialRequests"
+                  aria-label="Special Requests"
                   rows="2"
                   placeholder="Arrival preferences, couple romantic decor, photography assistance, or questions..."
                   value={formData.specialRequests}

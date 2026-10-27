@@ -232,10 +232,13 @@ export default function ContactSection({ onOpenBooking }) {
             ) : (
               <form onSubmit={handleQuickMessage} className="space-y-4">
                 <div>
-                  <label className="block text-xs uppercase tracking-wider font-semibold text-forest mb-1.5">
+                  <label htmlFor="contact-sender" className="block text-xs uppercase tracking-wider font-semibold text-forest mb-1.5">
                     Your Name & Phone / WhatsApp Number *
                   </label>
                   <input
+                    id="contact-sender"
+                    name="senderContact"
+                    aria-label="Your Name and Phone Number"
                     type="text"
                     required
                     placeholder="e.g. Ramesh Kumar, +91 98765 43210"
@@ -246,10 +249,13 @@ export default function ContactSection({ onOpenBooking }) {
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase tracking-wider font-semibold text-forest mb-1.5">
+                  <label htmlFor="contact-inquiry" className="block text-xs uppercase tracking-wider font-semibold text-forest mb-1.5">
                     How can we assist you? *
                   </label>
                   <textarea
+                    id="contact-inquiry"
+                    name="inquiryText"
+                    aria-label="How can we assist you?"
                     rows="3"
                     required
                     placeholder="Tell us your preferred date, time slot, group size, couple ride, or any questions about your 1-hour boat ride..."

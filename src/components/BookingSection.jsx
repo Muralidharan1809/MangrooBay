@@ -364,10 +364,13 @@ export default function BookingSection({ onOpenContact }) {
 
               {/* Ride Selection */}
               <div>
-                <label className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
+                <label htmlFor="booking-ride-type" className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
                   Select 1-Hour Boating Ride
                 </label>
                 <select
+                  id="booking-ride-type"
+                  name="rideType"
+                  aria-label="Select 1-Hour Boating Ride"
                   value={formData.rideType}
                   onChange={(e) => setFormData({ ...formData, rideType: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl bg-forest/80 border border-sand/30 text-sm text-cream focus:outline-none focus:border-sand font-medium"
@@ -389,10 +392,13 @@ export default function BookingSection({ onOpenContact }) {
               {/* Date & Time Slot (7:00 AM - 5:30 PM) */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
+                  <label htmlFor="booking-ride-date" className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
                     Ride Date *
                   </label>
                   <input
+                    id="booking-ride-date"
+                    name="rideDate"
+                    aria-label="Ride Date"
                     type="date"
                     value={formData.date}
                     onChange={(e) => setFormData({ ...formData, date: e.target.value })}
@@ -405,10 +411,13 @@ export default function BookingSection({ onOpenContact }) {
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
+                  <label htmlFor="booking-time-slot" className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
                     Time Slot (7:00 AM – 5:30 PM)
                   </label>
                   <select
+                    id="booking-time-slot"
+                    name="timeSlot"
+                    aria-label="Select Preferred Time Slot"
                     value={formData.timeSlot}
                     onChange={(e) => setFormData({ ...formData, timeSlot: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl bg-forest/80 border border-sand/30 text-sm text-cream focus:outline-none focus:border-sand"
@@ -450,6 +459,7 @@ export default function BookingSection({ onOpenContact }) {
                     <div className="flex items-center gap-2">
                       <button
                         type="button"
+                        aria-label="Decrease adult passengers"
                         onClick={() => setFormData(p => ({ ...p, adults: Math.max(1, p.adults - 1) }))}
                         className="w-8 h-8 rounded-lg bg-forest border border-sand/40 text-sand font-bold hover:bg-forest-light"
                       >
@@ -458,6 +468,7 @@ export default function BookingSection({ onOpenContact }) {
                       <span className="w-6 text-center font-bold text-sand text-sm">{formData.adults}</span>
                       <button
                         type="button"
+                        aria-label="Increase adult passengers"
                         onClick={() => setFormData(p => ({ ...p, adults: p.adults + 1 }))}
                         className="w-8 h-8 rounded-lg bg-forest border border-sand/40 text-sand font-bold hover:bg-forest-light"
                       >
@@ -475,6 +486,7 @@ export default function BookingSection({ onOpenContact }) {
                     <div className="flex items-center gap-2">
                       <button
                         type="button"
+                        aria-label="Decrease child passengers"
                         onClick={() => setFormData(p => ({ ...p, children: Math.max(0, p.children - 1) }))}
                         className="w-8 h-8 rounded-lg bg-forest border border-sand/40 text-sand font-bold hover:bg-forest-light"
                       >
@@ -483,6 +495,7 @@ export default function BookingSection({ onOpenContact }) {
                       <span className="w-6 text-center font-bold text-sand text-sm">{formData.children}</span>
                       <button
                         type="button"
+                        aria-label="Increase child passengers"
                         onClick={() => setFormData(p => ({ ...p, children: p.children + 1 }))}
                         className="w-8 h-8 rounded-lg bg-forest border border-sand/40 text-sand font-bold hover:bg-forest-light"
                       >
@@ -518,7 +531,7 @@ export default function BookingSection({ onOpenContact }) {
               {/* Promo Code Input & Quick Apply */}
               <div className="p-4 rounded-2xl bg-forest/60 border border-sand/30 space-y-2.5">
                 <div className="flex items-center justify-between">
-                  <label className="text-xs uppercase tracking-luxury text-sand font-semibold flex items-center gap-1.5">
+                  <label htmlFor="booking-promo-code" className="text-xs uppercase tracking-luxury text-sand font-semibold flex items-center gap-1.5">
                     <Tag className="w-3.5 h-3.5 text-sunset" />
                     <span>Have a Promo Code or Offer?</span>
                   </label>
@@ -527,6 +540,9 @@ export default function BookingSection({ onOpenContact }) {
 
                 <div className="flex gap-2">
                   <input
+                    id="booking-promo-code"
+                    name="promoCode"
+                    aria-label="Promo code or discount offer"
                     type="text"
                     placeholder="e.g. SUNRISE7, FAMILYPASS"
                     value={formData.promoCode}
@@ -611,10 +627,13 @@ export default function BookingSection({ onOpenContact }) {
               {/* Guest Information */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
+                  <label htmlFor="booking-full-name" className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
                     Your Name *
                   </label>
                   <input
+                    id="booking-full-name"
+                    name="fullName"
+                    aria-label="Your Name"
                     type="text"
                     placeholder="e.g. Karthik & Sneha"
                     value={formData.fullName}
@@ -627,10 +646,13 @@ export default function BookingSection({ onOpenContact }) {
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
+                  <label htmlFor="booking-phone" className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
                     Phone / WhatsApp *
                   </label>
                   <input
+                    id="booking-phone"
+                    name="phone"
+                    aria-label="Phone or WhatsApp Number"
                     type="tel"
                     placeholder="+91 98765 43210"
                     value={formData.phone}
@@ -644,10 +666,13 @@ export default function BookingSection({ onOpenContact }) {
               </div>
 
               <div>
-                <label className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
+                <label htmlFor="booking-email" className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
                   Email Address (Optional)
                 </label>
                 <input
+                  id="booking-email"
+                  name="email"
+                  aria-label="Email Address"
                   type="email"
                   placeholder="name@example.com"
                   value={formData.email}
@@ -661,10 +686,13 @@ export default function BookingSection({ onOpenContact }) {
 
               {/* Special Requests */}
               <div>
-                <label className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
+                <label htmlFor="booking-special-requests" className="block text-xs uppercase tracking-luxury text-sand font-semibold mb-2">
                   Special Requests (Optional)
                 </label>
                 <textarea
+                  id="booking-special-requests"
+                  name="specialRequests"
+                  aria-label="Special Requests"
                   rows="2"
                   placeholder="Arrival preferences, romantic rose decor, photography help, or custom music playlist..."
                   value={formData.specialRequests}
