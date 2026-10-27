@@ -1,4 +1,5 @@
 {
+  "cleanUrls": true,
   "redirects": [
     {
       "source": "/:path*",
@@ -14,7 +15,27 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!assets/|Images/|videos/|robots\\.txt|sitemap\\.xml|llms.*\\.txt|ai-catalog\\.json|\\.well-known/.*|.*\\.html|.*\\.json|.*\\.jpeg|.*\\.png|.*\\.mp4|.*\\.svg).*)",
+      "source": "/pondy-marina-boating",
+      "destination": "/pondy-marina-boating/index.html"
+    },
+    {
+      "source": "/pondicherry-mangrove-boating",
+      "destination": "/pondicherry-mangrove-boating/index.html"
+    },
+    {
+      "source": "/pondicherry-boating-booking",
+      "destination": "/pondicherry-boating-booking/index.html"
+    },
+    {
+      "source": "/pondicherry-boating-price",
+      "destination": "/pondicherry-boating-price/index.html"
+    },
+    {
+      "source": "/boating-in-pondicherry",
+      "destination": "/boating-in-pondicherry/index.html"
+    },
+    {
+      "source": "/((?!assets/|Images/|videos/|robots\\.txt|sitemap\\.xml|llms.*\\.txt|ai-catalog\\.json|\\.well-known/.*|pondy-marina-boating.*|pondicherry-mangrove-boating.*|pondicherry-boating-booking.*|pondicherry-boating-price.*|boating-in-pondicherry.*|.*\\.html|.*\\.json|.*\\.jpeg|.*\\.png|.*\\.mp4|.*\\.svg).*)",
       "destination": "/index.html"
     }
   ],

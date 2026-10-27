@@ -24,7 +24,7 @@ export default function LocationSection({ onOpenContact }) {
           </a>
 
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-forest font-light leading-tight">
-            Boating Near Me in Pondicherry
+            Pondy Marina Boating
           </h2>
 
           <p className="mt-4 text-base text-charcoal/75 max-w-xl font-sans">

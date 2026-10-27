@@ -3,59 +3,106 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- Main Homepage -->
+  <!-- 1. Main Homepage - Pondicherry Boating -->
   <url>
     <loc>https://www.pondyboating.com/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-
     <image:image>
       <image:loc>https://www.pondyboating.com/Images/Mangroo%20Forest.jpeg</image:loc>
-      <image:title>Mangrove Forest Canopy Trails Puducherry - Mangrove Bay</image:title>
+      <image:title>Mangrove Forest Canopy Trails Puducherry - Pondy Boating</image:title>
       <image:caption>Scenic 1-hour mangrove bio-reserve boat cruise in Puducherry.</image:caption>
     </image:image>
-
     <image:image>
       <image:loc>https://www.pondyboating.com/Images/CouplesRide.jpeg</image:loc>
-      <image:title>Couples Private Boat Ride in Puducherry - Mangrove Bay</image:title>
+      <image:title>Couples Private Boat Ride in Puducherry - Pondy Boating</image:title>
       <image:caption>100% private 1-hour romantic couple boat ride in Puducherry.</image:caption>
     </image:image>
-
     <image:image>
       <image:loc>https://www.pondyboating.com/Images/GroupRide.jpeg</image:loc>
-      <image:title>Separate Private Boat &amp; Group Ride - Mangrove Bay</image:title>
+      <image:title>Separate Private Boat &amp; Group Ride - Pondy Boating</image:title>
       <image:caption>Dedicated family and group covered cruiser boat ride in Puducherry.</image:caption>
     </image:image>
-
     <image:image>
       <image:loc>https://www.pondyboating.com/Images/Arikkamedu.jpeg</image:loc>
-      <image:title>Historic 2000-Year Arikamedu Port Ruins - Mangrove Bay</image:title>
+      <image:title>Historic 2000-Year Arikamedu Port Ruins - Pondy Boating</image:title>
       <image:caption>Ancient Indo-Roman trading port backwater river cruise in Puducherry.</image:caption>
     </image:image>
-
     <image:image>
       <image:loc>https://www.pondyboating.com/Images/Pondycherry%20Beach%26River.jpeg</image:loc>
-      <image:title>Puducherry Beach and River Confluence Sunset Ride - Mangrove Bay</image:title>
+      <image:title>Puducherry Beach and River Confluence Sunset Ride - Pondy Boating</image:title>
       <image:caption>Where the tranquil lagoon backwater meets Bay of Bengal sea waves.</image:caption>
     </image:image>
-
     <image:image>
       <image:loc>https://www.pondyboating.com/Images/Pondycherry_harbour.jpeg</image:loc>
-      <image:title>Puducherry Harbour &amp; Breakwaters Sunrise Ride - Mangrove Bay</image:title>
+      <image:title>Puducherry Harbour &amp; Breakwaters Sunrise Ride - Pondy Boating</image:title>
       <image:caption>Early 7:00 AM morning estuary calm and fishing fleet horizons.</image:caption>
     </image:image>
+  </url>
 
+  <!-- 2. Pondy Marina Boating -->
+  <url>
+    <loc>https://www.pondyboating.com/pondy-marina-boating/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <image:image>
-      <image:loc>https://www.pondyboating.com/Images/Mangroove_Forest1.jpeg</image:loc>
-      <image:title>Lush Mangrove Bio-Reserve Canopies Puducherry</image:title>
-      <image:caption>Serene natural waterways and bird watching in Puducherry.</image:caption>
+      <image:loc>https://www.pondyboating.com/Images/Pondycherry_harbour.jpeg</image:loc>
+      <image:title>Pondy Marina Boating Breakwaters &amp; Harbour</image:title>
+      <image:caption>Scenic Marina boat ride departing from Vambakeerapalayam near Marina Beach.</image:caption>
     </image:image>
+  </url>
 
+  <!-- 3. Pondicherry Mangrove Boating -->
+  <url>
+    <loc>https://www.pondyboating.com/pondicherry-mangrove-boating/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <image:image>
-      <image:loc>https://www.pondyboating.com/Images/BirthdayCelepraion.jpeg</image:loc>
-      <image:title>Celebrations on the Water - Mangrove Bay</image:title>
-      <image:caption>Special family and couple celebratory moments on Puducherry backwaters.</image:caption>
+      <image:loc>https://www.pondyboating.com/Images/Mangroo%20Forest.jpeg</image:loc>
+      <image:title>Pondicherry Mangrove Boating Canopy Safari</image:title>
+      <image:caption>Guided eco boat safari through protected mangrove tunnels in Pondicherry.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 4. Pondicherry Boating Booking & Tickets -->
+  <url>
+    <loc>https://www.pondyboating.com/pondicherry-boating-booking/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.pondyboating.com/Images/CouplesRide.jpeg</image:loc>
+      <image:title>Pondicherry Boating Booking Online &amp; WhatsApp</image:title>
+      <image:caption>Book couple, family, and private boat rides online with instant confirmation.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 5. Pondicherry Boat Ride Price & Packages -->
+  <url>
+    <loc>https://www.pondyboating.com/pondicherry-boating-price/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.pondyboating.com/Images/GroupRide.jpeg</image:loc>
+      <image:title>Pondicherry Boat Ride Prices and Packages</image:title>
+      <image:caption>Official transparent rates for shared, couple, and private boat rides in Pondicherry.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 6. Boating in Pondicherry -->
+  <url>
+    <loc>https://www.pondyboating.com/boating-in-pondicherry/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.pondyboating.com/Images/Pondycherry%20Beach%26River.jpeg</image:loc>
+      <image:title>Boating in Pondicherry - Premier Waterfront Tours</image:title>
+      <image:caption>Complete guide and 1-hour backwater cruises in Puducherry.</image:caption>
     </image:image>
   </url>
 

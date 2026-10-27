@@ -25,8 +25,7 @@ export default function WhyMarinaBay() {
             The Mangrove Bay Distinction
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-forest font-light leading-tight">
-            Best Boating in Pondicherry —<br />
-            <span className="italic text-sunset">Why Choose Pondy Boating?</span>
+            Why Choose Pondy Boating?
           </h2>
           <p className="mt-4 text-sm md:text-base text-charcoal/75 max-w-xl font-sans">
             Crafted for travelers seeking the best private boat ride in Pondicherry, peaceful mangrove boating, and transparent boat ride prices.

@@ -67,7 +67,7 @@ export default function RidesAndExperiences({ onBookRide }) {
           </div>
 
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-forest font-light leading-tight mb-3">
-            Best Boating in Pondicherry — Packages & Price
+            Pondicherry Mangrove Boating
           </h2>
 
           <p className="text-sm sm:text-base text-charcoal/75 leading-relaxed max-w-2xl mx-auto font-sans">

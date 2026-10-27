@@ -44,11 +44,11 @@ export default function Hero({ onOpenBooking }) {
         </div>
 
         {/* Brand Title */}
-        <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl font-light tracking-luxury uppercase text-cream drop-shadow-md mb-2">
-          Mangrove Bay
+        <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light tracking-luxury uppercase text-cream drop-shadow-md mb-3 leading-tight">
+          Pondicherry Boating – Marina & Mangrove Boat Rides
         </h1>
         <p className="text-xs sm:text-sm uppercase tracking-widest text-sand font-medium mb-3">
-          Premier Pondicherry Boat House • Mangrove Bay
+          Pondy Boating • Mangrove Bay Boarding Jetty
         </p>
 
         {/* Tagline */}
@@ -58,7 +58,7 @@ export default function Hero({ onOpenBooking }) {
 
         {/* Description */}
         <p className="max-w-2xl text-xs sm:text-sm md:text-base font-light text-cream/90 leading-relaxed mb-6 font-sans">
-          Discover the best boating in Pondicherry — experience scenic mangrove boating in Pondicherry, historic 2,000-year Arikamedu ruins, and the Bay of Bengal sea confluence with 100% private boat rides and transparent boat ride prices.
+          Book boating in Pondicherry with Pondy Boating. Enjoy scenic Marina boat rides, mangrove boating, backwater cruises and tourist boat rides with 100% private boat options and transparent boat ride prices.
         </p>
 
         {/* Clean, Cohesive Pricing Card */}

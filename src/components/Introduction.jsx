@@ -22,7 +22,7 @@ export default function Introduction() {
             </span>
 
             <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-forest font-light leading-[1.15] mb-8">
-              {INTRO_DATA.heading}
+              Boating in Pondicherry
             </h2>
 
             <div className="relative pl-6 border-l-2 border-sunset/60 mb-6">
