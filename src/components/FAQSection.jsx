@@ -72,6 +72,18 @@ export default function FAQSection({ onOpenBooking }) {
       answer: "Yes, 100% government-approved marine life jackets are provided and mandatory for all passengers (adults, children, and infants). Jackets are fitted prior to stepping onto the boat. All rides are piloted by government-licensed, experienced boat masters with full first-aid readiness."
     },
     {
+      question: "Can I visit Arikamedu by boat (Arikamedu boating / Arikkamedu boat ride)?",
+      answer: "Yes! Pondy Boating (Mangrove Bay) is the premier operator providing Arikamedu boating (Arikkamedu boat rides) in Pondicherry. Our 1-hour cruise navigates the Ariankuppam river backwaters directly past the ancient 2,000-year-old Indo-Roman archaeological port ruins of Arikamedu, offering rich history and photography from the water."
+    },
+    {
+      question: "Where can I experience Pondy river boating?",
+      answer: "Pondy river boating takes place along the scenic Ariankuppam river estuary at Pondy Boating (Mangrove Bay), Vambakeerapalayam. The 1-hour guided journey cruises through calm river waters, serene mangrove root channels, historic Arikamedu, and the scenic river mouth confluence where the river meets the Bay of Bengal sea."
+    },
+    {
+      question: "What is Mangrove Bay boating in Pondicherry?",
+      answer: "Mangrove Bay boating in Pondicherry is the signature boating experience operated by Pondy Boating from our private boarding jetty at 2nd Cross St, Marina, Vambakeerapalayam. Every 1-hour cruise explores protected mangrove bio-reserves, Arikamedu ruins, and the Marina estuary, with free car parking, clean restrooms, and private boat packages."
+    },
+    {
       question: "How do I book a boat ride and what is the payment method?",
       answer: "You can book easily online through our website or send an inquiry directly on WhatsApp (+91 73974 38874). No advance online payment is required; your slot is confirmed on WhatsApp, and payment can be made upon arrival at the jetty via Cash or UPI (Google Pay, PhonePe, Paytm)."
     }

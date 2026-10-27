@@ -35,7 +35,11 @@
       "destination": "/boating-in-pondicherry/index.html"
     },
     {
-      "source": "/((?!assets/|Images/|videos/|robots\\.txt|sitemap\\.xml|llms.*\\.txt|ai-catalog\\.json|\\.well-known/.*|pondy-marina-boating.*|pondicherry-mangrove-boating.*|pondicherry-boating-booking.*|pondicherry-boating-price.*|boating-in-pondicherry.*|.*\\.html|.*\\.json|.*\\.jpeg|.*\\.png|.*\\.mp4|.*\\.svg).*)",
+      "source": "/arikkamedu-boating",
+      "destination": "/arikkamedu-boating/index.html"
+    },
+    {
+      "source": "/((?!assets/|Images/|videos/|robots\\.txt|sitemap\\.xml|llms.*\\.txt|ai-catalog\\.json|\\.well-known/.*|pondy-marina-boating.*|pondicherry-mangrove-boating.*|pondicherry-boating-booking.*|pondicherry-boating-price.*|boating-in-pondicherry.*|arikkamedu-boating.*|.*\\.html|.*\\.json|.*\\.jpeg|.*\\.png|.*\\.mp4|.*\\.svg).*)",
       "destination": "/index.html"
     }
   ],
