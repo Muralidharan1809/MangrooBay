@@ -160,14 +160,14 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
                 <h4 className="font-serif text-3xl text-forest font-light">
                   Find Your Booking Details
                 </h4>
-                <p className="text-xs text-charcoal/70 mt-1">
+                <p className="text-xs text-charcoal/90 mt-1">
                   Enter your Booking Reference (e.g. MB-RIDE-48291) or Phone Number to check your slot time.
                 </p>
               </div>
 
               <form onSubmit={handleLookup} className="flex gap-2 mb-8">
                 <div className="relative flex-1">
-                  <Search className="w-4 h-4 text-charcoal/40 absolute left-3.5 top-3.5" />
+                  <Search className="w-4 h-4 text-charcoal/90 absolute left-3.5 top-3.5" />
                   <input
                     type="text"
                     placeholder="Enter Reference ID (e.g. MB-RIDE-...) or Phone"
@@ -188,7 +188,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
                 <div className="p-6 rounded-2xl bg-white border border-sunset/30 text-center">
                   <AlertCircle className="w-8 h-8 text-sunset mx-auto mb-2" />
                   <p className="font-serif text-lg text-forest font-medium">No booking found</p>
-                  <p className="text-xs text-charcoal/70 mt-1">
+                  <p className="text-xs text-charcoal/90 mt-1">
                     Please verify your reference number or phone. You can also call us directly at <strong>+91 73974 38874</strong>.
                   </p>
                 </div>
@@ -214,33 +214,33 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
 
                   <div className="space-y-2 text-xs text-charcoal/80">
                     <div className="flex justify-between py-1 border-b border-sand/20">
-                      <span className="text-charcoal/60">Passenger Name:</span>
+                      <span className="text-charcoal/90">Passenger Name:</span>
                       <span className="font-medium text-forest">{lookupResult.fullName}</span>
                     </div>
                     {lookupResult.referenceId && (
                       <div className="flex justify-between py-1 border-b border-sand/20">
-                        <span className="text-charcoal/60">Referral / Ref Code:</span>
+                        <span className="text-charcoal/90">Referral / Ref Code:</span>
                         <span className="font-mono font-semibold text-sunset">{lookupResult.referenceId}</span>
                       </div>
                     )}
                     <div className="flex justify-between py-1 border-b border-sand/20">
-                      <span className="text-charcoal/60">Ride Experience:</span>
+                      <span className="text-charcoal/90">Ride Experience:</span>
                       <span className="font-medium text-forest">{lookupResult.rideType}</span>
                     </div>
                     <div className="flex justify-between py-1 border-b border-sand/20">
-                      <span className="text-charcoal/60">Preferred Date:</span>
+                      <span className="text-charcoal/90">Preferred Date:</span>
                       <span className="font-semibold text-sunset">{lookupResult.date}</span>
                     </div>
                     <div className="flex justify-between py-1 border-b border-sand/20">
-                      <span className="text-charcoal/60">Time Slot:</span>
+                      <span className="text-charcoal/90">Time Slot:</span>
                       <span className="font-semibold text-forest">{lookupResult.timeSlot}</span>
                     </div>
                     <div className="flex justify-between py-1 border-b border-sand/20">
-                      <span className="text-charcoal/60">Guests:</span>
+                      <span className="text-charcoal/90">Guests:</span>
                       <span>{lookupResult.guests || lookupResult.passengers}</span>
                     </div>
                     <div className="flex justify-between py-1">
-                      <span className="text-charcoal/60">Boarding Point:</span>
+                      <span className="text-charcoal/90">Boarding Point:</span>
                       <span className="font-medium text-forest">Mangrove Bay Boarding Jetty</span>
                     </div>
                   </div>
@@ -272,7 +272,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
               {/* Filter & Search Bar */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 mb-6">
                 <div className="relative flex-1 max-w-md">
-                  <Search className="w-4 h-4 text-charcoal/40 absolute left-3.5 top-3" />
+                  <Search className="w-4 h-4 text-charcoal/90 absolute left-3.5 top-3" />
                   <input
                     type="text"
                     placeholder="Search by customer name, phone, or reference ID..."
@@ -290,7 +290,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
                       className={`px-3 py-1.5 rounded-full text-xs font-medium uppercase tracking-wider transition-colors whitespace-nowrap ${
                         selectedStatus === status
                           ? 'bg-forest text-sand shadow-sm'
-                          : 'bg-white text-charcoal/70 border border-sand/40 hover:bg-sand/20'
+                          : 'bg-white text-charcoal/90 border border-sand/40 hover:bg-sand/20'
                       }`}
                     >
                       {status === 'Inquiry' ? `Inquiries (${stats.inquiries})` : status}
@@ -303,7 +303,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
                 <div className="text-center py-16 bg-white rounded-2xl border border-sand/30">
                   <Calendar className="w-10 h-10 text-sand-dark mx-auto mb-3" />
                   <p className="font-serif text-xl text-forest font-light">No bookings found</p>
-                  <p className="text-xs text-charcoal/60 mt-1">
+                  <p className="text-xs text-charcoal/90 mt-1">
                     Try adjusting your search query or filter.
                   </p>
                 </div>
@@ -345,7 +345,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
                           {b.fullName}
                         </h4>
 
-                        <div className="flex flex-wrap items-center gap-x-6 gap-y-1.5 text-xs text-charcoal/75 font-sans">
+                        <div className="flex flex-wrap items-center gap-x-6 gap-y-1.5 text-xs text-charcoal/90 font-sans">
                           <div className="flex items-center gap-1.5 text-sunset font-medium">
                             <Calendar className="w-3.5 h-3.5" />
                             <span>{b.date || 'Flexible Date'}</span>
@@ -355,13 +355,13 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
                             <span>{b.timeSlot}</span>
                           </div>
                           <div className="flex items-center gap-1.5">
-                            <Users className="w-3.5 h-3.5 text-charcoal/50" />
+                            <Users className="w-3.5 h-3.5 text-charcoal/90" />
                             <span>{b.guests || b.passengers || '1-2 Guests'}</span>
                           </div>
                         </div>
 
                         {b.notes && (
-                          <p className="text-xs text-charcoal/70 bg-cream/70 p-2.5 rounded-lg border border-sand/30 italic">
+                          <p className="text-xs text-charcoal/90 bg-cream/70 p-2.5 rounded-lg border border-sand/30 italic">
                             “{b.notes}”
                           </p>
                         )}
@@ -411,7 +411,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
 
                           <button
                             onClick={() => handleDelete(b.id)}
-                            className="p-1.5 rounded-lg text-charcoal/40 hover:text-sunset hover:bg-sunset/10 transition-colors"
+                            className="p-1.5 rounded-lg text-charcoal/90 hover:text-sunset hover:bg-sunset/10 transition-colors"
                             title="Delete booking"
                           >
                             <Trash2 className="w-4 h-4" />
@@ -428,7 +428,7 @@ export default function AdminBookingsModal({ isOpen, onClose }) {
         </div>
 
         {/* Footer Note */}
-        <div className="bg-white px-6 py-3 border-t border-sand/30 flex items-center justify-between text-[11px] text-charcoal/60">
+        <div className="bg-white px-6 py-3 border-t border-sand/30 flex items-center justify-between text-[11px] text-charcoal/90">
           <span>Boarding & departures: Mangrove Bay (Daily 7:00 AM – 5:30 PM)</span>
           <span className="font-mono">Owner Helpline: +91 73974 38874</span>
         </div>

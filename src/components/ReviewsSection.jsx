@@ -30,7 +30,7 @@ export default function ReviewsSection({ onOpenBooking }) {
               Loved by travelers & locals alike.
             </h2>
 
-            <p className="mt-4 text-base text-charcoal/75 font-sans leading-relaxed">
+            <p className="mt-4 text-base text-charcoal/90 font-sans leading-relaxed">
               Read authentic feedback from couples, families, and travelers who experienced our 1-hour backwater cruises, private charters, and mangrove safaris departing from <strong>Mangrove Bay</strong>.
             </p>
           </div>
@@ -41,7 +41,7 @@ export default function ReviewsSection({ onOpenBooking }) {
             <div className="flex items-center gap-4 text-left">
               <div className="w-14 h-14 rounded-2xl bg-forest text-sand flex flex-col items-center justify-center font-serif shadow-sm">
                 <span className="text-2xl font-bold leading-none">{REVIEWS_DATA.aggregate.score}</span>
-                <span className="text-[10px] text-cream/70">out of 5</span>
+                <span className="text-[10px] text-cream">out of 5</span>
               </div>
               <div>
                 <div className="flex items-center gap-1 text-sunset mb-1">
@@ -52,8 +52,8 @@ export default function ReviewsSection({ onOpenBooking }) {
                 <div className="flex items-center gap-1.5 text-xs text-charcoal/80 font-medium">
                   {/* Google 'G' stylized text */}
                   <span className="font-semibold text-forest">Google Reviews</span>
-                  <span className="text-charcoal/40">•</span>
-                  <span className="text-charcoal/70">{REVIEWS_DATA.aggregate.totalReviews} verified ratings</span>
+                  <span className="text-charcoal/90">•</span>
+                  <span className="text-charcoal/90">{REVIEWS_DATA.aggregate.totalReviews} verified ratings</span>
                 </div>
               </div>
             </div>
@@ -76,19 +76,19 @@ export default function ReviewsSection({ onOpenBooking }) {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-10">
           <div className="p-4 rounded-xl bg-white/80 border border-sand/40 text-center">
             <span className="text-xl font-serif text-forest font-semibold block">1 Hour</span>
-            <span className="text-[11px] text-charcoal/70 font-medium">Full Duration Every Ride</span>
+            <span className="text-[11px] text-charcoal/90 font-medium">Full Duration Every Ride</span>
           </div>
           <div className="p-4 rounded-xl bg-white/80 border border-sand/40 text-center">
             <span className="text-xl font-serif text-forest font-semibold block">100% Free</span>
-            <span className="text-[11px] text-charcoal/70 font-medium">Vehicle Parking At Jetty</span>
+            <span className="text-[11px] text-charcoal/90 font-medium">Vehicle Parking At Jetty</span>
           </div>
           <div className="p-4 rounded-xl bg-white/80 border border-sand/40 text-center">
             <span className="text-xl font-serif text-forest font-semibold block">Hygienic</span>
-            <span className="text-[11px] text-charcoal/70 font-medium">Toilets & Changing Rooms</span>
+            <span className="text-[11px] text-charcoal/90 font-medium">Toilets & Changing Rooms</span>
           </div>
           <div className="p-4 rounded-xl bg-white/80 border border-sand/40 text-center">
             <span className="text-xl font-serif text-forest font-semibold block">₹3K & ₹5K</span>
-            <span className="text-[11px] text-charcoal/70 font-medium">Couple & Private Boat Plans</span>
+            <span className="text-[11px] text-charcoal/90 font-medium">Couple & Private Boat Plans</span>
           </div>
         </div>
 
@@ -103,7 +103,7 @@ export default function ReviewsSection({ onOpenBooking }) {
                 className={`px-4 py-2 rounded-full text-xs font-medium tracking-wide transition-all ${
                   isActive
                     ? 'bg-forest text-sand shadow-sm'
-                    : 'bg-white text-charcoal/75 hover:bg-sand/30 border border-sand/40'
+                    : 'bg-white text-charcoal/90 hover:bg-sand/30 border border-sand/40'
                 }`}
               >
                 {filter.label}
@@ -130,7 +130,7 @@ export default function ReviewsSection({ onOpenBooking }) {
                       <p className="text-sm font-semibold text-forest leading-tight">
                         {rev.author}
                       </p>
-                      <p className="text-[11px] text-charcoal/60">
+                      <p className="text-[11px] text-charcoal/90">
                         {rev.location}
                       </p>
                     </div>
@@ -162,18 +162,18 @@ export default function ReviewsSection({ onOpenBooking }) {
                 </h3>
 
                 {/* Review Body */}
-                <p className="text-xs text-charcoal/75 leading-relaxed font-sans mb-4">
+                <p className="text-xs text-charcoal/90 leading-relaxed font-sans mb-4">
                   {rev.reviewText}
                 </p>
               </div>
 
               {/* Bottom Card Highlight */}
-              <div className="pt-3 border-t border-sand/30 flex items-center justify-between text-[11px] text-charcoal/70">
+              <div className="pt-3 border-t border-sand/30 flex items-center justify-between text-[11px] text-charcoal/90">
                 <span className="text-[10px] text-sunset font-medium flex items-center gap-1">
                   <Sparkles className="w-3 h-3" />
                   {rev.highlight}
                 </span>
-                <span className="text-[10px] text-charcoal/50">{rev.date}</span>
+                <span className="text-[10px] text-charcoal/90">{rev.date}</span>
               </div>
             </div>
           ))}

@@ -112,7 +112,7 @@ export default function FAQSection({ onOpenBooking }) {
             Got questions? We've got answers.
           </h2>
 
-          <p className="text-sm text-charcoal/75 leading-relaxed font-sans">
+          <p className="text-sm text-charcoal/90 leading-relaxed font-sans">
             Everything you need to know about our 1-hour backwater cruises, pricing, tour route, and amenities at Mangrove Bay.
           </p>
         </div>

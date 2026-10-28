@@ -280,7 +280,7 @@ export default function BookingSection({ onOpenContact }) {
                   <span>Estimated Total:</span>
                   <span>₹{finalPrice}</span>
                 </div>
-                <div className="flex justify-between text-[11px] text-cream/70 pt-1">
+                <div className="flex justify-between text-[11px] text-cream pt-1">
                   <span>Boarding Jetty:</span>
                   <span className="text-sand">Mangrove Bay</span>
                 </div>
@@ -444,7 +444,7 @@ export default function BookingSection({ onOpenContact }) {
                   <span className="text-xs uppercase tracking-luxury text-sand font-semibold">
                     Number of Passengers
                   </span>
-                  <span className="text-[11px] text-cream/70 font-sans">
+                  <span className="text-[11px] text-cream font-sans">
                     Duration: 1 Hour (60 Mins)
                   </span>
                 </div>
@@ -535,7 +535,7 @@ export default function BookingSection({ onOpenContact }) {
                     <Tag className="w-3.5 h-3.5 text-sunset" />
                     <span>Have a Promo Code or Offer?</span>
                   </label>
-                  <span className="text-[10px] text-cream/50 uppercase">Optional</span>
+                  <span className="text-[10px] text-cream uppercase">Optional</span>
                 </div>
 
                 <div className="flex gap-2">
@@ -568,7 +568,7 @@ export default function BookingSection({ onOpenContact }) {
                 )}
 
                 <div className="pt-1 flex flex-wrap items-center gap-1.5">
-                  <span className="text-[10px] text-cream/60 uppercase">Quick Apply:</span>
+                  <span className="text-[10px] text-cream uppercase">Quick Apply:</span>
                   {OFFERS_DATA.map((off) => (
                     <button
                       key={off.id}
@@ -614,7 +614,7 @@ export default function BookingSection({ onOpenContact }) {
                     <div className="font-serif text-2xl font-bold text-sand">
                       ₹{finalPrice}
                     </div>
-                    <span className="text-[10px] text-cream/60">Pay on jetty arrival</span>
+                    <span className="text-[10px] text-cream">Pay on jetty arrival</span>
                   </div>
                 </div>
 
@@ -728,7 +728,7 @@ export default function BookingSection({ onOpenContact }) {
               </div>
 
               <div className="text-center pt-2">
-                <p className="text-[11px] text-sand/60 font-sans">
+                <p className="text-[11px] text-sand font-sans">
                   * Exclusively boat ride experiences. Departures from Mangrove Bay. Life jackets provided.
                 </p>
               </div>

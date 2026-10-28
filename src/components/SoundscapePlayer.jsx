@@ -118,7 +118,7 @@ export default function SoundscapePlayer() {
         </>
       ) : (
         <>
-          <VolumeX className="w-3.5 h-3.5 text-sand/60" />
+          <VolumeX className="w-3.5 h-3.5 text-sand" />
           <span className="hidden sm:inline">Bay Sounds</span>
         </>
       )}

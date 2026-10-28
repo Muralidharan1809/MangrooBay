@@ -45,7 +45,7 @@ export default function BoathouseStaySection({ onOpenBooking, onOpenLightbox }) 
               {BOATHOUSE_STAY_DATA.heading}
             </h2>
           </div>
-          <p className="max-w-md text-sm md:text-base text-charcoal/75 leading-relaxed font-sans">
+          <p className="max-w-md text-sm md:text-base text-charcoal/90 leading-relaxed font-sans">
             {BOATHOUSE_STAY_DATA.description}
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function BoathouseStaySection({ onOpenBooking, onOpenLightbox }) 
               className={`px-5 py-2.5 rounded-full text-xs sm:text-sm uppercase tracking-widest font-medium transition-all whitespace-nowrap ${
                 activeSuiteIndex === idx
                   ? 'bg-forest text-cream shadow-md'
-                  : 'bg-white/80 text-charcoal/70 hover:bg-sand/30 hover:text-forest border border-sand/40'
+                  : 'bg-white/80 text-charcoal/90 hover:bg-sand/30 hover:text-forest border border-sand/40'
               }`}
             >
               {suite.title}
@@ -128,8 +128,8 @@ export default function BoathouseStaySection({ onOpenBooking, onOpenLightbox }) 
                 <span className="text-xs font-semibold uppercase tracking-luxury text-sunset">
                   Floating Sanctuaries
                 </span>
-                <span className="text-xs text-charcoal/40">•</span>
-                <span className="text-xs text-charcoal/60">{activeSuite.capacity}</span>
+                <span className="text-xs text-charcoal/90">•</span>
+                <span className="text-xs text-charcoal/90">{activeSuite.capacity}</span>
               </div>
 
               <h3 className="font-serif text-3xl sm:text-4xl text-forest font-light mb-4">
@@ -155,7 +155,7 @@ export default function BoathouseStaySection({ onOpenBooking, onOpenLightbox }) 
                         <h4 className="text-xs font-semibold text-forest uppercase tracking-wide">
                           {feature.name}
                         </h4>
-                        <p className="text-[11px] text-charcoal/65 leading-tight">
+                        <p className="text-[11px] text-charcoal/90 leading-tight">
                           {feature.detail}
                         </p>
                       </div>

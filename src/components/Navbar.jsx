@@ -175,7 +175,7 @@ export default function Navbar({ onOpenBooking, onOpenContact, onOpenBookingsMan
               setMobileMenuOpen(false);
               onOpenBookingsManager && onOpenBookingsManager();
             }}
-            className="text-[11px] text-sand/60 hover:text-sand font-medium pt-2"
+            className="text-[11px] text-sand hover:text-sand font-medium pt-2"
           >
             🔒 Staff Admin Access
           </button>

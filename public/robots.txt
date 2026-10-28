@@ -15,3 +15,7 @@ User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://www.pondyboating.com/sitemap.xml
+
+# Agentic Resource Discovery
+Agentmap: https://www.pondyboating.com/ai-catalog.json
+Agent-catalog: https://www.pondyboating.com/ai-catalog.json

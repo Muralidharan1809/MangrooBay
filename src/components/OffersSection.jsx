@@ -41,7 +41,7 @@ export default function OffersSection({ onSelectOffer }) {
             Exclusive Boating Offers
           </h2>
 
-          <p className="text-sm sm:text-base text-charcoal/75 leading-relaxed max-w-2xl mx-auto font-sans">
+          <p className="text-sm sm:text-base text-charcoal/90 leading-relaxed max-w-2xl mx-auto font-sans">
             Make your 1-hour backwater voyage even sweeter. Use any active promo code during booking or click below to claim your offer directly.
           </p>
           <div className="w-16 h-[1px] bg-sand/60 mx-auto mt-6" />
@@ -95,7 +95,7 @@ export default function OffersSection({ onSelectOffer }) {
                   </h3>
                   <p
                     className={`text-xs italic mb-4 ${
-                      offer.highlight ? 'text-sand' : 'text-charcoal/70'
+                      offer.highlight ? 'text-sand' : 'text-charcoal/90'
                     }`}
                   >
                     “{offer.tagline}”
@@ -103,7 +103,7 @@ export default function OffersSection({ onSelectOffer }) {
 
                   <p
                     className={`text-xs leading-relaxed mb-6 ${
-                      offer.highlight ? 'text-cream/80' : 'text-charcoal/75'
+                      offer.highlight ? 'text-cream/80' : 'text-charcoal/90'
                     }`}
                   >
                     {offer.description}
@@ -114,7 +114,7 @@ export default function OffersSection({ onSelectOffer }) {
                     className={`p-2.5 rounded-xl text-[11px] mb-6 flex items-center gap-2 ${
                       offer.highlight
                         ? 'bg-white/10 text-sand/90'
-                        : 'bg-cream text-charcoal/70 border border-sand/40'
+                        : 'bg-cream text-charcoal/90 border border-sand/40'
                     }`}
                   >
                     <Clock className="w-3.5 h-3.5 text-sunset shrink-0" />

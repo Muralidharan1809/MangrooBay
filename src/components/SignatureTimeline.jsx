@@ -34,7 +34,7 @@ export default function SignatureTimeline() {
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-cream font-light leading-tight mb-4">
             {TIMELINE_DATA.heading}
           </h2>
-          <p className="text-base text-cream/70 font-light font-serif italic">
+          <p className="text-base text-cream font-light font-serif italic">
             “{TIMELINE_DATA.subheading}”
           </p>
           <div className="w-16 h-[1px] bg-sand/30 mx-auto mt-6" />
@@ -52,7 +52,7 @@ export default function SignatureTimeline() {
                   className={`flex flex-col items-center justify-center p-4 rounded-xl transition-all duration-500 relative ${
                     isActive
                       ? 'bg-forest-light text-cream shadow-floating border border-sand/40'
-                      : 'text-cream/60 hover:text-cream hover:bg-forest/40'
+                      : 'text-cream hover:text-cream hover:bg-forest/40'
                   }`}
                 >
                   <div className="mb-2 p-2 rounded-full bg-forest-deep/60 border border-sand/20">
@@ -61,7 +61,7 @@ export default function SignatureTimeline() {
                   <span className="font-serif text-xl sm:text-2xl font-light text-cream mb-0.5">
                     {stage.name}
                   </span>
-                  <span className="text-[10px] uppercase tracking-wider text-sand/70 font-sans">
+                  <span className="text-[10px] uppercase tracking-wider text-sand font-sans">
                     {stage.time}
                   </span>
                   {isActive && (
@@ -122,7 +122,7 @@ export default function SignatureTimeline() {
               </div>
 
               {/* Stage Navigation / Indicator */}
-              <div className="pt-6 border-t border-sand/20 flex items-center justify-between text-xs text-sand/70">
+              <div className="pt-6 border-t border-sand/20 flex items-center justify-between text-xs text-sand">
                 <span>Switch between times above</span>
                 <span className="flex items-center gap-1 font-serif text-sand text-sm">
                   {activeStage.name} Flow <ChevronRight className="w-4 h-4" />

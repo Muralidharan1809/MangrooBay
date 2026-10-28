@@ -249,7 +249,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
             <div className="flex items-center gap-2 text-[11px] uppercase tracking-luxury text-sand font-semibold mb-1">
               <Anchor className="w-3.5 h-3.5 text-sunset" />
               <span>Mangrove Bay</span>
-              <span className="text-sand/50">•</span>
+              <span className="text-sand">•</span>
               <span className="text-sunset">Daily 7:00 AM – 5:30 PM</span>
             </div>
             <h3 id="booking-modal-title" className="font-serif text-2xl sm:text-3xl font-light text-cream">
@@ -310,7 +310,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
                   <span>Estimated Total:</span>
                   <span>₹{finalPrice}</span>
                 </div>
-                <div className="flex justify-between text-[11px] text-charcoal/60 pt-1">
+                <div className="flex justify-between text-[11px] text-charcoal/90 pt-1">
                   <span>Boarding Point:</span>
                   <span className="font-medium text-forest">Mangrove Bay</span>
                 </div>
@@ -477,7 +477,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
                   <span className="text-xs uppercase tracking-wider font-bold text-forest">
                     Number of Passengers
                   </span>
-                  <span className="text-[11px] text-charcoal/60">
+                  <span className="text-[11px] text-charcoal/90">
                     Duration: 1 Hour (60 Mins)
                   </span>
                 </div>
@@ -487,7 +487,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
                   <div className="p-3 rounded-xl bg-cream border border-sand/40 flex items-center justify-between">
                     <div>
                       <span className="block text-xs font-bold text-forest">Adults</span>
-                      <span className="text-[11px] text-charcoal/60">₹500 each</span>
+                      <span className="text-[11px] text-charcoal/90">₹500 each</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <button
@@ -514,7 +514,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
                   <div className="p-3 rounded-xl bg-cream border border-sand/40 flex items-center justify-between">
                     <div>
                       <span className="block text-xs font-bold text-forest">Children</span>
-                      <span className="text-[11px] text-charcoal/60">₹250 (3–10 yrs)</span>
+                      <span className="text-[11px] text-charcoal/90">₹250 (3–10 yrs)</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <button
@@ -568,7 +568,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
                     <Tag className="w-3.5 h-3.5 text-sunset" />
                     <span>Have a Promo Code or Offer?</span>
                   </label>
-                  <span className="text-[10px] text-charcoal/50 uppercase">Optional</span>
+                  <span className="text-[10px] text-charcoal/90 uppercase">Optional</span>
                 </div>
 
                 <div className="flex gap-2">
@@ -603,7 +603,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
 
                 {/* Quick Offer Chips */}
                 <div className="pt-1 flex flex-wrap items-center gap-1.5">
-                  <span className="text-[10px] text-charcoal/60 uppercase">Quick Apply:</span>
+                  <span className="text-[10px] text-charcoal/90 uppercase">Quick Apply:</span>
                   {OFFERS_DATA.map((off) => (
                     <button
                       key={off.id}
@@ -649,7 +649,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
                     <div className="font-serif text-2xl font-bold text-sand">
                       ₹{finalPrice}
                     </div>
-                    <span className="text-[10px] text-cream/60">Pay on jetty arrival</span>
+                    <span className="text-[10px] text-cream">Pay on jetty arrival</span>
                   </div>
                 </div>
 
@@ -752,7 +752,7 @@ export default function BookingModal({ isOpen, onClose, initialExperience, initi
                     </>
                   )}
                 </button>
-                <p className="text-[11px] text-charcoal/60 text-center mt-3 font-sans">
+                <p className="text-[11px] text-charcoal/90 text-center mt-3 font-sans">
                   * All rides depart from Mangrove Bay. Life jackets and certified marine pilots provided.
                 </p>
               </div>

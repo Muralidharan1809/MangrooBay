@@ -61,7 +61,7 @@ export default function GallerySection({ selectedImage, setSelectedImage }) {
           <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-forest font-light leading-tight mb-4">
             A glimpse of Mangrove Bay
           </h2>
-          <p className="text-sm md:text-base text-charcoal/70 leading-relaxed font-sans">
+          <p className="text-sm md:text-base text-charcoal/90 leading-relaxed font-sans">
             Gently drifting between calm waters, golden skies, lush coastal greenery, and authentic boating stories.
           </p>
           <div className="w-16 h-[1px] bg-sand/60 mx-auto mt-6" />
@@ -76,7 +76,7 @@ export default function GallerySection({ selectedImage, setSelectedImage }) {
               className={`px-5 py-2 rounded-full text-xs sm:text-sm uppercase tracking-widest font-medium transition-all duration-300 flex items-center gap-1.5 ${
                 activeFilter === filter
                   ? 'bg-forest text-cream shadow-md scale-105'
-                  : 'bg-white/80 text-charcoal/70 hover:bg-sand/30 hover:text-forest border border-sand/40'
+                  : 'bg-white/80 text-charcoal/90 hover:bg-sand/30 hover:text-forest border border-sand/40'
               }`}
             >
               {filter === 'Video Story' && <Film className="w-3.5 h-3.5 text-sunset" />}
