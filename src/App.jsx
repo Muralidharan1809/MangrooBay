@@ -71,7 +71,8 @@ export default function App() {
         onOpenBookingsManager={() => setIsBookingsManagerOpen(true)}
       />
 
-      {/* 01 Full-screen Cinematic Hero */}
+      <main id="main-content">
+        {/* 01 Full-screen Cinematic Hero */}
       <Hero
         onOpenBooking={() => handleOpenBooking()}
       />
@@ -134,10 +135,7 @@ export default function App() {
         onOpenContact={handleOpenContact}
       />
 
-      {/* 12 Minimal Elegant Contact Area */}
-      <ContactSection
-        onOpenBooking={() => handleOpenBooking()}
-      />
+      {/* 12 Minimal Elegant Contact Area */}\n      </main>
 
       {/* 13 Forest Green Luxury Footer */}
       <Footer

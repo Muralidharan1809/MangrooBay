@@ -84,7 +84,7 @@ export default function ContactSection({ onOpenBooking }) {
               <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-forest font-light leading-tight mb-4">
                 Talk to Mangrove Bay
               </h2>
-              <p className="text-sm md:text-base text-charcoal/75 max-w-md font-sans leading-relaxed">
+              <p className="text-sm md:text-base text-charcoal/90 max-w-md font-sans leading-relaxed">
                 Connect directly with our boat house staff via WhatsApp or Phone for real-time slot availability, tidal guidance, weather updates, and custom boat charters.
               </p>
             </div>
@@ -116,7 +116,7 @@ export default function ContactSection({ onOpenBooking }) {
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="block text-xs uppercase tracking-wider text-charcoal/60 font-semibold">Jetty Phone Line</span>
+                  <span className="block text-xs uppercase tracking-wider text-charcoal/90 font-semibold">Jetty Phone Line</span>
                   <span className="font-semibold text-base text-forest group-hover:text-sunset transition-colors">{BRAND_DATA.contact.phone}</span>
                 </div>
               </a>
@@ -135,7 +135,7 @@ export default function ContactSection({ onOpenBooking }) {
 
             {/* Social Media Links */}
             <div className="pt-2">
-              <span className="text-xs uppercase tracking-luxury text-charcoal/60 font-semibold block mb-3">
+              <span className="text-xs uppercase tracking-luxury text-charcoal/90 font-semibold block mb-3">
                 Follow The Story
               </span>
               <div className="flex items-center gap-4">
@@ -173,7 +173,7 @@ export default function ContactSection({ onOpenBooking }) {
               </span>
             </div>
             
-            <p className="text-xs sm:text-sm text-charcoal/70 mb-6 font-sans">
+            <p className="text-xs sm:text-sm text-charcoal/90 mb-6 font-sans">
               Leave your inquiry below. It directly opens on WhatsApp with our jetty team for an immediate reply!
             </p>
 
@@ -189,7 +189,7 @@ export default function ContactSection({ onOpenBooking }) {
                   <h4 className="font-serif text-2xl text-forest font-light">
                     Message Dispatched to WhatsApp!
                   </h4>
-                  <p className="text-xs text-charcoal/75 max-w-sm mx-auto mt-1 font-sans">
+                  <p className="text-xs text-charcoal/90 max-w-sm mx-auto mt-1 font-sans">
                     Reference ID: <strong className="font-mono text-forest">{submittedId}</strong>. If WhatsApp did not open automatically, click the green button below:
                   </p>
                 </div>
@@ -274,13 +274,13 @@ export default function ContactSection({ onOpenBooking }) {
                   <ArrowRight className="w-4 h-4" />
                 </button>
 
-                <p className="text-[11px] text-center text-charcoal/60 pt-1">
+                <p className="text-[11px] text-center text-charcoal/90 pt-1">
                   ⚡ Directly opens WhatsApp chat with our Mangrove Bay jetty (+91 73974 38874)
                 </p>
               </form>
             )}
 
-            <div className="mt-8 pt-6 border-t border-sand/30 flex items-center justify-between text-xs text-charcoal/60">
+            <div className="mt-8 pt-6 border-t border-sand/30 flex items-center justify-between text-xs text-charcoal/90">
               <span>Puducherry, India</span>
               <span className="italic font-serif text-sand-dark text-sm">Escape into the calm.</span>
             </div>

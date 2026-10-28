@@ -29,7 +29,7 @@ export default function MobileBookingBar({ onOpenBooking }) {
             <Anchor className="w-3.5 h-3.5 text-sunset" />
             <span>Mangrove Bay</span>
           </span>
-          <span className="text-[10px] uppercase tracking-wider text-cream/70 font-sans">
+          <span className="text-[10px] uppercase tracking-wider text-cream font-sans">
             1 Hr Cruise • Daily 7 AM – 5:30 PM
           </span>
         </div>

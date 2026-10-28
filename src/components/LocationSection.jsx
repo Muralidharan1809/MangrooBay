@@ -27,7 +27,7 @@ export default function LocationSection({ onOpenContact }) {
             Pondy Marina Boating
           </h2>
 
-          <p className="mt-4 text-base text-charcoal/75 max-w-xl font-sans">
+          <p className="mt-4 text-base text-charcoal/90 max-w-xl font-sans">
             Looking for the famous Marina boating in Pondy (Merina boating) or boating near me in Pondicherry? Depart directly from Pondy Boating (Mangrove Bay) at Marina, Vambakeerapalayam — featuring 100% free car parking, clean restrooms, and changing rooms right at the boarding jetty.
           </p>
         </div>
@@ -69,9 +69,9 @@ export default function LocationSection({ onOpenContact }) {
               >
                 <Anchor className="w-3.5 h-3.5 text-sunset group-hover:scale-110 transition-transform" />
                 <span className="font-medium">Mangrove Bay</span>
-                <ExternalLink className="w-3 h-3 text-sand/70 group-hover:text-sand" />
+                <ExternalLink className="w-3 h-3 text-sand group-hover:text-sand" />
               </a>
-              <span className="text-[11px] text-sand/70 tracking-widest uppercase">Puducherry, India</span>
+              <span className="text-[11px] text-sand tracking-widest uppercase">Puducherry, India</span>
             </div>
 
             {/* Interactive Clickable Pin on Map - Redirects directly to Google Maps */}
@@ -158,7 +158,7 @@ export default function LocationSection({ onOpenContact }) {
                 <MapPin className="w-5 h-5 text-sunset shrink-0 mt-0.5" />
                 <div>
                   <p className="font-medium text-forest">Mangrove Bay Boarding Jetty</p>
-                  <p className="text-xs text-charcoal/70 mt-1">
+                  <p className="text-xs text-charcoal/90 mt-1">
                     {LOCATION_DATA.address}
                   </p>
                   <p className="text-[11px] text-mangrove mt-2 leading-relaxed">
@@ -203,7 +203,7 @@ export default function LocationSection({ onOpenContact }) {
                 {LOCATION_DATA.attractions.map((attraction, i) => (
                   <li key={i} className="flex items-center justify-between text-xs py-1.5 border-b border-sand/30 last:border-0">
                     <span className="text-forest font-medium">{attraction.name}</span>
-                    <span className="text-charcoal/60 italic">{attraction.distance}</span>
+                    <span className="text-charcoal/90 italic">{attraction.distance}</span>
                   </li>
                 ))}
               </ul>

@@ -48,7 +48,7 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
               <p className="font-serif text-xl italic text-sand font-light">
                 “{BRAND_DATA.tagline}”
               </p>
-              <p className="text-sm text-cream/70 max-w-sm font-sans font-light leading-relaxed">
+              <p className="text-sm text-cream max-w-sm font-sans font-light leading-relaxed">
                 Premier 1-hour Pondy boating rides, romantic couple voyages, private family charters, and pondy mangrove boating safaris in Puducherry.
               </p>
             </div>
@@ -85,7 +85,7 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
               <p className="text-xs uppercase tracking-luxury text-sand font-semibold mb-4">
                 Boarding Jetty & Hours
               </p>
-              <p className="text-xs text-cream/70 leading-relaxed font-sans">
+              <p className="text-xs text-cream leading-relaxed font-sans">
                 Mangrove Bay Boarding Jetty<br />
                 Estuary & Mangrove Backwaters<br />
                 Puducherry 605001, India
@@ -141,7 +141,7 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
           </div>
 
           {/* Bottom Copyright & Legal Links */}
-          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream/60 font-sans">
+          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream font-sans">
             <p>
               <button 
                 onClick={onOpenBookingsManager} 

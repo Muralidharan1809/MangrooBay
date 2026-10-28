@@ -70,7 +70,7 @@ export default function RidesAndExperiences({ onBookRide }) {
             Pondicherry Mangrove Boating
           </h2>
 
-          <p className="text-sm sm:text-base text-charcoal/75 leading-relaxed max-w-2xl mx-auto font-sans">
+          <p className="text-sm sm:text-base text-charcoal/90 leading-relaxed max-w-2xl mx-auto font-sans">
             Check Pondicherry boat ride price and packages. Experience the premier mangrove boating Pondicherry adventure with 100% private boat rides or shared family tours exploring all 4 iconic sights in 1 full hour.
           </p>
         </div>
@@ -151,7 +151,7 @@ export default function RidesAndExperiences({ onBookRide }) {
               className={`px-5 py-2 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 ${
                 selectedCategory === cat
                   ? 'bg-forest text-sand shadow-md scale-105'
-                  : 'bg-white text-charcoal/70 hover:bg-sand/30 hover:text-forest border border-sand/40'
+                  : 'bg-white text-charcoal/90 hover:bg-sand/30 hover:text-forest border border-sand/40'
               }`}
             >
               {cat}
@@ -204,7 +204,7 @@ export default function RidesAndExperiences({ onBookRide }) {
                     “{ride.tagline}”
                   </p>
 
-                  <p className="text-xs text-charcoal/75 leading-relaxed font-sans line-clamp-3">
+                  <p className="text-xs text-charcoal/90 leading-relaxed font-sans line-clamp-3">
                     {ride.description}
                   </p>
 
@@ -215,20 +215,20 @@ export default function RidesAndExperiences({ onBookRide }) {
                       {ride.id === 'couples-ride' ? (
                         <div className="flex items-baseline gap-1 mt-0.5">
                           <span className="text-lg font-serif font-bold text-forest">₹3,000</span>
-                          <span className="text-[11px] text-charcoal/70">/ Couple (2 Guests)</span>
+                          <span className="text-[11px] text-charcoal/90">/ Couple (2 Guests)</span>
                         </div>
                       ) : ride.id === 'separate-ride' ? (
                         <div className="flex items-baseline gap-1 mt-0.5">
                           <span className="text-lg font-serif font-bold text-forest">₹5,000</span>
-                          <span className="text-[11px] text-charcoal/70">/ Separate Boat (1–10 Guests)</span>
+                          <span className="text-[11px] text-charcoal/90">/ Separate Boat (1–10 Guests)</span>
                         </div>
                       ) : (
                         <div className="flex items-baseline gap-2 mt-0.5">
                           <span className="text-base font-serif font-bold text-forest">
-                            ₹500 <span className="text-[10px] font-sans font-normal text-charcoal/60">Adult</span>
+                            ₹500 <span className="text-[10px] font-sans font-normal text-charcoal/90">Adult</span>
                           </span>
                           <span className="text-sm font-serif font-semibold text-sunset">
-                            ₹250 <span className="text-[10px] font-sans font-normal text-charcoal/60">Child</span>
+                            ₹250 <span className="text-[10px] font-sans font-normal text-charcoal/90">Child</span>
                           </span>
                         </div>
                       )}
@@ -240,7 +240,7 @@ export default function RidesAndExperiences({ onBookRide }) {
                   </div>
 
                   {/* Feature Bullets */}
-                  <div className="pt-2 space-y-1.5 text-xs text-charcoal/70 font-sans">
+                  <div className="pt-2 space-y-1.5 text-xs text-charcoal/90 font-sans">
                     <div className="flex items-center gap-2">
                       <Check className="w-3.5 h-3.5 text-mangrove shrink-0" />
                       <span>Explores Mangroves, Arikamedu, Beach & Harbour</span>

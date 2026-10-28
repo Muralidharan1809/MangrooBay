@@ -49,7 +49,7 @@ export default function Introduction() {
                   <h3 className="font-sans text-sm font-semibold text-forest uppercase tracking-wider mb-1">
                     {feat.title}
                   </h3>
-                  <p className="text-xs text-charcoal/70 leading-normal">
+                  <p className="text-xs text-charcoal/90 leading-normal">
                     {feat.subtitle}
                   </p>
                 </div>

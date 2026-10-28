@@ -52,13 +52,19 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23123C32' d='M0 0h32v32H0z'/%3E%3Cpath fill='%23D9825B' d='M16 6a5 5 0 100 10 5 5 0 000-10z' opacity='.8'/%3E%3Cpath fill='%23E9D8B8' d='M4 22c4-2 8-2 12 0s8 2 12 0v4c-4 2-8 2-12 0s-8-2-12 0v-4z'/%3E%3Cpath fill='%23315C4A' d='M7 25c3-1 6-1 9 0s6 1 9 0v3c-3 1-6 1-9 0s-6-1-9 0v-3z'/%3E%3C/svg%3E" />
 
-    <!-- Google Fonts Preconnect -->
+        <!-- Preload LCP Hero Background Image -->
+    <link rel="preload" as="image" href="/Images/Mangroo%20Forest.jpeg" fetchpriority="high" />
+
+    <!-- Agentic AI Discovery Links -->
+    <link rel="ai-catalog" href="https://www.pondyboating.com/ai-catalog.json" />
+    <link rel="alternate" type="text/plain" href="https://www.pondyboating.com/llms.txt" title="LLM Context" />
+
+    <!-- Google Fonts Preconnect & Zero Render-Blocking Load -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
     </noscript>
 
     <!-- Schema.org Comprehensive Structured Data (TouristAttraction + LocalBusiness + FAQPage + AggregateRating + Offers) -->

@@ -127,9 +127,9 @@ export default function ReviewsSection({ onOpenBooking }) {
                       {rev.avatarInitials}
                     </div>
                     <div>
-                      <h4 className="text-sm font-semibold text-forest leading-tight">
+                      <p className="text-sm font-semibold text-forest leading-tight">
                         {rev.author}
-                      </h4>
+                      </p>
                       <p className="text-[11px] text-charcoal/60">
                         {rev.location}
                       </p>
@@ -157,9 +157,9 @@ export default function ReviewsSection({ onOpenBooking }) {
                 </div>
 
                 {/* Headline */}
-                <h5 className="font-serif text-base text-forest font-medium leading-snug mb-3">
+                <h3 className="font-serif text-base text-forest font-medium leading-snug mb-3">
                   "{rev.headline}"
-                </h5>
+                </h3>
 
                 {/* Review Body */}
                 <p className="text-xs text-charcoal/75 leading-relaxed font-sans mb-4">
