@@ -1,6 +1,6 @@
 {
   "$schema": "https://ard.spec/v1.0/ai-catalog.schema.json",
-  "catalogVersion": "1.0",
+  "specVersion": "1.0",
   "publisher": {
     "name": "Pondy Boating - Mangrove Bay",
     "id": "https://www.pondyboating.com",
@@ -8,11 +8,11 @@
   },
   "entries": [
     {
-      "id": "urn:pondyboating:booking-service",
+      "identifier": "urn:pondyboating:booking-service",
       "type": "application/a2a-agent-card+json",
       "displayName": "Pondy Boating & Mangrove Tours Booking",
       "description": "Book 1-hour backwater boat rides in Pondicherry, including shared rides (₹500/adult, ₹250/child), couples private boat (₹3,000), and separate private vessel (₹5,000) exploring mangrove root tunnels, historic Arikamedu, and beach river confluence.",
-      "endpoint": "https://www.pondyboating.com/#booking",
+      "url": "https://www.pondyboating.com/#booking",
       "capabilities": [
         "BoatRideBooking",
         "PriceCatalog",
