@@ -21,8 +21,8 @@ export default function Introduction() {
               {INTRO_DATA.eyebrow}
             </span>
 
-            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-forest font-light leading-[1.15] mb-8">
-              Boating in Pondicherry
+            <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-forest font-light leading-[1.15] mb-8">
+              Mangrove Forest Boating & Backwater Tours
             </h2>
 
             <div className="relative pl-6 border-l-2 border-sunset/60 mb-6">
@@ -31,8 +31,8 @@ export default function Introduction() {
               </p>
             </div>
 
-            <p className="text-sm md:text-base text-charcoal/80 leading-relaxed mb-4 font-sans">
-              {INTRO_DATA.secondaryText}
+            <p className="text-sm md:text-base text-charcoal/90 leading-relaxed mb-4 font-sans">
+              Discover authentic <strong>mangrove forest boating</strong> in Pondicherry and premier <strong>Pondy Marina boating</strong> at Mangrove Bay. We guide travelers through protected coastal mangrove root canopy tunnels, ancient 2,000-year Roman trade port ruins at Arikamedu, and the dramatic Bay of Bengal sea mouth confluence with 100% private boat options.
             </p>
 
             <p className="font-serif italic text-base md:text-lg text-sunset font-medium mb-10">

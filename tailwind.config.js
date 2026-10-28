@@ -30,9 +30,10 @@ export default {
           warm: '#EFECE2'
         },
         sunset: {
-          DEFAULT: '#D9825B',
+          DEFAULT: '#A8441F',
           glow: '#E49571',
-          deep: '#BA6640'
+          deep: '#8C320E',
+          light: '#F5B895'
         },
         charcoal: {
           DEFAULT: '#17211E',

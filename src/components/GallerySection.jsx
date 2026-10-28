@@ -195,8 +195,7 @@ export default function GallerySection({ selectedImage, setSelectedImage }) {
                 />
               </div>
             ) : (
-              <img
-                src={filteredImages[lightboxIndex].src}
+              <img loading="lazy" decoding="async" src={filteredImages[lightboxIndex].src}
                 alt={filteredImages[lightboxIndex].title}
                 className="max-h-[72vh] max-w-full rounded-2xl object-contain shadow-2xl border border-sand/30"
               />

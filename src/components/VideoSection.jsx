@@ -13,8 +13,7 @@ export default function VideoSection() {
     <section className="relative w-full py-28 md:py-40 bg-forest-deep overflow-hidden">
       {/* Background Cinematic Visual (Clean high-res image; no broken autoplay video) */}
       <div className="absolute inset-0 z-0 overflow-hidden flex items-center justify-center pointer-events-none">
-        <img
-          src="/Images/Pondycherry_harbour.jpeg"
+        <img loading="lazy" decoding="async" src="/Images/Pondycherry_harbour.jpeg"
           alt="Mangrove Bay Experience Video"
           className="w-full h-full object-cover filter brightness-[0.35] scale-105"
         />

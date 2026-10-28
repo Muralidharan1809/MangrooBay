@@ -82,8 +82,7 @@ export default function SignatureTimeline() {
             
             {/* Visual Photo on One Side */}
             <div className="lg:col-span-7 relative min-h-[350px] lg:min-h-[480px] overflow-hidden">
-              <img
-                src={activeStage.image}
+              <img loading="lazy" decoding="async" src={activeStage.image}
                 alt={activeStage.name}
                 className="w-full h-full object-cover transition-transform duration-1000 ease-out hover:scale-105"
                 key={activeStage.id}

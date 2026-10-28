@@ -66,12 +66,12 @@ export default function RidesAndExperiences({ onBookRide }) {
             <span>Pondicherry Boating Booking & Price • All 4 Sights in 1 Hour</span>
           </div>
 
-          <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl text-forest font-light leading-tight mb-3">
-            Pondicherry Mangrove Boating
+          <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-forest font-light leading-tight mb-3">
+            Mangrove Forest Boating & Pondy Marina Rides
           </h2>
 
           <p className="text-sm sm:text-base text-charcoal/90 leading-relaxed max-w-2xl mx-auto font-sans">
-            Check Pondicherry boat ride price and packages. Experience the premier mangrove boating Pondicherry adventure with 100% private boat rides or shared family tours exploring all 4 iconic sights in 1 full hour.
+            Check official Pondicherry boat ride prices for scenic <strong>mangrove forest boating</strong> and <strong>Pondy Marina boating</strong> at Mangrove Bay. Enjoy 100% private boat rides or shared family tours exploring all 4 iconic sights in 1 full hour.
           </p>
         </div>
 

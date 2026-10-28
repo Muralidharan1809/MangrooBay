@@ -44,15 +44,17 @@ export default function Hero({ onOpenBooking }) {
           </span>
         </div>
 
-        {/* Brand Title (Balanced typography for mobile screens) */}
-        <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wide sm:tracking-luxury uppercase text-cream drop-shadow-md mb-2 sm:mb-3 leading-snug sm:leading-tight">
-          Pondicherry Boating
-          <span className="block text-base sm:text-2xl md:text-3xl text-sand font-normal mt-1 tracking-normal">
-            Marina & Mangrove Boat Rides
+        {/* Brand Title: Prominent "Mangrove Bay" Title with rich SEO H1 content */}
+        <h1 className="font-serif font-light text-cream drop-shadow-md mb-2 sm:mb-3 leading-tight">
+          <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-luxury uppercase">
+            Mangrove Bay
+          </span>
+          <span className="block font-sans text-xs sm:text-sm md:text-base font-medium text-sand tracking-widest uppercase mt-2">
+            Mangrove Forest Boating • Pondy Marina Boating • Backwater Rides
           </span>
         </h1>
         <p className="text-[10px] sm:text-xs uppercase tracking-widest text-sand font-semibold mb-2 sm:mb-3">
-          Pondy Boating • Mangrove Bay Boarding Jetty
+          Pondy Boating • Premier Boarding Jetty Puducherry
         </p>
 
         {/* Tagline */}
@@ -60,9 +62,9 @@ export default function Hero({ onOpenBooking }) {
           Escape into the calm.
         </p>
 
-        {/* Description */}
+        {/* Description: High-search SEO body content */}
         <p className="max-w-2xl text-xs sm:text-sm md:text-base font-light text-cream/95 leading-relaxed mb-5 sm:mb-6 font-sans px-2">
-          Discover the premier boat rides in Pondicherry. Enjoy scenic Marina boat rides, mangrove root tunnels, and 2,000-year Arikamedu ruins with 100% private boat options and transparent rates.
+          Experience authentic <strong>mangrove forest boating</strong> and scenic <strong>Pondy Marina boating</strong> with Pondy Boating (Mangrove Bay). 1-hour backwater cruises through protected mangrove canopy tunnels, 2,000-year historic Arikamedu ruins, and the Bay of Bengal sea confluence with 100% private boat options.
         </p>
 
         {/* Mobile-Perfect Pricing Card */}
@@ -75,7 +77,7 @@ export default function Hero({ onOpenBooking }) {
               </span>
             </div>
             <div className="px-1 sm:px-2">
-              <span className="block text-[10px] sm:text-xs uppercase tracking-wider text-sunset font-semibold">Couple</span>
+              <span className="block text-[10px] sm:text-xs uppercase tracking-wider text-amber-300 font-semibold">Couple</span>
               <span className="font-serif text-sm sm:text-xl font-bold text-sand block mt-0.5">
                 ₹3,000 <span className="text-[9px] sm:text-[10px] font-sans font-normal text-sand">flat</span>
               </span>
@@ -88,7 +90,7 @@ export default function Hero({ onOpenBooking }) {
             </div>
           </div>
           <div className="mt-2.5 pt-2 border-t border-sand/20 text-[10px] sm:text-[11px] text-cream flex items-center justify-center gap-1.5 font-sans">
-            <span className="text-sunset font-bold">✨ Every Ride:</span>
+            <span className="text-amber-300 font-bold">✨ Every Ride:</span>
             <span>1-Hr Full Cruise • Mangroves, Arikamedu, Beach & Harbour</span>
           </div>
         </div>
@@ -120,16 +122,16 @@ export default function Hero({ onOpenBooking }) {
         {/* Clean Amenities Trust Strip (2x2 on mobile for balanced symmetry) */}
         <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-1.5 sm:gap-y-2 text-[11px] sm:text-xs text-sand font-medium">
           <span className="inline-flex items-center gap-1.5 justify-center sm:justify-start">
-            <span className="text-sunset font-bold">✓</span> Free Parking
+            <span className="text-amber-300 font-bold">✓</span> Free Parking
           </span>
           <span className="inline-flex items-center gap-1.5 justify-center sm:justify-start">
-            <span className="text-sunset font-bold">✓</span> Clean Toilets
+            <span className="text-amber-300 font-bold">✓</span> Clean Toilets
           </span>
           <span className="inline-flex items-center gap-1.5 justify-center sm:justify-start">
-            <span className="text-sunset font-bold">✓</span> Changing Rooms
+            <span className="text-amber-300 font-bold">✓</span> Changing Rooms
           </span>
           <span className="inline-flex items-center gap-1.5 justify-center sm:justify-start">
-            <span className="text-sunset font-bold">✓</span> Life Jackets
+            <span className="text-amber-300 font-bold">✓</span> Life Jackets
           </span>
         </div>
 

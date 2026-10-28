@@ -74,8 +74,7 @@ export default function BoatFleetSection({ onOpenBooking, onOpenLightbox }) {
           {/* Left Column: Vessel Photography Showcase */}
           <div className="lg:col-span-7 space-y-4">
             <div className="relative rounded-2xl overflow-hidden aspect-[16/10] bg-sand/20 group">
-              <img
-                src={activeVessel.image}
+              <img loading="lazy" decoding="async" src={activeVessel.image}
                 alt={activeVessel.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
