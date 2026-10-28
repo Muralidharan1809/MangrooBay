@@ -22,10 +22,13 @@ export default function Hero({ onOpenBooking }) {
       {/* Background High-Resolution Still Image (LCP element with high fetch priority) */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img
-          src="/Images/Mangroo Forest.jpeg"
+          src="/Images/Mangroo%20Forest.jpeg"
           alt="Pondicherry Boating - Mangrove Bay boat rides"
           fetchPriority="high"
           loading="eager"
+          decoding="async"
+          width="1200"
+          height="800"
           className="w-full h-full object-cover filter brightness-[0.52] scale-105 transition-transform duration-1000"
         />
         {/* Cinematic gradient overlays so typography remains crisp & readable */}

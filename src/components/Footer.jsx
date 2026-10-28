@@ -200,6 +200,7 @@ export default function Footer({ onOpenBooking, onOpenBookingsManager }) {
               <button
                 onClick={() => setModalType(null)}
                 className="p-1 rounded-full hover:bg-sand/30 text-charcoal"
+                aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
               </button>

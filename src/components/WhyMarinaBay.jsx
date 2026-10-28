@@ -43,7 +43,7 @@ export default function WhyMarinaBay() {
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <span className="font-serif text-3xl font-light text-forest/50 group-hover:text-sunset transition-colors">
+                  <span className="font-serif text-3xl font-normal text-mangrove group-hover:text-sunset transition-colors">
                     {item.number}
                   </span>
                   <div className="w-10 h-10 rounded-full bg-cream border border-sand/40 flex items-center justify-center group-hover:scale-110 transition-transform">

@@ -134,8 +134,11 @@ export default function App() {
       <BookingSection
         onOpenContact={handleOpenContact}
       />
-
-      {/* 12 Minimal Elegant Contact Area */}\n      </main>
+      {/* 12 Minimal Elegant Contact Area */}
+      <ContactSection
+        onOpenBooking={() => handleOpenBooking()}
+      />
+    </main>
 
       {/* 13 Forest Green Luxury Footer */}
       <Footer

@@ -58,7 +58,11 @@ export default function Navbar({ onOpenBooking, onOpenContact, onOpenBookingsMan
           
           {/* Brand Logo */}
           <a
-            href="#"
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
             className="group flex items-center gap-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-sand"
             aria-label="Mangrove Bay Home"
           >
